@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Redes/Redes de computadores.md",
-                "mode": "source",
+                "file": "Fundamentos/Ciber segurança/Attacks/Wifi Attack.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Redes de computadores"
+              "title": "Wifi Attack"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "2d6f01956701f134",
@@ -171,8 +172,18 @@
   },
   "active": "0da4618a6d27a7b7",
   "lastOpenFiles": [
-    "Fundamentos/Redes/Modelo OSI.md",
+    "Fundamentos/Redes/Protocolos/ICMP/ICMP - Internet Control Message  Protocol.md",
+    "Fundamentos/Ciber segurança/Attacks/Wifi Attack.md",
+    "Fundamentos/Ciber segurança/Attacks",
     "Fundamentos/Redes/Protocolos/Protocolos.md",
+    "Fundamentos/Redes/Protocolos/Telnet/Telnet.md",
+    "Fundamentos/Redes/Protocolos/SSH/SSH.md",
+    "Fundamentos/Redes/Protocolos/HTTP/HTTP.md",
+    "Fundamentos/Redes/Protocolos/ARP/ARP.md",
+    "Fundamentos/Redes/Protocolos/IP/IP.md",
+    "Fundamentos/Redes/Protocolos/IP",
+    "Fundamentos/Redes/Redes de computadores.md",
+    "Fundamentos/Redes/Modelo OSI.md",
     "Fundamentos/Redes/Protocolos/TCP/TCP (Transmission Contol Protocol).md",
     "Fundamentos/Redes/Protocolos/Telnet",
     "Fundamentos/Redes/VPN",
@@ -185,9 +196,6 @@
     "Fundamentos/Literatura para evoluir como DEV.md",
     "Fundamentos/Arquitetura de Software/Padrões de projeto",
     "Fundamentos/Arquitetura de Software/DDD",
-    "Fundamentos/Arquitetura de Software",
-    "Fundamentos/Compiladores",
-    "Fundamentos/Redes/Redes de computadores.md",
     "linux_terminal_course.md",
     "docker_guide.md",
     "Linux Essentials (LinuxTips)/Day 2.md"
