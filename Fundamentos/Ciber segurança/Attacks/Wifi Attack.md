@@ -19,6 +19,7 @@ Você deve ver `Mode: Monitor` para a interface.
 
 ---
 ### 3️⃣ Escanear Redes Wi-Fi
+###### troque `wlan0` pelo nome da sua interface e adicione `mon` no final:
 	sudo airodump-ng wlan0mon
 
 - **Anote:**
