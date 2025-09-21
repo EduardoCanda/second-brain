@@ -1,0 +1,2 @@
+# second-brain
+Meus estudos
