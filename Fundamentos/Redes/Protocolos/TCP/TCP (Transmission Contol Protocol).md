@@ -23,3 +23,8 @@ Quando o servidor processa os dados recebidos, ele envia um **ACK** de volta ao 
 
 ---
 ### Término da ligação:
+A fase de encerramento é divida em quatro etapas, em que cada parte(cliente e servidor) se responsabiliza pelo encerramento da sua conexão. No momento, em que uma parte quer encerrar a conexão, é enviado um pacote com a flag FIN ao destino. 
+O outro lado responde ao estímulo de término com ACK. A conexão ficará semiaberta em caso de apenas uma parte solicitar o encerramento. Em outras palavras, a parte que mantiver a conexao aberta ainda pode enviar dados, no entanto não receberá dadps de volta porque uma parte já se encerrou.
+Por fim, o lado que mantém a conexão aberta pode enviar um pacote com a flag FIN também e o processo de encerramento se repete(FIN-ACK).
+
+
