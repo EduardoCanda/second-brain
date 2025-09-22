@@ -1,4 +1,4 @@
-O ARP é um protocolo usado em redes IPv4 para mapear endereços lógicos (IP) em endereços físicos (MAC).
+O ARP(Address Resolution Protocol) é um protocolo usado em redes IPv4 para mapear endereços lógicos (IP) em endereços físicos (MAC).
 Ele trabalha na transição entre a Camada 3 (Rede) e a Camada 2 (Enlace) do [[Modelo OSI]].
 
 Em outras palavras:
