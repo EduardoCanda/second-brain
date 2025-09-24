@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - ferramenta == "gatewayapi"
+    order:
+      - file.name
+      - tags
+      - categoria
+    sort:
+      - property: file.backlinks
+        direction: DESC
+    columnSize:
+      note.tags: 364
+  - type: table
+    name: View

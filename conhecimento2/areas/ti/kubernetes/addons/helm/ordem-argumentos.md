@@ -1,0 +1,1 @@
+Quando aplicamos um helm chart ao passar argumentos é importante considerar que, os ultimos argumentos `--values` terão prioridade maior em relação aos primeiros.

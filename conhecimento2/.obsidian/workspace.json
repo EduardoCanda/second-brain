@@ -1,0 +1,299 @@
+{
+  "main": {
+    "id": "37816635ceb32a6c",
+    "type": "split",
+    "children": [
+      {
+        "id": "779e218285899b83",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc9cf4d5eff4e55c",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "areas/ti/kubernetes/addons/fluentbit/metas-fluentbit.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "metas-fluentbit"
+            }
+          },
+          {
+            "id": "6f11f26e6a08bbb9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "areas/ti/kubernetes/recursos/pv.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "pv"
+            }
+          },
+          {
+            "id": "76ba71678c73c3cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "areas/ti/redes/protocolos/rede/protocolo-ipv4/checksum-ipv4.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "checksum-ipv4"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f59439c832f58984",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ba79ab6a7d4276c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37876d56a8cce18d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8e1969a2f9d83dc8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "abd0d1c201e3c8cb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 421.5
+  },
+  "right": {
+    "id": "715bd41876a524ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd8d16d3211648ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6e4e7dcfc1f79f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "08b822db1aacb4f0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "areas/ti/0-metas-conhecimentos/metas-prometheus.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from metas-prometheus"
+            }
+          },
+          {
+            "id": "cced9fccbc21363d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "46ae44ac6c87296c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "areas/ti/0-metas-conhecimentos/metas-prometheus.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of metas-prometheus"
+            }
+          },
+          {
+            "id": "61d3c92456a2bef4",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 331.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "37876d56a8cce18d",
+  "lastOpenFiles": [
+    "areas/ti/seguranca/certificados/autoridade-certificadora/autoridade-certificadora.md",
+    "areas/ti/seguranca/autenticacao-autorizacao.md",
+    "areas/ti/kubernetes/addons/argocd/integracoes/argocd-helm.md",
+    "areas/ti/kubernetes/addons/argocd/crd/application.md",
+    "areas/ti/laboratorios/config-redes/Explorando conexões wifi com o comando nmcli.md",
+    "areas/ti/laboratorios/seguranca/certificados/utilizando-google-lets-encrypt.md",
+    "areas/ti/linux/comandos/redes/nmcli/device/nmcli device wifi connect.md",
+    "areas/ti/laboratorios/seguranca/configurando-git-ssh.md",
+    "areas/ti/0-metas-conhecimentos/metas-kubernetes.md",
+    "areas/ti/0-metas-conhecimentos/metas-gateway-api.md",
+    "areas/ti/kubernetes/addons/fluentbit/metas-fluentbit.md",
+    "areas/ti/programacao/rust/rust-borrow.md",
+    "areas/ti/programacao/rust/rust-dyn.md",
+    "areas/ti/programacao/rust/rust-arc.md",
+    "areas/ti/programacao/rust/rust-sync-send.md",
+    "areas/ti/programacao/rust/rust-d.md",
+    "areas/ti/programacao/rust/rust-macros.md",
+    "areas/ti/programacao/rust/Untitled.md",
+    "areas/ti/programacao/rust/rus.md",
+    "areas/ti/programacao/ponteiros.md",
+    "areas/ti/programacao/go-lang.md",
+    "areas/ti/programacao/big-o-notation.md",
+    "areas/ti/linux/comandos/compactacao/tar.md",
+    "areas/ti/programacao/rust",
+    "areas/ti/linux/comandos/navegacao-diretorios/mv.md",
+    "areas/ti/kubernetes/addons/fluentbit/parser/fluentbit-parsers.md",
+    "areas/ti/kubernetes/addons/fluentbit/fundamentos/fluentbit-tamanho-chunks.md",
+    "areas/ti/kubernetes/addons/fluentbit/fundamentos",
+    "areas/ti/kubernetes/addons/fluentbit/output",
+    "areas/ti/kubernetes/addons/fluentbit/parser",
+    "areas/ti/kubernetes/addons/fluentbit/filter",
+    "areas/ti/kubernetes/addons/fluentbit/service",
+    "areas/ti/kubernetes/addons/fluentbit/input",
+    "areas/ti/kubernetes/addons/loki",
+    "areas/ti/kubernetes/addons/fluentbit/laboratorios",
+    "areas/ti/kubernetes/addons/fluentbit",
+    "Areas/TI/SRE/Prometheus/Untitled.canvas",
+    "recursos/laboratorios/wireshark/opcoes-segmento-tcp-hanshake-syn.png",
+    "recursos/laboratorios/wireshark/opcoes-segmento-tcp-handshake-synack.png",
+    "recursos/laboratorios/wireshark/flags-segmento-tcp-hanshake-syn.png",
+    "recursos/laboratorios/wireshark/flags-segmento-tcp-handshake-synack.png",
+    "recursos/laboratorios/wireshark/flag-ack.png",
+    "recursos/laboratorios/wireshark/datagrama-ipv4-handshake-synack.png",
+    "recursos/laboratorios/wireshark/datagrama-ipv4-handshake-syn.png",
+    "recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png",
+    "recursos/fundamentos/portas-conhecidas.png",
+    "recursos/fundamentos/opcoes-segmento-tcp.png",
+    "Recursos/diagramas/estrutura geral VPC.canvas",
+    "Recursos/diagramas/AWS.canvas",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
+    "Untitled 2.canvas",
+    "Areas/TI/Linux/Comandos/Redes/nmcli.canvas"
+  ]
+}

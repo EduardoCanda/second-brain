@@ -1,0 +1,24 @@
+formulas:
+  Untitled: ""
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - ferramenta == "prometheus-operator"
+    order:
+      - file.name
+      - tags
+      - categoria
+      - file.ctime
+    sort:
+      - property: file.ctime
+        direction: DESC
+      - property: tags
+        direction: ASC
+      - property: formula.Untitled
+        direction: ASC
+    columnSize:
+      note.tags: 360
+  - type: cards
+    name: View
