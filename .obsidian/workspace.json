@@ -4,20 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "93faa28a392b123f",
+        "id": "0ae4c7919de58d97",
         "type": "tabs",
         "children": [
           {
-            "id": "0da4618a6d27a7b7",
+            "id": "38d39957aef3ae22",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Fundamentos/Ciber segurança/Blue Team/Blue Team.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Blue Team"
+            }
+          },
+          {
+            "id": "c6ca8f81b4b12977",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fundamentos/Ciber segurança/Blue Team/Digital Forensics and Incident Response (DFIR).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Digital Forensics and Incident Response (DFIR)"
+            }
+          },
+          {
+            "id": "28a3063cb03ea3cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fundamentos/Ciber segurança/Blue Team/Malware Analysis.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Malware Analysis"
+            }
+          },
+          {
+            "id": "b732526c178cbc62",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fundamentos/Ciber segurança/Blue Team/Threat Intelligence (TI).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Threat Intelligence (TI)"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,34 +212,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0da4618a6d27a7b7",
+  "active": "c6ca8f81b4b12977",
   "lastOpenFiles": [
+    "Fundamentos/Ciber segurança/Blue Team/SOC – Security Operations Center.md",
+    "Fundamentos/Ciber segurança/Blue Team/Blue Team.md",
+    "Fundamentos/Ciber segurança/Blue Team/Digital Forensics and Incident Response (DFIR).md",
+    "Fundamentos/Ciber segurança/Blue Team/Malware Analysis.md",
+    "Fundamentos/Ciber segurança/Blue Team/Threat Intelligence (TI).md",
+    "conhecimento2/areas/ti/linux/fundamentos/kernel/Boot.md",
+    "Fundamentos/Ciber segurança/Red Team",
+    "Fundamentos/Ciber segurança/Blue Team",
+    "conhecimento2/areas/ti/linux/fundamentos/distros/Distribuições Linux.md",
+    "conhecimento2/areas/ti/linux/fundamentos/distros/Ambientes Graficos.md",
+    "conhecimento2/areas/ti/cloud/AWS/Api Gateway/Api Gateway AWS.md",
+    "conhecimento2/areas/ti/0-metas-conhecimentos/metas-gateway-api.md",
+    "conhecimento2/areas/ti/0-metas-conhecimentos/metas-argocd.md",
+    "conhecimento2/areas/obsidian/Links to Markdown.md",
+    "conhecimento2/areas/ti/lideranca/perguntas/Time Travado.md",
+    "conhecimento2/areas/ti/lideranca/perguntas/Falta de Dados Concretos.md",
+    "conhecimento2/templates/Nota de Comando.md",
+    "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-syn.png",
+    "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png",
+    "conhecimento2/recursos/fundamentos/enderecos-ipv4-especiais.png",
+    "conhecimento2/recursos/fundamentos/campo-opcoes-dchp.png",
+    "conhecimento2/queries/Comandos de namespaces.md",
     "conhecimento2/areas/ti/git/Branch.md",
+    "conhecimento2/areas/ti/git/Commit.md",
+    "conhecimento2/areas/ti/git/branch 1.md",
+    "Fundamentos/Redes/VPN.md",
+    "Fundamentos/Redes/DNS.md",
     "conhecimento2/areas/ti/programacao/rust/rust-arc.md",
     "conhecimento2/areas/ti/hardware/SSD.md",
     "conhecimento2/areas/ti/arquitetura/perguntas/Boas Praticas Sem Imposicao.md",
-    "conhecimento2/areas/obsidian/Links to Markdown.md",
     "Fundamentos/Ciber segurança/Attacks/Wifi Attack.md",
     "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general status.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general reload.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general permissions.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general logging.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general hostname.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection up.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection show.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection reload.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection monitor.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection modify.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection load.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection import.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection export.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection edit.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection down.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection delete.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection clone.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection/nmcli connection add.md",
     "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general",
     "conhecimento2/areas/ti/linux/comandos/redes/nmcli/device",
     "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection",
@@ -201,17 +254,11 @@
     "conhecimento2/areas/ti/linux/comandos/redes/ip/link",
     "conhecimento2/areas/ti/linux/comandos/redes/ip/address",
     "conhecimento2/areas/ti/kubernetes/addons/prometheus-operator/crd/prometheus-crd",
-    "conhecimento2/areas/ti/kubernetes/addons/gateway-api/gateway/ngf",
-    "conhecimento2/areas/ti/kubernetes/addons/argocd/conceitos-fundamentais/Drift",
     "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-hanshake-syn.png",
     "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-synack.png",
     "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-ack.png",
     "conhecimento2/recursos/laboratorios/wireshark/pacotes-handshake-3-vias.png",
     "conhecimento2/recursos/laboratorios/wireshark/opcoes-segmento-tcp-hanshake-syn.png",
-    "conhecimento2/recursos/laboratorios/wireshark/opcoes-segmento-tcp-hanshake-syn-2.png",
-    "conhecimento2/recursos/laboratorios/wireshark/opcoes-segmento-tcp-handshake-synack.png",
-    "conhecimento2/recursos/laboratorios/wireshark/flags-segmento-tcp-hanshake-syn.png",
-    "conhecimento2/recursos/laboratorios/wireshark/flags-segmento-tcp-handshake-synack.png",
-    "conhecimento2/recursos/laboratorios/wireshark/flag-ack.png"
+    "conhecimento2/recursos/laboratorios/wireshark/opcoes-segmento-tcp-hanshake-syn-2.png"
   ]
 }
