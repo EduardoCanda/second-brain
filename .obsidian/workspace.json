@@ -4,67 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "0ae4c7919de58d97",
+        "id": "a0b044ace424dde1",
         "type": "tabs",
         "children": [
           {
-            "id": "38d39957aef3ae22",
+            "id": "1d3d2003f6aa5b9d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Ciber segurança/Blue Team/Blue Team.md",
+                "file": "Fundamentos/Redes/LAN/Topologias.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Blue Team"
-            }
-          },
-          {
-            "id": "c6ca8f81b4b12977",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fundamentos/Ciber segurança/Blue Team/Digital Forensics and Incident Response (DFIR).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Digital Forensics and Incident Response (DFIR)"
-            }
-          },
-          {
-            "id": "28a3063cb03ea3cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fundamentos/Ciber segurança/Blue Team/Malware Analysis.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Malware Analysis"
-            }
-          },
-          {
-            "id": "b732526c178cbc62",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fundamentos/Ciber segurança/Blue Team/Threat Intelligence (TI).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Threat Intelligence (TI)"
+              "title": "Topologias"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -121,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 375.5
+    "width": 200
   },
   "right": {
     "id": "2d6f01956701f134",
@@ -212,53 +169,52 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c6ca8f81b4b12977",
+  "active": "1d3d2003f6aa5b9d",
   "lastOpenFiles": [
-    "Fundamentos/Ciber segurança/Blue Team/SOC – Security Operations Center.md",
-    "Fundamentos/Ciber segurança/Blue Team/Blue Team.md",
-    "Fundamentos/Ciber segurança/Blue Team/Digital Forensics and Incident Response (DFIR).md",
-    "Fundamentos/Ciber segurança/Blue Team/Malware Analysis.md",
+    "Untitled.base",
+    "Fundamentos/Redes/LAN/Router.md",
+    "Pasted image 20250927193012.png",
+    "Fundamentos/Redes/LAN/Switch.md",
+    "Fundamentos/Ciber segurança/Spoof.md",
+    "conhecimento2/areas/ti/kubernetes/addons/argocd/erros/erro-deletar-pv-pvc-associado.md",
+    "README.md",
+    "Fundamentos/Redes/LAN/LAN (Local Area Network).md",
+    "Fundamentos/Redes/LAN/Topologias.md",
+    "Fundamentos/Redes/LAN/Pasted image 20250927191050.png",
+    "Fundamentos/Redes/Ethernet.md",
+    "Fundamentos/Redes/Redes de computadores.md",
+    "Fundamentos/Redes/LAN",
+    "Fundamentos/Redes/VPN/VPN.md",
+    "Fundamentos/Redes/DNS.md",
+    "Fundamentos/Redes/Protocolos/UDP/UDP (User Datagram Protocol).md",
+    "Fundamentos/Redes/Protocolos/TCP/TCP (Transmission Control Protocol).md",
+    "Fundamentos/Redes/Protocolos/UDP",
+    "Fundamentos/Redes/Protocolos/TCP/TCP 3-way handshake.png",
+    "Fundamentos/Redes/Protocolos/SSH/SSH (Secure Shell).md",
+    "Fundamentos/Redes/Protocolos/IP/IP (Internet Protocol).md",
+    "Fundamentos/Redes/Modelo OSI/Modelo OSI.md",
+    "Fundamentos/Redes/Protocolos/TCP/Handshake.md",
+    "Fundamentos/Redes/Modelo OSI/Rede/OSPF (Open Shortest Path First).md",
+    "Fundamentos/Redes/Modelo OSI/Rede/RIP (Routing Information Protocol).md",
+    "Fundamentos/Redes/Modelo OSI/Rede",
+    "Fundamentos/Redes/Modelo OSI/Física",
+    "Fundamentos/Redes/Protocolos/ARP/ARP.md",
+    "Fundamentos/Redes/Modelo OSI/Física/NIC (Network Interface Card).md",
+    "Fundamentos/Redes/Modelo OSI/Física/MAC (Media Access Control).md",
     "Fundamentos/Ciber segurança/Blue Team/Threat Intelligence (TI).md",
-    "conhecimento2/areas/ti/linux/fundamentos/kernel/Boot.md",
+    "Fundamentos/Ciber segurança/Blue Team/Malware Analysis.md",
+    "Fundamentos/Ciber segurança/Blue Team/Blue Team.md",
+    "Fundamentos/Redes/Modelo OSI",
     "Fundamentos/Ciber segurança/Red Team",
     "Fundamentos/Ciber segurança/Blue Team",
-    "conhecimento2/areas/ti/linux/fundamentos/distros/Distribuições Linux.md",
-    "conhecimento2/areas/ti/linux/fundamentos/distros/Ambientes Graficos.md",
-    "conhecimento2/areas/ti/cloud/AWS/Api Gateway/Api Gateway AWS.md",
-    "conhecimento2/areas/ti/0-metas-conhecimentos/metas-gateway-api.md",
-    "conhecimento2/areas/ti/0-metas-conhecimentos/metas-argocd.md",
-    "conhecimento2/areas/obsidian/Links to Markdown.md",
-    "conhecimento2/areas/ti/lideranca/perguntas/Time Travado.md",
-    "conhecimento2/areas/ti/lideranca/perguntas/Falta de Dados Concretos.md",
-    "conhecimento2/templates/Nota de Comando.md",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-syn.png",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png",
     "conhecimento2/recursos/fundamentos/enderecos-ipv4-especiais.png",
     "conhecimento2/recursos/fundamentos/campo-opcoes-dchp.png",
-    "conhecimento2/queries/Comandos de namespaces.md",
-    "conhecimento2/areas/ti/git/Branch.md",
-    "conhecimento2/areas/ti/git/Commit.md",
-    "conhecimento2/areas/ti/git/branch 1.md",
-    "Fundamentos/Redes/VPN.md",
-    "Fundamentos/Redes/DNS.md",
-    "conhecimento2/areas/ti/programacao/rust/rust-arc.md",
-    "conhecimento2/areas/ti/hardware/SSD.md",
-    "conhecimento2/areas/ti/arquitetura/perguntas/Boas Praticas Sem Imposicao.md",
-    "Fundamentos/Ciber segurança/Attacks/Wifi Attack.md",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general/nmcli general.md",
     "conhecimento2/areas/ti/linux/comandos/redes/nmcli/general",
     "conhecimento2/areas/ti/linux/comandos/redes/nmcli/device",
-    "conhecimento2/areas/ti/linux/comandos/redes/nmcli/connection",
-    "conhecimento2/areas/ti/linux/comandos/redes/ip/route",
-    "conhecimento2/areas/ti/linux/comandos/redes/ip/netns",
-    "conhecimento2/areas/ti/linux/comandos/redes/ip/link",
-    "conhecimento2/areas/ti/linux/comandos/redes/ip/address",
-    "conhecimento2/areas/ti/kubernetes/addons/prometheus-operator/crd/prometheus-crd",
     "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-hanshake-syn.png",
     "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-synack.png",
-    "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-ack.png",
-    "conhecimento2/recursos/laboratorios/wireshark/pacotes-handshake-3-vias.png",
-    "conhecimento2/recursos/laboratorios/wireshark/opcoes-segmento-tcp-hanshake-syn.png",
-    "conhecimento2/recursos/laboratorios/wireshark/opcoes-segmento-tcp-hanshake-syn-2.png"
+    "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-ack.png"
   ]
 }

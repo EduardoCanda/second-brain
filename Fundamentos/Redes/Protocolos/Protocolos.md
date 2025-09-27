@@ -1,6 +1,6 @@
-[[TCP (Transmission Contol Protocol)]]
+[[TCP (Transmission Control Protocol)]]
 [[ARP]]
 [[HTTP]]
 [[ICMP - Internet Control Message  Protocol]]
-[[SSH]]
+[[SSH (Secure Shell)]]
 [[Telnet]]
