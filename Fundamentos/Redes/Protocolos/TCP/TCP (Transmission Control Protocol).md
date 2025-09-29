@@ -27,4 +27,15 @@ A fase de encerramento é divida em quatro etapas, em que cada parte(cliente e s
 O outro lado responde ao estímulo de término com ACK. A conexão ficará semiaberta em caso de apenas uma parte solicitar o encerramento. Em outras palavras, a parte que mantiver a conexao aberta ainda pode enviar dados, no entanto não receberá dadps de volta porque uma parte já se encerrou.
 Por fim, o lado que mantém a conexão aberta pode enviar um pacote com a flag FIN também e o processo de encerramento se repete(FIN-ACK).
 
+---
+
+### Vantagens e desvantagens:
+vantagem - Guarantees the integrity of data.	
+desvantagem - Requires a reliable connection between the two devices. If one small chunk of data is not received, then the entire chunk of data cannot be used and must be re-sent.
+
+v - Capable of synchronising two devices to prevent each other from being flooded with data in the wrong order.	
+d - A slow connection can bottleneck another device as the connection will be reserved on the other device the whole time.
+
+v - Performs a lot more processes for reliability	
+d - TCP is significantly slower than UDP because more work (computing) has to be done by the devices using this protocol.
 
