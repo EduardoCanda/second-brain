@@ -2,7 +2,7 @@ A Camada de Transporte é a quarta camada do [[Modelo OSI]] e tem como principal
 
 Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação, cuidando de como os dados serão entregues, e não apenas para onde.
 
-⸻
+---
 
 🧩 Funções Principais
 	•	Segmentação e Reassembly: Divide mensagens grandes em segmentos menores e garante que eles sejam remontados corretamente no destino.
@@ -10,7 +10,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 	•	Controle de Erros: Detecta e retransmite segmentos corrompidos ou perdidos.
 	•	Multiplexação/Demultiplexação: Permite que múltiplas aplicações compartilhem a mesma conexão de rede (identificação via portas).
 
-⸻
+---
 
 🔑 Protocolos Importantes
 	•	[[TCP (Transmission Control Protocol)]]
@@ -24,7 +24,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 	•	Útil em aplicações em tempo real.
 	•	Exemplo de uso: DNS, VoIP, streaming.
 
-⸻
+---
 
 📊 Identificação (Portas)
 	•	Cada aplicação que usa a camada de transporte é identificada por um número de porta.
@@ -33,7 +33,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 	•	Registradas (1024–49151): atribuídas a aplicações específicas.
 	•	Dinâmicas/Privadas (49152–65535): usadas temporariamente por clientes.
 
-⸻
+---
 
 ⚙️ Exemplo de Funcionamento
 	1.	Um cliente abre uma conexão TCP com um servidor web na porta 80.
