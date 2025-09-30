@@ -1,7 +1,7 @@
 ### Oque é?
-O protocolo TCP age na camada de transporte do [[Modelo OSI]]. Este protocolo é utilizado para trocas de pacotes entre cliente e servidor.
+O protocolo TCP (Transmission Control Protocol) age na camada de transporte do Modelo OSI. Este protocolo é utilizado para trocas de pacotes entre cliente e servidor.
 
-Para a conexão acontecer, é necessário o **estabelecimento de conexão**, conhecido como [[Handshake]].
+Para a conexão acontecer, é necessrio o **estabelecimento de conexão**, conhecido como [[Handshake]].
 
 ---
 ### **Transferência de dados (sessão):**  
