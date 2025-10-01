@@ -1,67 +1,41 @@
-O DNS funciona como a “agenda telefônica” da Internet.
-Ele traduz nomes de domínio legíveis por humanos (como www.google.com) em endereços IP (como 142.250.217.4) que os computadores usam para se comunicar.
-
-⸻
-
-🔄 Funcionamento da Consulta DNS (Passo a Passo)
-
-Quando você digita www.google.com no navegador:
-
-1️⃣ Verificação local
-O sistema operacional verifica se já tem o IP armazenado em:
-	•	Cache do navegador
-	•	Cache do sistema operacional
-	•	Arquivo hosts (se configurado)
-
-Se encontrar, não precisa fazer consulta externa.
-
-⸻
-
-2️⃣ Consulta ao DNS Recursivo (Resolver)
-Se o IP não está no cache, seu computador pergunta ao DNS Recursivo (geralmente do seu provedor de internet ou de serviços como 8.8.8.8 do Google):
-
-“Qual é o IP de www.google.com?”
-
-⸻
-
-3️⃣ Consulta ao Servidor Raiz (Root)
-O DNS Recursivo pergunta aos Servidores Raiz:
-
-“Quem sabe onde está o domínio .com?”
-
-Os servidores raiz respondem com o endereço dos TLD Servers responsáveis por .com.
-
-⸻
-
-4️⃣ Consulta ao Servidor TLD (.com)
-O DNS Recursivo pergunta ao TLD Server de .com:
-
-“Quem sabe onde está google.com?”
-
-O TLD Server responde com o endereço dos servidores autoritativos para google.com.
-
-⸻
-
-5️⃣ Consulta ao Servidor Autoritativo
-O DNS Recursivo pergunta ao servidor autoritativo:
-
-“Qual é o IP de www.google.com?”
-
-Ele responde com o IP correto (ex.: 142.250.217.4).
-
-⸻
-
-6️⃣ Resposta ao Cliente + Cache
-O DNS Recursivo envia a resposta para seu computador e armazena no cache (por um tempo definido no campo TTL – Time To Live) para consultas futuras.
-
-⸻
-
-🧠 Tipos de Registro DNS Comuns
+DNS (Domain name system)  serve para nos conectar a dispostivos na internet sem que a gente tenha que saber o seu respectivo endereço [[IP]].
 
 ---
+# Hierarquia dos domínios:
+![[Hierarquia de dominios.png]]
 
-🧩 Resumo Rápido
-	•	Camada: Aplicação (OSI 7)
-	•	Função: Traduz nomes → IPs
-	•	Consulta: Pode ser recursiva ou iterativa
-	•	Cache: Reduz tempo de resolução e tráfego de rede
+### TLD (Top-Level Domain):
+O TLD é a parte da direita do domínio. Por exemplo, em "google.com", o TLD é o "**.com**". 
+
+Há dois tipos de TLD:
+- **gTLD** (Generic Top Level Domain)
+- **ccTLD** (Country Code Top Level Domain)
+
+Historicamente, o gTLD serve para indicar o propósito do domínio. Por exemplo .com, é para fins comerciais, .gov para fins governamentais, .edu para fins educacionais. Com o passar dos anos, a demanda dos sites aumentaram e surgiram outros tipos como .net, .online, .club, .biz e vários outros. Há uma lista completa [aqui](https://data.iana.org/TLD/tlds-alpha-by-domain.txt)
+
+O ccTLD é usado para o propósito geográfico. Por exemplo, .ca são sites do Canada, .br são sites do Brasil e assim por diante.
+
+### Second-Level Domain:
+Ainda pegando o site do google.com como exemplo, o TLD é o .com, já o "google" é o Second-Level Domain. Quando vamos registrar um domínio, o Second-Level Domain é limitado até 63 caracteres + o TLD que pode usar a regra de a-z 0-9 e hífens (mas não pode começar ou terminar com hífens ou ter hífens consecutivos)
+
+### Subdomain:
+O subdomain é a parte esquerda do Second-Level Domain. Por exemplo no nome "admin.google.com", o "admin" é o subdomain. O subdomain tem as mesmas regras de criação de nomenclatura.
+
+É possível usar múltiplos subdomains, para criação de nomes mais longos. Por exemplo "jupiter.servers.admin.google.com", no entanto o tamanho máximo é de 253 caracteres ou menos. Não há um limite de subdomains para criação de um domain.
+
+---
+# Record Types:
+DNS não serve apenas para websites. Há múltiplos tipos de registros.
+## A Record
+
+## AAAA Record
+
+## CNAME Record
+
+## MX Record
+
+## TXT Record
+
+
+---
+# Como funciona a requisição do DNS?

@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9a978573b77f4060",
+        "id": "d4ebe01fde02f29f",
         "type": "tabs",
         "children": [
           {
-            "id": "f663eb0e3a1005f5",
+            "id": "4e58231ef72127fe",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.9.14"
+                "file": "README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.14"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -167,14 +169,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f663eb0e3a1005f5",
+  "active": "4e58231ef72127fe",
   "lastOpenFiles": [
-    "Untitled 1.base",
+    "README.md",
     "Untitled.base",
+    "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
+    "Fundamentos/Redes/04 - Serviços de Rede/DHCP.md",
+    "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Hierarquia de dominios.png",
+    "Fundamentos/Redes/04 - Serviços de Rede/Imagens",
+    "Fundamentos/Redes/02 - LAN/Router.md",
+    "Untitled 1.base",
     "Fundamentos/Redes/04 - Serviços de Rede/NAT.md",
     "Fundamentos/Redes/02 - LAN/Packets e Frames.md",
     "Fundamentos/Redes/Packets e Frames.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/DHCP.md",
     "Fundamentos/Redes/04 - Serviços de Rede/HTTP.md",
     "Fundamentos/Redes/02 - LAN/Topologias.md",
     "Fundamentos/Redes/02 - LAN/Overview.md",
@@ -184,9 +191,7 @@
     "Fundamentos/Redes/02 - LAN/LAN.md",
     "Fundamentos/Redes/02 - LAN/ARP.md",
     "Fundamentos/Literatura para evoluir como DEV.md",
-    "README.md",
     "Fundamentos/Redes/06 - Laboratórios/Laboratorios.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
     "Fundamentos/Redes/06 - Laboratórios",
     "Fundamentos/Redes/01 - Modelo OSI/Overview.md",
     "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 2 Enlace.md",
@@ -199,20 +204,16 @@
     "[TCP (Transmission Control Protocol).md",
     "Fundamentos/Redes/03 - Protocolos/ICMP.md",
     "Fundamentos/Redes/05 - Segurança/SSH.md",
-    "Fundamentos/Redes/03 - Protocolos/IP.md",
-    "Fundamentos/Redes/03 - Protocolos/UDP.md",
     "Fundamentos/Redes/02 - LAN/Imagens/Pasted image 20250927193012.png",
     "Fundamentos/Redes/05 - Segurança/VPN",
     "Fundamentos/Redes/05 - Segurança",
     "Fundamentos/Redes/04 - Serviços de Rede",
     "Fundamentos/Redes/00 - Introdução",
-    "Fundamentos/Redes/02 - LAN",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-syn.png",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png",
     "conhecimento2/recursos/fundamentos/enderecos-ipv4-especiais.png",
     "conhecimento2/recursos/fundamentos/campo-opcoes-dchp.png",
     "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-hanshake-syn.png",
-    "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-synack.png",
-    "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-ack.png"
+    "conhecimento2/recursos/laboratorios/wireshark/segmento-tcp-handshake-synack.png"
   ]
 }
