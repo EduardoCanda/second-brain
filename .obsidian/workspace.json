@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "12e1d244e62465bc",
+        "id": "9a978573b77f4060",
         "type": "tabs",
         "children": [
           {
-            "id": "f4c2e76d58356fdd",
+            "id": "f663eb0e3a1005f5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "release-notes",
               "state": {
-                "file": "Fundamentos/Redes/04 - Serviços de Rede/NAT.md",
-                "mode": "source",
-                "source": false
+                "currentVersion": "1.9.14"
               },
-              "icon": "lucide-file",
-              "title": "NAT"
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
             }
           }
         ]
@@ -169,12 +167,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f4c2e76d58356fdd",
+  "active": "f663eb0e3a1005f5",
   "lastOpenFiles": [
+    "Untitled 1.base",
+    "Untitled.base",
+    "Fundamentos/Redes/04 - Serviços de Rede/NAT.md",
     "Fundamentos/Redes/02 - LAN/Packets e Frames.md",
     "Fundamentos/Redes/Packets e Frames.md",
     "Fundamentos/Redes/04 - Serviços de Rede/DHCP.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/NAT.md",
     "Fundamentos/Redes/04 - Serviços de Rede/HTTP.md",
     "Fundamentos/Redes/02 - LAN/Topologias.md",
     "Fundamentos/Redes/02 - LAN/Overview.md",
@@ -186,8 +186,6 @@
     "Fundamentos/Literatura para evoluir como DEV.md",
     "README.md",
     "Fundamentos/Redes/06 - Laboratórios/Laboratorios.md",
-    "Untitled 1.base",
-    "Untitled.base",
     "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
     "Fundamentos/Redes/06 - Laboratórios",
     "Fundamentos/Redes/01 - Modelo OSI/Overview.md",
@@ -204,7 +202,6 @@
     "Fundamentos/Redes/03 - Protocolos/IP.md",
     "Fundamentos/Redes/03 - Protocolos/UDP.md",
     "Fundamentos/Redes/02 - LAN/Imagens/Pasted image 20250927193012.png",
-    "Fundamentos/Redes/02 - LAN/Router.md",
     "Fundamentos/Redes/05 - Segurança/VPN",
     "Fundamentos/Redes/05 - Segurança",
     "Fundamentos/Redes/04 - Serviços de Rede",
