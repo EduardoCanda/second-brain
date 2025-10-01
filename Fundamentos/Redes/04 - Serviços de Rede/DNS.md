@@ -27,15 +27,47 @@ O subdomain é a parte esquerda do Second-Level Domain. Por exemplo no nome "adm
 # Record Types:
 DNS não serve apenas para websites. Há múltiplos tipos de registros.
 ## A Record
+- Associa um **nome de domínio** a um **endereço IPv4**.  
+- Exemplo:  www.exemplo.com → 192.168.1.10
 
 ## AAAA Record
+- Similar ao **A Record**, mas aponta para um **endereço IPv6**.  
+- Exemplo:  www.exemplo.com → 2001:db8::!
 
 ## CNAME Record
+- Cria um **alias** (apelido) para outro domínio.  
+- Muito usado para subdomínios.  
+- Exemplo:  blog.exemplo.com → www.exemplo.com
 
 ## MX Record
+- Define **servidores de e-mail** para o domínio.  
+- Inclui prioridade: o servidor com número menor é tentado primeiro.  
+- Exemplo:  exemplo.com → mail1.exemplo.com (10) 
 
 ## TXT Record
+- Armazena **informações de texto** associadas ao domínio.  
+- Muito usado para:  
+- **SPF** (evitar spam forjado).  
+- **DKIM** (assinatura de e-mails).  
+- **Verificações de domínio** (Google, Microsoft, etc.).  
+- Exemplo:  exemplo.com → "v=spf1 include:_spf.google.com ~all"
 
+## 📌 Usando comando `host` para parta prática
+### Consultar IPv4 e IPv6
+```
+host www.exemplo.com
+```
+
+### Consultar MX Record
+```
+host -t MX google.com
+```
+
+### Consultar TXT Record
+```
+host -t TXT google.com
+```
 
 ---
 # Como funciona a requisição do DNS?
+![[DNS request.png]]
