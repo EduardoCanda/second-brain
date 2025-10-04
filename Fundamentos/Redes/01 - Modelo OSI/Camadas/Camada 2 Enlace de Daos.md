@@ -7,7 +7,7 @@ Quando ela recebe um pacote da **camada de rede**, ela o encapsula em um **quadr
 - Prepara os dados para serem enviados pela **camada física**.
 
 ###### Endereçamento físico (MAC):
-Dentro de cada computador na rede, há um [[NIC (Network Interface Card)]], componente que provê o endereço [[MAC (Media Access Control)]]  que identifica o computador na  rede.
+Dentro de cada computador na rede, há um [[NIC]], componente que provê o endereço [[MAC]]  que identifica o computador na  rede.
 
 Portanto, quando um pacote é transmitido, é o **endereço MAC** que é usado para identificar o remetente. O MAC de destino também é identificado via [[ARP]] caso esteja na mesma rede.
 

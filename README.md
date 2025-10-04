@@ -37,7 +37,6 @@ Fundamentos
 ```
 
 ---
-
 ## Objetivo
 
 - Servir como **guia de estudo** para reforçar a base em computação.
@@ -45,7 +44,6 @@ Fundamentos
 - Facilitar a revisão rápida de conceitos importantes no dia a dia do desenvolvimento.
 
 ---
-
 ## Como usar
 
 1. Navegue pelas pastas de cada área de estudo.

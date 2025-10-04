@@ -39,3 +39,6 @@ d - A slow connection can bottleneck another device as the connection will be re
 v - Performs a lot more processes for reliability	
 d - TCP is significantly slower than UDP because more work (computing) has to be done by the devices using this protocol.
 
+---
+## Notas relacionadas:
+- [[IP]]

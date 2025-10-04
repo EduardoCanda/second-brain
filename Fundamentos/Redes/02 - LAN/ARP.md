@@ -1,5 +1,5 @@
 O ARP(Address Resolution Protocol) é um protocolo usado em redes IPv4 para mapear endereços lógicos (IP) em endereços físicos (MAC).
-Ele trabalha na transição entre a [[Camada 3 Rede]] e a [[Camada 2 Enlace]] do [[Modelo OSI]].
+Ele trabalha na transição entre a [[Camada 3 Rede]] e a [[Camada 2 Enlace de Daos]] do [[Modelo OSI]].
 
 Em outras palavras:
     Quando um computador precisa enviar um pacote para um IP na mesma rede local, ele usa o ARP para descobrir qual é o endereço MAC correspondente a esse IP.
@@ -48,3 +48,11 @@ O ARP não tem autenticação → isso permite ataques como ARP Spoofing, em que
 	•	Camadas envolvidas: Rede (IP) → Enlace (MAC).
 	•	Tipo de tráfego: ARP Request (broadcast) + ARP Reply (unicast).
 	•	Importância: Essencial para comunicação dentro da LAN.
+
+---
+## Notas relacionadas:
+- [[Camada 3 Rede]]
+- [[Camada 2 Enlace de Daos]]
+- [[Camada 1 Física]]
+- [[MAC]]
+- [[IP]]

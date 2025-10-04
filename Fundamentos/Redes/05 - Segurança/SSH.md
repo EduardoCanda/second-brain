@@ -49,4 +49,4 @@ scp arquivo.txt usuario@servidor:/caminho/destino
 🔗 Notas Relacionadas
 	•	[[TCP]] – SSH funciona sobre TCP.
 	•	[[Criptografia Assimétrica]] – usada para autenticação.
-	•	[[Portas Bem Conhecidas]] – SSH usa a porta 22.
+	•	[[Portas Mais Conhecidas]] – SSH usa a porta 22.

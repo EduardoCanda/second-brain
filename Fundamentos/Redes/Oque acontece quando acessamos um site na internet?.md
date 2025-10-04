@@ -18,6 +18,6 @@ Por fim, o site é exibido no navegador.
 - [[Load Balancer]]
 - [[IP]]
 - [[TCP]]
-- [[Portas Conhecidas]]
+- [[Portas Mais Conhecidas]]
 - [[TLS]]
 - [[SSL]]

@@ -13,12 +13,12 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 ---
 
 🔑 Protocolos Importantes
-	•	[[TCP (Transmission Control Protocol)]]
+	•	[[TCP]]
 	•	Confiável (usa confirmação de recebimento - ACK).
 	•	Conexão orientada (usa handshake de 3 vias).
 	•	Garante ordem dos pacotes.
 	•	Exemplo de uso: HTTP, HTTPS, SSH, FTP.
-	•	[[UDP (User Datagram Protocol)]]
+	•	[[UDP ]]
 	•	Não confiável (sem ACK ou retransmissão).
 	•	Sem conexão, mais rápido e leve.
 	•	Útil em aplicações em tempo real.

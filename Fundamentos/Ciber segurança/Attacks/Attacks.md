@@ -1,0 +1,5 @@
+[[Spoof]]
+[[XSS]]
+[[SQL Injection]]
+[[Phishing]]
+[[OSINT]]

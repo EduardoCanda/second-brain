@@ -1,6 +1,6 @@
 NAT - Network Address Translation
 
-O NAT (Tradução de Endereços de Rede) é um recurso da [[Camada de Rede]] utilizado para mapear endereços IP privados em endereços IP públicos (e vice-versa).
+O NAT (Tradução de Endereços de Rede) é um recurso da [[Camada 3 Rede]] utilizado para mapear endereços IP privados em endereços IP públicos (e vice-versa).
 
 Ele foi criado principalmente para economizar o uso de endereços IPv4 públicos, permitindo que redes privadas inteiras se conectem à Internet usando apenas um ou poucos endereços públicos.
 

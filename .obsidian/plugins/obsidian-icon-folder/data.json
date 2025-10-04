@@ -6,12 +6,13 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FabReadme",
+      "LiLock",
+      "FasGears",
+      "📚",
+      "⚙",
       "FasComputer",
-      "FabApple",
-      "FabWindows",
-      "FabLinux",
-      "LiNetwork",
-      "LiAlbum"
+      "FabApple"
     ],
     "recentlyUsedIconsSize": 7,
     "rules": [],
@@ -41,5 +42,10 @@
   "Fundamentos/Sistemas operacionais/Windows": "FabWindows",
   "Fundamentos/Sistemas operacionais/iOS": "FabApple",
   "Fundamentos/Sistemas operacionais/MacOS": "FabApple",
-  "Fundamentos/Hardware": "FasComputer"
+  "Fundamentos/Hardware": "FasComputer",
+  "Fundamentos/Sistemas operacionais": "⚙",
+  "Fundamentos/Literatura para evoluir como DEV.md": "📚",
+  "Fundamentos/Compiladores": "FasGears",
+  "Fundamentos/Ciber segurança": "LiLock",
+  "README.md": "FabReadme"
 }

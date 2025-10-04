@@ -71,3 +71,9 @@ host -t TXT google.com
 ---
 # Como funciona a requisição do DNS?
 ![[DNS request.png]]
+
+---
+## Notas relacionadas:
+- [[Packets e Frames]]
+- [[TCP]]
+- [[IP]]
