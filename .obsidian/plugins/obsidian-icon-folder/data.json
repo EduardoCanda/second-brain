@@ -5,7 +5,14 @@
     "fontSize": 16,
     "emojiStyle": "native",
     "iconColor": null,
-    "recentlyUsedIcons": [],
+    "recentlyUsedIcons": [
+      "FasComputer",
+      "FabApple",
+      "FabWindows",
+      "FabLinux",
+      "LiNetwork",
+      "LiAlbum"
+    ],
     "recentlyUsedIconsSize": 7,
     "rules": [],
     "extraMargin": {
@@ -27,5 +34,12 @@
     "lucideIconPackType": "native",
     "debugMode": false,
     "useInternalPlugins": false
-  }
+  },
+  "Fundamentos": "LiAlbum",
+  "Fundamentos/Redes": "LiNetwork",
+  "Fundamentos/Sistemas operacionais/Linux": "FabLinux",
+  "Fundamentos/Sistemas operacionais/Windows": "FabWindows",
+  "Fundamentos/Sistemas operacionais/iOS": "FabApple",
+  "Fundamentos/Sistemas operacionais/MacOS": "FabApple",
+  "Fundamentos/Hardware": "FasComputer"
 }
