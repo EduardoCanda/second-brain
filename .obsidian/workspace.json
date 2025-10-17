@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Redes/05 - Segurança/SSH.md",
-                "mode": "preview",
+                "file": "Fundamentos/Redes/03 - Protocolos/ICMP.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSH"
+              "title": "ICMP"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "SSH",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,13 +74,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 341.5,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "2d6f01956701f134",
@@ -173,6 +171,19 @@
   },
   "active": "e208fb03a1616ff8",
   "lastOpenFiles": [
+    "Fundamentos/Redes/06 - Laboratórios/Laboratorios.md",
+    "Fundamentos/Redes/03 - Protocolos/IP Público vs IP Privado.md",
+    "Fundamentos/Redes/04 - Serviços de Rede/DHCP.md",
+    "Fundamentos/Redes/03 - Protocolos/IP.md",
+    "Fundamentos/Sistemas operacionais/Linux/00 - Introdução/Linux.md",
+    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/Comandos básicos.md",
+    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/scp.md",
+    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/curl.md",
+    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/wget.md",
+    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos",
+    "Fundamentos/Sistemas operacionais/Linux/01 - Sistemas de arquivos/Estrutura de Diretórios do Linux.md",
+    "Fundamentos/Redes/05 - Segurança/SSH.md",
+    "Fundamentos/Sistemas operacionais/Linux/01 - Sistemas de arquivos",
     "Fundamentos/Literatura para evoluir como DEV.md",
     "Untitled.canvas",
     "Fundamentos/Ciber segurança/Attacks/Attacks.md",
@@ -181,35 +192,23 @@
     "Fundamentos/Redes/04 - Serviços de Rede/CDN.md",
     "Fundamentos/Redes/04 - Serviços de Rede/NAT.md",
     "Fundamentos/Redes/01 - Modelo OSI/Portas Mais Conhecidas.md",
-    "Fundamentos/Redes/03 - Protocolos/IP.md",
     "Fundamentos/Redes/05 - Segurança/VPN/VPN.md",
     "Fundamentos/Ciber segurança/Attacks/Phishing.md",
     "Fundamentos/Redes/02 - LAN/VPN.md",
-    "Fundamentos/Sistemas operacionais/Linux/01 - Laboratórios/Comandos básicos.md",
     "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 2 Enlace de Daos.md",
     "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
     "Fundamentos/Redes/Oque acontece quando acessamos um site na internet?.md",
     "Fundamentos/Ciber segurança/Blue Team/Blue Team.md",
     "Fundamentos/Ciber segurança/OSINT.md",
-    "Fundamentos/Ciber segurança/Attacks/SQL Injection.md",
-    "Fundamentos/Ciber segurança/Attacks/XSS.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/HTTP.md",
-    "Fundamentos/Redes/06 - Laboratórios/Laboratorios.md",
-    "Fundamentos/Redes/03 - Protocolos/UDP.md",
-    "Fundamentos/Redes/03 - Protocolos/Protocolos de Rede.md",
-    "Fundamentos/Redes/03 - Protocolos/TCP/TCP.md",
-    "Fundamentos/Redes/05 - Segurança/SSH.md",
     "Untitled 1.base",
     "Untitled.base",
     "Fundamentos/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
     "Fundamentos/Sistemas operacionais/Linux/Untitled 1",
     "Fundamentos/Sistemas operacionais/Linux/00 - Introdução/Distribuições",
-    "Fundamentos/Sistemas operacionais/Linux/01 - Laboratórios",
+    "Fundamentos/Sistemas operacionais/Linux/02 - Laboratórios",
     "Fundamentos/Hardware",
     "Fundamentos/Sistemas operacionais/iOS",
     "Fundamentos/Sistemas operacionais/MacOS",
-    "Fundamentos/Sistemas operacionais/Linux/00 - Introdução",
-    "TCP",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/DNS request.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Hierarquia de dominios.png",
