@@ -6,13 +6,13 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasDatabase",
+      "LiDatabase",
+      "LiCommand",
       "FabReadme",
       "LiLock",
       "FasGears",
-      "📚",
-      "⚙",
-      "FasComputer",
-      "FabApple"
+      "📚"
     ],
     "recentlyUsedIconsSize": 7,
     "rules": [],
@@ -47,5 +47,7 @@
   "Fundamentos/Literatura para evoluir como DEV.md": "📚",
   "Fundamentos/Compiladores": "FasGears",
   "Fundamentos/Ciber segurança": "LiLock",
-  "README.md": "FabReadme"
+  "README.md": "FabReadme",
+  "Fundamentos/Linhas de comando": "LiCommand",
+  "Fundamentos/Banco de dados": "FasDatabase"
 }

@@ -19,7 +19,10 @@ Fundamentos
 │
 ├── Arquitetura de Software
 │   └── (padrões de arquitetura, boas práticas, princípios de design, etc.)
-│
+|
+│── Banco de dados
+|   └── (Bancos relacionais, não relacionais, SGBD, etc.)
+|
 ├── Ciber segurança
 │   └── (conceitos de segurança, criptografia, defesa, ataques, etc.)
 │
