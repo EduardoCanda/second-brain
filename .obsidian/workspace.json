@@ -4,21 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "8aeb631148624858",
+        "id": "eb092081d1ee712a",
         "type": "tabs",
         "children": [
           {
-            "id": "ffaa3e5dd406597c",
+            "id": "90fde5a321ad08c8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Literatura para evoluir como DEV.md",
+                "file": "Fundamentos/Sistemas operacionais/Windows/Active Directory/01 - Active Directory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Literatura para evoluir como DEV"
+              "title": "01 - Active Directory"
+            }
+          },
+          {
+            "id": "8e0bb05ade10bfbb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -78,7 +88,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 365.5
+    "width": 365.5,
+    "collapsed": true
   },
   "right": {
     "id": "2d6f01956701f134",
@@ -169,12 +180,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ffaa3e5dd406597c",
+  "active": "90fde5a321ad08c8",
   "lastOpenFiles": [
+    "Fundamentos/Sistemas operacionais/Windows/Active Directory/01 - Active Directory.md",
+    "Fundamentos/Sistemas operacionais/Windows/Active Directory/00 - Windows Domains.md",
+    "Fundamentos/Sistemas operacionais/Windows/Active Directory/img",
+    "Fundamentos/Sistemas operacionais/Windows/Active Directory/img/Domain Controller.png",
+    "Fundamentos/Sistemas operacionais/Windows/Windows.md",
+    "Fundamentos/Sistemas operacionais/Windows/Active Directory",
+    "Fundamentos/Banco de dados/SQL/05 - Functions.md",
+    "Fundamentos/Banco de dados/SQL/04 - Operators.md",
+    "Fundamentos/Banco de dados/SQL/03 - Clauses.md",
+    "Fundamentos/Banco de dados/SQL/02 - CRUD.md",
+    "Fundamentos/Banco de dados/SQL/01 - SGBD.md",
+    "Fundamentos/Banco de dados/SQL/01 - Database & tables statements.md",
+    "Fundamentos/Banco de dados/SQL/00 - Overview.md",
+    "Fundamentos/Redes/06 - Laboratórios/Rastreamento de redes.md",
+    "Fundamentos/Redes/02 - LAN/LAN.md",
+    "Fundamentos/Banco de dados/Tipos de bancos/Banco relacional (SQL).md",
+    "Fundamentos/Banco de dados/Tipos de bancos/Banco não relacional (noSQL).md",
+    "Fundamentos/Banco de dados/00 - Overview.md",
+    "Fundamentos/Banco de dados/Tipos de bancos/SGBD.md",
+    "Fundamentos/Banco de dados/SQL",
+    "Fundamentos/Banco de dados/Tipos de bancos",
+    "Fundamentos/Literatura para evoluir como DEV.md",
     "README.md",
-    "Fundamentos/Banco de dados/SGBD.md",
-    "Fundamentos/Banco de dados/Banco relacional (SQL).md",
-    "Fundamentos/Banco de dados/Banco não relacional (noSQL).md",
     "Fundamentos/Banco de dados",
     "Fundamentos/Linhas de comando/Bash.md",
     "Fundamentos/Linhas de comando/Zsh.md",
@@ -185,30 +215,11 @@
     "Fundamentos/Sistemas operacionais/Sistemas operacionais.md",
     "Fundamentos/Linhas de comando",
     "Fundamentos/Sistemas operacionais/Linux/03 - Shell",
-    "Fundamentos/Redes/03 - Protocolos/ICMP.md",
-    "Fundamentos/Redes/06 - Laboratórios/Laboratorios.md",
-    "Fundamentos/Redes/03 - Protocolos/IP Público vs IP Privado.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/DHCP.md",
-    "Fundamentos/Redes/03 - Protocolos/IP.md",
-    "Fundamentos/Sistemas operacionais/Linux/00 - Introdução/Linux.md",
-    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/Comandos básicos.md",
-    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/scp.md",
-    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/curl.md",
-    "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/wget.md",
     "Fundamentos/Sistemas operacionais/Linux/02 - Comandos",
-    "Fundamentos/Sistemas operacionais/Linux/01 - Sistemas de arquivos/Estrutura de Diretórios do Linux.md",
-    "Fundamentos/Redes/05 - Segurança/SSH.md",
     "Fundamentos/Sistemas operacionais/Linux/01 - Sistemas de arquivos",
-    "Fundamentos/Literatura para evoluir como DEV.md",
     "Untitled.canvas",
-    "Fundamentos/Ciber segurança/Attacks/Attacks.md",
-    "Fundamentos/Ciber segurança/Segurança da Informação.md",
     "Untitled 1.base",
-    "Untitled.base",
     "Fundamentos/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
-    "Fundamentos/Sistemas operacionais/Linux/Untitled 1",
-    "Fundamentos/Sistemas operacionais/Linux/00 - Introdução/Distribuições",
-    "Fundamentos/Sistemas operacionais/Linux/02 - Laboratórios",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/DNS request.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Hierarquia de dominios.png",
@@ -216,7 +227,6 @@
     "Fundamentos/Redes/02 - LAN/Imagens/Pasted image 20250927193012.png",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-syn.png",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png",
-    "conhecimento2/recursos/fundamentos/enderecos-ipv4-especiais.png",
-    "conhecimento2/recursos/fundamentos/campo-opcoes-dchp.png"
+    "conhecimento2/recursos/fundamentos/enderecos-ipv4-especiais.png"
   ]
 }
