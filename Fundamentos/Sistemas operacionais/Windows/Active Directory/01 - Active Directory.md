@@ -27,7 +27,7 @@ Também são considerados como **security principals** e podem possuir privilég
 
 Grupos podem usuários, máquinas e outros grupos como membros.
 
-Por padrão no **Windows Domain** já possui diversos grupos criados com própositos bem definidos que devem atender a maioria das necessidades. Isso não significa que novos grupos com privilégios específicos não possam ser criados. Com certeza podem.
+Por padrão no **Windows Domain** já possui diversos grupos criados com própositos bem definidos que devem atender a maioria das necessidades. Isso não significa que novos grupos com **privilégios** específicos não possam ser criados. Com certeza podem.
 
 Alguns exemplos:
 
@@ -44,3 +44,6 @@ Mais grupos oficiais na [documentação Microsoft](https://docs.microsoft.com/en
 
 
 ---
+
+
+
