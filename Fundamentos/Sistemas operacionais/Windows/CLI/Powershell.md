@@ -17,7 +17,6 @@ Get-Content # Comando utilizado para ler um arquivo
 ```
 
 
-
 ---
 ## Cmdlets básicos:
 Para listar todos os comandos, funções e alias disponíveis no sistema Windows que o Powershell estiver operando, podemos usar o **Get-Command**.
