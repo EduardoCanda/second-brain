@@ -6,13 +6,13 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FabDocker",
+      "LiServer",
       "FasDatabase",
       "LiDatabase",
       "LiCommand",
       "FabReadme",
-      "LiLock",
-      "FasGears",
-      "📚"
+      "LiLock"
     ],
     "recentlyUsedIconsSize": 7,
     "rules": [],
@@ -49,5 +49,7 @@
   "Fundamentos/Ciber segurança": "LiLock",
   "README.md": "FabReadme",
   "Fundamentos/Linhas de comando": "LiCommand",
-  "Fundamentos/Banco de dados": "FasDatabase"
+  "Fundamentos/Banco de dados": "FasDatabase",
+  "Fundamentos/Inafraestrutura e DevOps": "LiServer",
+  "Fundamentos/Inafraestrutura e DevOps/Docker": "FabDocker"
 }
