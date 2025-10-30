@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Inafraestrutura e DevOps/Docker/Docker Engine.md",
+                "file": "Fundamentos/Sistemas operacionais/Windows/Active Directory/05 - Políticas de grupo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker Engine"
+              "title": "05 - Políticas de grupo"
             }
           }
         ]
@@ -171,12 +171,21 @@
   },
   "active": "0be4673388ad56f9",
   "lastOpenFiles": [
-    "Fundamentos/Inafraestrutura e DevOps/Docker/01 - Benefícios do Docker.md",
-    "Fundamentos/Inafraestrutura e DevOps/Docker/Docker Engine.md",
-    "Fundamentos/Inafraestrutura e DevOps/Docker/00 - Overview.md",
-    "Fundamentos/Inafraestrutura e DevOps/Contêinernização.md",
-    "Fundamentos/Inafraestrutura e DevOps/Kubernetes",
-    "Fundamentos/Inafraestrutura e DevOps/Docker",
+    "Fundamentos/Ciber segurança/Web Hacking",
+    "Fundamentos/Ciber segurança/Exploração",
+    "Fundamentos/Ciber segurança/Criptografia",
+    "Fundamentos/Literatura para evoluir como DEV.md",
+    "Fundamentos/Ciber segurança/Reverse shell.md",
+    "Fundamentos/Ciber segurança/OSINT/Mecanismos de busca especializados.md",
+    "Fundamentos/Ciber segurança/Segurança da Informação.md",
+    "Fundamentos/Ciber segurança/OSINT",
+    "Fundamentos/Ciber segurança/OSINT/OSINT.md",
+    "Fundamentos/Infraestrutura e DevOps/Docker/00 - Overview.md",
+    "Fundamentos/Infraestrutura e DevOps/Docker/01 - Benefícios do Docker.md",
+    "Fundamentos/Infraestrutura e DevOps/Docker/Docker Engine.md",
+    "Fundamentos/Infraestrutura e DevOps/Contêinernização.md",
+    "Fundamentos/Infraestrutura e DevOps/Kubernetes",
+    "Fundamentos/Infraestrutura e DevOps/Docker",
     "Fundamentos/Redes/05 - Segurança/VPN/VPN.md",
     "Fundamentos/Sistemas operacionais/Windows/CLI/Powershell.md",
     "Fundamentos/Sistemas operacionais/Windows/CLI/cmd.md",
@@ -197,17 +206,8 @@
     "Fundamentos/Banco de dados/SQL/05 - Functions.md",
     "Fundamentos/Banco de dados/SQL/04 - Operators.md",
     "Fundamentos/Banco de dados/SQL/03 - Clauses.md",
-    "Fundamentos/Banco de dados/SQL/02 - CRUD.md",
-    "Fundamentos/Banco de dados/SQL/01 - SGBD.md",
-    "Fundamentos/Banco de dados/SQL/01 - Database & tables statements.md",
-    "Fundamentos/Banco de dados/SQL/00 - Overview.md",
-    "Fundamentos/Redes/06 - Laboratórios/Rastreamento de redes.md",
-    "Fundamentos/Redes/02 - LAN/LAN.md",
     "Fundamentos/Banco de dados/SQL",
     "Fundamentos/Banco de dados/Tipos de bancos",
-    "Fundamentos/Banco de dados",
-    "Fundamentos/Linhas de comando",
-    "Fundamentos/Sistemas operacionais/Linux/03 - Shell",
     "Untitled.canvas",
     "Fundamentos/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",

@@ -50,6 +50,6 @@
   "README.md": "FabReadme",
   "Fundamentos/Linhas de comando": "LiCommand",
   "Fundamentos/Banco de dados": "FasDatabase",
-  "Fundamentos/Inafraestrutura e DevOps": "LiServer",
-  "Fundamentos/Inafraestrutura e DevOps/Docker": "FabDocker"
+  "Fundamentos/Infraestrutura e DevOps": "LiServer",
+  "Fundamentos/Infraestrutura e DevOps/Docker": "FabDocker"
 }
