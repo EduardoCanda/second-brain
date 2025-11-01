@@ -1,4 +1,4 @@
-Este índice resume os principais protocolos de rede, suas camadas no Modelo OSI e links para estudo detalhado.
+Este índice resume os principais protocolos de rede, suas camadas no [[Modelo OSI|Modelo OSI]] e links para estudo detalhado.
 
 | Protocolo  | Camada (OSI)          | Função Principal                            | Nota                           |
 | ---------- | --------------------- | ------------------------------------------- | ------------------------------ |
@@ -12,5 +12,3 @@ Este índice resume os principais protocolos de rede, suas camadas no Modelo OSI
 | [[HTTP]]   | Camada 7 - Aplicação  | Comunicação web.                            | Inclua HTTPS, HTTP/2, HTTP/3.  |
 | [[SSH]]    | Camada 7 - Aplicação  | Acesso remoto seguro.                       | Substitui Telnet.              |
 | [[Telnet]] | Camada 7 - Aplicação  | Acesso remoto não criptografado.            | Usado apenas em testes.        |
-
-> 💡 **Dica:** revise a relação entre protocolos e camadas no arquivo [[Modelo OSI|Modelo OSI]]

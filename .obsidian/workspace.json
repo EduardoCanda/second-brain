@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Sistemas operacionais/Windows/Active Directory/05 - Políticas de grupo.md",
-                "mode": "source",
+                "file": "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05 - Políticas de grupo"
+              "title": "DNS"
             }
           }
         ]
@@ -169,8 +169,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0be4673388ad56f9",
+  "active": "eb9d3984c61ee8bc",
   "lastOpenFiles": [
+    "Fundamentos/Redes/03 - Protocolos/Protocolos de Rede.md",
+    "Fundamentos/Redes/00 - Introdução/Redes de computadores.md",
+    "Fundamentos/Sistemas operacionais/Windows/CLI/Powershell.md",
+    "Fundamentos/Sistemas operacionais/Windows/CLI/cmd.md",
+    "Fundamentos/Programação/Conceitos para estudar.md",
+    "Fundamentos/Sistemas operacionais/Windows/Active Directory/05 - Políticas de grupo.md",
     "Fundamentos/Ciber segurança/Web Hacking",
     "Fundamentos/Ciber segurança/Exploração",
     "Fundamentos/Ciber segurança/Criptografia",
@@ -187,13 +193,10 @@
     "Fundamentos/Infraestrutura e DevOps/Kubernetes",
     "Fundamentos/Infraestrutura e DevOps/Docker",
     "Fundamentos/Redes/05 - Segurança/VPN/VPN.md",
-    "Fundamentos/Sistemas operacionais/Windows/CLI/Powershell.md",
-    "Fundamentos/Sistemas operacionais/Windows/CLI/cmd.md",
     "Fundamentos/Sistemas operacionais/Windows/Windows.md",
     "Fundamentos/Sistemas operacionais/Windows/CLI",
     "Fundamentos/Sistemas operacionais/Sistemas operacionais.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/06 - Métodos de autenticação.md",
-    "Fundamentos/Sistemas operacionais/Windows/Active Directory/05 - Políticas de grupo.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/04 - Gerenciamento de máquinas.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/03 - Gerenciamento de usuários.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/01 - Active Directory.md",
@@ -204,10 +207,7 @@
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/img/Domain Controller.png",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory",
     "Fundamentos/Banco de dados/SQL/05 - Functions.md",
-    "Fundamentos/Banco de dados/SQL/04 - Operators.md",
-    "Fundamentos/Banco de dados/SQL/03 - Clauses.md",
     "Fundamentos/Banco de dados/SQL",
-    "Fundamentos/Banco de dados/Tipos de bancos",
     "Untitled.canvas",
     "Fundamentos/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",
