@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
-                "mode": "preview",
+                "file": "Fundamentos/Ciber segurança/Criptografia/01 - Criptografia plaintext.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DNS"
+              "title": "01 - Criptografia plaintext"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 365.5
+    "width": 365.5,
+    "collapsed": true
   },
   "right": {
     "id": "2d6f01956701f134",
@@ -171,6 +172,12 @@
   },
   "active": "eb9d3984c61ee8bc",
   "lastOpenFiles": [
+    "Fundamentos/Ciber segurança/Criptografia/img/decrypt plaintext.png",
+    "Fundamentos/Ciber segurança/Criptografia/img/encrypt plaintext.png",
+    "Fundamentos/Ciber segurança/Criptografia/img",
+    "Fundamentos/Ciber segurança/Criptografia/00 - Overview.md",
+    "Fundamentos/Ciber segurança/Criptografia/01 - Criptografia plaintext.md",
+    "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
     "Fundamentos/Redes/03 - Protocolos/Protocolos de Rede.md",
     "Fundamentos/Redes/00 - Introdução/Redes de computadores.md",
     "Fundamentos/Sistemas operacionais/Windows/CLI/Powershell.md",
@@ -200,14 +207,9 @@
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/04 - Gerenciamento de máquinas.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/03 - Gerenciamento de usuários.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/01 - Active Directory.md",
-    "Fundamentos/Sistemas operacionais/Windows/Active Directory/02 - Organizational Units.md",
-    "README.md",
-    "Fundamentos/Sistemas operacionais/Windows/Active Directory/00 - Windows Domains.md",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/img",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/img/Domain Controller.png",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory",
-    "Fundamentos/Banco de dados/SQL/05 - Functions.md",
-    "Fundamentos/Banco de dados/SQL",
     "Untitled.canvas",
     "Fundamentos/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",
@@ -216,7 +218,6 @@
     "Fundamentos/Redes/02 - LAN/Imagens/Pasted image 20250927191050.png",
     "Fundamentos/Redes/02 - LAN/Imagens/Pasted image 20250927193012.png",
     "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-syn.png",
-    "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png",
-    "conhecimento2/recursos/fundamentos/enderecos-ipv4-especiais.png"
+    "conhecimento2/recursos/laboratorios/wireshark/datagrama-ipv4-handshake-ack.png"
   ]
 }
