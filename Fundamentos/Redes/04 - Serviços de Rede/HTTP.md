@@ -87,6 +87,6 @@ This is used for deleting information/records from a web server.
 
 ---
 
-# Cookies:
+# 
 
 ---
