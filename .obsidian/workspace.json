@@ -11,14 +11,17 @@
             "id": "5a12ea892f090b20",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Fundamentos/Redes/05 - Segurança/Telnet.md",
-                "mode": "preview",
-                "source": false
+                "file": "Fundamentos/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas",
+                "viewState": {
+                  "x": -194,
+                  "y": 183.39999999999998,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "Telnet"
+              "icon": "lucide-layout-dashboard",
+              "title": "Modelo TCP-IP"
             }
           }
         ]
@@ -171,17 +174,21 @@
   },
   "active": "5a12ea892f090b20",
   "lastOpenFiles": [
-    "Fundamentos/Redes/03 - Protocolos/TCP/TCP.md",
+    "Fundamentos/Redes/01 - Modelo TPC-IP/Untitled.md",
+    "Fundamentos/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas",
+    "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 4 Transporte.md",
+    "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 7 Aplicação.md",
+    "Fundamentos/Redes/01 - Modelo OSI/Modelo OSI.md",
+    "Fundamentos/Redes/Untitled.md",
+    "Fundamentos/Redes/01 - Modelo TPC-IP",
     "Fundamentos/Redes/05 - Segurança/Telnet.md",
+    "Fundamentos/Redes/03 - Protocolos/TCP/TCP.md",
     "Fundamentos/Redes/06 - Laboratórios/Laboratorios.md",
     "Fundamentos/Redes/03 - Protocolos/IP.md",
     "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 5 Sessão.md",
-    "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 4 Transporte.md",
     "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 3 Rede.md",
     "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 2 Enlace de Daos.md",
     "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 1 Física.md",
-    "Fundamentos/Redes/01 - Modelo OSI/Camadas/Camada 7 Aplicação.md",
-    "Fundamentos/Redes/01 - Modelo OSI/Modelo OSI.md",
     "Fundamentos/Redes/01 - Modelo OSI/Portas Mais Conhecidas.md",
     "Fundamentos/Ciber segurança/Red Team/Attacks/SQL Injection.md",
     "Fundamentos/Ciber segurança/Red Team/Attacks/Spoof.md",
@@ -199,9 +206,6 @@
     "Fundamentos/Ciber segurança/Criptografia/00 - Overview.md",
     "Fundamentos/Redes/04 - Serviços de Rede/DNS.md",
     "Fundamentos/Redes/03 - Protocolos/Protocolos de Rede.md",
-    "Fundamentos/Redes/00 - Introdução/Redes de computadores.md",
-    "Fundamentos/Sistemas operacionais/Windows/CLI/Powershell.md",
-    "Fundamentos/Sistemas operacionais/Windows/CLI/cmd.md",
     "Fundamentos/Ciber segurança/Web Hacking",
     "Fundamentos/Ciber segurança/Exploração",
     "Fundamentos/Ciber segurança/Criptografia",
@@ -211,8 +215,6 @@
     "Fundamentos/Sistemas operacionais/Windows/CLI",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/img",
     "Fundamentos/Sistemas operacionais/Windows/Active Directory/img/Domain Controller.png",
-    "Fundamentos/Sistemas operacionais/Windows/Active Directory",
-    "Untitled.canvas",
     "Fundamentos/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",
     "Fundamentos/Redes/04 - Serviços de Rede/Imagens/DNS request.png",
