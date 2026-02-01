@@ -8,7 +8,7 @@ Este índice resume os principais protocolos de rede, suas camadas no [[Modelo O
 | [[TCP]]    | Camada 4 - Transporte | Comunicação confiável, orientada a conexão. | Usado em HTTP, SSH, etc.       |
 | [[UDP]]    | Camada 4 - Transporte | Comunicação simples, sem conexão.           | Usado em DNS, streaming.       |
 | [[DHCP]]   | Camada 7 - Aplicação  | Distribui IPs automaticamente.              | Facilita administração.        |
-| [[DNS]]    | Camada 7 - Aplicação  | Resolve nomes de domínio para IPs.          | Essencial para navegação.      |
+| [[Overview]]    | Camada 7 - Aplicação  | Resolve nomes de domínio para IPs.          | Essencial para navegação.      |
 | [[HTTP]]   | Camada 7 - Aplicação  | Comunicação web.                            | Inclua HTTPS, HTTP/2, HTTP/3.  |
 | [[SSH]]    | Camada 7 - Aplicação  | Acesso remoto seguro.                       | Substitui Telnet.              |
 | [[Telnet]] | Camada 7 - Aplicação  | Acesso remoto não criptografado.            | Usado apenas em testes.        |

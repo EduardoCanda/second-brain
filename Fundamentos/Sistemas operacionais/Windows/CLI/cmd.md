@@ -23,7 +23,7 @@ Para checagem das informações de rede, usamos **ipconfig**. O output do comand
 ipconfig
 ```
 
-Também há a variação do comando para obter mais informações, como os servidores [[DNS]] e confirmar se o [[DHCP]] está habilitado.
+Também há a variação do comando para obter mais informações, como os servidores [[Overview]] e confirmar se o [[DHCP]] está habilitado.
 
 ```bash
 ipconfig /all

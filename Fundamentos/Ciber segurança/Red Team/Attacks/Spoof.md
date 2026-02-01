@@ -45,5 +45,5 @@ O objetivo é enganar sistemas, usuários ou dispositivos, fazendo-os acreditar 
 ## 🔗 Relacionamentos
 - [[Phishing]]  
 - [[Man-in-the-Middle (MITM)]]  
-- [[DNS]]  
+- [[Overview]]  
 - [[Segurança da Informação]]  

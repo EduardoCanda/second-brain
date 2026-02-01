@@ -40,5 +40,5 @@ O cabeçalho do UDP é simples, com apenas 8 bytes, dividido em:
 ## Notas Relacionadas
 - [[Camada 4 Transporte]]  
 - [[TCP]]  
-- [[DNS]]  
+- [[Overview]]  
 - [[DHCP]]

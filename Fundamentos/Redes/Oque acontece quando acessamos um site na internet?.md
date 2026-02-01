@@ -13,7 +13,7 @@ Por fim, o site é exibido no navegador.
   
 ---  
 ### Notas relacionadas:  
-- [[DNS]]
+- [[Overview]]
 - [[WAF]]
 - [[Load Balancer]]
 - [[IP]]

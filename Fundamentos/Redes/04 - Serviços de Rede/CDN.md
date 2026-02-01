@@ -4,5 +4,5 @@ A CDN (Content Delivery Networks) can be an excellent resource for cutting down 
 ## Notas relacionadas:
 - [[Load Balancer]]
 - [[WAF]]
-- [[DNS]]
+- [[Overview]]
 - [[NAT]]

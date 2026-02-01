@@ -1,5 +1,3 @@
-# Docker — Fundamentos
-
 Docker é uma plataforma para criação, distribuição e execução de aplicações em containers.
 
 ## Conceitos-chave
