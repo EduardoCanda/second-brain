@@ -6,7 +6,6 @@
 O protocolo opera acima do [[TCP]] e abaixo dos protocolos de aplicação (HTTP, SMTP, IMAP).
 Na camada OSI, o TLS é frequentemente associaco á camada 6 (apresentação), embora na prática seja tratado como parte da pilha de aplicação.
 
-
 ## TLS Handshake:
 Antes de trafegar dados, o cliente e servidor realizam um **handshake TLS** para negociar segurança.
 
