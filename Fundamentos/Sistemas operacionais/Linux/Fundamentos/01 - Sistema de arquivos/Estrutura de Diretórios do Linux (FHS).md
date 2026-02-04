@@ -1,5 +1,3 @@
-# Filesystem Hierarchy Standard (FHS)
-
 O Linux segue o padrão **Filesystem Hierarchy Standard (FHS)**, que define a estrutura e o propósito de cada diretório do sistema.  
 Essa organização garante consistência entre distribuições (Ubuntu, Fedora, Debian, etc.) e facilita manutenção, automação, scripts e compatibilidade de software.
 
