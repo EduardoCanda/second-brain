@@ -37,12 +37,4 @@ Ele gerencia recursos do sistema, fornece serviços essenciais e cria um ambient
 O SO normalmente é dividido em **camadas** ou **módulos**:
 - **Núcleo (Kernel):** controla hardware, memória e processos.  
 - **Chamadas de Sistema (System Calls):** interface para que programas interajam com o kernel.  
-- **Shell/UI:** interface de interação com o usuário (linha de comando ou gráfica).  
-
----
-
-## 🔗 Relacionamentos
-- [[Kernel]]  
-- [[Processos e Threads]]  
-- [[Memória Virtual]]  
-- [[Sistemas de Arquivos]]  
+- **Shell/UI:** interface de interação com o usuário (linha de comando ou gráfica). 

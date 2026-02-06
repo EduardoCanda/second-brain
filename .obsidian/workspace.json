@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Sistemas operacionais/Linux/Fundamentos/01 - Sistema de arquivos/Gerenciamento de pacotes.md",
+                "file": "Fundamentos/Sistemas operacionais/Sistemas operacionais.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Gerenciamento de pacotes"
+              "title": "Sistemas operacionais"
             }
           }
         ]
@@ -172,8 +172,9 @@
   },
   "active": "f92bfc83f35a3c2e",
   "lastOpenFiles": [
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos/systemctl.md",
+    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/00 - Introdução/Linux.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/01 - Sistema de arquivos/Gerenciamento de pacotes.md",
+    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos/systemctl.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/04 - systemd e serviços/systemd e Serviços.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos/systemctl",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos",
@@ -183,7 +184,6 @@
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/07 - Armazenamento e Mounts/Armazenamento e Mounts.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/06 - Networling/Networking Básico.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos Linux.md",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/00 - Introdução/Linux.md",
     "Fundamentos/Literatura para evoluir como DEV.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/03 - Processos, PID e Sinais/Processos, PID e Sinais.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/08 - Logs e troubleshooting/Logs e Troubleshooting.md",
