@@ -2,6 +2,11 @@
 
 `systemd` é o **init system** e **gerenciador de serviços** do Linux moderno.
 
+- É multiprocessamento;
+- É muito maior do que somente um gerenciador de boot, agregando controlador de rede, timezone, serviços, logs e diversas outras;
+- Em contrapartida algumas pessoas não gostam de utilizar porque contraria as leis do UNIX "keep it simple";
+
+
 Responsabilidades:
 - Inicializar o sistema (PID 1)
 - Gerenciar serviços
@@ -10,7 +15,6 @@ Responsabilidades:
 - Controlar sessões e recursos
 
 ---
-
 ## PID 1
 
 - `systemd` roda como PID 1
