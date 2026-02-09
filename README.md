@@ -1,55 +1,58 @@
 # Fundamentos da Computação
 
-Este repositório tem como objetivo reunir conteúdos essenciais sobre os **fundamentos da computação**, servindo como uma base sólida para mim quando desejar reforçar ou revisar conceitos fundamentais.
+Este repositório é um **segundo cérebro** de estudos sobre fundamentos de computação. Ele reúne anotações pessoais, resumos e exemplos práticos para consulta rápida e revisão contínua.
 
-A organização está estruturada por tópicos principais (cada um em uma pasta), contendo explicações, resumos, anotações e materiais de apoio.
+O conteúdo está organizado em pastas temáticas dentro de `Fundamentos/`, com foco em redes, sistemas operacionais, infraestrutura, segurança, banco de dados e outros tópicos essenciais.
 
 ---
 
-## Estrutura
+## Estrutura atual
 
 ```
 Fundamentos
-│
-├── Algoritmos
-│   └── (conteúdos sobre lógica, análise de algoritmos, complexidade, etc.)
-│
-├── Arquitetura de Computadores
-│   └── (componentes de hardware, CPU, memória, instruções, etc.)
-│
-├── Arquitetura de Software
-│   └── (padrões de arquitetura, boas práticas, princípios de design, etc.)
-|
-│── Banco de dados
-|   └── (Bancos relacionais, não relacionais, SGBD, etc.)
-|
+├── Banco de dados
+│   ├── SQL
+│   └── Tipos de bancos
 ├── Ciber segurança
-│   └── (conceitos de segurança, criptografia, defesa, ataques, etc.)
-│
-├── Compiladores
-│   └── (análise léxica, sintática, semântica, geração de código, etc.)
-│
+│   ├── Blue Team
+│   ├── Criptografia
+│   ├── OSINT
+│   └── Red Team
+├── Hardware
+├── IA
+├── Infraestrutura e DevOps
+│   └── Docker
+├── Linhas de comando
+├── Programação
 ├── Redes
-│   └── (conceitos de redes de computadores, modelo OSI/TCP-IP, protocolos, serviços, segurança e prática)
-│
-├── Sistemas Operacionais
-│   └── (conceitos de processos, threads, memória, gerenciamento de arquivos, etc.)
-│
+│   ├── 00 - Introdução
+│   ├── 01 - Modelo OSI
+│   ├── 02 - LAN
+│   ├── 03 - Protocolos
+│   ├── 04 - Serviços de Rede
+│   ├── 05 - Segurança
+│   └── 06 - Laboratórios
+├── Sistemas operacionais
+│   ├── Linux
+│   ├── MacOS
+│   └── Windows
 └── Literatura para evoluir como DEV
-    └── (indicações de livros, artigos e materiais complementares)
 ```
 
 ---
+
 ## Objetivo
 
-- Servir como **guia de estudo** para reforçar a base em computação.
-- Fornecer uma **coleção de anotações organizadas** que podem ser expandidas conforme o aprendizado.
-- Facilitar a revisão rápida de conceitos importantes no dia a dia do desenvolvimento.
+- Manter uma **base de conhecimento pessoal** sobre fundamentos de TI.
+- Consolidar aprendizados de redes, segurança, sistemas e infraestrutura.
+- Servir como referência rápida para estudos e revisões.
 
 ---
+
 ## Como usar
 
-1. Navegue pelas pastas de cada área de estudo.
-2. Leia as anotações em formato Markdown.
+1. Acesse a pasta do tema desejado em `Fundamentos/`.
+2. Leia os arquivos Markdown com os resumos e anotações.
+3. Utilize como referência ou checklist de estudos.
 
 ---
