@@ -6,13 +6,13 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiLogs",
       "LiCode",
       "FabDocker",
       "LiServer",
       "FasDatabase",
       "LiDatabase",
-      "LiCommand",
-      "FabReadme"
+      "LiCommand"
     ],
     "recentlyUsedIconsSize": 7,
     "rules": [],
@@ -52,5 +52,6 @@
   "Fundamentos/Banco de dados": "FasDatabase",
   "Fundamentos/Infraestrutura e DevOps": "LiServer",
   "Fundamentos/Infraestrutura e DevOps/Docker": "FabDocker",
-  "Fundamentos/Programação": "LiCode"
+  "Fundamentos/Programação": "LiCode",
+  "Fundamentos/Observability": "LiLogs"
 }

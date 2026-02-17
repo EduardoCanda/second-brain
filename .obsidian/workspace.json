@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0fa59880cff7e196",
+        "id": "9341d6b359f290f1",
         "type": "tabs",
         "children": [
           {
-            "id": "f92bfc83f35a3c2e",
+            "id": "8a0fd22d9e5d1174",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentos/Sistemas operacionais/Sistemas operacionais.md",
+                "file": "Fundamentos/Observability/Prometheus/Introdução.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sistemas operacionais"
+              "title": "Introdução"
             }
           }
         ]
@@ -170,9 +170,22 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "f92bfc83f35a3c2e",
+  "active": "8a0fd22d9e5d1174",
   "lastOpenFiles": [
+    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/02 - Usuário, grupos e permissões/Usuários, Grupos e Permissões.md",
+    "Fundamentos/Observability/Prometheus/Introdução.md",
+    "Fundamentos/Observability/Prometheus",
+    "Fundamentos/Observability",
+    "Untitled",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/00 - Introdução/Linux.md",
+    "Fundamentos/Redes/07 - Patterns/Service Mesh.md",
+    "Tópicos para estudar.md",
+    "Fundamentos/Literatura para evoluir como DEV.md",
+    "Fundamentos/Redes/07 - Patterns",
+    "Fundamentos/Sistemas operacionais/Linux/Labotatórios/dual_boot_→_triple_boot_→_organizacao_final_mint_windows.md",
+    "Fundamentos/Sistemas operacionais/Sistemas operacionais.md",
+    "Fundamentos/Sistemas operacionais/Linux/Labotatórios",
+    "Fundamentos/Sistemas operacionais/Linux/Fundamentos Linux.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/01 - Sistema de arquivos/Gerenciamento de pacotes.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos/systemctl.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/04 - systemd e serviços/systemd e Serviços.md",
@@ -180,11 +193,8 @@
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/05 - Boot/Runlevel.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/01 - Sistema de arquivos/Estrutura de Diretórios do Linux (FHS).md",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/02 - Usuário, grupos e permissões/Usuários, Grupos e Permissões.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/07 - Armazenamento e Mounts/Armazenamento e Mounts.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/06 - Networling/Networking Básico.md",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos Linux.md",
-    "Fundamentos/Literatura para evoluir como DEV.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/03 - Processos, PID e Sinais/Processos, PID e Sinais.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/08 - Logs e troubleshooting/Logs e Troubleshooting.md",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/05 - Boot/Processo de boot no Linux.md",
@@ -193,21 +203,11 @@
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Linux aplicado a containers",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/08 - Logs e troubleshooting",
     "Fundamentos/Sistemas operacionais/Linux/Fundamentos/07 - Armazenamento e Mounts",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/04 - systemd e serviços",
     "README.md",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/06 - Networling",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/05 - Boot",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/03 - Processos, PID e Sinais",
-    "Fundamentos/Sistemas operacionais/Linux/Fundamentos/02 - Usuário, grupos e permissões",
     "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/Comandos básicos.md",
     "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/curl.md",
     "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/scp.md",
     "Fundamentos/Sistemas operacionais/Linux/02 - Comandos/wget.md",
-    "Fundamentos/Redes/05 - Segurança/TLS.md",
-    "Fundamentos/Redes/Oque acontece em uma requisição a um site?.md",
-    "Fundamentos/Redes/Oque acontece quando acessamos um site na internet?.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/DNS/Passo a passo requisição DNS.md",
-    "Fundamentos/Redes/04 - Serviços de Rede/DNS/DNS.md",
     "Fundamentos/Redes/04 - Serviços de Rede/DNS/Untitled.canvas",
     "Fundamentos/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas",
     "Fundamentos/Ciber segurança/Criptografia/img/criptografia assimétrica.png",
