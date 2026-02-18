@@ -136,5 +136,5 @@ docker inspect minha-imagem
 Relações
 [[Imagens]]
 [[Containers]]
-[[Compose]]
+[[Docker Compose]]
 [[Segurança]]

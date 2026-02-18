@@ -1,5 +1,3 @@
-# Docker Compose
-
 Docker Compose permite definir e executar múltiplos containers com um único arquivo YAML.
 
 ## Conceitos
