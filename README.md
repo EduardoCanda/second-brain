@@ -125,3 +125,24 @@ Trilha de Docker abrangendo:
 - Adicionar um índice navegável por links para cada área.
 - Padronizar todos os arquivos com seções fixas (conceito, prática, referências).
 - Criar trilhas recomendadas por nível (iniciante, intermediário, avançado).
+
+---
+
+## Publicação automática no GitHub Pages
+
+Este repositório já está preparado para publicar as notas em um site com **MkDocs** e atualizar automaticamente a cada `push` na branch `main`.
+
+Arquivos adicionados:
+- `mkdocs.yml`
+- `.github/workflows/deploy-pages.yml`
+
+### Passos para ativar no GitHub
+
+1. Defina o repositório remoto no `mkdocs.yml`:
+   - `site_url`
+   - `repo_url`
+2. Faça push da branch `main` com esses arquivos.
+3. No GitHub, abra **Settings → Pages** e use a origem **Deploy from a branch**.
+4. Selecione a branch `gh-pages` e a pasta `/ (root)`.
+
+Depois disso, cada nova nota adicionada no repositório será publicada automaticamente no GitHub Pages após o workflow rodar.
