@@ -1,4 +1,4 @@
-site_name: Second Brain de Fundamentos de Computação
+site_name: Second Brain do Canda
 site_description: Base de estudos em português sobre fundamentos de TI.
 site_url: https://example.github.io/second-brain/
 repo_url: https://github.com/example/second-brain
@@ -17,7 +17,7 @@ markdown_extensions:
       permalink: true
 
 # Usa o próprio repositório como fonte do site.
-docs_dir: .
+docs_dir: docs
 
 # Evita publicar pastas/arquivos internos no site.
 exclude_docs: |

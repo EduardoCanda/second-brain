@@ -36,22 +36,6 @@
     "debugMode": false,
     "useInternalPlugins": false
   },
-  "Fundamentos": "LiAlbum",
-  "Fundamentos/Redes": "LiNetwork",
-  "Fundamentos/Sistemas operacionais/Linux": "FabLinux",
-  "Fundamentos/Sistemas operacionais/Windows": "FabWindows",
-  "Fundamentos/Sistemas operacionais/iOS": "FabApple",
-  "Fundamentos/Sistemas operacionais/MacOS": "FabApple",
-  "Fundamentos/Hardware": "FasComputer",
-  "Fundamentos/Sistemas operacionais": "⚙",
-  "Fundamentos/Literatura para evoluir como DEV.md": "📚",
   "Fundamentos/Compiladores": "FasGears",
-  "Fundamentos/Ciber segurança": "LiLock",
-  "README.md": "FabReadme",
-  "Fundamentos/Linhas de comando": "LiCommand",
-  "Fundamentos/Banco de dados": "FasDatabase",
-  "Fundamentos/Infraestrutura e DevOps": "LiServer",
-  "Fundamentos/Infraestrutura e DevOps/Docker": "FabDocker",
-  "Fundamentos/Programação": "LiCode",
-  "Fundamentos/Observability": "LiLogs"
+  "README.md": "FabReadme"
 }
