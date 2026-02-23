@@ -1,0 +1,29 @@
+site_name: Second Brain de Fundamentos de Computação
+site_description: Base de estudos em português sobre fundamentos de TI.
+site_url: https://example.github.io/second-brain/
+repo_url: https://github.com/example/second-brain
+repo_name: second-brain
+
+theme:
+  name: material
+  language: pt-BR
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+# Usa o próprio repositório como fonte do site.
+docs_dir: .
+
+# Evita publicar pastas/arquivos internos no site.
+exclude_docs: |
+  .git/
+  .github/
+  .obsidian/
+  site/
+  venv/
+  .venv/
