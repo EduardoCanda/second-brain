@@ -142,7 +142,7 @@ Arquivos adicionados:
    - `site_url`
    - `repo_url`
 2. Faça push da branch `main` com esses arquivos.
-3. No GitHub, abra **Settings → Pages** e defina **Source: GitHub Actions**.
-4. Garanta que a branch padrão usada para edição seja `main`.
+3. No GitHub, abra **Settings → Pages** e use a origem **Deploy from a branch**.
+4. Selecione a branch `gh-pages` e a pasta `/ (root)`.
 
 Depois disso, cada nova nota adicionada no repositório será publicada automaticamente no GitHub Pages após o workflow rodar.
