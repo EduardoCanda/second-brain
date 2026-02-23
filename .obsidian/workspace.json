@@ -172,6 +172,7 @@
   },
   "active": "2caaa2fd9ae1112c",
   "lastOpenFiles": [
+    "requirements.txt",
     "docs/index.md",
     "site/search/search_index.json",
     "site/search",
@@ -218,7 +219,6 @@
     "docs/Sistemas operacionais/Windows/Active Directory/04 - Gerenciamento de máquinas.md",
     "docs/Sistemas operacionais/Windows/Active Directory/03 - Gerenciamento de usuários.md",
     "docs/Sistemas operacionais/Windows/Active Directory/02 - Organizational Units.md",
-    "docs/Sistemas operacionais/Windows/Active Directory/01 - Active Directory.md",
     "docs/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas",
     "Fundamentos/Redes/04 - Serviços de Rede/DNS/Untitled.canvas",
     "Fundamentos/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas"
