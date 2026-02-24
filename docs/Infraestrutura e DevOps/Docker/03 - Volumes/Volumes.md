@@ -18,5 +18,5 @@ Volumes permitem persistir dados fora do ciclo de vida do container.
 - docker volume inspect
 
 ## Relações
-- [[Containers]]
-- [[Docker Compose]]
+- [Containers](../02 - Containers/Containers.md)
+- [Docker Compose](../05 - Compose/Docker Compose.md)

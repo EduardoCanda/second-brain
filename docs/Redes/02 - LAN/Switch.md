@@ -15,12 +15,12 @@ Ambos podem se conectarem. Essa redudância retorna disponibilidade e confiabili
 
 A contrapartida é que os dados terão um caminho maior para percorrer, aumento a latência, no entanto será mais difícil a rede cair. --Um pequeno preço a se pagar por essa alterativa.
 
-![[Pasted image 20250927191050.png]]
+![Pasted image 20250927191050](Imagens/Pasted image 20250927191050.png)
 
 #redes #lan 
 
 ---
 ## Notas relacionadas:
-- [[Router]]
-- [[Ethernet]]
+- [Router](Router.md)
+- [Ethernet](Ethernet.md)
 

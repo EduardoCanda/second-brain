@@ -16,6 +16,6 @@ Docker Compose permite definir e executar múltiplos containers com um único ar
 - docker compose ps
 
 ## Relações
-- [[Containers]]
-- [[Volumes]]
-- [[Networking Docker]]
+- [Containers](../02 - Containers/Containers.md)
+- [Volumes](../03 - Volumes/Volumes.md)
+- [Networking Docker](../02 - Containers/Networking Docker.md)

@@ -5,8 +5,8 @@ Apesar de ambos identificarem dispositivos na rede, eles operam em contextos dif
 
 ## IP Privado
 
-O **IP privado** identifica um dispositivo **dentro de uma rede local ([[LAN]])**.  
-Esses endereços não são roteáveis na Internet e são atribuídos normalmente pelo roteador via [[DHCP]].
+O **IP privado** identifica um dispositivo **dentro de uma rede local ([LAN](../02 - LAN/LAN.md))**.  
+Esses endereços não são roteáveis na Internet e são atribuídos normalmente pelo roteador via [DHCP](../04 - Serviços de Rede/DHCP.md).
 
 ### Faixas reservadas para IPs privados:
 - **10.0.0.0 – 10.255.255.255**  
@@ -32,7 +32,7 @@ Esse endereço pertence ao roteador/modem que conecta sua rede à Internet.
 
 ## Relação com NAT
 
-O roteador utiliza o processo de [[NAT]] (Network Address Translation) para permitir que **vários dispositivos com IPs privados compartilhem um único IP público**.  
+O roteador utiliza o processo de [NAT](../04 - Serviços de Rede/NAT.md) (Network Address Translation) para permitir que **vários dispositivos com IPs privados compartilhem um único IP público**.  
 Dessa forma, todos os dispositivos da rede doméstica acessam a Internet usando o mesmo endereço externo.
 
 ---
@@ -51,6 +51,6 @@ O IP público é o **número do prédio** (visível para o carteiro).
 ---
 
 ## Notas Relacionadas
-- [[IP]]
-- [[DHCP]]
-- [[NAT]]
+- [IP](IP.md)
+- [DHCP](../04 - Serviços de Rede/DHCP.md)
+- [NAT](../04 - Serviços de Rede/NAT.md)

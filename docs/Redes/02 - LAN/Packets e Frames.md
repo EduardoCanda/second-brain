@@ -8,6 +8,6 @@ Fazendo uma analogia com o mundo real, podemos dizer que o frame é um envelope 
 
 ---
 ## Notas relacionadas:
-- [[Modelo OSI]]
-- [[MAC]]
-- [[IP]]
+- [Modelo OSI](../01 - Modelo OSI/Modelo OSI.md)
+- [MAC](../01 - Modelo OSI/Camadas/Física/MAC.md)
+- [IP](../03 - Protocolos/IP.md)

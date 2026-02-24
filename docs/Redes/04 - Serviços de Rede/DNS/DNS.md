@@ -1,6 +1,6 @@
-DNS (Domain name system)  serve para nos conectar a dispostivos na internet sem que a gente tenha que saber o seu respectivo endereço [[IP]].
+DNS (Domain name system)  serve para nos conectar a dispostivos na internet sem que a gente tenha que saber o seu respectivo endereço [IP](../../03 - Protocolos/IP.md).
 
-O DNS utiliza o [[UDP]] para comunicação, para não ficar aguardando conexões TCP. Além disso, o DNS nos devolve o respectivo IP do site que estivermos acessando.
+O DNS utiliza o [UDP](../../03 - Protocolos/UDP.md) para comunicação, para não ficar aguardando conexões TCP. Além disso, o DNS nos devolve o respectivo IP do site que estivermos acessando.
 
 **Ex:**
 O site do Google pode ter o IP "54.12.23.444", que se acessado diretamente entraríamos no site; No entanto, decorar os IPs de todos os sites que a gente queira acessar é impossível. Portanto, ao digitar o site "www.google.com", o DNS por sua vez nos devolve o IP.
@@ -12,7 +12,7 @@ O site do Google pode ter o IP "54.12.23.444", que se acessado diretamente entra
 
 ---
 # Hierarquia dos domínios:
-![[Hierarquia de dominios.png]]
+![Hierarquia de dominios](../Imagens/Hierarquia de dominios.png)
 
 ### TLD (Top-Level Domain):
 O TLD é a parte da direita do domínio. Por exemplo, em "google.com", o TLD é o "**.com**". 
@@ -85,10 +85,10 @@ host -t TXT google.com
 
 ---
 # Como funciona a requisição do DNS?
-![[DNS request.png]]
+![DNS request](../Imagens/DNS request.png)
 
 ---
 ## Notas relacionadas:
-- [[Packets e Frames]]
-- [[TCP]]
-- [[IP]]
+- [Packets e Frames](../../02 - LAN/Packets e Frames.md)
+- [TCP](../../03 - Protocolos/TCP/TCP.md)
+- [IP](../../03 - Protocolos/IP.md)

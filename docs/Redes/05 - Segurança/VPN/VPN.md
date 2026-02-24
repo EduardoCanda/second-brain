@@ -8,6 +8,6 @@ https://tryhackme-images.s3.amazonaws.com/user-uploads/5de96d9ca744773ea7ef8c00/
 - Oferta anonimato
 
 ### Tecnologias utilizadas pela VPN:
-- [[PPP]]
-- [[PPTP]]
-- [[IPSec]]
+- [PPP](PPP.md)
+- [PPTP](PPTP.md)
+- [IPSec](IPSec.md)

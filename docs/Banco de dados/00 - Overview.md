@@ -3,8 +3,8 @@ Banco de dados é uma estrutura organizada de informações para armazenamento e
 Esses dados podem representar autenticação, clientes, produtos, pedidos, logs e muito mais.
 
 ## Tipos de banco de dados
-- [[Banco relacional (SQL)]]
-- [[Banco não relacional (noSQL)]]
+- [Banco relacional (SQL)](Tipos de bancos/Banco relacional (SQL).md)
+- [Banco não relacional (noSQL)](Tipos de bancos/Banco não relacional (noSQL).md)
 
 ## Como escolher: relacional ou não relacional?
 
@@ -28,4 +28,4 @@ Em muitos sistemas, o melhor caminho é **híbrido**:
 - NoSQL para casos específicos de escala e flexibilidade;
 - cache para reduzir latência e proteger o banco.
 
-Veja também: [[Cache]]
+Veja também: [Cache](Cache.md)

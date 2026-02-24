@@ -4,6 +4,6 @@ Nesta matéria está contida toda estrutura necessária como switches, routers, 
 
 ---
 ## Notas relacionadas:
-- [[Protocolos de Rede]]
-- [[Switch]]
-- [[Router]]
+- [Protocolos de Rede](../03 - Protocolos/Protocolos de Rede.md)
+- [Switch](../02 - LAN/Switch.md)
+- [Router](../02 - LAN/Router.md)

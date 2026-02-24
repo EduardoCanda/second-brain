@@ -1,11 +1,11 @@
 ### Oque é?
 O protocolo TCP (Transmission Control Protocol) age na camada de transporte do Modelo OSI. Este protocolo é utilizado para trocas de pacotes entre cliente e servidor.
 
-Para a conexão acontecer, é necessrio o **estabelecimento de conexão**, conhecido como [[Handshake]].
+Para a conexão acontecer, é necessrio o **estabelecimento de conexão**, conhecido como [Handshake](Handshake.md).
 
 ---
 ### **Transferência de dados (sessão):**  
-Durante a **sessão TCP** (após o [[Handshake]]), cliente e servidor precisam garantir que nenhum lado envie mais dados do que o outro pode processar.  Para isso, existe um mecanismo chamado **janela de recepção (receive window)**, que informa **quantos bytes o receptor ainda consegue receber** sem perder dados. 
+Durante a **sessão TCP** (após o [Handshake](Handshake.md)), cliente e servidor precisam garantir que nenhum lado envie mais dados do que o outro pode processar.  Para isso, existe um mecanismo chamado **janela de recepção (receive window)**, que informa **quantos bytes o receptor ainda consegue receber** sem perder dados. 
 
 Essa **adequação de parâmetros** é dinâmica: o tamanho da janela pode **aumentar ou diminuir** dependendo da capacidade momentânea do receptor. Se a janela for **0**, o cliente para de enviar dados e esperar até o servidor enviar um **Window Update**.
 
@@ -41,4 +41,4 @@ d - TCP is significantly slower than UDP because more work (computing) has to be
 
 ---
 ## Notas relacionadas:
-- [[IP]]
+- [IP](../IP.md)

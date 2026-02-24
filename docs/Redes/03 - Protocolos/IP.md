@@ -51,7 +51,7 @@ Existem dois formatos principais:
 
 ---
 ## Notas Relacionadas
-- [[Camada 3 Rede]]  
-- [[TCP]]  
-- [[UDP]]  
-- [[ICMP]] 
+- [Camada 3 Rede](../01 - Modelo OSI/Camadas/Camada 3 Rede.md)  
+- [TCP](TCP/TCP.md)  
+- [UDP](UDP.md)  
+- [ICMP](ICMP.md) 

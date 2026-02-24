@@ -1,4 +1,4 @@
-A Camada de Transporte é a quarta camada do [[Modelo OSI]] e tem como principal função garantir a entrega confiável e ordenada dos dados entre aplicações em diferentes dispositivos.
+A Camada de Transporte é a quarta camada do [Modelo OSI](../Modelo OSI.md) e tem como principal função garantir a entrega confiável e ordenada dos dados entre aplicações em diferentes dispositivos.
 
 Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação, cuidando de como os dados serão entregues, e não apenas para onde.
 
@@ -13,12 +13,12 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 ---
 
 🔑 Protocolos Importantes
-	•	[[TCP]]
+	•	[TCP](../../03 - Protocolos/TCP/TCP.md)
 	•	Confiável (usa confirmação de recebimento - ACK).
 	•	Conexão orientada (usa handshake de 3 vias).
 	•	Garante ordem dos pacotes.
 	•	Exemplo de uso: HTTP, HTTPS, SSH, FTP.
-	•	[[UDP ]]
+	•	[UDP](../../03 - Protocolos/UDP.md)
 	•	Não confiável (sem ACK ou retransmissão).
 	•	Sem conexão, mais rápido e leve.
 	•	Útil em aplicações em tempo real.
