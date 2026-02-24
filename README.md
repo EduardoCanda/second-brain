@@ -4,7 +4,7 @@ Este repositório reúne minhas anotações de estudos em tecnologia.
 
 👉 Para acessar o conteúdo de forma organizada e navegável, use o site no GitHub Pages:
 
-**https://luizcalaca.github.io/second-brain/**
+**https://eduardocanda.github.io/second-brain/**
 
 ## Sobre o repositório
 
