@@ -1,4 +1,4 @@
-# Sumário do Second Brain
+# Sumário Canda's Second Brain
 
 Bem-vindo ao meu repositório de estudos de fundamentos de computação.
 
@@ -20,13 +20,6 @@ Esta página funciona como um **sumário central** para navegar rapidamente pelo
 - [Tópicos para estudar](Planejamento%20de%20estudos/T%C3%B3picos%20para%20estudar.md)
 - [Literatura para evoluir como DEV](Refer%C3%AAncias/Literatura%20para%20evoluir%20como%20DEV.md)
 
-## Sugestão de ordem de estudo
-
-Faz sentido numerar as pastas para criar uma progressão clara.
-
-Se a dúvida for **"Sistemas Operacionais ou Redes primeiro?"**, a sugestão é começar por
-**Sistemas Operacionais** e depois seguir para **Redes**.
-
 ## Enumeração sugerida das pastas
 
 1. **Sistemas operacionais**
@@ -43,3 +36,5 @@ Se a dúvida for **"Sistemas Operacionais ou Redes primeiro?"**, a sugestão é 
 ## Objetivo deste material
 
 Concentrar notas objetivas e práticas para revisão rápida, organização de estudos e aprofundamento contínuo.
+
+> Made by Eduardo Canda
