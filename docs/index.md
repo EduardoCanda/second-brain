@@ -22,10 +22,23 @@ Esta página funciona como um **sumário central** para navegar rapidamente pelo
 
 ## Sugestão de ordem de estudo
 
-1. **Base:** Redes + Sistemas Operacionais.
-2. **Prática de ambiente:** Linhas de comando + Infraestrutura e DevOps.
-3. **Especialização:** Ciber Segurança, Banco de dados e Observability.
-4. **Evolução contínua:** Programação + leitura técnica.
+Faz sentido numerar as pastas para criar uma progressão clara.
+
+Se a dúvida for **"Sistemas Operacionais ou Redes primeiro?"**, a sugestão é começar por
+**Sistemas Operacionais** e depois seguir para **Redes**.
+
+## Enumeração sugerida das pastas
+
+1. **Sistemas operacionais**
+2. **Redes**
+3. **Linhas de comando**
+4. **Infraestrutura e DevOps**
+5. **Banco de dados**
+6. **Programação**
+7. **Observability**
+8. **Ciber segurança**
+9. **Referências**
+10. **Planejamento de estudos**
 
 ## Objetivo deste material
 
