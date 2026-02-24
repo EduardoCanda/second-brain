@@ -1,16 +1,39 @@
-Bancos relacionais guardam os dados de maneira estrutura. Isso é, requerem um padrão de inserção de dados.
+Bancos relacionais guardam dados de forma **estruturada**, com esquema definido (colunas, tipos e regras).
 
-Por exemplo, em uma tabela de **clientes** os dados consistem em cliente_id, nome, data_nascimento, cpf e endereco. Quando novos clientes entrarem nessa tabela, os dados deverão seguir este padrão de cadastro.
+## Como funcionam
+- Dados ficam em **tabelas** (linhas e colunas).
+- Relações entre tabelas são feitas por **chaves**.
+- Suporte forte a **ACID** (atomicidade, consistência, isolamento e durabilidade).
 
-Pelos dados serem guardados em **tabelas**, os dados são estruturados em **linhas** e **colunas**. Relaçãoes entre duas ou mais tabelas podem ser criadas, a partir de uma coluna **chave**.
+Exemplo: tabela `clientes` com `cliente_id`, `nome`, `data_nascimento`, `cpf` e `endereco`.
 
-Um exemplo seria relacionar a tabela de **cliente** com a tabela de **pedidos**. A tabela de pedidos teria o cliente_id para relacionar o pedido ao cliente em questão.
+## Chaves primárias e estrangeiras
 
----
-### Chaves primárias e estrangeiras:
+**Chave primária (PK)**
+- Identifica um registro de forma única.
+- Ex.: `cliente_id`.
 
-**Chave primária:**
-Chave primária é usada para garantir que o dado coletado é único na tabela. Podemos pensar em uma chave primária como um CPF do Brasil, onde cada pessoa do país possui um número único. Desse ponto de vista, é o CPF que diferencia uma pessoa da outra, por mais que possuam o mesmo nome por exemplo.
+**Chave estrangeira (FK)**
+- Coluna que referencia a PK de outra tabela.
+- Ex.: `pedidos.cliente_id` aponta para `clientes.cliente_id`.
 
-**Chave estrangeira:**
-Chaves estrangeiras é uma coluna (ou colunas)de uma tabela que existem em outras tabelas do banco de dados. Por este motivo, são comumente utilizadas para correlacionar uma tabela com outra.
+## Quando escolher SQL
+- Regras de negócio rígidas e dados consistentes são prioridade.
+- Você precisa de consultas complexas com `JOIN`, agregações e relatórios.
+- Transações são críticas (pagamentos, pedidos, saldo, estoque).
+
+## SQL em arquitetura de alto vs baixo throughput
+
+### Baixo throughput
+- Um único banco relacional bem configurado costuma resolver.
+- Índices e modelagem adequada já entregam ótimo resultado.
+
+### Alto throughput
+- Comece com otimizações: índices, particionamento, tuning de queries.
+- Escale com:
+  - **replicação de leitura** (read replicas);
+  - **sharding** (quando necessário);
+  - separação de carga de leitura/escrita;
+  - uso de **cache** para aliviar queries repetidas.
+
+> Regra prática: use relacional como base quando consistência é essencial; escale gradualmente sem abandonar o modelo cedo demais.
