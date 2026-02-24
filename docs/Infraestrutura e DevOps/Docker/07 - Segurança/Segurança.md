@@ -17,5 +17,5 @@ Segurança em Docker envolve imagens, containers e runtime.
 - Scan de vulnerabilidades
 
 ## Relações
-- [[Imagens Docker]]
-- [[Docker Swarm]]
+- [Imagens Docker](../02 - Containers/Imagens Docker.md)
+- [Docker Swarm](Docker Swarm.md)

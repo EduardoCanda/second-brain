@@ -3,7 +3,7 @@
 - Integridade;
 - Auntenticação;
 
-O protocolo opera acima do [[TCP]] e abaixo dos protocolos de aplicação (HTTP, SMTP, IMAP).
+O protocolo opera acima do [TCP](../03 - Protocolos/TCP/TCP.md) e abaixo dos protocolos de aplicação (HTTP, SMTP, IMAP).
 Na camada OSI, o TLS é frequentemente associaco á camada 6 (apresentação), embora na prática seja tratado como parte da pilha de aplicação.
 
 ## TLS Handshake:

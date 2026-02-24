@@ -5,11 +5,11 @@ Da perspectiva de criptografia, todos esses "plaintext" estão aguardando para s
 ## Como funciona?
 O plaintext (texto simples) é passado através da função de criptografia, juntamente com uma chave adequada; a função de criptografia retorna um texto cifrado. A função de criptografia faz parte da cifra; uma cifra é um algoritmo para converter um texto simples em um texto cifrado e vice-versa.
 
-![[encrypt plaintext.png]]
+![encrypt plaintext](img/encrypt plaintext.png)
 
 Para recuperar o plaintext, devemos passar o texto cifrado junto com a chave adequada através da função de descriptografia, que nos daria o texto simples original
 
-![[decrypt plaintext.png]]
+![decrypt plaintext](img/decrypt plaintext.png)
 
 ---
 ## Resumo

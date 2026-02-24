@@ -20,6 +20,6 @@ Container é uma instância em execução de uma imagem Docker.
 - docker rm
 
 ## Relações
-- [[Imagens Docker]]
-- [[Volumes]]
-- [[Networking Docker]]
+- [Imagens Docker](Imagens Docker.md)
+- [Volumes](../03 - Volumes/Volumes.md)
+- [Networking Docker](Networking Docker.md)

@@ -134,7 +134,7 @@ docker history minha-imagem
 docker inspect minha-imagem
 
 Relações
-[[Imagens]]
-[[Containers]]
-[[Docker Compose]]
-[[Segurança]]
+[Imagens](../01 - Imagens/Imagens.md)
+[Containers](../02 - Containers/Containers.md)
+[Docker Compose](../05 - Compose/Docker Compose.md)
+[Segurança](../07 - Segurança/Segurança.md)

@@ -26,6 +26,6 @@ Imagem Docker é um conjunto de camadas somente leitura que define como um conta
 - Minimizar camadas
 
 ## Relações
-- [[Dockerfile]]
-- [[Containers]]
-- [[Registry]]
+- [Dockerfile](../00 - Fundamentos/Dockerfile.md)
+- [Containers](../02 - Containers/Containers.md)
+- [Registry](../08 - Registry/Registry.md)

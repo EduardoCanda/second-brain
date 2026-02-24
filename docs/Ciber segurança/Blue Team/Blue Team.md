@@ -9,10 +9,10 @@ Principais atividades:
 
 Pensa neles como os **"guardas e bombeiros digitais"**: protegem e apagam incêndios.
 
-[[SOC – Security Operations Center]]
-[[Threat Intelligence (TI)]]
-[[Digital Forensics and Incident Response (DFIR)]]
-[[Malware Analysis]]
+[SOC – Security Operations Center](SOC – Security Operations Center.md)
+[Threat Intelligence (TI)](Threat Intelligence (TI).md)
+[Digital Forensics and Incident Response (DFIR)](Digital Forensics and Incident Response (DFIR).md)
+[Malware Analysis](Malware Analysis.md)
 
 ## Como tudo se conecta
 Imagine que sua empresa foi vítima de um ransomware:

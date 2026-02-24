@@ -19,5 +19,5 @@ Registry é o repositório de imagens Docker.
 - docker tag
 
 ## Relações
-- [[Imagens Docker]]
-- [[Segurança Docker]]
+- [Imagens Docker](../02 - Containers/Imagens Docker.md)
+- [Segurança Docker](../06 - Swarm/Segurança Docker.md)

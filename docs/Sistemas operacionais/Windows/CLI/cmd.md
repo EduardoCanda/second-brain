@@ -23,13 +23,13 @@ Para checagem das informações de rede, usamos **ipconfig**. O output do comand
 ipconfig
 ```
 
-Também há a variação do comando para obter mais informações, como os servidores [[DNS]] e confirmar se o [[DHCP]] está habilitado.
+Também há a variação do comando para obter mais informações, como os servidores [DNS](../../../Redes/04 - Serviços de Rede/DNS/DNS.md) e confirmar se o [DHCP](../../../Redes/04 - Serviços de Rede/DHCP.md) está habilitado.
 
 ```bash
 ipconfig /all
 ```
 
-Uma abordagem muito comum é a checagem se o servidor consegue acessar outro servidor exposto a internet. Para isso usamos o comando **ping** para enviar um pacote [[ICMP]] e ouvir a resposta.
+Uma abordagem muito comum é a checagem se o servidor consegue acessar outro servidor exposto a internet. Para isso usamos o comando **ping** para enviar um pacote [ICMP](../../../Redes/03 - Protocolos/ICMP.md) e ouvir a resposta.
 
 ```bash
 ping example.com
@@ -41,7 +41,7 @@ Para trace de rede, podemos utilizar o **tracert**. Ele mostra por onde os pacot
 tracert example.com
 ```
 
-Para consultar o endereço [[IP]] de um servidor, podemos usar o **nslookup**
+Para consultar o endereço [IP](../../../Redes/03 - Protocolos/IP.md) de um servidor, podemos usar o **nslookup**
 
 ```bash
 nslookup example.com

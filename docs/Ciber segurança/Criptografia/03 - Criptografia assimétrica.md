@@ -1,1 +1,1 @@
-![[criptografia assimétrica.png]]
+![criptografia assimétrica](img/criptografia assimétrica.png)

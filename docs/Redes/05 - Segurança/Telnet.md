@@ -67,6 +67,6 @@ telnet mail.servidor.com 25
 
 ## Referências Cruzadas
 
-- [[SSH]]
-- [[TCP]]
-- [[Protocolos de Rede]]
+- [SSH](SSH.md)
+- [TCP](../03 - Protocolos/TCP/TCP.md)
+- [Protocolos de Rede](../03 - Protocolos/Protocolos de Rede.md)

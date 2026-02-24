@@ -1,5 +1,5 @@
 HTTP (Hypertext Transfer Protocol)
-Este protocolo é a base de comunicação da World Wide Web, reside na camada de aplicação do [[Modelo OSI]]. A comunicação é composta por cliente-servidor, onde o cliente pode ser um navegador por exemplo, e o servidor pode ser um host onde um site está hospedado, entregando seu conteúdo em HTML.
+Este protocolo é a base de comunicação da World Wide Web, reside na camada de aplicação do [Modelo OSI](../01 - Modelo OSI/Modelo OSI.md). A comunicação é composta por cliente-servidor, onde o cliente pode ser um navegador por exemplo, e o servidor pode ser um host onde um site está hospedado, entregando seu conteúdo em HTML.
 
 # HTTPS
 É a versão segura do HTTP, onde os dados trafegados agora são criptografados.
@@ -34,7 +34,7 @@ Abaixo todas as features da URL (Mas não usamos todas necessariamente na requis
 
 (imagem)
 
-Mas para obter uma experiência mais rica, é necessário informar os [[Headers]]
+Mas para obter uma experiência mais rica, é necessário informar os [Headers](Headers.md)
 
 Exemplo de resquest:
         GET / HTTP/1.1

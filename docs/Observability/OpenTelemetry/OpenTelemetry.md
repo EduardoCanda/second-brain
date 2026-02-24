@@ -1,4 +1,4 @@
-OpenTelemetry é um framework de observabilidade open-source para softwares nativas de cloud, governada pela [[Cloud Native Computing Foundation]] (CNCF).
+OpenTelemetry é um framework de observabilidade open-source para softwares nativas de cloud, governada pela [Cloud Native Computing Foundation](Cloud Native Computing Foundation.md) (CNCF).
 
 Ele fornece uma forma padronizada de coletar, gerar e exportar dados de telemetria das aplicações e infraestrutura.
 

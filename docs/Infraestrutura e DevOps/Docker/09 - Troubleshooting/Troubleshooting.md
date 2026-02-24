@@ -15,5 +15,5 @@ Conjunto de técnicas para diagnóstico de problemas em containers.
 - Rede não resolve DNS
 
 ## Relações
-- [[Containers]]
-- [[Networking Docker]]
+- [Containers](../02 - Containers/Containers.md)
+- [Networking Docker](../02 - Containers/Networking Docker.md)

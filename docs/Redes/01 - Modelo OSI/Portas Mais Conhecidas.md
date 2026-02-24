@@ -38,7 +38,7 @@ Cada porta é representada por um número de **0 a 65535**, dividido em faixas:
 ---
 
 ## Notas Relacionadas
-- [[TCP]]  
-- [[UDP]]  
-- [[Camada 4 Transporte]]  
-- [[DNS]]
+- [TCP](../03 - Protocolos/TCP/TCP.md)  
+- [UDP](../03 - Protocolos/UDP.md)  
+- [Camada 4 Transporte](Camadas/Camada 4 Transporte.md)  
+- [DNS](../04 - Serviços de Rede/DNS/DNS.md)

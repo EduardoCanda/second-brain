@@ -2,7 +2,7 @@ A ideia principal por trás do **WIndows Domain** é centralizar a administraç�
 
 O servidor que hospeda o AD também é conhecido como **Domain Controller (DC)**
 
-![[Domain Controller.png]]
+![Domain Controller](img/Domain Controller.png)
 
 ## Vantagens:
 - **Centralisar o gerenciamento de identidade:** Todos os usuários em torno da rede podem ser configurados no AD com um esforço mínimo.
@@ -11,4 +11,4 @@ O servidor que hospeda o AD também é conhecido como **Domain Controller (DC)**
 
 ---
 ## Notas relacionadas:
-[[01 - Active Directory]]
+[01 - Active Directory](01 - Active Directory.md)

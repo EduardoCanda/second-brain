@@ -1,4 +1,4 @@
-![[TCP 3-way handshake.png]]
+![TCP 3-way handshake](TCP 3-way handshake.png)
 
 **O handshake é o processo de estabelecimento de conexão entre cliente e servidor, no protocolo TCP, que opera na camada 4 (Transporte) do modelo OSI.**
 
