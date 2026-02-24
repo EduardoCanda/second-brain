@@ -1,9 +1,5 @@
 # Docker — Networking
 
-# Docker --- Networking
-
-📅 23 de fevereiro de 2026
-
 Docker fornece redes virtuais para comunicação entre containers.
 
 ------------------------------------------------------------------------
