@@ -42,3 +42,30 @@ d - TCP is significantly slower than UDP because more work (computing) has to be
 ---
 ## Notas relacionadas:
 - [IP](../IP.md)
+
+
+### Diagrama: janela TCP (controle de fluxo)
+
+```text
+Cliente (sender)                               Servidor (receiver)
+      |                                                  |
+      |---- Dados: 124 bytes --------------------------->|
+      |                                                  |  Janela inicial: 1024
+      |<--- ACK + Window=900 ----------------------------|  (1024 - 124)
+      |                                                  |
+      |---- Dados: 900 bytes --------------------------->|
+      |<--- ACK + Window=1024 ---------------------------|  (dados processados)
+      |                                                  |
+```
+
+### Diagrama: encerramento TCP (4-way)
+
+```mermaid
+sequenceDiagram
+    participant C as Cliente
+    participant S as Servidor
+    C->>S: FIN
+    S-->>C: ACK
+    S->>C: FIN
+    C-->>S: ACK
+```
