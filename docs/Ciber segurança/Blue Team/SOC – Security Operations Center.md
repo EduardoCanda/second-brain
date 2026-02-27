@@ -92,3 +92,51 @@ Pensa nele como uma **sala de controle** (tipo NASA), mas para segurança digita
     
 
 Ou seja: **SOC é onde tudo acontece e se integra**.
+
+---
+
+### 🧭 Fluxo operacional de um SOC
+
+```text
+[Coleta de logs]
+      |
+      v
+[SIEM gera alerta]
+      |
+      v
+[Triage L1]
+  |        \
+  |         \--> [Falso positivo] --> [Ajuste de regra]
+  v
+[Investigação L2]
+      |
+      v
+[Incidente confirmado?] -- não --> [Encerrar com documentação]
+      |
+     sim
+      v
+[Resposta L3 / IR]
+      |
+      +--> [Conter: isolar host, bloquear IOC, resetar credenciais]
+      |
+      +--> [Erradicar: remover persistência/malware]
+      |
+      +--> [Recuperar: restaurar serviço]
+      v
+[Lições aprendidas + melhoria contínua]
+```
+
+### 🏗️ Integração SOC com outras frentes
+
+```mermaid
+flowchart LR
+    SOC[SOC] --> SIEM[SIEM]
+    SOC --> EDR[EDR/XDR]
+    SOC --> TI[Threat Intelligence]
+    SOC --> DFIR[DFIR]
+    SOC --> MA[Malware Analysis]
+    SOC --> SOAR[SOAR]
+    TI --> SOC
+    SIEM --> SOC
+    EDR --> SOC
+```

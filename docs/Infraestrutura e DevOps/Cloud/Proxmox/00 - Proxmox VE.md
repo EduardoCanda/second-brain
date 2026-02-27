@@ -186,3 +186,33 @@ Mesmo sendo on-prem/homelab, Proxmox ajuda a entender fundamentos usados em clou
 3. Criar um repositório `infra-homelab` com Terraform + Ansible.
 4. Adicionar métricas e alertas (Prometheus/Grafana) no ambiente.
 
+
+## Diagrama de componentes do Proxmox VE
+
+```mermaid
+flowchart LR
+  UI[Web UI/API] --> PVE[Proxmox VE Host]
+  PVE --> KVM[KVM VMs]
+  PVE --> LXC[LXC Containers]
+  PVE --> ST[(Storage: ZFS/Ceph/NFS)]
+  PVE --> NET[Bridge/VLAN]
+  B[Backup Server] --> PVE
+```
+
+## Fluxo rapido de provisionamento
+
+```text
+[Upload de ISO/template]
+          |
+          v
+[Criar VM ou CT]
+          |
+          v
+[Configurar CPU/RAM/Disk/Network]
+          |
+          v
+[Boot + instalacao]
+          |
+          v
+[Snapshot/Backup]
+```

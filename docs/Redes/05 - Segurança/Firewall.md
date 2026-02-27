@@ -20,3 +20,31 @@ Este tipo de firewall utiliza um conjunto estático de regras para determinar se
 Embora esses firewalls utilizem muito menos recursos do que as alternativas, eles são muito mais eficientes. Por exemplo, esses firewalls são eficazes apenas conforme as regras definidas neles. Se uma regra não for exatamente correspondida, ela é efetivamente inútil.
 
 No entanto, esses firewalls são ótimos para receber grandes volumes de tráfego de um conjunto de hosts (como em um ataque de negação de serviço distribuído).
+
+
+## Diagrama de filtragem de firewall
+
+```text
+[Pacote entra na interface]
+            |
+            v
+[Regra 1 confere?] -- sim --> [ALLOW/DENY]
+            |
+           nao
+            v
+[Regra 2 confere?] -- sim --> [ALLOW/DENY]
+            |
+           nao
+            v
+[Policy padrao (default deny/allow)]
+```
+
+## Firewall em camadas
+
+```mermaid
+flowchart LR
+  I[Internet] --> E[Edge Firewall]
+  E --> W[WAF/Reverse Proxy]
+  W --> A[Aplicacao]
+  A --> D[DB Firewall Rules]
+```

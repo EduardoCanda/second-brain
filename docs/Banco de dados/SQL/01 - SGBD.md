@@ -25,3 +25,33 @@ Com um SGBD você consegue:
 - Em NoSQL, a consulta pode ser feita por API própria, linguagem específica ou SQL-like (depende da ferramenta).
 
 > Em resumo: banco de dados é onde os dados vivem; SGBD é o motor que organiza, protege e entrega esses dados para as aplicações.
+
+
+## Arquitetura simplificada de um SGBD
+
+```mermaid
+flowchart TB
+  C[Cliente SQL] --> P[Parser/Planner]
+  P --> E[Executor]
+  E --> B[(Buffer Cache)]
+  B <--> D[(Data Files)]
+  E --> L[(Write-Ahead Log)]
+```
+
+## Caminho de uma query
+
+```text
+[SQL recebido]
+      |
+      v
+[Parse + validacao]
+      |
+      v
+[Plano de execucao]
+      |
+      v
+[Leitura/escrita em pagina]
+      |
+      v
+[Retorno ao cliente]
+```

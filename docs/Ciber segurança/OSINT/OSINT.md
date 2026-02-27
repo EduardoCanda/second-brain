@@ -49,3 +49,36 @@ Essas informações podem vir de qualquer fonte pública ou acessível legalment
 - Muitas organizações usam OSINT como parte de **threat intelligence** e **red/blue teaming**.  
 
 ---
+
+
+## Pipeline OSINT (visão prática)
+
+```text
+[Definir alvo + objetivo]
+           |
+           v
+[Coleta passiva de fontes publicas]
+           |
+           v
+[Normalizacao e correlacao]
+           |
+           v
+[Validacao de evidencias]
+           |
+           v
+[Relatorio com riscos e acoes]
+```
+
+## Fontes e ferramentas por categoria
+
+```mermaid
+flowchart TB
+  O[OSINT] --> D[Dominios/DNS]
+  O --> E[Emails/Breaches]
+  O --> I[Infra/Servicos]
+  O --> S[Social/People]
+  D --> D1[whois / dnsdumpster]
+  E --> E1[HIBP]
+  I --> I1[Shodan / Censys]
+  S --> S1[Buscas avancadas]
+```

@@ -173,3 +173,37 @@ Assim você estuda tanto a camada de virtualização quanto a camada de cloud.
 3. Definir metas semanais com evidências (prints, logs, scripts).
 4. Comparar os mesmos conceitos em OpenStack e em uma cloud pública.
 
+
+## Mapa visual dos principais serviços OpenStack
+
+```mermaid
+flowchart TB
+  U[Usuario/API] --> K[Keystone - Identity]
+  K --> N[Nova - Compute]
+  K --> Ne[Neutron - Networking]
+  K --> C[Cinder - Block Storage]
+  K --> Gl[Glance - Images]
+  K --> Sw[Swift - Object Storage]
+  K --> H[Horizon - Dashboard]
+```
+
+## Fluxo de criação de VM
+
+```text
+[Autenticar no Keystone]
+          |
+          v
+[Selecionar imagem no Glance]
+          |
+          v
+[Nova agenda host de compute]
+          |
+          v
+[Neutron conecta rede]
+          |
+          v
+[Cinder anexa volume (opcional)]
+          |
+          v
+[Instancia ativa e acessivel]
+```
