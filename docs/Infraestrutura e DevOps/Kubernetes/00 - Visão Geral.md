@@ -257,3 +257,71 @@ Tipos principais:
 3. Praticar troubleshooting com `kubectl logs/describe/events`.
 4. Simular falhas para observar self-healing.
 5. Configurar HPA e testar autoscaling.
+
+
+## 24) Diagrama de arquitetura do cluster
+
+```mermaid
+flowchart TB
+    subgraph CP[Control Plane]
+      API[kube-apiserver]
+      ETCD[(etcd)]
+      SCH[kube-scheduler]
+      CCM[kube-controller-manager]
+    end
+
+    subgraph W1[Worker Node A]
+      K1[kubelet]
+      P1[kube-proxy]
+      POD1[Pod app]
+      POD2[Pod sidecar]
+    end
+
+    subgraph W2[Worker Node B]
+      K2[kubelet]
+      P2[kube-proxy]
+      POD3[Pod app]
+    end
+
+    KCTL[kubectl] --> API
+    API <--> ETCD
+    API --> SCH
+    API --> CCM
+
+    SCH --> K1
+    SCH --> K2
+
+    API --> K1
+    API --> K2
+
+    P1 --- POD1
+    P1 --- POD2
+    P2 --- POD3
+```
+
+## 25) Fluxo de deploy (manifesto até pod rodando)
+
+```text
+[Dev edita deployment.yaml]
+            |
+            v
+[kubectl apply -f deployment.yaml]
+            |
+            v
+[kube-apiserver valida requisição]
+            |
+            v
+[etcd persiste estado desejado]
+            |
+            v
+[kube-scheduler escolhe node]
+            |
+            v
+[kubelet cria/atualiza Pod no node]
+            |
+            v
+[kube-proxy ajusta regras de rede]
+            |
+            v
+[Service envia tráfego ao Pod saudável]
+```

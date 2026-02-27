@@ -186,3 +186,28 @@ Essa organização garante consistência entre distribuições (Ubuntu, Fedora, 
   - Cache → `/var/cache`
   - Bancos de dados e estados → `/var/lib`
   - E-mails → `/var/mail`
+
+
+## Mapa do FHS em árvore
+
+```text
+/
+├── /bin      (comandos essenciais)
+├── /etc      (configuracoes)
+├── /home     (usuarios)
+├── /var      (logs, cache, spool)
+├── /usr      (apps e libs)
+├── /tmp      (temporarios)
+└── /boot     (kernel e bootloader)
+```
+
+## Fluxo mental de troubleshooting por diretório
+
+```mermaid
+flowchart LR
+  P[Problema no sistema] --> C{Tipo?}
+  C -->|Servico nao sobe| E[/etc + systemd]
+  C -->|Disco lotado| V[/var + /tmp]
+  C -->|Comando ausente| U[/usr/bin]
+  C -->|Falha de boot| B[/boot]
+```

@@ -41,3 +41,22 @@ Exemplo de documento:
 ## Ponto de atenção
 NoSQL **não significa** “sem consistência” e SQL **não significa** “sem escala”.
 A escolha depende do tipo de problema, requisitos de consistência, volume e padrão de acesso.
+
+
+## Panorama de modelos NoSQL
+
+```mermaid
+flowchart LR
+  N[NoSQL] --> K[Key-Value]
+  N --> D[Document]
+  N --> C[Column Family]
+  N --> G[Graph]
+```
+
+## Quando considerar NoSQL
+
+```text
+[Dados variam muito de formato?] -- sim --> [Document/Key-Value]
+[Escala horizontal e throughput alto?] -- sim --> [NoSQL favorece]
+[Relacoes complexas e ACID forte?] -- sim --> [Avaliar SQL]
+```

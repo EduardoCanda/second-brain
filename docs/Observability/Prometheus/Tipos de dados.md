@@ -71,4 +71,37 @@ Utilizamos o sufixo `_sum` indica que o valor é uma soma, ou seja, o valor é s
 
 O ponto alto do `summary` é a excelente precisão e o ponto baixo é a baixa flexibilidades, pois percentuais e as janelas de tempos precisam ser definidos durante a criação da métrica e não é possível agregar métricas do tipo `summary` com outras métricas do tipo `summary` durante a criação das queries.
 
-Percebam que em nosso primeiro exporter, nós somente utilizamos métricas do tipo `gauge`, pois queremos saber quantas pessoas estão no espaço e também a localização da ISS (International Space Station) ao longo do tempo. 
+Percebam que em nosso primeiro exporter, nós somente utilizamos métricas do tipo `gauge`, pois queremos saber quantas pessoas estão no espaço e também a localização da ISS (International Space Station) ao longo do tempo.
+
+
+## Diagrama mental dos tipos de dados do Prometheus
+
+```mermaid
+flowchart TB
+  M[Metricas Prometheus] --> C[Counter]
+  M --> G[Gauge]
+  M --> H[Histogram]
+  M --> S[Summary]
+  C --> C1[So aumenta]
+  G --> G1[Sobe e desce]
+  H --> H1[Buckets + quantis estimados]
+  S --> S1[Quantis no cliente]
+```
+
+## Fluxo de coleta e consulta
+
+```text
+[Aplicacao expõe /metrics]
+           |
+           v
+[Prometheus faz scrape]
+           |
+           v
+[TSDB armazena series temporais]
+           |
+           v
+[PromQL consulta/agrega]
+           |
+           v
+[Grafana exibe dashboard]
+```

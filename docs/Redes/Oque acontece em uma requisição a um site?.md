@@ -84,13 +84,6 @@ CLIENTE SERVIDOR
 | <--- HTTP 200 OK ----------------|  
 | <--- HTML / CSS / JS ------------|  
 | |
-```CLIENTE SERVIDOR  
-| |  
-| --- HTTP GET / ----------------->|  
-| |  
-| <--- HTTP 200 OK ----------------|  
-| <--- HTML / CSS / JS ------------|  
-| |
 ```
 
 O cliente envia a requisição HTTP (por exemplo, um GET), o servidor processa a solicitação e devolve a resposta pelo mesmo caminho lógico da requisição inicial.
@@ -104,3 +97,31 @@ Enlace: ARP / Ethernet
 
 ## 7. Linha do tempo simplificada
 DNS → ARP → TCP Handshake → TLS Handshake → HTTP
+
+## 8. Diagrama único da jornada completa
+
+```mermaid
+sequenceDiagram
+    participant U as Usuário/Navegador
+    participant R as DNS Recursivo
+    participant G as Gateway
+    participant W as Servidor Web
+
+    U->>R: Consulta DNS (A/AAAA)
+    R-->>U: IP do domínio
+
+    U->>G: ARP Request (Quem tem o gateway?)
+    G-->>U: ARP Reply (MAC do gateway)
+
+    U->>W: TCP SYN
+    W-->>U: SYN-ACK
+    U->>W: ACK
+
+    U->>W: TLS ClientHello
+    W-->>U: ServerHello + Certificado
+    U->>W: Key Exchange + Finished
+    W-->>U: Finished
+
+    U->>W: HTTP GET /
+    W-->>U: HTTP 200 + HTML/CSS/JS
+```

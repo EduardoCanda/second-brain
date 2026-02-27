@@ -42,3 +42,28 @@ O cabeçalho do UDP é simples, com apenas 8 bytes, dividido em:
 - [TCP](TCP/TCP.md)  
 - [DNS](../04 - Serviços de Rede/DNS/DNS.md)  
 - [DHCP](../04 - Serviços de Rede/DHCP.md)
+
+
+## Diagrama: envio UDP (sem handshake)
+
+```text
+Cliente                              Servidor
+   |                                     |
+   |---- Datagrama UDP ----------------->|
+   |---- Datagrama UDP ----------------->|
+   |---- Datagrama UDP ----------------->|
+   |                                     |
+(sem SYN/ACK, sem garantia de entrega/ordem)
+```
+
+## Comparativo visual TCP vs UDP
+
+```mermaid
+flowchart LR
+  TCP[TCP] --> T1[Confiavel]
+  TCP --> T2[Ordenado]
+  TCP --> T3[Mais overhead]
+  UDP[UDP] --> U1[Baixa latencia]
+  UDP --> U2[Sem conexao]
+  UDP --> U3[Sem garantia]
+```

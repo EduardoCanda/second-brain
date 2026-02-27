@@ -146,3 +146,34 @@ No contexto deste repositório:
 - Com Loki, fecha o pilar de **logs**.
 
 Resultado: você passa a praticar observabilidade de forma realmente integrada.
+
+
+## Arquitetura simplificada do Loki
+
+```mermaid
+flowchart LR
+  A[Apps/Containers] --> P[Promtail/Agent]
+  P --> D[Distributor]
+  D --> I[Ingester]
+  I --> O[(Object Storage)]
+  Q[Querier] --> O
+  G[Grafana] --> Q
+```
+
+## Jornada do log (ingestão até consulta)
+
+```text
+[Aplicacao escreve log]
+        |
+        v
+[Agent coleta e rotula labels]
+        |
+        v
+[Loki ingere e indexa labels]
+        |
+        v
+[Chunks salvos no storage]
+        |
+        v
+[Consulta LogQL no Grafana]
+```

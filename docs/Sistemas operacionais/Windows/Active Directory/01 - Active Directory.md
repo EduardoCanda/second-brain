@@ -47,3 +47,43 @@ Mais grupos oficiais na [documentação Microsoft](https://docs.microsoft.com/en
 
 
 
+
+
+## Diagrama de estrutura do Active Directory
+
+```mermaid
+flowchart TB
+    D[Domínio AD] --> OU1[OU: TI]
+    D --> OU2[OU: Financeiro]
+    D --> OU3[OU: Servidores]
+
+    OU1 --> U1[Usuário: alice]
+    OU1 --> G1[Grupo: Domain Admins]
+
+    OU2 --> U2[Usuário: bob]
+    OU2 --> G2[Grupo: Domain Users]
+
+    OU3 --> M1[Máquina: APP01$]
+    OU3 --> M2[Máquina: DB01$]
+
+    G1 --> P1[Permissões elevadas]
+    G2 --> P2[Permissões padrão]
+```
+
+## Fluxo de autenticação no domínio (visão simples)
+
+```text
+[Usuário faz login na máquina do domínio]
+                 |
+                 v
+[Máquina consulta Domain Controller]
+                 |
+                 v
+[AD valida credenciais + grupos]
+                 |
+                 v
+[Token de acesso é emitido]
+                 |
+                 v
+[Usuário acessa recursos (arquivos, impressoras, sistemas)]
+```
