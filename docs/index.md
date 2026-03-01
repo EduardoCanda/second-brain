@@ -10,6 +10,7 @@ Esta página funciona como um **sumário central** para navegar rapidamente pelo
 - [Sistemas Operacionais](Sistemas%20operacionais/Sistemas%20operacionais.md)
 - [Ciber Segurança](Ciber%20seguran%C3%A7a/Blue%20Team/Blue%20Team.md)
 - [Infraestrutura e DevOps](Infraestrutura%20e%20DevOps/Cont%C3%AAinerniza%C3%A7%C3%A3o.md)
+- [ArgoCD (GitOps)](Infraestrutura%20e%20DevOps/ArgoCD.md)
 - [Banco de dados](Banco%20de%20dados/00%20-%20Overview.md)
 - [Observability](Observability/00%20-%20Trilha%20de%20estudos.md)
 - [Linhas de comando](Linhas%20de%20comando/Bash.md)
