@@ -29,7 +29,6 @@ plugins:
   - search
   - awesome-pages
   - redirects
-  - gh-admonitions
 
 markdown_extensions:
   - admonition
