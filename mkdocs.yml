@@ -21,7 +21,6 @@ theme:
 plugins:
   - search
   - awesome-pages
-  - git-revision-date-localized
   - redirects
 
 markdown_extensions:
