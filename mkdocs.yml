@@ -7,7 +7,6 @@ repo_name: second-brain
 theme:
   font:
     text: Work Sans
-  logo: assets/favicon.png
   name: material
   palette:
   - media: '(prefers-color-scheme: light)'
