@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Sistemas operacionais/Linux/Fundamentos/01 - Sistema de arquivos/Gerenciamento de pacotes/Introdução.md",
-                "mode": "preview",
+                "file": "docs/01 - Fundamentos/Sistemas operacionais/Linux/Fundamentos/03 - Processos, PID e Sinais/Processos, PID e Sinais.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introdução"
+              "title": "Processos, PID e Sinais"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "docker compose",
+                "query": "sigterm",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -170,8 +171,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0be4673388ad56f9",
+  "active": "2caaa2fd9ae1112c",
   "lastOpenFiles": [
+    "docs/08 - Semana DevOps (LinuxTips)/Dia 2/5 - Tutorial prático - Mão na Massa.md",
+    "docs/08 - Semana DevOps (LinuxTips)/Dia 2/4 - Declarativo vs Imperativo e o Terraform.md",
+    "docs/08 - Semana DevOps (LinuxTips)/Dia 2/3 - O Adeus aos Cliques no Console.md",
+    "docs/08 - Semana DevOps (LinuxTips)/Dia 2/2 - Conhecimento invisível - Linux e Redes.md",
+    "docs/08 - Semana DevOps (LinuxTips)/Dia 2/1 - Objetivo do dia.md",
+    "docs/08 - Semana DevOps (LinuxTips)/Dia 2",
+    "docs/08 - Semana DevOps (LinuxTips)",
     "assets/favicon.png",
     "assets/IMG_3084.PNG",
     "assets/favicon",
@@ -200,15 +208,9 @@
     "docs/Redes/04 - Serviços de Rede/Weighted.md",
     "docs/Redes/04 - Serviços de Rede/Round-robin.md",
     "docs/Redes/04 - Serviços de Rede/Headers.md",
-    "docs/Planejamento de estudos/Tópicos para estudar.md",
-    "docs/Planejamento de estudos/Auditoria visual das notas.md",
     "docs/Planejamento de estudos",
-    "docs/Observability/OpenTelemetry/Cloud Native Computing Foundation.md",
-    "docs/Observability/Loki/Loki.md",
     "docs/Observability/Loki",
     "docs/Observability/Jaeger",
-    "docs/Observability/Grafana",
-    "docs/Infraestrutura e DevOps/Kubernetes",
     "site/assets/images/favicon.png",
     "site/Sistemas operacionais/Windows/Active Directory/img/Domain Controller.png",
     "site/Redes/04 - Serviços de Rede/Imagens/Pasted image 20251003202154.png",
@@ -218,7 +220,6 @@
     "site/Redes/02 - LAN/Imagens/Pasted image 20250927191050.png",
     "site/Redes/03 - Protocolos/TCP/TCP 3-way handshake.png",
     "site/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas",
-    "site/Ciber segurança/Criptografia/img/encrypt plaintext.png",
     "docs/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas",
     "Fundamentos/Redes/04 - Serviços de Rede/DNS/Untitled.canvas",
     "Fundamentos/Redes/01 - Modelo TPC-IP/Modelo TCP-IP.canvas"
