@@ -86,6 +86,9 @@ nav:
           - PPP: 01 - Fundamentos/Redes/05 - Segurança/VPN/PPP.md
           - PPTP: 01 - Fundamentos/Redes/05 - Segurança/VPN/PPTP.md
           - VPN: 01 - Fundamentos/Redes/05 - Segurança/VPN/VPN.md
+      - 06 - Roteamento e Firewall:
+        - Routing Tables: 01 - Fundamentos/Redes/06 - Roteamento e Firewall/Routing Tables.md
+        - IPTables: 01 - Fundamentos/Redes/06 - Roteamento e Firewall/IPTables.md
       - 07 - Patterns:
         - Service Mesh: 01 - Fundamentos/Redes/07 - Patterns/Service Mesh.md
     - Sistemas operacionais:
