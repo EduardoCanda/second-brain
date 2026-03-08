@@ -295,6 +295,8 @@ nav:
       - 5 - Engenharia do Caos e Troubleshooting: 06 - Semana DevOps (LinuxTips)/Dia 5/5 - Engenharia do Caos e Troubleshooting.md
 
 theme:
+  features:
+    - navigation.indexes
   font:
     text: Work Sans
   name: material
