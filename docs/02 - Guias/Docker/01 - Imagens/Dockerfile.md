@@ -1,5 +1,3 @@
-# Dockerfile
-
 Dockerfile é um arquivo de texto que contém um conjunto de instruções usadas pelo Docker para construir uma imagem.
 
 Cada instrução no Dockerfile cria uma **camada** na imagem final.

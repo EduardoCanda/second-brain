@@ -1,0 +1,1 @@
+Entender por que a divisão clássica entre **Desenvolvimento (Dev)** e **Infraestrutura/Operações (Ops)** acabou. Descobrir qual é o verdadeiro papel de um profissional de tecnologia hoje e preparar a base (sua mente) para a construção técnica dos próximos dias.
