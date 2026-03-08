@@ -1,5 +1,3 @@
-# Nginx e Reverse Proxy
-
 ## O que é
 Nginx é servidor web e proxy reverso usado para publicar aplicações, fazer terminação TLS, balancear carga e aplicar controles de segurança na borda.
 
@@ -65,8 +63,3 @@ curl -I https://api.exemplo.com/health
 - `proxy_read_timeout` curto para rotas lentas, causando 504.
 - Não repassar `X-Forwarded-*`, quebrando rastreabilidade.
 - Reload sem validação de sintaxe (`nginx -t`).
-
-## Referências relacionadas
-- [[12 - Deployment Strategies em Kubernetes]]
-- [[13 - Arquitetura Cloud para DevOps]]
-- [[09 - SRE SLI SLO SLA e Incidentes]]

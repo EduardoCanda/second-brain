@@ -1,5 +1,3 @@
-# Mensageria com Kafka e RabbitMQ (visão DevOps)
-
 ## O que é
 Mensageria permite comunicação assíncrona entre serviços. Kafka e RabbitMQ atendem necessidades diferentes:
 - Kafka: streaming distribuído e retenção de eventos.
@@ -56,8 +54,3 @@ rabbitmq-diagnostics check_running
 - Acreditar em "exactly once" ponta a ponta sem considerar aplicação.
 - Reprocessar eventos sem controle de duplicidade.
 - Não monitorar consumer lag em produção.
-
-## Referências relacionadas
-- [[09 - SRE SLI SLO SLA e Incidentes]]
-- [[11 - CI-CD para DevOps]]
-- [[13 - Arquitetura Cloud para DevOps]]

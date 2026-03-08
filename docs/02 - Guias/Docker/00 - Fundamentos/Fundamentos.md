@@ -12,7 +12,3 @@ Docker é uma plataforma para criação, distribuição e execução de aplicaç
 - Cgroups: controle de recursos (CPU, memória)
 - Union File System: camadas de imagem
 - OCI: padrão aberto para containers
-
-## Relações
-- [Containers](../02 - Containers/Containers.md)
-- [Imagens](../01 - Imagens/Imagens.md)

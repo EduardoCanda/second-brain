@@ -1,4 +1,3 @@
-# Backup, restore e disaster recovery
 
 ## O que é
 Conjunto de processos técnicos e operacionais para garantir continuidade do negócio após falhas, exclusões acidentais, corrupção de dados ou indisponibilidade regional.
@@ -52,7 +51,3 @@ velero restore create --from-backup prod-cluster-daily
 - Backup sem teste de restauração.
 - Mesmo domínio de falha para produção e backup.
 - Runbook desatualizado e sem evidência de execução.
-
-## Referências relacionadas
-- [[09 - SRE SLI SLO SLA e Incidentes]]
-- [[13 - Arquitetura Cloud para DevOps]]

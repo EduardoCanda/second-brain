@@ -1,5 +1,3 @@
-# Secrets Management e Supply Chain Security
-
 ## O que é
 Conjunto de práticas para proteger credenciais, artefatos e cadeia de build/deploy contra vazamento, adulteração e execução de componentes comprometidos.
 

@@ -1,5 +1,3 @@
-# Terraform para Infraestrutura como Código (IaC)
-
 ## O que é
 Terraform é uma ferramenta declarativa para provisionar infraestrutura por meio de providers (AWS, Kubernetes, Cloudflare etc.), gerando plano de execução antes de aplicar mudanças.
 
@@ -95,9 +93,3 @@ terraform plan -detailed-exitcode
 - Misturar recursos de múltiplos ambientes no mesmo workspace sem governança.
 - `terraform apply` direto em produção sem `plan` revisado.
 - Uso excessivo de `-target` (pode causar inconsistência de dependências).
-
-## Referências relacionadas
-- [[03 - Ansible para Configuration Management]]
-- [[08 - Secrets e Supply Chain Security]]
-- [[11 - CI-CD para DevOps]]
-- [[13 - Arquitetura Cloud para DevOps]]

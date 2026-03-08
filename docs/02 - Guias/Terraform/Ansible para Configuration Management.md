@@ -1,5 +1,3 @@
-# Ansible para configuration management
-
 ## O que é
 Ansible é uma ferramenta de automação agentless para configurar servidores, aplicar hardening, instalar aplicações e orquestrar rotinas operacionais via SSH/WinRM.
 
@@ -48,5 +46,5 @@ ansible-playbook -i inventories/prod/hosts.ini site.yml
 - Playbooks não idempotentes (sempre mudam).
 
 ## Referências relacionadas
-- [[02 - Terraform para IaC]]
-- [[10 - Backup Restore e Disaster Recovery]]
+- [[Terraform para Infraestrutura como Código (IaC)]]
+- [[Backup, restore e disaster recovery]]

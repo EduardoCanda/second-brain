@@ -1,5 +1,3 @@
-# SRE: SLI, SLO, SLA e gestão de incidentes
-
 ## O que é
 SRE é uma disciplina para operar sistemas confiáveis com engenharia. Usa metas objetivas de confiabilidade e processos de resposta a incidentes para balancear velocidade e estabilidade.
 
@@ -59,8 +57,3 @@ Estrutura mínima:
 - Meta de 100% disponibilidade para tudo (custo proibitivo).
 - Alert fatigue por thresholds sem contexto.
 - Postmortem sem ação rastreável e sem dono.
-
-## Referências relacionadas
-- [[10 - Backup Restore e Disaster Recovery]]
-- [[11 - CI-CD para DevOps]]
-- [[13 - Arquitetura Cloud para DevOps]]

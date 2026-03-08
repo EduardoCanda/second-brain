@@ -5,8 +5,6 @@ A Contêinernização originalmente era um conceito que foi iniciado em 1979 com
 ## Contêinerização
 Contêinernização é o processo de empacotamento de uma aplicação e seus recursos necessários (como bibliotecas e dependências) tudo em um só pacote, chamado "container".
 
-
-# Benefícios do Docker:
 ## É gratuíto:
 O ecosistema do Docker é de software livre (Open Source) e gratuíto. Podemos baixar imagens livremente, usa-las, cria-las e compartilha-las também.
 

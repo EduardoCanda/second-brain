@@ -1,5 +1,3 @@
-# Docker — Networking
-
 Docker fornece redes virtuais para comunicação entre containers.
 
 ------------------------------------------------------------------------
