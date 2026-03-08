@@ -183,6 +183,8 @@ nav:
         - Troubleshooting: 02 - Guias/Docker/09 - Troubleshooting/Troubleshooting.md
       - 10 - DCA - Revisão:
         - Revisão: 02 - Guias/Docker/10 - DCA - Revisão/Revisão.md
+      - 11 - DCA - Plano de Estudos:
+        - Plano de Estudos: 02 - Guias/Docker/11 - DCA - Plano de Estudos/Plano de Estudos.md
     - Git:
       - Oque é Git: 02 - Guias/Git/Oque é Git.md
       - Comandos:
