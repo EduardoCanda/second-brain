@@ -126,6 +126,7 @@ nav:
           - 08 - Logs e troubleshooting:
             - Logs e Troubleshooting: 01 - Fundamentos/Sistemas operacionais/Linux/Fundamentos/08 - Logs e troubleshooting/Logs e Troubleshooting.md
           - 09 - Comandos:
+            - Operadores do terminal Linux: 01 - Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos/Operadores do Terminal Linux.md
             - systemctl: 01 - Fundamentos/Sistemas operacionais/Linux/Fundamentos/09 - Comandos/systemctl.md
         - Labotatórios:
           - dual_boot_→_triple_boot_→_organizacao_final_mint_windows: 01 - Fundamentos/Sistemas operacionais/Linux/Labotatórios/dual_boot_→_triple_boot_→_organizacao_final_mint_windows.md
