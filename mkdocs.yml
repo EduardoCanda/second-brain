@@ -151,6 +151,35 @@ nav:
       - 04 - Outros Pipelines: 02 - Guias/CI-CD/04 - Outros Pipelines.md
     - Cloud:
       - ALB vs NLB e Canary Deployment: 02 - Guias/Cloud/ALB vs NLB e Canary Deployment.md
+      - AWS:
+        - 00 - AWS Overview: 02 - Guias/Cloud/AWS/00 - AWS Overview.md
+        - 01 - VPC: 02 - Guias/Cloud/AWS/01 - VPC.md
+        - 02 - Subnet: 02 - Guias/Cloud/AWS/02 - Subnet.md
+        - 03 - Security Group: 02 - Guias/Cloud/AWS/03 - Security Group.md
+        - 04 - IAM: 02 - Guias/Cloud/AWS/04 - IAM.md
+        - 05 - EC2: 02 - Guias/Cloud/AWS/05 - EC2.md
+        - 06 - ECS: 02 - Guias/Cloud/AWS/06 - ECS.md
+        - 07 - EKS: 02 - Guias/Cloud/AWS/07 - EKS.md
+        - 08 - ECR: 02 - Guias/Cloud/AWS/08 - ECR.md
+        - 09 - Lambda: 02 - Guias/Cloud/AWS/09 - Lambda.md
+        - 10 - API Gateway: 02 - Guias/Cloud/AWS/10 - API Gateway.md
+        - 11 - ELB: 02 - Guias/Cloud/AWS/11 - ELB.md
+        - 12 - ALB: 02 - Guias/Cloud/AWS/12 - ALB.md
+        - 13 - NLB: 02 - Guias/Cloud/AWS/13 - NLB.md
+        - 14 - S3: 02 - Guias/Cloud/AWS/14 - S3.md
+        - 15 - RDS: 02 - Guias/Cloud/AWS/15 - RDS.md
+        - 16 - DynamoDB: 02 - Guias/Cloud/AWS/16 - DynamoDB.md
+        - 17 - SQS: 02 - Guias/Cloud/AWS/17 - SQS.md
+        - 18 - SNS: 02 - Guias/Cloud/AWS/18 - SNS.md
+        - 19 - EventBridge: 02 - Guias/Cloud/AWS/19 - EventBridge.md
+        - 20 - Route 53: 02 - Guias/Cloud/AWS/20 - Route 53.md
+        - 21 - CloudFront: 02 - Guias/Cloud/AWS/21 - CloudFront.md
+        - 22 - CloudWatch: 02 - Guias/Cloud/AWS/22 - CloudWatch.md
+        - 23 - KMS e Secrets Manager: 02 - Guias/Cloud/AWS/23 - KMS e Secrets Manager.md
+        - 24 - Auto Scaling: 02 - Guias/Cloud/AWS/24 - Auto Scaling.md
+        - 25 - WAF: 02 - Guias/Cloud/AWS/25 - WAF.md
+        - 26 - NAT Gateway: 02 - Guias/Cloud/AWS/26 - NAT Gateway.md
+        - 27 - ElastiCache: 02 - Guias/Cloud/AWS/27 - ElastiCache.md
       - AWS - Developer Certification:
         - 00 - Plano de Estudos: 02 - Guias/Cloud/AWS - Developer Certification/00 - Plano de Estudos.md
         - 01 - Checklist de Revisão: 02 - Guias/Cloud/AWS - Developer Certification/01 - Checklist de Revisão.md
