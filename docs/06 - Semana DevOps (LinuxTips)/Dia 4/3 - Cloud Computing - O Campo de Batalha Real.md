@@ -39,6 +39,20 @@ A Cloud oferece serviços prontos para problemas comuns:
 
 **A regra:** Se a Cloud oferece gerenciado, use gerenciado. Rodar seu próprio PostgreSQL numa EC2 é pedir para ter pesadelo com backup, patching e failover.
 
+---
+
+## 4.1 Mapa AWS na prática (resumo)
+
+O detalhamento completo foi extraído para guias dedicados em **`02 - Guias/Cloud/AWS/`**, com uma nota por serviço.
+
+- Visão geral: [AWS na prática — mapa de arquitetura](../../../02 - Guias/Cloud/AWS/00 - AWS Overview.md)
+- Rede e segurança: VPC, Subnet, Security Group, IAM
+- Compute: EC2, ECS, EKS, Lambda, Auto Scaling
+- Dados e integração: S3, RDS, DynamoDB, SQS, SNS, EventBridge
+- Borda e operação: API Gateway, ELB/ALB/NLB, Route 53, CloudFront, CloudWatch, WAF, NAT Gateway
+
+Assim você aprofunda cada recurso com: **o que é**, **caso de uso**, **por que existe**, **trade-offs** e **boas práticas**.
+
 ### 5. Custo: O Monstro Silencioso
 
 A Cloud cobra por **tudo**: CPU, RAM, tráfego de rede (especialmente saída!), armazenamento, até DNS queries.
