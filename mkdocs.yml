@@ -222,6 +222,8 @@ nav:
         - Git bisect: 02 - Guias/Git/Comandos/Git bisect.md
         - Git hooks: 02 - Guias/Git/Comandos/Git hooks.md
         - Git reflog: 02 - Guias/Git/Comandos/Git reflog.md
+    - Documentação:
+      - Diagramas com Mermaid: 02 - Guias/Documentação/Diagramas com Mermaid.md
     - Kubernetes:
       - 00 - Visão Geral: 02 - Guias/Kubernetes/00 - Visão Geral.md
       - 01 - Exemplo de Manifestos: 02 - Guias/Kubernetes/01 - Exemplo de Manifestos.md
@@ -364,8 +366,17 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
 
 # Usa o próprio repositório como fonte do site.
 docs_dir: docs
