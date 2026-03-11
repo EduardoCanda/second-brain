@@ -330,23 +330,24 @@ nav:
       - 5 - Engenharia do Caos e Troubleshooting: 06 - Semana DevOps (LinuxTips)/Dia 5/5 - Engenharia do Caos e Troubleshooting.md
 
 theme:
-  features:
-    - navigation.indexes
+  favicon: assets/favicon.png
   font:
     text: Work Sans
   name: material
   palette:
   - media: '(prefers-color-scheme: light)'
-    primary: blue
+    primary: black
     scheme: default
+    accent: indigo
     toggle:
-      icon: material/brightness-7
+      icon: material/weather-night
       name: Switch to dark mode
   - media: '(prefers-color-scheme: dark)'
-    primary: blue
+    primary: black
     scheme: slate
+    accent: indigo
     toggle:
-      icon: material/brightness-4
+      icon: material/weather-sunny
       name: Switch to light mode
   language: pt-BR
   color_mode: dark
