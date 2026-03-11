@@ -1,92 +1,208 @@
-HTTP (Hypertext Transfer Protocol)
-Este protocolo é a base de comunicação da World Wide Web, reside na camada de aplicação do [Modelo OSI](../01 - Modelo OSI/Modelo OSI.md). A comunicação é composta por cliente-servidor, onde o cliente pode ser um navegador por exemplo, e o servidor pode ser um host onde um site está hospedado, entregando seu conteúdo em HTML.
+# HTTP (Hypertext Transfer Protocol)
 
-# HTTPS
-É a versão segura do HTTP, onde os dados trafegados agora são criptografados.
+O **HTTP** é o protocolo base da comunicação na Web. Ele atua na **camada de aplicação** do modelo TCP/IP (e se relaciona com a camada de aplicação no modelo OSI).  
+No HTTP, a comunicação segue o padrão **cliente-servidor**:
 
----
-# Request e Response:
-Para acessarmos um webserver por exemplo, o browser precisa fazer a requisição para receber de volta o conteúdo HTML, imagens etc. Para isso, é necessário dizer onde buscar o conteúdo. Para isso a **URL** vai ajudar.
+- **Cliente**: navegador, app mobile, `curl`, etc.
+- **Servidor**: aplicação web/API que recebe requisições e retorna respostas.
 
-### URL (Uniform Resource Locator):
-Todos que acessam a internet, usam a URL. A URL predominantemente serve como um meio de como acessar a internet.
-
-Abaixo todas as features da URL (Mas não usamos todas necessariamente na requisição)
-(imagem)
-
-**scheme**:
-
-**user**:
-
-**host**:
-
-**port**:
-
-**path**:
-
-**query string**:
-
-**fragment**:
-
-### Fazendo a requisição:
-É possível fazer a requisição com apenas uma linha:
-        GET / HTTP/1.1
-
-(imagem)
-
-Mas para obter uma experiência mais rica, é necessário informar os [Headers](Headers.md)
-
-Exemplo de resquest:
-        GET / HTTP/1.1
-
-        Host: tryhackme.com
-        User-Agent: Mozilla/5.0 Firefox/87.0
-        Referer: https://tryhackme.com/
-
-Exemplo de response:
-        HTTP/1.1 200 OK
-        
-        Server: nginx/1.15.8
-        Date: Fri, 09 Apr 2021 13:34:03 GMT
-        Content-Type: text/html
-        Content-Length: 98
-        
-        
-        <html>
-        <head>
-            <title>TryHackMe</title>
-        </head>
-        <body>
-            Welcome To TryHackMe.com
-        </body>
-        </html>
-
----
-# HTTP Methods:
-HTTP methods are a way for the client to show their intended action when making an HTTP request. There are a lot of HTTP methods but we'll cover the most common ones, although mostly you'll deal with the GET and POST method.
-
-GET Request
-This is used for getting information from a web server.
-
-POST Request
-This is used for submitting data to the web server and potentially creating new records
-
-PUT Request
-This is used for submitting data to a web server to update information
-
-DELETE Request
-This is used for deleting information/records from a web server.
+> O HTTP é um protocolo **stateless**: por padrão, cada requisição é independente da anterior.
 
 ---
 
-# HTTP Status Code
+## HTTPS
+
+O **HTTPS** é o HTTP com segurança via **TLS** (antigo SSL):
+
+- Criptografa os dados em trânsito.
+- Garante integridade (evita alteração de conteúdo no caminho).
+- Autentica o servidor via certificado digital.
+
+Porta padrão:
+
+- HTTP: **80**
+- HTTPS: **443**
 
 ---
 
-# Headers:
+## Request e Response
+
+Para acessar um servidor web, o cliente envia uma **requisição (request)** e recebe uma **resposta (response)**.
+
+### Estrutura de uma requisição HTTP
+
+```http
+GET / HTTP/1.1
+Host: exemplo.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+```
+
+Partes principais:
+
+1. **Start line** (método + caminho + versão)
+2. **Headers**
+3. **Body** (opcional, comum em POST/PUT/PATCH)
+
+### Estrutura de uma resposta HTTP
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Content-Length: 98
+
+<html>
+  <body>Olá mundo</body>
+</html>
+```
+
+Partes principais:
+
+1. **Status line** (versão + código + motivo)
+2. **Headers**
+3. **Body**
 
 ---
 
-# 
+## URL (Uniform Resource Locator)
+
+A URL define *onde* e *como* acessar um recurso.
+
+Exemplo:
+
+```text
+https://usuario:senha@www.exemplo.com:443/produtos?id=10&ordem=asc#detalhes
+```
+
+Componentes:
+
+- **scheme**: `https`
+- **user info**: `usuario:senha` (pouco usado hoje)
+- **host**: `www.exemplo.com`
+- **port**: `443`
+- **path**: `/produtos`
+- **query string**: `?id=10&ordem=asc`
+- **fragment**: `#detalhes` (usado no cliente, não vai ao servidor)
 
 ---
+
+## HTTP Methods (métodos)
+
+Os métodos indicam a ação desejada no recurso.
+
+- **GET**: buscar/ler recurso.
+- **POST**: enviar dados, geralmente para criar recurso/processar ação.
+- **PUT**: atualizar/substituir recurso de forma completa.
+- **PATCH**: atualização parcial de recurso.
+- **DELETE**: remover recurso.
+- **HEAD**: igual ao GET, mas sem corpo na resposta (útil para metadados).
+- **OPTIONS**: informa métodos/opções suportados pelo endpoint (muito usado em CORS).
+
+### Segurança e idempotência (visão prática)
+
+- **Safe methods**: não devem alterar estado no servidor (ex.: GET, HEAD).
+- **Idempotentes**: repetir a mesma requisição tende ao mesmo resultado final (ex.: GET, PUT, DELETE).
+
+---
+
+## HTTP Status Codes
+
+Os códigos de status indicam o resultado da requisição:
+
+### 1xx – Informacional
+
+- **100 Continue**
+
+### 2xx – Sucesso
+
+- **200 OK**
+- **201 Created**
+- **204 No Content**
+
+### 3xx – Redirecionamento
+
+- **301 Moved Permanently**
+- **302 Found**
+- **304 Not Modified**
+
+### 4xx – Erro do cliente
+
+- **400 Bad Request**
+- **401 Unauthorized**
+- **403 Forbidden**
+- **404 Not Found**
+- **405 Method Not Allowed**
+- **409 Conflict**
+- **429 Too Many Requests**
+
+### 5xx – Erro do servidor
+
+- **500 Internal Server Error**
+- **502 Bad Gateway**
+- **503 Service Unavailable**
+- **504 Gateway Timeout**
+
+---
+
+## Headers (cabeçalhos)
+
+Headers carregam metadados da requisição/resposta.
+
+Exemplos comuns em **request**:
+
+- `Host`: domínio de destino.
+- `Authorization`: credenciais/token (ex.: Bearer JWT).
+- `Content-Type`: formato do corpo enviado (`application/json`, etc.).
+- `Accept`: formatos aceitos na resposta.
+- `Cookie`: cookies enviados ao servidor.
+- `User-Agent`: cliente que fez a requisição.
+
+Exemplos comuns em **response**:
+
+- `Content-Type`: formato do conteúdo retornado.
+- `Content-Length`: tamanho do corpo.
+- `Set-Cookie`: define cookie no cliente.
+- `Cache-Control`: diretivas de cache.
+- `Location`: URL de redirecionamento/criação de recurso.
+- `Server`: software do servidor (opcional).
+
+---
+
+## Cookies, sessão e autenticação
+
+Como HTTP é stateless, aplicações usam mecanismos para manter contexto:
+
+- **Cookies de sessão**: servidor identifica usuário via ID de sessão.
+- **Tokens (ex.: JWT)**: cliente envia token no `Authorization`.
+- **CSRF token**: proteção em operações sensíveis com sessão/cookie.
+
+---
+
+## Versionamento do HTTP
+
+- **HTTP/1.1**: amplamente usado, conexões persistentes.
+- **HTTP/2**: multiplexação, compressão de headers, melhor desempenho.
+- **HTTP/3**: usa QUIC/UDP, melhora latência e resiliência em redes instáveis.
+
+---
+
+## Exemplos rápidos com curl
+
+```bash
+# GET simples
+curl -i https://httpbin.org/get
+
+# POST com JSON
+curl -i -X POST https://httpbin.org/post \
+  -H "Content-Type: application/json" \
+  -d '{"nome":"ana"}'
+```
+
+---
+
+## Resumo
+
+- HTTP organiza a comunicação web em **requisição** e **resposta**.
+- URL indica o recurso; método define ação; status code indica resultado.
+- Headers e body carregam contexto e dados.
+- HTTPS é obrigatório na prática para segurança em produção.
