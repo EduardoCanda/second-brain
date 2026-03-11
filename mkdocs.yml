@@ -3,6 +3,7 @@ site_description: Base de estudos em português sobre fundamentos de TI.
 site_url: https://eduardocanda.github.io/second-brain/
 repo_url: https://github.com/eduardocanda/second-brain
 repo_name: second-brain
+edit_uri: edit/main/docs/
 
 nav:
   - Início: index.md
@@ -334,6 +335,8 @@ theme:
   font:
     text: Work Sans
   name: material
+  features:
+    - content.action.edit
   palette:
   - media: '(prefers-color-scheme: light)'
     primary: black
