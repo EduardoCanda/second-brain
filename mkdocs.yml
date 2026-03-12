@@ -232,6 +232,16 @@ nav:
       - 04 - Helm e Kustomize: 02 - Guias/Kubernetes/04 - Helm e Kustomize.md
     - Mensageria:
       - Mensageria com Kafka e RabbitMQ (visão DevOps): 02 - Guias/Mensageria/Mensageria com Kafka e RabbitMQ (visão DevOps).md
+    - Testes:
+      - 00 - Trilha de Testes de Software: 02 - Guias/Testes/00 - Trilha de Testes de Software.md
+      - 01 - Pirâmide de testes (unitário, integração, contrato, E2E): 02 - Guias/Testes/01 - Pirâmide de testes (unitário, integração, contrato, E2E).md
+      - 02 - Testes de contrato em arquitetura distribuída: 02 - Guias/Testes/02 - Testes de contrato em arquitetura distribuída.md
+      - 03 - Estratégia de mock vs ambiente real: 02 - Guias/Testes/03 - Estratégia de mock vs ambiente real.md
+      - 04 - Qualidade em pipelines (quality gates): 02 - Guias/Testes/04 - Qualidade em pipelines (quality gates).md
+      - 05 - Testes A-B: 02 - Guias/Testes/05 - Testes A-B.md
+      - 06 - Testes de acessibilidade: 02 - Guias/Testes/06 - Testes de acessibilidade.md
+      - 07 - Test as a Code (TaaC): 02 - Guias/Testes/07 - Test as a Code (TaaC).md
+      - 08 - Smoke testes: 02 - Guias/Testes/08 - Smoke testes.md
     - Observability:
       - 00 - Trilha de estudos: 02 - Guias/Observability/00 - Trilha de estudos.md
       - Grafana:
