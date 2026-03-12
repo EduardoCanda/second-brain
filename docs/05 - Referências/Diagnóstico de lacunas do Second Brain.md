@@ -5,14 +5,14 @@
 Este diagnóstico foi feito para responder à pergunta: **"o que está faltando de conteúdo?"**
 
 Panorama atual do repositório:
-- **235 arquivos Markdown** no total.
+- **239 arquivos Markdown** no total.
 - Distribuição por macroárea:
   - **Fundamentos**: 97
   - **Guias**: 77
   - **Deep Dives**: 30
   - **Semana DevOps**: 25
-  - **Playbooks**: 3
-  - **Referências**: 2
+  - **Playbooks**: 6
+  - **Referências**: 3
 
 Além disso, há **39 notas com até 10 linhas**, o que sinaliza tópicos ainda em estado inicial/rascunho.
 
@@ -24,9 +24,6 @@ Além disso, há **39 notas com até 10 linhas**, o que sinaliza tópicos ainda 
 Hoje existe pouco conteúdo em `04 - Playbooks`.
 
 Sugestões diretas:
-- Playbook de incidente em produção (API lenta/erro 5xx)
-- Playbook de rollback de deploy
-- Playbook de troubleshooting de Kubernetes (pod crashloop, pending, image pull error)
 - Playbook de investigação de banco (latência, lock, conexão esgotada)
 - Playbook de resposta a incidente de segurança (detecção, contenção, erradicação, lições aprendidas)
 
@@ -116,7 +113,6 @@ Isso acelera revisão e evita estudo "fragmentado".
 ## Backlog sugerido (30 dias)
 
 ### Semana 1
-- Criar 3 playbooks essenciais (incidente, rollback, k8s troubleshooting)
 - Expandir 10 notas curtas usando template mínimo
 
 ### Semana 2
