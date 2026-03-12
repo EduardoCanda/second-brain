@@ -294,6 +294,12 @@ nav:
       - Fazer notas com esses assuntos: 03 - Deep Dives/Sistemas distríbuidos/Fazer notas com esses assuntos.md
   - 04 - Playbooks:
     - Visão geral: 04 - Playbooks/index.md
+    - Incidentes:
+      - Incidente em produção - API lenta e 5xx: 04 - Playbooks/Incidentes/Incidente em produção - API lenta e 5xx.md
+    - Deploy:
+      - Rollback de deploy: 04 - Playbooks/Deploy/Rollback de deploy.md
+    - Kubernetes:
+      - Troubleshooting de Pods: 04 - Playbooks/Kubernetes/Troubleshooting de Pods.md
     - Redes:
       - Laboratorios: 04 - Playbooks/Redes/Laboratorios.md
       - Rastreamento de redes: 04 - Playbooks/Redes/Rastreamento de redes.md
