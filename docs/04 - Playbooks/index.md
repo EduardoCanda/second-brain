@@ -23,6 +23,7 @@ Se você quer começar pelo que mais gera resultado no dia a dia, siga esta orde
 ### Incidentes
 
 - [Incidente em produção - API lenta e 5xx](Incidentes/Incidente%20em%20produ%C3%A7%C3%A3o%20-%20API%20lenta%20e%205xx.md)
+- [Investigação de banco - latência, lock e conexão esgotada](Incidentes/Investiga%C3%A7%C3%A3o%20de%20banco%20-%20lat%C3%AAncia%2C%20lock%20e%20conex%C3%A3o%20esgotada.md)
 
 ### Deploy
 

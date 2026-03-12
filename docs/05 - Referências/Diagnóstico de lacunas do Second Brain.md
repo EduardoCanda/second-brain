@@ -24,7 +24,6 @@ Além disso, há **39 notas com até 10 linhas**, o que sinaliza tópicos ainda 
 Hoje existe pouco conteúdo em `04 - Playbooks`.
 
 Sugestões diretas:
-- Playbook de investigação de banco (latência, lock, conexão esgotada)
 - Playbook de resposta a incidente de segurança (detecção, contenção, erradicação, lições aprendidas)
 
 ### 2) Observabilidade aplicada ponta-a-ponta

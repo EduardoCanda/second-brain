@@ -296,6 +296,7 @@ nav:
     - Visão geral: 04 - Playbooks/index.md
     - Incidentes:
       - Incidente em produção - API lenta e 5xx: 04 - Playbooks/Incidentes/Incidente em produção - API lenta e 5xx.md
+      - Investigação de banco - latência, lock e conexão esgotada: 04 - Playbooks/Incidentes/Investigação de banco - latência, lock e conexão esgotada.md
     - Deploy:
       - Rollback de deploy: 04 - Playbooks/Deploy/Rollback de deploy.md
     - Kubernetes:
