@@ -13,6 +13,7 @@ A pasta **Guias** reúne materiais orientados à execução prática.
 - Docker
 - Kubernetes
 - CI/CD
+- Testes de Software
 - Terraform
 - Observability
 - Cloud
