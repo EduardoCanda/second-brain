@@ -244,6 +244,7 @@ nav:
       - 08 - Smoke testes: 02 - Guias/Testes/08 - Smoke testes.md
     - Observability:
       - 00 - Trilha de estudos: 02 - Guias/Observability/00 - Trilha de estudos.md
+      - 01 - Observabilidade aplicada ponta a ponta: 02 - Guias/Observability/01 - Observabilidade aplicada ponta-a-ponta.md
       - Grafana:
         - Grafana: 02 - Guias/Observability/Grafana/Grafana.md
       - Jaeger:
