@@ -2,6 +2,25 @@
 
 A pasta **Playbooks** concentra roteiros de ação para cenários práticos e recorrentes.
 
+```mermaid
+flowchart TD
+    A[Alerta/Incidente] --> B[Triagem]
+    B --> C[Diagnóstico]
+    C --> D[Ação]
+    D --> E[Validação]
+    E --> F[Postmortem]
+```
+
+```text
+INCIDENTE
+  -> TRIAGEM
+    -> DIAGNÓSTICO
+      -> AÇÃO
+        -> VALIDAÇÃO
+          -> LIÇÕES APRENDIDAS
+```
+
+
 ## Objetivo
 
 - Padronizar resolução de problemas.

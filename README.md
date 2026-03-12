@@ -17,6 +17,19 @@ Este repositório reúne minhas anotações de estudos em tecnologia.
 - `docs/`: notas e materiais de estudo.
 - `mkdocs.yml`: configuração do site.
 
+```mermaid
+flowchart LR
+    A[Anotações em Markdown] --> B[Organização por trilhas]
+    B --> C[Publicação automática]
+    C --> D[GitHub Pages]
+```
+
+```text
+[Estudo] -> [Anotação] -> [Organização] -> [Publicação]
+    ^                                          |
+    |__________________________________________|
+```
+
 ---
 
 Se você quiser explorar os detalhes, navegue diretamente pelo site.

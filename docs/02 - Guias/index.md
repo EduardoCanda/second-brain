@@ -2,6 +2,21 @@
 
 A pasta **Guias** reúne materiais orientados à execução prática.
 
+```mermaid
+flowchart TD
+    A[Entender problema] --> B[Escolher guia]
+    B --> C[Executar passo a passo]
+    C --> D[Validar resultado]
+    D --> E[Documentar aprendizado]
+```
+
+```text
+Problema?
+  |
+  +--> Guia prático --> Execução --> Validação --> Registro
+```
+
+
 ## Objetivo
 
 - Transformar conceitos em implementação.

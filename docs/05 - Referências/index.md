@@ -2,6 +2,19 @@
 
 A pasta **Referências** reúne materiais de apoio para continuidade dos estudos.
 
+```mermaid
+flowchart LR
+    A[Referências externas] --> B[Curadoria]
+    B --> C[Plano de estudo]
+    C --> D[Aplicação prática]
+    D --> E[Novas referências]
+```
+
+```text
+Fonte externa -> Curadoria -> Prática -> Revisão contínua
+```
+
+
 ## Objetivo
 
 - Centralizar fontes externas úteis.
