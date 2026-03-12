@@ -69,16 +69,7 @@ Template mínimo sugerido para cada nota curta:
 6. Erros comuns
 7. Referências
 
-### 6) Trilha de testes de software
-Tema essencial para backend e pouco visível hoje.
-
-Sugestões:
-- Pirâmide de testes (unitário, integração, contrato, E2E)
-- Testes de contrato em arquitetura distribuída
-- Estratégia de mock vs ambiente real
-- Qualidade em pipelines (quality gates)
-
-### 7) Segurança aplicada no ciclo de entrega
+### 6) Segurança aplicada no ciclo de entrega
 Você já cobre cibersegurança, mas pode conectar mais ao dia a dia DevOps.
 
 Sugestões:
@@ -91,7 +82,7 @@ Sugestões:
 
 ## Lacunas de organização (prioridade média/baixa)
 
-### 8) Padronização de nomenclatura e revisão editorial
+### 7) Padronização de nomenclatura e revisão editorial
 Pequenas inconsistências de nomes e ortografia podem atrapalhar busca e navegação.
 
 Ações sugeridas:
@@ -99,7 +90,7 @@ Ações sugeridas:
 - Corrigir termos digitados com erro
 - Unificar português/inglês por contexto
 
-### 9) Mapa de progressão por trilha
+### 8) Mapa de progressão por trilha
 Adicionar para cada trilha:
 - Pré-requisitos
 - Ordem sugerida
