@@ -32,6 +32,11 @@ Objetivo: diagnosticar erros com contexto e histórico.
 ### Fase 5 — Correlação (Grafana)
 Objetivo: navegar entre métricas, logs e traces no mesmo fluxo de investigação.
 
+### Fase 6 — Operação orientada a SLO (teoria → incidente)
+Objetivo: conectar SLI/SLO/SLA, estratégia de alertas, runbooks e resposta a incidentes.
+
+Veja: **01 - Observabilidade aplicada ponta a ponta (da teoria ao incidente)**.
+
 ---
 
 ## Mapa mental rápido
