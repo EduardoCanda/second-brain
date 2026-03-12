@@ -2,6 +2,21 @@
 
 A pasta **Deep Dives** é dedicada a análises mais profundas de temas técnicos.
 
+```mermaid
+flowchart LR
+    A[Cenário avançado] --> B[Análise técnica]
+    B --> C[Trade-offs]
+    C --> D[Decisão]
+    D --> E[Boas práticas]
+```
+
+```text
+[Cenário] => [Análise] => [Decisão]
+                 ||
+            [Riscos x Custos]
+```
+
+
 ## Objetivo
 
 - Explorar detalhes de arquitetura, segurança e operação.

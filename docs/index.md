@@ -4,6 +4,27 @@
 
 Este projeto organiza conceitos, guias práticos, aprofundamentos técnicos e experimentos de forma progressiva e navegável.
 
+```mermaid
+flowchart TD
+    A[Fundamentos] --> B[Guias]
+    B --> C[Deep Dives]
+    C --> D[Playbooks]
+    D --> E[Referências]
+    E --> A
+```
+
+```text
+        ┌───────────────────────────────┐
+        │   Second Brain (ciclo vivo)  │
+        └──────────────┬────────────────┘
+                       │
+      ┌────────────────┼─────────────────┐
+      ▼                ▼                 ▼
+ [Aprender]      [Aplicar]         [Refinar]
+      ▲                │                 │
+      └────────────────┴─────────────────┘
+```
+
 ---
 ## 📌 Como esta documentação está organizada
 

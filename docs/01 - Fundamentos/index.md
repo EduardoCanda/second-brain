@@ -2,6 +2,22 @@
 
 A pasta **Fundamentos** existe para consolidar a base técnica que sustenta todos os outros tópicos do Second Brain.
 
+```mermaid
+mindmap
+  root((Fundamentos))
+    Redes
+    Sistemas Operacionais
+    Programação
+    Banco de Dados
+```
+
+```text
+        Fundamentos
+        /   |   \
+   Redes  SO  Programação  Dados
+```
+
+
 ## Objetivo
 
 - Construir entendimento sólido de conceitos essenciais.
