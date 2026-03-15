@@ -2,66 +2,64 @@
 
 ## O que é
 
-Ferramenta legada para visualizar e manipular tabela ARP IPv4. Resolve validação de mapeamento IP-MAC na LAN.
+Comando legado do net-tools para ler/manipular cache ARP (mapeamento IPv4 -> MAC) no host local.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Verificar se o host resolveu MAC do gateway/destino local
+- Identificar entradas ARP incompletas ou stale
+- Limpar cache ARP para forçar nova resolução
+- Criar entrada estática em cenários específicos de laboratório
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- `ping` ao gateway falha mas link físico está up
+- Suspeita de conflito ARP, MAC flapping ou equipamento trocado
+- Troubleshooting de problema local em mesma sub-rede/VLAN
 
 ## Exemplos de uso
 
 ```bash
 arp -an
-arp -d 10.0.0.10
-arp -s 10.0.0.50 00:11:22:33:44:55
+arp -an | grep 10.10.20.1
+arp -d 10.10.20.1
+arp -s 10.10.20.50 00:11:22:33:44:55
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
 $ arp -an
-... saída resumida ...
+? (10.10.20.1) at 52:54:00:aa:bb:cc [ether] on eth0
+? (10.10.20.200) at <incomplete> on eth0
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `<incomplete>` indica que ARP request saiu, mas ninguém respondeu.
+- MAC mudando constantemente para o mesmo IP pode indicar conflito ou ataque ARP spoofing.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Sempre compare com `ip neigh` (ferramenta moderna equivalente).
+- Se entrada está `<incomplete>`, valide VLAN, porta de switch e ACL L2.
+- Limpe cache (`arp -d`) e teste de novo para diferenciar dado stale de falha real.
+- Em ambiente cloud, confira política de anti-spoofing da interface virtual.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-a` / `-n`: lista cache ARP (normalmente sem resolver nomes).
+- `-d <ip>`: remove entrada ARP.
+- `-s <ip> <mac>`: cria entrada ARP estática.
+- `-i <iface>`: restringe operação à interface.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Não mantenha ARP estático em produção sem necessidade clara.
+- Prefira `ip neigh` para novos procedimentos operacionais.
+- Registre MAC/IP observados em incidentes para cruzar com logs de switch.
 
 ## Referências
 
-- man page: `man arp`
-- Documentação oficial da ferramenta/projeto
+- `man arp`
+- `man ip-neighbour`
+- ARP RFC 826: https://www.rfc-editor.org/rfc/rfc826

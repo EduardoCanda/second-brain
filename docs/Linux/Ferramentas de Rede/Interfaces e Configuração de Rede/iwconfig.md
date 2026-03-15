@@ -2,66 +2,67 @@
 
 ## O que é
 
-Ferramenta legada de configuração wireless. Resolve suporte a ambientes antigos sem utilitários recentes.
+Ferramenta wireless legada do pacote **wireless-tools** (pré-nl80211). Ainda útil em sistemas antigos e ambientes embarcados.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Ver parâmetros básicos da interface Wi-Fi (ESSID, modo, frequência, qualidade)
+- Ajustes simples legados (txpower, channel, mode)
+- Diagnóstico rápido quando `iw` não está disponível
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Distribuição antiga/firmware legado sem suporte completo ao `iw`
+- Scripts antigos de provisionamento Wi-Fi que ainda usam wireless-tools
+- Equipamentos embarcados com stack antiga
 
 ## Exemplos de uso
 
 ```bash
 iwconfig
 iwconfig wlan0
+iwconfig wlan0 channel 6
 iwconfig wlan0 txpower 15
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ iwconfig
-... saída resumida ...
+$ iwconfig wlan0
+wlan0     IEEE 802.11  ESSID:"Corp-WiFi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 34:60:F9:12:34:56
+          Bit Rate=72.2 Mb/s   Tx-Power=15 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=57/70  Signal level=-53 dBm
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `Link Quality` e `Signal level` ajudam a avaliar estabilidade do enlace.
+- `Power Management:on` pode gerar economia de energia com aumento de latência.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-iwconfig vs iw: iwconfig é legado e possui suporte limitado em stacks recentes.
+- Se os campos aparecerem vazios/limitados, a placa pode estar usando driver moderno (prefira `iw`).
+- Em lentidão, teste desativar power save pelo gerenciador de rede.
+- Valide frequência/canal para evitar 2.4GHz congestionado em escritório.
+- Cruce com `dmesg | rg -i 'wlan|wifi|firmware'` para falhas de driver/firmware.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `<iface> essid <nome>`: define ESSID (legado).
+- `<iface> channel <n>`: altera canal.
+- `<iface> txpower <dbm>`: ajusta potência de transmissão.
+- `<iface> mode managed|monitor|master`: muda modo da interface (dependente de driver).
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Trate `iwconfig` como compatibilidade, não como padrão para novos runbooks.
+- Para automação nova, use `iw` + ferramentas de gestão (NetworkManager, wpa_supplicant).
+- Documente claramente limitações de hardware/driver em ambiente legado.
 
 ## Referências
 
-- man page: `man iwconfig`
-- Documentação oficial da ferramenta/projeto
+- `man iwconfig`
+- wireless-tools: https://hewlettpackard.github.io/wireless-tools/
+- nl80211 vs wireless extensions: https://wireless.docs.kernel.org/en/latest/en/developers/documentation/nl80211.html

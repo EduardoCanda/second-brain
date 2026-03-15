@@ -2,66 +2,70 @@
 
 ## O que é
 
-Ferramenta para envio de requisições ARP em rede local. Resolve verificação de host ativo na mesma sub-rede e conflitos de IP.
+Ferramenta que envia requisições ARP na LAN para validar presença de host e resolução IP->MAC sem depender de ICMP.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Confirmar se um IP responde em camada 2 (mesma sub-rede)
+- Detectar IP duplicado antes de subir interface/serviço
+- Verificar reachability local mesmo quando `ping` está bloqueado
+- Obter MAC real do destino para troubleshooting rápido
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Gateway responde ARP mas não responde ICMP (firewall bloqueando ping)
+- Provisionamento de IP fixo com risco de conflito
+- Problema restrito à LAN/VLAN (antes de investigar roteamento)
 
 ## Exemplos de uso
 
 ```bash
-arping -I eth0 10.0.0.1
-arping -D -I eth0 10.0.0.20
-arping -c 3 -I eth0 10.0.0.30
+arping -I eth0 10.10.20.1
+arping -c 3 -I eth0 10.10.20.30
+arping -D -I eth0 10.10.20.50
+arping -U -I eth0 10.10.20.50
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ arping -I eth0 10.0.0.1
-... saída resumida ...
+$ arping -c 3 -I eth0 10.10.20.1
+ARPING 10.10.20.1 from 10.10.20.15 eth0
+Unicast reply from 10.10.20.1 [52:54:00:AA:BB:CC]  1.022ms
+Unicast reply from 10.10.20.1 [52:54:00:AA:BB:CC]  0.811ms
+Unicast reply from 10.10.20.1 [52:54:00:AA:BB:CC]  0.924ms
+Sent 3 probes (1 broadcast(s))
+Received 3 response(s)
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- Resposta com MAC confirma conectividade L2 até o destino.
+- Sem respostas indica problema local de domínio de broadcast/VLAN/interface.
+- Em `-D`, qualquer resposta significa IP já em uso.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Use `-I` sempre para evitar testar pela interface errada.
+- Se ARP funciona e ICMP não, avance investigação para firewall/ACL.
+- Em IP duplicado, compare MAC retornado com inventário/DHCP logs.
+- Em VMs, confirme se hypervisor permite ARP/GARP (políticas anti-spoof).
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-I <iface>`: define interface de saída (essencial).
+- `-c <n>`: quantidade de probes.
+- `-D`: Duplicate Address Detection (detectar IP já ocupado).
+- `-U`: envia Gratuitous ARP update.
+- `-f`: finaliza no primeiro reply.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Antes de atribuir IP manual, rode `arping -D` para evitar colisão.
+- Em troubleshooting, guarde MAC retornado para rastrear porta no switch.
+- Não extrapole resultado de `arping` para fora da sub-rede: ARP é local.
 
 ## Referências
 
-- man page: `man arping`
-- Documentação oficial da ferramenta/projeto
+- `man arping`
+- iputils arping: https://github.com/iputils/iputils
+- ARP RFC 826: https://www.rfc-editor.org/rfc/rfc826

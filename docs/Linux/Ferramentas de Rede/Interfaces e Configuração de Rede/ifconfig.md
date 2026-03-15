@@ -2,22 +2,20 @@
 
 ## O que é
 
-Ferramenta legada de configuração de interface. Resolve manutenção de ambientes antigos e scripts herdados.
+Utilitário legado do pacote **net-tools** para visualizar/configurar interfaces. Ainda aparece em distribuições antigas e scripts herdados.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Consultar rapidamente IP, máscara, MAC e contadores RX/TX
+- Subir/descer interface em ambientes antigos (`up/down`)
+- Ajustar MTU em troubleshooting pontual legado
+- Entender scripts antigos que ainda não migraram para `ip`
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Você está em servidor antigo (RHEL/CentOS antigos, appliances, imagens minimalistas)
+- Script legado usa `ifconfig` e precisa manutenção urgente
+- Precisa comparar saída antiga com nova após migração para `ip`
 
 ## Exemplos de uso
 
@@ -25,43 +23,49 @@ Ferramenta legada de configuração de interface. Resolve manutenção de ambien
 ifconfig -a
 ifconfig eth0
 ifconfig eth0 mtu 1400
+ifconfig eth0 down && ifconfig eth0 up
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ ifconfig -a
-... saída resumida ...
+$ ifconfig eth0
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.10.20.15  netmask 255.255.255.0  broadcast 10.10.20.255
+        inet6 fe80::5054:ff:fe12:3456  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:12:34:56  txqueuelen 1000  (Ethernet)
+        RX packets 892340  bytes 1302298301 (1.3 GB)
+        RX errors 0  dropped 221  overruns 0  frame 0
+        TX packets 640221  bytes 712339102 (712.3 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `dropped` alto em RX pode apontar gargalo local (buffer/driver/CPU).
+- `carrier`/`collisions` são pistas clássicas de problema físico em rede antiga.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Se `ifconfig` divergir de `ip a`, use `ip` como fonte de verdade atual.
+- Após mudar MTU com `ifconfig`, valide com teste real de tráfego (não só `ping`).
+- Em incidentes, capture `ethtool eth0` junto para confirmar link/duplex.
+- Evite depender de parsing textual do `ifconfig`; formato varia entre distros.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-a`: mostra interfaces ativas e inativas.
+- `<iface> up|down`: altera estado administrativo da interface.
+- `<iface> mtu <valor>`: altera MTU.
+- `<iface> <ip> netmask <mask>`: define IP/máscara (legado).
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Use `ip` para novos playbooks; mantenha `ifconfig` apenas para compatibilidade.
+- Documente claramente quando alteração foi feita por ferramenta legada.
+- Em automação, evite `ifconfig`; priorize `ip -j` para parsing robusto.
 
 ## Referências
 
-- man page: `man ifconfig`
-- Documentação oficial da ferramenta/projeto
+- `man ifconfig`
+- net-tools: https://sourceforge.net/projects/net-tools/
+- Migração para iproute2: https://www.redhat.com/en/blog/deprecated-linux-command-replacements
