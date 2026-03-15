@@ -2,66 +2,86 @@
 
 ## O que é
 
-Gerenciador de firewall dinâmico baseado em zonas. Resolve políticas diferentes por tipo de rede sem recriar regras manualmente.
+`firewalld` é um gerenciador dinâmico de firewall (backend nftables/iptables) orientado a zonas, muito usado em RHEL, Rocky, Alma e Fedora.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Aplicar políticas diferentes por contexto de rede (`public`, `internal`, `dmz`, etc.)
+- Alterar regras em runtime sem reiniciar serviço de rede
+- Gerenciar serviços, portas, rich rules, forward e NAT de forma declarativa
+- Integrar com NetworkManager para associar interfaces a zonas
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Servidores com múltiplas interfaces/rede (ex.: WAN + LAN + VPN)
+- Ambientes enterprise com necessidade de configuração persistente e auditável
+- Operação diária onde time prefere abstração de “serviços” ao invés de regras low-level
 
 ## Exemplos de uso
 
 ```bash
+# Ver zonas ativas e interfaces
 firewall-cmd --get-active-zones
+
+# Inspecionar zona public
 firewall-cmd --zone=public --list-all
-firewall-cmd --add-service=https --permanent
+
+# Liberar HTTPS em runtime e persistir
+firewall-cmd --zone=public --add-service=https
+firewall-cmd --zone=public --add-service=https --permanent
+
+# Abrir porta customizada
+firewall-cmd --zone=public --add-port=8443/tcp --permanent
+
+# Recarregar regras persistentes
+firewall-cmd --reload
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ firewall-cmd --get-active-zones
-... saída resumida ...
+$ firewall-cmd --zone=public --list-all
+public (active)
+  target: default
+  interfaces: eth0
+  services: cockpit dhcpv6-client ssh https
+  ports: 8443/tcp
+  protocols:
+  forward: no
+  masquerade: no
+  rich rules:
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `(active)` confirma zona em uso por interface.
+- `services` e `ports` mostram o que está efetivamente permitido.
+- `masquerade: no` indica que não há NAT de saída nessa zona.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-firewalld vs ufw: firewalld é melhor para políticas dinâmicas em múltiplas redes.
+- Diferencie runtime vs permanente (`--runtime-to-permanent`) para não perder regra após reboot.
+- Se porta foi liberada e ainda falha, valide binding da aplicação (`0.0.0.0` vs `127.0.0.1`).
+- Confirme zona correta da interface (`firewall-cmd --get-active-zones`).
+- Em troubleshooting profundo, compare com `nft list ruleset` para validar backend.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `--zone=<zona>`: define contexto da regra
+- `--list-all` / `--list-all-zones`: inventário de política
+- `--add-service` / `--add-port`: libera serviço/porta
+- `--permanent`: persiste alteração em disco
+- `--reload`: reaplica configuração persistente
+- `--runtime-to-permanent`: salva estado runtime atual
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Defina zona padrão conscientemente (`public` não deve ser “depósito” de exceções).
+- Prefira `services` (com descrição semântica) antes de abrir portas soltas.
+- Evite alterações manuais diretas em backend nft/iptables quando firewalld é o orquestrador.
+- Versione arquivos de zona e use automação (Ansible, por exemplo) para consistência.
 
 ## Referências
 
-- man page: `man firewalld`
-- Documentação oficial da ferramenta/projeto
+- `man firewall-cmd`
+- firewalld docs: https://firewalld.org/documentation/
+- RHEL Security Guide (firewalld)
