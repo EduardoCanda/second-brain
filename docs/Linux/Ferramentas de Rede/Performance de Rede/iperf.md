@@ -2,66 +2,77 @@
 
 ## O que é
 
-Ferramenta clássica para medir throughput entre dois pontos. Resolve benchmark de capacidade de link.
+Ferramenta clássica de teste de banda (v2), ainda comum em ambientes legados. Funciona em modelo cliente/servidor para medir throughput TCP/UDP.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Validar capacidade de links antigos onde só existe iperf v2
+- Medir limite de throughput entre dois hosts Linux
+- Detectar perda em UDP sob carga
+- Servir como comparação histórica em ambientes que já têm baseline antigo
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Quando o endpoint remoto só suporta `iperf` (não `iperf3`)
+- Em troubleshooting de links WAN/MPLS legados
+- Para comparar resultado atual com medições históricas feitas em iperf v2
 
 ## Exemplos de uso
 
 ```bash
+# servidor
 iperf -s
-iperf -c 10.0.0.20 -t 10
-iperf -c 10.0.0.20 -u -b 50M -t 10
+
+# TCP por 15 segundos
+iperf -c 10.0.0.20 -t 15
+
+# UDP em 100 Mbps
+iperf -c 10.0.0.20 -u -b 100M -t 15
+
+# relatório a cada 1s
+iperf -c 10.0.0.20 -i 1 -t 10
 ```
 
 ## Exemplo de saída
 
 ```text
-$ iperf -s
-... saída resumida ...
+$ iperf -c 10.0.0.20 -t 10
+[  3]  0.0-10.0 sec  1.01 GBytes   867 Mbits/sec
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Como interpretar:
+- valor em `Mbits/sec` é a taxa média no intervalo
+- em UDP, observe perda de datagramas e jitter para avaliar qualidade
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Confirmar versão em ambos os lados (`iperf -v`) para evitar incompatibilidade
+- Em testes UDP, começar com `-b` baixo e subir gradualmente
+- Se houver throughput baixo, testar tamanho de janela TCP (`-w`) em links de alta latência
+- Sempre comparar com `ping`/`mtr` para correlacionar throughput e latência/perda
 
 ## Comparação com ferramentas similares
 
-iperf vs iperf3: iperf3 é mais moderno, mas não interoperável com iperf clássico.
+- **iperf vs iperf3**: iperf é útil para legado; iperf3 é preferível para novos testes
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-s`: servidor
+- `-c <host>`: cliente
+- `-u`: modo UDP
+- `-b <taxa>`: taxa alvo no UDP
+- `-t <seg>`: duração
+- `-i <seg>`: intervalo de relatório
+- `-w <janela>`: janela TCP
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Documentar claramente que o teste foi feito com v2
+- Manter consistência de parâmetros entre execuções para comparar resultados
+- Evitar executar junto com backup/sincronização para não distorcer medição
+- Usar host dedicado quando possível para reduzir impacto de CPU/disco
 
 ## Referências
 
-- man page: `man iperf`
-- Documentação oficial da ferramenta/projeto
+- `man iperf`
+- https://iperf.fr/
