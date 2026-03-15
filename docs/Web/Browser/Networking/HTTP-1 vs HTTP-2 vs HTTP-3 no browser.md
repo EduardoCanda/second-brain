@@ -1,69 +1,48 @@
 docs/Web/Browser/Networking/HTTP-1 vs HTTP-2 vs HTTP-3 no browser.md
 
-# HTTP/1 vs HTTP/2 vs HTTP/3 no browser
+# HTTP-1 vs HTTP-2 vs HTTP-3 no browser
 
 ## O que é
 
-Versões do protocolo com diferentes estratégias de multiplexação e transporte.
+Cada versão do HTTP muda forma de transporte, multiplexação e recuperação de perda, impactando latência real no navegador.
 
 ## Por que isso existe
 
-Reduzir head-of-line blocking e melhorar eficiência em páginas com muitos recursos.
+Escolher protocolo certo influencia TTFB, head-of-line blocking e custo de infraestrutura.
 
 ## Como funciona internamente
 
-1. HTTP/1.1 usa múltiplas conexões e pipelining pouco confiável.
-2. HTTP/2 multiplexa streams sobre um TCP único com HPACK.
-3. HTTP/3 roda sobre QUIC/UDP com criptografia obrigatória e QPACK.
-4. ALPN durante TLS/QUIC define versão final.
-
-## Fluxo de funcionamento
-
-```mermaid
-sequenceDiagram
-participant U as Usuário/JS
-participant B as Browser
-participant N as Rede/Servidor
-U->>B: Dispara ação
-B->>N: Solicita recurso/operação
-N-->>B: Retorna dados/resposta
-B-->>U: Atualiza estado/render
-```
+1. HTTP/1.1 usa texto e paralelismo limitado por conexão.
+2. HTTP/2 multiplexa streams sobre TCP com compressão de headers.
+3. HTTP/3 usa QUIC/UDP para reduzir HOL no transporte e acelerar retomadas.
+4. Navegador negocia versão via ALPN/Alt-Svc.
 
 ## Exemplo prático
 
 ```bash
-curl --http1.1 -I https://example.com
-curl --http2 -I https://example.com
-curl --http3 -I https://example.com
+curl -i https://example.com
 ```
 
 ```http
-GET /resource HTTP/1.1
+GET / HTTP/1.1
 Host: example.com
-Accept: */*
 ```
 
-## Quando isso é importante para um engenheiro backend/devops
+## Quando isso é importante para backend/devops
 
-- Diagnóstico de incidentes de latência, erros intermitentes e saturação de recursos.
-- Definição de estratégia de cache, balanceamento, TLS termination e observabilidade.
-- Revisão de segurança em headers, cookies, políticas de origem e proteção de sessão.
-- Planejamento de capacidade (conexões concorrentes, CPU por handshake, egress).
+- Facilita a análise de incidentes sem depender apenas de hipótese no servidor.
+- Ajuda a escolher headers, timeouts, políticas de cache e segurança mais coerentes.
+- Melhora correlação entre DevTools, logs de aplicação e métricas de infraestrutura.
 
 ## Problemas comuns
 
-- Assumir que problema está apenas no backend sem validar DNS/TCP/TLS/browser.
-- Ignorar diferença entre ambiente local, staging e produção (proxy/CDN/WAF).
-- Não correlacionar waterfall do navegador com tracing e logs do servidor.
-- Configurar timeouts/retries de forma incompatível entre camadas.
+- Interpretar sintomas de frontend sem validar o que o navegador decidiu internamente.
+- Confiar apenas no status HTTP e ignorar headers/políticas que bloqueiam uso da resposta.
+- Não reproduzir o cenário real (CDN, proxy, HTTPS, cache quente/frio).
 
 ## Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP]]
-- [[DNS]]
-- [[TLS]]
-- [[TCP]]
-- [[Critical Rendering Path]]
-- [[Event Loop]]
+- [[TLS handshake no navegador]]
+- [[Connection pooling]]
+- [[Como analisar waterfall de requests]]
