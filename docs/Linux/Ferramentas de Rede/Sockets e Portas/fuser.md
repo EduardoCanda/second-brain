@@ -2,66 +2,82 @@
 
 ## O que é
 
-Ferramenta para identificar processos que utilizam arquivo, mountpoint ou socket. Resolve conflitos de porta ocupada.
+`fuser` identifica quais processos estão usando um arquivo, filesystem, porta TCP/UDP ou socket. É uma ferramenta direta para responder “quem está usando este recurso agora?”.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Descobrir rapidamente quem está ocupando uma porta.
+- Encerrar processo que mantém porta presa após shutdown incompleto.
+- Ver processos usando um mountpoint/device antes de unmount.
+- Acelerar resposta operacional sem parsing complexo.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Deploy falha com “porta já em uso” e você precisa liberar rápido.
+- Serviço foi parado, mas o socket continua ocupado por processo órfão.
+- `umount` falha porque filesystem ainda está em uso.
+- Você precisa de comando curto para automação operacional simples.
 
 ## Exemplos de uso
 
 ```bash
+# Quem usa a porta TCP 8080
 fuser -v -n tcp 8080
+
+# Quem usa a porta UDP 53
+fuser -v -n udp 53
+
+# Encerrar processos que usam a porta 8080 (cuidado)
 fuser -k -n tcp 8080
-fuser -v /var/log/syslog
+
+# Descobrir quem está segurando um mountpoint
+fuser -vm /mnt/dados
 ```
 
 ## Exemplo de saída
 
 ```text
 $ fuser -v -n tcp 8080
-... saída resumida ...
+                     USER        PID ACCESS COMMAND
+8080/tcp:            app        4242 F.... java
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Como interpretar:
+
+- `8080/tcp`: recurso consultado.
+- `PID`/`COMMAND`: processo que detém a porta.
+- `ACCESS`: tipo de acesso (`F` costuma indicar open file/socket ativo).
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Primeiro rode sem `-k` para evitar matar processo errado.
+- Em porta crítica, confirme o PID com `ps -fp <PID>` antes de encerrar.
+- Se `fuser` não mostrar dados, execute como root/sudo.
+- Em ambiente com systemd/k8s, matar PID pode disparar restart automático (esperado).
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- `fuser` vs `lsof`: `fuser` é mais direto; `lsof` oferece mais detalhes.
+- `fuser` vs `ss`: `ss` é melhor para estado/conjunto de conexões; `fuser` para dono de um alvo específico.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-n tcp|udp`: define namespace de porta de rede.
+- `-v`: modo verboso (mostra usuário, comando, acesso).
+- `-k`: envia sinal para processos encontrados (por padrão `SIGKILL` em muitas implementações).
+- `-m`: identifica processos usando filesystem/mountpoint.
+- `-i`: confirmação interativa ao usar `-k`.
+- `-SIGNAL` (ex.: `-TERM`, `-HUP`): escolhe sinal mais seguro que `KILL`.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Prefira `-TERM` antes de `-KILL` para permitir shutdown limpo.
+- Registre PID/comando antes de matar (`fuser -v ...` + `ps -fp`).
+- Evite `fuser -k` em portas compartilhadas sem validar impacto.
+- Em pós-incidente, documente por que a porta ficou presa para evitar recorrência.
 
 ## Referências
 
-- man page: `man fuser`
-- Documentação oficial da ferramenta/projeto
+- `man fuser`
+- `man psmisc`
+- Documentação psmisc: https://man7.org/linux/man-pages/man1/fuser.1.html

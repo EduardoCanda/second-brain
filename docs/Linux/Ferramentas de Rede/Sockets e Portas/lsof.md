@@ -2,66 +2,83 @@
 
 ## O que é
 
-Ferramenta para listar arquivos abertos por processos, incluindo sockets. Resolve qual PID está usando uma porta.
+`lsof` (List Open Files) lista arquivos abertos por processos. Em Linux, sockets também são “arquivos”, então a ferramenta é excelente para descobrir exatamente qual processo/FD está usando uma porta ou conexão.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Descobrir qual PID está prendendo uma porta após deploy/restart.
+- Mapear conexões de rede abertas por processo específico.
+- Correlacionar socket de rede com file descriptor (FD) e usuário efetivo.
+- Ajudar em investigação de vazamento de conexão/FD (`too many open files`).
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- `bind: address already in use` ao subir serviço.
+- Porta aparece aberta, mas você precisa saber **qual binário** e **qual usuário** abriu.
+- Processo Java/Node/Python com suspeita de leak de sockets.
+- Necessidade de investigar conexões por PID durante incidente sem reiniciar serviço.
 
 ## Exemplos de uso
 
 ```bash
-lsof -i :443
-lsof -iTCP -sTCP:LISTEN -nP
-lsof -p 1234 -nP
+# Quem está usando a porta 8080
+lsof -nP -iTCP:8080 -sTCP:LISTEN
+
+# Conexões de rede de um PID específico
+lsof -nP -p 1234 -i
+
+# Ver todos sockets TCP em LISTEN no host
+lsof -nP -iTCP -sTCP:LISTEN
+
+# Filtrar por usuário dono do processo
+lsof -nP -i -u nginx
 ```
 
 ## Exemplo de saída
 
 ```text
-$ lsof -i :443
-... saída resumida ...
+$ lsof -nP -iTCP:8080 -sTCP:LISTEN
+COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+java     4242 app   95u  IPv6  58231      0t0  TCP *:8080 (LISTEN)
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Como interpretar:
+
+- `COMMAND`/`PID`/`USER`: dono do socket.
+- `FD` (`95u`): file descriptor usado pelo processo; útil para debug avançado.
+- `NAME` (`*:8080`): bind em todas interfaces.
+- `(LISTEN)`/`(ESTABLISHED)`: estado da conexão.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Sempre use `-nP` para evitar resolução DNS/porta e ganhar velocidade.
+- Se resultado vier vazio, valide privilégios (muitos dados exigem root).
+- Combine com `ss -tanp` para ver estado global e depois aprofunde no processo com `lsof`.
+- Para leak de FD, compare amostras no tempo: `lsof -p <PID> | wc -l`.
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- `lsof` vs `ss`: `ss` mostra panorama de sockets; `lsof` aprofunda no processo/FD.
+- `lsof` vs `fuser`: `fuser` é rápido para “quem usa esta porta”, `lsof` traz mais contexto.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-i`: filtra objetos de rede.
+- `-iTCP[:porta]` / `-iUDP[:porta]`: protocolo/porta.
+- `-sTCP:LISTEN|ESTABLISHED`: estado TCP.
+- `-p <PID>`: filtra por processo.
+- `-u <usuário>`: filtra por usuário.
+- `-nP`: sem resolução de host/serviço.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Padronize `lsof -nP` em runbooks para reduzir variabilidade.
+- Não use `kill` direto sem confirmar se o PID pertence ao serviço correto.
+- Em produção, capture evidências (`lsof`, `ss`, logs) antes de qualquer ação corretiva.
+- Se houver supervisão (`systemd`, `k8s`), mate processo apenas com entendimento do impacto.
 
 ## Referências
 
-- man page: `man lsof`
-- Documentação oficial da ferramenta/projeto
+- `man lsof`
+- FAQ oficial: https://github.com/lsof-org/lsof/blob/master/00FAQ
+- Quickstart: https://man7.org/linux/man-pages/man8/lsof.8.html
