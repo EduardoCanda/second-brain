@@ -2,66 +2,78 @@
 
 ## O que é
 
-Analisador gráfico de protocolos de rede. Resolve troubleshooting profundo de sessões e pacotes complexos.
+Analisador gráfico de protocolos de rede com dissecação profunda de pacotes. Excelente para investigar fluxos complexos (TLS, HTTP/2, DNS, VoIP) com contexto visual.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Entender sequência completa de uma sessão (do SYN ao FIN/RST).
+- Inspecionar handshake TLS, certificados, ALPN e negociação de versões.
+- Reconstituir streams TCP para visualizar payload de aplicação.
+- Correlacionar latência entre camadas (rede x aplicação).
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- `tcpdump`/`tshark` já mostraram sintoma, mas falta causa raiz detalhada.
+- Há necessidade de análise visual por pacote, com follow stream e gráficos.
+- Você precisa apresentar evidência técnica clara para outros times.
+- Investigação envolve protocolos com muitos campos e extensões.
 
 ## Exemplos de uso
 
 ```bash
+# Abrir captura já coletada
+wireshark -r incidente-api.pcap
+
+# Iniciar captura imediata em interface específica
 wireshark -i eth0 -k
-wireshark -r captura.pcap
-wireshark -i any -f "port 53"
+
+# Capturar só DNS (capture filter BPF)
+wireshark -i eth0 -f "udp port 53"
 ```
 
-## Exemplo de saída
+## Exemplos de saída
+
+No Wireshark a saída é visual (lista de pacotes + detalhes + bytes).
+Filtros práticos no campo de display filter:
 
 ```text
-$ wireshark -i eth0 -k
-... saída resumida ...
+tcp.flags.syn == 1 && tcp.flags.ack == 0
+dns && ip.addr == 10.10.20.15
+tls.handshake.type == 1
+http.response.code >= 500
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida:
+
+- Muitos SYN sem SYN-ACK: problema de caminho/firewall/ACL.
+- `Server Hello` ausente após `Client Hello`: bloqueio/interceptação TLS ou incompatibilidade.
+- Retransmissões TCP frequentes: perda, congestionamento ou MTU.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Aplique filtro de captura antes de iniciar para evitar arquivos gigantes.
+- Use “Follow TCP Stream” para validar conteúdo e ordem das mensagens.
+- Marque pacotes críticos (time reference) para medir intervalos com precisão.
+- Compare “Statistics > Conversations” entre cenário saudável e degradado.
+- Em ambientes Linux remotos, capture com tcpdump e analise o `.pcap` localmente no Wireshark.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-i <iface>`: define interface.
+- `-k`: inicia captura imediatamente.
+- `-f "<capture-filter>"`: filtro BPF na captura.
+- `-r arquivo.pcap`: abre arquivo de captura.
+- `-Y "<display-filter>"`: já abre aplicando filtro de visualização.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Não compartilhar `.pcap` bruto sem revisão (pode conter dados pessoais/sigilosos).
+- Salvar profile de análise por tipo de incidente (DNS, TLS, API).
+- Documentar no ticket quais filtros e streams foram usados como evidência.
+- Preferir análise offline em estação segura quando captura contém produção.
 
 ## Referências
 
-- man page: `man wireshark`
-- Documentação oficial da ferramenta/projeto
+- `man wireshark`
+- https://www.wireshark.org/docs/wsug_html_chunked/
+- Cheat Sheet de filtros: https://wiki.wireshark.org/DisplayFilters
