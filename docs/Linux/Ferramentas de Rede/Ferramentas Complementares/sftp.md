@@ -2,66 +2,94 @@
 
 ## O que é
 
-Sub-sistema de transferência de arquivos sobre SSH. Resolve envio/recebimento com operações interativas remotas.
+Cliente de transferência de arquivos via subsistema SSH (SSH File Transfer Protocol), com shell interativo para manipular arquivos remotos.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Enviar e baixar arquivos com segurança, mantendo sessão interativa
+- Navegar diretórios remotos (`ls`, `cd`, `pwd`) sem abrir shell completo
+- Automatizar lotes de upload/download com arquivo de comandos (`-b`)
+- Operar em ambientes onde SCP é restrito, mas SFTP é permitido
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Quando você precisa listar/remover/renomear arquivos remotos durante a transferência
+- Para rotinas operacionais de troca de arquivos entre sistemas (integrações)
+- Quando quer transferir vários arquivos de forma guiada por sessão
+- Em pipelines com lote (`sftp -b`) sem dependências extras
 
 ## Exemplos de uso
 
 ```bash
-sftp user@10.0.0.20
-sftp -P 2222 user@10.0.0.20
-sftp> put app.log
+# abrir sessão interativa
+sftp ops@10.10.10.40
+
+# conectar em porta SSH customizada
+sftp -P 2222 ops@10.10.10.40
+
+# comandos dentro da sessão
+sftp> lcd ./coletas
+sftp> cd /var/log/app
+sftp> get app.log
+sftp> put diagnostico.txt
+
+# execução em lote (batch mode)
+sftp -b comandos_sftp.txt ops@10.10.10.40
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ sftp user@10.0.0.20
-... saída resumida ...
+$ sftp ops@10.10.10.40
+Connected to 10.10.10.40.
+sftp> ls
+app.log
+app.log.1
+sftp> get app.log
+Fetching /var/log/app/app.log to app.log
+/var/log/app/app.log                          100%  6MB   3.2MB/s   00:02
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida:
+- `Connected to ...`: handshake/autenticação concluídos.
+- `Couldn't stat remote file`: caminho remoto inválido.
+- `Permission denied`: ACL/permissão insuficiente no remoto.
+- Transferência muito lenta: verificar latência, compressão e limitação de banda.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Ative `-v` para detalhes de SSH/SFTP em falhas de conexão.
+- Valide se o servidor tem subsistema SFTP habilitado (`Subsystem sftp ...` no `sshd_config`).
+- Use caminho absoluto ao diagnosticar erro de diretório remoto.
+- Em automação, prefira `-b` + tratamento de exit code para reprocessamento.
+- Em bastion, combine com `-o ProxyJump`.
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- `scp`: mais direto para cópia pontual, porém sem shell de arquivos.
+- `rsync`: melhor para sincronização eficiente e incremental.
+- FTP/FTPS: legado comum em integrações, mas SFTP costuma simplificar segurança (porta única + SSH).
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-P <porta>`: porta SSH remota.
+- `-i <chave>`: chave privada específica.
+- `-b <arquivo>`: modo batch (não interativo).
+- `-r`: cópia recursiva (quando suportado no cliente).
+- `-C`: compressão na sessão.
+- `-v`: verboso para debug.
+- `-o ProxyJump=<host>`: conexão via bastion.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Padronizar diretórios de entrada/saída para integração (`/in`, `/out`, `/error`).
+- Aplicar princípio de menor privilégio para usuário SFTP (chroot/jail quando possível).
+- Versionar scripts de batch SFTP usados em produção.
+- Monitorar falhas de transferência e criar retry idempotente.
+- Evitar transferir arquivos parcialmente escritos (usar padrão `.tmp` + rename atômico).
 
 ## Referências
 
-- man page: `man sftp`
-- Documentação oficial da ferramenta/projeto
+- `man sftp`
+- `man ssh_config`
+- OpenSSH manual: https://www.openssh.com/manual.html
