@@ -2,66 +2,87 @@
 
 ## O que é
 
-Frontend simplificado para gerenciamento de firewall. Resolve operação diária de regras com menor complexidade.
+`ufw` (Uncomplicated Firewall) é um frontend simplificado para netfilter, comum em Ubuntu/Debian, focado em operação rápida de regras de host.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Proteger servidores com política simples de entrada/saída
+- Abrir portas de serviços de forma padronizada (ex.: SSH, HTTP, HTTPS)
+- Aplicar limites básicos contra brute force
+- Gerenciar regras IPv4/IPv6 sem escrever sintaxe completa de iptables
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Servidor único, VM ou bastion com necessidades de firewall de host (não de roteador complexo)
+- Times que precisam de baixa curva de aprendizado operacional
+- Ambientes em que firewalld não é padrão e `ufw` já vem integrado no SO
 
 ## Exemplos de uso
 
 ```bash
+# Estado atual
 ufw status verbose
+
+# Política padrão segura
+ufw default deny incoming
+ufw default allow outgoing
+
+# Permitir SSH e HTTPS
+ufw allow 22/tcp
 ufw allow 443/tcp
-ufw deny 3306/tcp
+
+# Limitar tentativas de SSH
+ufw limit 22/tcp
+
+# Ativar firewall
+ufw enable
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
 $ ufw status verbose
-... saída resumida ...
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     LIMIT IN    Anywhere
+443/tcp                    ALLOW IN    Anywhere
+22/tcp (v6)                LIMIT IN    Anywhere (v6)
+443/tcp (v6)               ALLOW IN    Anywhere (v6)
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `Status: active` confirma que regras estão aplicadas.
+- `routed disabled` indica que UFW não está roteando tráfego entre interfaces (importante para NAT/forward).
+- Regras `v6` precisam existir quando IPv6 está habilitado no host.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-ufw vs firewalld: ufw é simples; firewalld é mais flexível por zonas.
+- Em acesso remoto, sempre permita SSH antes de `ufw enable` para evitar lockout.
+- Se serviço continua inacessível, valide aplicação escutando (`ss -lntup`) e rota.
+- Confira `ufw status numbered` para remover regra correta por índice.
+- Para tráfego roteado/NAT, revise `/etc/default/ufw` e regras em `/etc/ufw/before.rules`.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `status verbose`: estado completo e políticas padrão
+- `status numbered`: lista indexada para delete seguro
+- `allow|deny|reject|limit`: ações principais
+- `--dry-run`: simula mudança sem aplicar
+- `logging on|off|low|medium|high`: controle de auditoria
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Padronize baseline: `deny incoming`, `allow outgoing`.
+- Use comentários em regras (`ufw allow 443/tcp comment 'nginx-prod'`).
+- Revise regras órfãs periodicamente em servidores antigos.
+- Mantenha logging em nível adequado para incidentes sem gerar ruído excessivo.
 
 ## Referências
 
-- man page: `man ufw`
-- Documentação oficial da ferramenta/projeto
+- `man ufw`
+- Ubuntu UFW docs: https://help.ubuntu.com/community/UFW
