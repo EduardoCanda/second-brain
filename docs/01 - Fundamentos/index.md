@@ -10,14 +10,6 @@ mindmap
     Programação
     Banco de Dados
 ```
-
-```text
-        Fundamentos
-        /   |   \
-   Redes  SO  Programação  Dados
-```
-
-
 ## Objetivo
 
 - Construir entendimento sólido de conceitos essenciais.

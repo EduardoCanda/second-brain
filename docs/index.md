@@ -12,19 +12,6 @@ flowchart TD
     D --> E[Referências]
     E --> A
 ```
-
-```text
-        ┌───────────────────────────────┐
-        │   Second Brain (ciclo vivo)  │
-        └──────────────┬────────────────┘
-                       │
-      ┌────────────────┼─────────────────┐
-      ▼                ▼                 ▼
- [Aprender]      [Aplicar]         [Refinar]
-      ▲                │                 │
-      └────────────────┴─────────────────┘
-```
-
 ---
 ## 📌 Como esta documentação está organizada
 
@@ -47,3 +34,5 @@ Construir uma documentação técnica estruturada, evolutiva e organizada, mante
 - Aplicação prática
 
 Este Second Brain é um sistema vivo de aprendizado contínuo.
+
+
