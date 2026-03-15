@@ -2,66 +2,78 @@
 
 ## O que é
 
-Ferramenta de encaminhamento bidirecional de streams/sockets. Resolve criação de túneis e bridges temporárias para debug.
+`socat` conecta dois endpoints de I/O (TCP, UDP, UNIX socket, arquivo, PTY, OpenSSL) e faz ponte bidirecional. É excelente para reproduzir cenários “estranhos” de rede.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Criar túnel temporário para inspecionar tráfego entre cliente e servidor.
+- Expor serviço local em outra porta para teste controlado.
+- Adaptar protocolos/transportes (ex.: UNIX socket <-> TCP).
+- Simular relay durante troubleshooting sem alterar aplicação.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Você precisa observar/mediar fluxo e não apenas testar “porta abre ou não”.
+- Serviço escuta em UNIX socket mas cliente só fala TCP.
+- Quer reproduzir comportamento de proxy/LB localmente.
+- Precisa testar TLS em baixo nível com opção de ignorar/verificar certificado.
 
 ## Exemplos de uso
 
 ```bash
-socat - TCP:api.exemplo.com:443
-socat TCP-LISTEN:8080,fork TCP:127.0.0.1:80
-socat -d -d OPENSSL:api.exemplo.com:443,verify=0 -
+# Relay TCP local -> serviço real
+socat -d -d TCP-LISTEN:8080,reuseaddr,fork TCP:10.10.20.80:80
+
+# UNIX socket -> TCP (ex.: app local consumindo serviço remoto)
+socat -d -d TCP-LISTEN:15432,reuseaddr,fork UNIX-CONNECT:/var/run/postgresql/.s.PGSQL.5432
+
+# Cliente TLS simples
+socat -d -d - OPENSSL:api.exemplo.com:443,verify=1
+
+# Capturar payload em arquivo enquanto faz relay
+socat -d -d TCP-LISTEN:9000,reuseaddr,fork SYSTEM:'tee -a /tmp/capture.log | socat - TCP:10.10.20.50:9000'
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ socat - TCP:api.exemplo.com:443
-... saída resumida ...
+$ socat -d -d TCP-LISTEN:8080,reuseaddr,fork TCP:10.10.20.80:80
+2026/03/01 10:20:11 socat[1234] N listening on AF=2 0.0.0.0:8080
+2026/03/01 10:20:20 socat[1234] N accepting connection from AF=2 10.10.20.99:53214
+2026/03/01 10:20:20 socat[1234] N opening connection to AF=2 10.10.20.80:80
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Interpretação: listener recebeu conexão e conseguiu abrir upstream.
+
+```text
+2026/03/01 10:20:20 socat[1234] E connect(5, AF=2 10.10.20.80:80, 16): Connection refused
+```
+
+Interpretação: caminho existe, mas porta destino recusou conexão.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Sempre use `-d -d` (ou `-d -d -d`) para logs suficientes no incidente.
+- Comece simples (TCP<->TCP) e adicione opções aos poucos (`fork`, `reuseaddr`, `verify`).
+- Se o relay “trava”, verifique direção de fluxo/pipeline e buffering do comando `SYSTEM:`.
+- Para TLS, teste primeiro com `verify=0` só para isolar conectividade; depois valide com `verify=1`.
 
-## Comparação com ferramentas similares
+## Flags/opções importantes
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
-
-## Flags importantes
-
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-d -d`: aumenta verbosidade de eventos de socket.
+- `TCP-LISTEN:<porta>,fork,reuseaddr`: listener concorrente e reaproveitamento de porta.
+- `OPENSSL:<host>:<porta>,verify=0|1`: conexão TLS com/sem validação de certificado.
+- `UNIX-CONNECT:<path>`: conecta em socket Unix.
+- `SYSTEM:'<cmd>'`: integra com ferramentas shell para captura/manipulação.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Use portas temporárias altas (acima de 1024) para evitar conflito com serviços reais.
+- Não deixe relay em produção sem prazo/owner: risco de desvio de tráfego.
+- Ao capturar payload, cuide de dados sensíveis (LGPD/segurança).
+- Encapsule comandos longos em script versionado para repetibilidade do diagnóstico.
 
 ## Referências
 
-- man page: `man socat`
-- Documentação oficial da ferramenta/projeto
+- `man socat`
+- Socat documentation: http://www.dest-unreach.org/socat/

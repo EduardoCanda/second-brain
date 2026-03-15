@@ -2,66 +2,85 @@
 
 ## O que é
 
-Implementação avançada do netcat no Nmap. Resolve cenários com TLS, proxy e automação mais robusta.
+`ncat` é o netcat do projeto Nmap, com recursos extras para diagnóstico avançado: TLS, proxy, IPv6 e modo broker/chat.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Testar portas TCP/UDP como no `nc`, mas com melhor suporte corporativo.
+- Validar handshake TLS sem depender de cliente HTTP completo.
+- Testar acesso via proxy HTTP/SOCKS.
+- Automatizar testes de conectividade em scripts de diagnóstico.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Você precisa verificar problema em serviços HTTPS/TLS (`handshake failure`, `unknown ca`).
+- O tráfego passa por proxy e você quer validar rota real.
+- Quer saída mais consistente entre ambientes com Nmap já instalado.
 
 ## Exemplos de uso
 
 ```bash
-ncat -vz 10.0.0.20 443
-ncat --ssl github.com 443
-ncat -l 8080
+# Conectividade TCP básica
+ncat -vz -n -w 2 10.10.20.30 443
+
+# Teste TLS (mostra detalhes no modo verboso)
+ncat --ssl -v api.exemplo.com 443
+
+# Teste via proxy HTTP
+ncat --proxy 10.10.0.10:3128 --proxy-type http api.exemplo.com 443
+
+# Listener para coleta de payload
+ncat -lvk 8080
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ ncat -vz 10.0.0.20 443
-... saída resumida ...
+$ ncat -vz -n -w 2 10.10.20.30 443
+Ncat: Version 7.94 ( https://nmap.org/ncat )
+Ncat: Connected to 10.10.20.30:443.
+Ncat: 0 bytes sent, 0 bytes received in 0.02 seconds.
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Interpretação: conectividade L3/L4 OK; falta ainda validar protocolo da aplicação.
+
+```text
+$ ncat --ssl -v api.exemplo.com 443
+Ncat: SSL connection to 203.0.113.15:443.
+Ncat: SHA-1 fingerprint: 12AB ...
+```
+
+Interpretação: handshake TLS ocorreu; útil para separar erro de rede de erro de certificado.
+
+```text
+$ ncat --ssl -v api.exemplo.com 443
+Ncat: SSL routines:tls_process_server_certificate:certificate verify failed
+```
+
+Interpretação: rota e porta OK, mas cadeia de certificado/CA falhou.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-ncat vs nc: ncat é mais completo para testes avançados de conectividade.
+- Para erro de certificado, compare com `openssl s_client -connect host:443 -servername host`.
+- Em proxy, valide se bloqueio é no proxy ou no destino testando com e sem `--proxy`.
+- Use `-n` para evitar falso positivo/negativo causado por DNS interno.
+- Em timeout TLS, teste primeiro sem `--ssl` para confirmar conectividade TCP pura.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `--ssl`: habilita TLS no cliente/servidor.
+- `--ssl-verify`: valida certificado do peer (comportamento seguro).
+- `--proxy <host:porta>` e `--proxy-type http|socks4|socks5`.
+- `-z`, `-v`, `-n`, `-w`: mesmos conceitos práticos do `nc`.
+- `-l`, `-k`: listener persistente para capturar múltiplas conexões.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Em produção, prefira `--ssl-verify` para não mascarar erro real de PKI.
+- Documente fingerprint/cert expirado quando abrir incidente para time de segurança.
+- Evite usar `--ssl` como prova de “aplicação saudável”; valide rota HTTP/API depois.
 
 ## Referências
 
-- man page: `man ncat`
-- Documentação oficial da ferramenta/projeto
+- `man ncat`
+- Ncat Reference Guide: https://nmap.org/ncat/guide/
