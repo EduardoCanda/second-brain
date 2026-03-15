@@ -2,66 +2,85 @@
 
 ## O que é
 
-Ferramenta de cópia de arquivos sobre SSH. Resolve transferência segura e rápida de artefatos e logs.
+Comando de cópia de arquivos sobre SSH. Usa o canal SSH para transferir dados de forma autenticada e criptografada.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Transferir logs, dumps e artefatos entre máquinas Linux com segurança
+- Copiar rapidamente arquivos para suporte de incidente (coleta de evidência)
+- Distribuir arquivos de configuração/chaves em ambiente controlado
+- Validar throughput básico entre dois hosts sem abrir serviços adicionais
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Quando você já tem SSH liberado e quer copiar arquivo sem instalar agente adicional
+- Em troubleshooting, para retirar logs de servidor sem expor compartilhamentos
+- Em operações pontuais/automação simples (script shell)
+- Quando precisa cópia recursiva de diretórios (`-r`) para hosts remotos
 
 ## Exemplos de uso
 
 ```bash
-scp arquivo.log user@10.0.0.20:/tmp/
-scp -r ./logs user@10.0.0.20:/tmp/logs
-scp -P 2222 backup.tar.gz user@10.0.0.20:/backup/
+# copiar arquivo local para remoto
+scp app.log ops@10.10.10.30:/tmp/
+
+# copiar arquivo remoto para local
+scp ops@10.10.10.30:/var/log/nginx/error.log ./
+
+# copiar diretório recursivamente
+scp -r ./coleta-incidente ops@10.10.10.30:/tmp/
+
+# usar porta customizada e chave específica
+scp -P 2222 -i ~/.ssh/id_ed25519 backup.tar.gz ops@10.10.10.30:/backup/
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ scp arquivo.log user@10.0.0.20:/tmp/
-... saída resumida ...
+$ scp app.log ops@10.10.10.30:/tmp/
+app.log                                      100%  248KB   1.8MB/s   00:00
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida:
+- `%` e taxa (`MB/s`) ajudam a perceber gargalo de banda/latência.
+- `No such file or directory`: caminho local/remoto incorreto.
+- `Permission denied`: usuário sem permissão no diretório de destino.
+- `Connection timed out` ou `Connection refused`: problema de rota/firewall/porta SSH.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Teste primeiro `ssh user@host` antes de depurar `scp`.
+- Use `-v` para ver detalhes de autenticação e negociação.
+- Confirme espaço em disco no destino (`df -h`) ao copiar arquivos grandes.
+- Se houver limitação de rede, use compressão (`-C`) para texto/logs.
+- Para ambientes com bastion, combine `-o ProxyJump=bastion`.
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- `rsync -e ssh`: melhor para sync incremental, retomada e preservação avançada.
+- `sftp`: melhor para uso interativo (listar, navegar, subir/baixar por sessão).
+- `cp`/NFS/SMB: exigem filesystem compartilhado; `scp` funciona só com SSH.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-P <porta>`: porta SSH do host remoto.
+- `-i <chave>`: chave privada específica.
+- `-r`: cópia recursiva de diretório.
+- `-C`: habilita compressão durante transferência.
+- `-p`: preserva mtime/atime/modo do arquivo.
+- `-v`: modo verboso para debug.
+- `-o ProxyJump=<host>`: salto via bastion.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Evitar copiar segredos sem criptografia adicional e controle de destino.
+- Validar hash (`sha256sum`) após transferir arquivos críticos.
+- Usar diretório temporário controlado (`/tmp/inc-<id>`) em incidentes.
+- Preferir `rsync` para grandes volumes e reexecução frequente.
+- Limpar arquivos sensíveis após a análise.
 
 ## Referências
 
-- man page: `man scp`
-- Documentação oficial da ferramenta/projeto
+- `man scp`
+- `man ssh_config`
+- OpenSSH manual: https://www.openssh.com/manual.html

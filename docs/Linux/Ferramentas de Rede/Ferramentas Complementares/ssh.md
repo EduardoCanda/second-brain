@@ -2,66 +2,95 @@
 
 ## O que é
 
-Protocolo/cliente para acesso remoto seguro. Resolve administração, execução remota e túnel de portas.
+Cliente OpenSSH para acesso remoto seguro e execução de comandos em outro host via TCP/22 (ou porta customizada).
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Acessar servidor Linux remotamente com autenticação por chave ou senha
+- Executar comandos de diagnóstico sem abrir sessão interativa (`ssh host comando`)
+- Criar túneis para acessar serviços internos (DB, Redis, painel web) sem expor portas
+- Investigar problemas de rede **a partir da origem real do tráfego** (bastion, app server, pod)
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Quando você precisa validar conectividade **do servidor A para o B** (e não da sua máquina local)
+- Quando um serviço interno só é alcançável via bastion/jump host
+- Quando quer testar porta remota com segurança (`ssh -vvv`, `ssh -p`, `ssh -J`)
+- Quando precisa encaminhar porta local/remota para troubleshooting temporário
 
 ## Exemplos de uso
 
 ```bash
-ssh user@10.0.0.20
-ssh -i ~/.ssh/id_ed25519 user@servidor
-ssh -L 15432:db.internal:5432 user@bastion
+# login remoto simples
+ssh admin@10.10.10.20
+
+# debug detalhado de conexão SSH
+ssh -vvv admin@10.10.10.20
+
+# executar comando remoto sem shell interativo
+ssh admin@10.10.10.20 'ss -tulpen | grep 443'
+
+# acessar host privado via bastion
+ssh -J ops@bastion.corp.local ubuntu@app-01.internal
+
+# túnel local: localhost:15432 -> db.internal:5432
+ssh -L 15432:db.internal:5432 ops@bastion.corp.local
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ ssh user@10.0.0.20
-... saída resumida ...
+$ ssh -vvv admin@10.10.10.20
+...
+debug1: Connecting to 10.10.10.20 [10.10.10.20] port 22.
+debug1: Connection established.
+debug1: Authenticating to 10.10.10.20:22 as 'admin'
+debug1: Offering public key: /home/user/.ssh/id_ed25519
+debug1: Server accepts key: /home/user/.ssh/id_ed25519
+Authenticated to 10.10.10.20 ([10.10.10.20]:22).
+...
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida:
+- Parou em `Connecting to ...` + timeout: rota/firewall/porta bloqueada.
+- `Permission denied (publickey,password)`: falha de credencial/política de autenticação.
+- `Host key verification failed`: chave do host mudou ou `known_hosts` divergente.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Use `ssh -vvv` para separar problema de rede, handshake e autenticação.
+- Valide porta antes com `nc -vz host 22` quando suspeitar de bloqueio L3/L4.
+- Em salto via bastion, teste primeiro bastion isoladamente e depois `-J`.
+- Se houver erro de host key, confirme mudança legítima antes de remover entrada do `~/.ssh/known_hosts`.
+- Em conexões instáveis, configure keepalive (`ServerAliveInterval`, `ServerAliveCountMax`).
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- `telnet`/`nc`: testam conectividade de porta, mas não fornecem acesso administrativo seguro.
+- VPN: abre conectividade de rede ampla; `ssh` é mais pontual e auditável para acesso por host.
+- Console de cloud: útil para emergência, porém `ssh` é mais automatizável para operação diária.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-p <porta>`: conecta em porta diferente de 22.
+- `-i <chave>`: define chave privada específica.
+- `-J <jump_host>`: conexão via bastion (ProxyJump).
+- `-L [local:]host:porta` / `-R`: túnel local/remoto.
+- `-N`: não executa comando remoto (útil para túnel).
+- `-T`: desabilita pseudo-terminal (bom para scripts).
+- `-o ConnectTimeout=5`: timeout de conexão explícito.
+- `-vvv`: máximo nível de verbosidade de debug.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Preferir autenticação por chave + passphrase (evitar senha em produção).
+- Desabilitar login direto de `root` e usar usuário nominativo + `sudo`.
+- Centralizar parâmetros em `~/.ssh/config` para reduzir erro operacional.
+- Rotacionar chaves e remover acessos de usuários inativos.
+- Registrar comandos críticos executados remotamente no processo de incidente.
 
 ## Referências
 
-- man page: `man ssh`
-- Documentação oficial da ferramenta/projeto
+- `man ssh`
+- `man ssh_config`
+- OpenSSH manual: https://www.openssh.com/manual.html

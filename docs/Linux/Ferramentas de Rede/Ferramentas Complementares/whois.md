@@ -2,66 +2,84 @@
 
 ## O que é
 
-Ferramenta para consultar dados de registro de domínios e blocos IP/ASN. Resolve investigação de ownership e origem de rede.
+Ferramenta de consulta de registros públicos de domínio, bloco IP e ASN em servidores WHOIS (RIR/NIC/registries).
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Identificar dono/organização responsável por domínio, IP ou ASN
+- Descobrir faixa de IP, contatos de abuso e provedor upstream
+- Apoiar investigação de origem de tráfego suspeito (ataque, scan, spam)
+- Validar se um endereço pertence ao provedor esperado em troubleshooting de rota
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Durante análise de incidentes de segurança e tráfego anômalo
+- Quando precisar abrir chamado com provedor correto (abuse/NOC)
+- Para confirmar jurisdição/registro de domínio em troubleshooting DNS
+- Em diagnóstico de BGP/peering, para mapear ASN e prefixos
 
 ## Exemplos de uso
 
 ```bash
+# domínio
 whois example.com
+
+# IP público
 whois 8.8.8.8
+
+# consultar ASN em servidor específico (RADB)
 whois -h whois.radb.net AS15169
+
+# obter rota/prefixo via RADB
+whois -h whois.radb.net 8.8.8.0/24
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ whois example.com
-... saída resumida ...
+$ whois 8.8.8.8
+NetRange:       8.8.8.0 - 8.8.8.255
+CIDR:           8.8.8.0/24
+OrgName:        Google LLC
+OriginAS:       AS15169
+OrgAbuseEmail:  network-abuse@google.com
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida:
+- `NetRange/CIDR`: faixa associada ao IP.
+- `OrgName`/`descr`: organização proprietária.
+- `OriginAS`: ASN de origem (útil em análise de rota/BGP).
+- `OrgAbuseEmail`: contato para reporte de abuso.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Lembre que WHOIS não testa conectividade; ele apenas mostra metadados de registro.
+- Se resposta vier incompleta, consulte diretamente o servidor RIR correto (`-h whois.arin.net`, `whois.ripe.net`, etc.).
+- Cruze informação de WHOIS com `dig`, `traceroute` e dados BGP para contexto completo.
+- Alguns TLDs ocultam dados por privacidade (GDPR/proxy); valide em fontes complementares.
+- Em investigação de domínio malicioso, combine com histórico DNS e CT logs.
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- `dig/nslookup`: focam resolução DNS atual, não ownership de registro.
+- Portais RIR/web: mesma base, porém `whois` é scriptável para automação.
+- APIs de threat intel: enriquecem WHOIS com reputação e histórico.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-h <servidor>`: escolhe servidor WHOIS de consulta.
+- `-p <porta>`: porta customizada (raro; padrão 43).
+- `--verbose` (quando disponível): detalhes de consulta/encadeamento.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Registrar timestamp da consulta (dados WHOIS mudam ao longo do tempo).
+- Salvar saída bruta em incidentes para cadeia de evidência.
+- Não tirar conclusão isolada de WHOIS; sempre correlacionar com telemetria de rede.
+- Em automação, tratar variações de formato entre registries.
 
 ## Referências
 
-- man page: `man whois`
-- Documentação oficial da ferramenta/projeto
+- `man whois`
+- IANA WHOIS: https://www.iana.org/whois
+- ARIN, RIPE, APNIC, LACNIC, AFRINIC (RIRs)
