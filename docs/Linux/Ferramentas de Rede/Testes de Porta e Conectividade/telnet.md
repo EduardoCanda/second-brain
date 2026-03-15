@@ -2,66 +2,85 @@
 
 ## O que é
 
-Cliente TCP interativo legado. Resolve teste manual de conectividade TCP e leitura de banners.
+`telnet` é um cliente TCP interativo legado. Ainda é útil para teste manual de porta e leitura de banner em protocolos texto (SMTP, HTTP, POP3, IMAP).
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Confirmar conectividade TCP quando ferramentas modernas não estão instaladas.
+- Abrir sessão manual para enviar comandos simples de protocolo texto.
+- Validar banner de serviço (ex.: `220 mail... ESMTP`).
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Ambiente mínimo/legado onde só existe `telnet`.
+- Troubleshooting rápido de SMTP/HTTP sem TLS.
+- Necessidade de provar se a porta aceita conexão e responde texto.
 
 ## Exemplos de uso
 
 ```bash
-telnet 10.0.0.20 25
+# SMTP
+telnet 10.10.30.25 25
+
+# HTTP (sem TLS)
 telnet api.exemplo.com 80
-telnet 10.0.0.20 443
+# depois digite manualmente:
+# GET /health HTTP/1.1
+# Host: api.exemplo.com
+#
+
+# Teste porta genérica
+telnet 10.10.20.15 5432
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ telnet 10.0.0.20 25
-... saída resumida ...
+$ telnet 10.10.30.25 25
+Trying 10.10.30.25...
+Connected to 10.10.30.25.
+Escape character is '^]'.
+220 mail.exemplo.com ESMTP Postfix
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Interpretação: porta aberta e serviço SMTP ativo com banner.
+
+```text
+$ telnet 10.10.20.15 5432
+Trying 10.10.20.15...
+telnet: Unable to connect to remote host: Connection refused
+```
+
+Interpretação: host alcançável, mas sem processo ouvindo na porta.
+
+```text
+$ telnet 10.10.20.15 5432
+Trying 10.10.20.15...
+telnet: Unable to connect to remote host: Connection timed out
+```
+
+Interpretação: bloqueio de rede/firewall ou rota inválida.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Use `Ctrl+]` para abrir prompt do telnet e `quit` para sair corretamente.
+- Não use telnet para concluir saúde de serviços TLS (443, 993, 995): prefira `ncat --ssl` ou `openssl s_client`.
+- Se conecta mas não há banner, o serviço pode exigir envio inicial de comando/protocolo binário.
+- Para erro intermitente, repita o teste com timestamp para correlacionar com firewall/log de app.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `telnet <host> <porta>`: modo principal (não há muitas flags modernas).
+- `-4` / `-6` (dependendo da implementação): força IPv4 ou IPv6.
+- `-E` (algumas implementações): desativa escape char.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Trate telnet como ferramenta de emergência/legado; prefira `nc`/`ncat` no dia a dia.
+- Nunca use para credenciais em rede não confiável (protocolo sem criptografia).
+- Em documentação de incidente, registre banner recebido: ajuda a identificar serviço real por trás da porta.
 
 ## Referências
 
-- man page: `man telnet`
-- Documentação oficial da ferramenta/projeto
+- `man telnet`
+- NetKit telnet user guide (implementações Linux legadas)
