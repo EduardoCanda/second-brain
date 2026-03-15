@@ -2,66 +2,72 @@
 
 ## O que é
 
-Ferramenta moderna para gerenciamento de interfaces Wi-Fi. Resolve diagnóstico de link sem fio e parâmetros 802.11.
+Ferramenta moderna baseada em **nl80211/cfg80211** para inspeção e configuração de interfaces Wi-Fi no Linux.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Ver estado do link Wi-Fi (SSID, frequência, bitrate, sinal)
+- Listar capabilities da placa (bandas, canais, modos)
+- Fazer scan de redes e diagnosticar interferência/canal
+- Investigar desconexões por baixa qualidade de sinal
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Notebook/host Linux conecta no Wi-Fi, mas tráfego está lento ou instável
+- Precisa confirmar banda (2.4GHz vs 5GHz) e largura de canal
+- Troubleshooting de roaming, RSSI fraco, AP congestionado
 
 ## Exemplos de uso
 
 ```bash
 iw dev
 iw dev wlan0 link
-iw dev wlan0 scan | head
+iw dev wlan0 scan | head -n 40
+iw phy phy0 info
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ iw dev
-... saída resumida ...
+$ iw dev wlan0 link
+Connected to 34:60:f9:12:34:56 (on wlan0)
+	SSID: Corp-WiFi
+	freq: 5180
+	RX: 1293091 bytes (11930 packets)
+	TX: 220183 bytes (2101 packets)
+	signal: -62 dBm
+	rx bitrate: 433.3 MBit/s MCS 9 40MHz short GI
+	tx bitrate: 300.0 MBit/s MCS 15 40MHz short GI
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `signal` melhor que -67 dBm costuma ser aceitável para voz/vídeo.
+- `freq` mostra em qual canal/banda você está operando.
+- Bitrate alto com perda alta pode indicar interferência, não falta de banda.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-iw vs iwconfig: iw é a ferramenta moderna para wireless no Linux.
+- Correlacione `signal` com perda real (`ping`) e throughput (`iperf3`).
+- Se sinal oscila muito, investigue distância, obstáculos e canal do AP.
+- Use `iw phy` para confirmar se adaptador suporta 5GHz/HT/VHT/HE.
+- Se `iw dev wlan0 link` retorna "Not connected", valide NetworkManager/wpa_supplicant.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `dev`: operações por interface (`wlan0`).
+- `phy`: operações por rádio físico (`phy0`).
+- `link`: estado de associação atual.
+- `scan`: varredura de redes (pode exigir privilégios).
+- `station dump`: métricas de clientes (modo AP).
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Prefira `iw` em vez de `iwconfig` em ambientes modernos.
+- Em incidentes de Wi-Fi, colete também `journalctl -u NetworkManager`.
+- Faça medições repetidas em diferentes horários para detectar congestionamento.
 
 ## Referências
 
-- man page: `man iw`
-- Documentação oficial da ferramenta/projeto
+- `man iw`
+- Documentação wireless Linux: https://wireless.docs.kernel.org/
+- Projeto iw: https://git.kernel.org/pub/scm/linux/kernel/git/jberg/iw.git/

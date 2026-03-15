@@ -2,66 +2,79 @@
 
 ## O que é
 
-Ferramenta principal do pacote iproute2 para administração de rede. Resolve configuração e inspeção de interfaces, rotas e vizinhança.
+Ferramenta padrão do pacote **iproute2** para administrar pilha de rede no Linux (interfaces, endereços, rotas, vizinhos ARP/NDP, regras de policy routing e namespaces).
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Inspecionar estado real das interfaces (`state`, MTU, qdisc, filas, erros)
+- Validar endereçamento IPv4/IPv6 e gateway default
+- Investigar caminho de saída com `ip route get`
+- Conferir cache de vizinhos (`ip neigh`) para problemas de ARP/NDP
+- Operar em troubleshooting avançado com `ip netns` e `ip rule`
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Host “tem IP” mas não sai para a rede (suspeita de rota/gateway)
+- Latência alta após mudança de MTU (ex.: VPN, túnel, cloud)
+- Conectividade intermitente em Kubernetes/containers (veth, CNI, netns)
+- Erro “No route to host” ou tráfego saindo pela interface errada
 
 ## Exemplos de uso
 
 ```bash
-ip addr show
-ip route show
-ip neigh show
+ip -br a
+ip route show table main
+ip route get 8.8.8.8
+ip neigh show dev eth0
+ip -s link show dev eth0
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ ip addr show
-... saída resumida ...
+$ ip -br a
+lo               UNKNOWN        127.0.0.1/8 ::1/128
+eth0             UP             10.10.20.15/24 fe80::5054:ff:fe12:3456/64
+
+$ ip route get 8.8.8.8
+8.8.8.8 via 10.10.20.1 dev eth0 src 10.10.20.15 uid 1000
+    cache
+
+$ ip neigh show dev eth0
+10.10.20.1 lladdr 52:54:00:aa:bb:cc REACHABLE
+10.10.20.200 FAILED
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática:
+- `src` mostra o IP de origem que o kernel escolheu.
+- `via` e `dev` confirmam gateway/interface de saída.
+- Vizinho em `FAILED` geralmente indica problema L2 (VLAN, cabo, switch, ARP bloqueado).
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Compare `ip route get <destino>` com o que você esperava da topologia.
+- Use `ip -s link` para checar `dropped`, `errors`, `overruns` antes de culpar aplicação.
+- Se houver VPN/túnel, confirme MTU e teste com `ping -M do -s 1472 <destino>`.
+- Em container, rode no namespace correto: `ip netns exec <ns> ip a`.
+- Para incidentes rápidos, salve snapshot: `ip a; ip r; ip neigh` no ticket.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-br` (brief): saída curta e ótima para triagem rápida.
+- `-c` (color): facilita leitura em terminal.
+- `-s` (statistics): inclui contadores de erro/perda.
+- `-4` / `-6`: filtra por família IP.
+- `-j` (json): ideal para automação e parsing em scripts.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Prefira `ip` em vez de `ifconfig/route/arp` (ferramentas legadas).
+- Em produção, priorize comandos de leitura; mude estado apenas com janela/rollback.
+- Sempre correlacione saída de `ip` com regras de firewall (`nft`/`iptables`) e DNS.
+- Padronize coleta de evidências em incidentes (mesmos comandos, mesma ordem).
 
 ## Referências
 
-- man page: `man ip`
-- Documentação oficial da ferramenta/projeto
+- `man ip`
+- `man ip-address`, `man ip-route`, `man ip-neighbour`
+- Documentação do iproute2: https://wiki.linuxfoundation.org/networking/iproute2
