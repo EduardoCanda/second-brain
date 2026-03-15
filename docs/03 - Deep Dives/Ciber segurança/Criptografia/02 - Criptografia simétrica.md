@@ -1,0 +1,1 @@
+![criptografia simétrica](img/criptografia simétrica.png)
