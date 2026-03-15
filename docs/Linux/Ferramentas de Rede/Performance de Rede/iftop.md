@@ -2,66 +2,75 @@
 
 ## O que é
 
-Monitor interativo de uso de banda por fluxo. Resolve identificação de conexões que consomem tráfego excessivo.
+Monitor interativo de tráfego por fluxo (host origem/destino) em tempo real, semelhante ao `top` para rede.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Identificar rapidamente **quem** está consumindo banda
+- Detectar fluxos inesperados (backup fora de janela, replicação, exfiltração)
+- Ver volume por conexão sem precisar abrir captura completa no Wireshark
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Interface saturada e você precisa do "top talkers" agora
+- Suspeita de tráfego anômalo entre hosts internos
+- Troubleshooting de "rede lenta" com causa potencial em poucos fluxos pesados
 
 ## Exemplos de uso
 
 ```bash
-iftop -i eth0
-iftop -i eth0 -n -P
-iftop -i eth0 -B
+# monitora interface padrão
+sudo iftop -i eth0
+
+# sem resolução DNS e mostrando portas
+sudo iftop -i eth0 -n -P
+
+# mostra taxa em bytes/s (útil para casar com logs de app)
+sudo iftop -i eth0 -B
 ```
 
 ## Exemplo de saída
 
 ```text
-$ iftop -i eth0
-... saída resumida ...
+                 10.0.1.15:443 => 10.0.2.40:53122   120Mb 110Mb 105Mb
+                 10.0.2.40:53122 <= 10.0.1.15:443    12Mb  10Mb   9Mb
+TX: 122Mb  RX: 14Mb  TOTAL: 136Mb
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Como interpretar:
+- três colunas por fluxo = média curta/média/longa (2s/10s/40s)
+- `=>` é tráfego saindo da interface monitorada; `<=` entrando
+- `TX/RX/TOTAL` ajuda a confirmar saturação e direção dominante
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Usar `-n` para evitar atraso por DNS reverso durante incidente
+- Filtrar por rede crítica (tecla `f`) para reduzir ruído
+- Se precisar evidência forense, complementar com `tcpdump` (iftop não salva pcap)
+- Atenção a bond/VLAN: monitorar a interface correta (`bond0`, `eth0.100`, etc.)
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- **iftop vs nload**: iftop mostra por fluxo; nload mostra agregado por interface
+- **iftop vs bmon**: bmon é melhor para série temporal de interface, iftop para top consumers
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-i <if>`: interface
+- `-n`: sem resolução de nomes
+- `-P`: exibe portas
+- `-B`: unidade em bytes/s
+- `-N`: não resolve portas por serviço
+- `-F <filtro>`: filtro de rede/host na captura
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Executar com `sudo` para visibilidade completa
+- Registrar prints dos fluxos mais pesados no incidente
+- Cruzar horário do pico no iftop com logs de aplicação/jobs
+- Em produção crítica, preferir janelas curtas de observação para reduzir overhead
 
 ## Referências
 
-- man page: `man iftop`
-- Documentação oficial da ferramenta/projeto
+- `man iftop`
+- https://github.com/soarpenguin/iftop

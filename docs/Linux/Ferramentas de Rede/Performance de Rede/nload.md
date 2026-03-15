@@ -2,66 +2,74 @@
 
 ## O que é
 
-Monitor simples de entrada/saída por interface. Resolve visualização rápida de throughput em tempo real.
+Ferramenta TUI simples para visualizar throughput de entrada/saída por interface, com gráfico temporal leve.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Ver tendência rápida de uso de banda sem detalhar fluxos
+- Confirmar se há pico sustentado ou rajada curta
+- Acompanhar interface durante deploy, backup ou teste de carga
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Você quer diagnóstico rápido da interface sem complexidade
+- Ambiente mínimo (jump host/VM) onde ferramentas mais pesadas não estão instaladas
+- Durante execução de `iperf3` para observar comportamento em tempo real
 
 ## Exemplos de uso
 
 ```bash
+# monitora interface específica
 nload eth0
+
+# mostra múltiplas interfaces
 nload -m
-nload -u b -t 500
+
+# unidade em bits e atualização a cada 500ms
+nload -u b -t 500 eth0
 ```
 
 ## Exemplo de saída
 
 ```text
-$ nload eth0
-... saída resumida ...
+Device eth0 [=====>      420.35 Mbit/s]
+Incoming: 380.12 Mbit/s   Outgoing: 40.23 Mbit/s
+Min/Avg/Max: 10.2 / 210.4 / 512.8 Mbit/s
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Como interpretar:
+- `Incoming/Outgoing` mostra taxa instantânea por direção
+- `Min/Avg/Max` ajuda a identificar burst vs carga estável
+- gráfico facilita perceber padrão cíclico (ex.: sincronização a cada minuto)
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Se taxa oscila muito, reduzir intervalo (`-t`) para capturar burst curto
+- Usar junto com `iftop` quando precisar descobrir qual fluxo gerou o pico
+- Conferir se está na interface certa (bridge, bond, vlan)
+- Se números parecem baixos, verificar unidade (`-u h|b|B`) para não interpretar errado
 
 ## Comparação com ferramentas similares
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- **nload vs bmon**: nload é mais simples e direto; bmon tem mais métricas detalhadas
+- **nload vs iftop**: nload é agregado por interface, iftop é por fluxo
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-m`: múltiplas interfaces na mesma tela
+- `-u <h|b|B>`: unidade (auto, bits, bytes)
+- `-t <ms>`: intervalo de refresh
+- `-a <seg>`: janela de cálculo da média
+- `-i <max>` / `-o <max>`: escala máxima de entrada/saída
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Padronizar unidade (bits/s ou bytes/s) no time para evitar confusão
+- Capturar valores de pico e média durante incidentes
+- Usar em conjunto com métricas históricas (Prometheus/Netdata) para contexto
+- Evitar concluir causa raiz apenas com nload; complementar com ferramenta por fluxo/pacote
 
 ## Referências
 
-- man page: `man nload`
-- Documentação oficial da ferramenta/projeto
+- `man nload`
+- https://github.com/rolandriegel/nload
