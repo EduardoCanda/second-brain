@@ -4,65 +4,45 @@ docs/Web/Browser/Networking/Como o navegador resolve DNS.md
 
 ## O que é
 
-Mapeia hostname para IP usando cache local, resolver do SO, DNS recursivo e, em alguns cenários, DoH/DoT.
+A resolução DNS converte o hostname da URL em endereço IP para o navegador abrir conexão.
 
 ## Por que isso existe
 
-Evitar hardcode de IP e permitir balanceamento geográfico, failover e rotação transparente de infraestrutura.
+Permite separar identidade lógica do serviço (domínio) da infraestrutura real (IPs dinâmicos, balanceamento, CDN).
 
 ## Como funciona internamente
 
-1. Verifica cache DNS do browser e cache do sistema operacional.
-2. Se não houver entrada válida, envia consulta ao resolvedor configurado (UDP/TCP 53 ou HTTPS no DoH).
-3. Resolvedor faz iteração/recursão: root -> TLD -> authoritative.
-4. Resposta retorna com TTL; browser guarda em cache e inicia conexão para o IP escolhido.
-
-## Fluxo de funcionamento
-
-```mermaid
-sequenceDiagram
-participant U as Usuário/JS
-participant B as Browser
-participant N as Rede/Servidor
-U->>B: Dispara ação
-B->>N: Solicita recurso/operação
-N-->>B: Retorna dados/resposta
-B-->>U: Atualiza estado/render
-```
+1. Browser consulta cache interno e cache do sistema operacional.
+2. Sem hit, pergunta ao resolvedor recursivo configurado.
+3. Resolvedor obtém resposta autoritativa e TTL.
+4. Resultado pode incluir IPv4/IPv6 e políticas como Happy Eyeballs.
 
 ## Exemplo prático
 
 ```bash
-dig +trace example.com
-nslookup example.com
+dig +short api.exemplo.com
 ```
 
 ```http
-GET /resource HTTP/1.1
+GET / HTTP/1.1
 Host: example.com
-Accept: */*
 ```
 
-## Quando isso é importante para um engenheiro backend/devops
+## Quando isso é importante para backend/devops
 
-- Diagnóstico de incidentes de latência, erros intermitentes e saturação de recursos.
-- Definição de estratégia de cache, balanceamento, TLS termination e observabilidade.
-- Revisão de segurança em headers, cookies, políticas de origem e proteção de sessão.
-- Planejamento de capacidade (conexões concorrentes, CPU por handshake, egress).
+- Facilita a análise de incidentes sem depender apenas de hipótese no servidor.
+- Ajuda a escolher headers, timeouts, políticas de cache e segurança mais coerentes.
+- Melhora correlação entre DevTools, logs de aplicação e métricas de infraestrutura.
 
 ## Problemas comuns
 
-- Assumir que problema está apenas no backend sem validar DNS/TCP/TLS/browser.
-- Ignorar diferença entre ambiente local, staging e produção (proxy/CDN/WAF).
-- Não correlacionar waterfall do navegador com tracing e logs do servidor.
-- Configurar timeouts/retries de forma incompatível entre camadas.
+- Interpretar sintomas de frontend sem validar o que o navegador decidiu internamente.
+- Confiar apenas no status HTTP e ignorar headers/políticas que bloqueiam uso da resposta.
+- Não reproduzir o cenário real (CDN, proxy, HTTPS, cache quente/frio).
 
 ## Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP]]
-- [[DNS]]
-- [[TLS]]
-- [[TCP]]
-- [[Critical Rendering Path]]
-- [[Event Loop]]
+- [[Como o navegador abre uma conexão TCP]]
+- [[HTTP request lifecycle no navegador]]
+- [[Keep Alive]]

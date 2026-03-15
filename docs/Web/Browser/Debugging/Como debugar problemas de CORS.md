@@ -4,64 +4,53 @@ docs/Web/Browser/Debugging/Como debugar problemas de CORS.md
 
 ## O que é
 
-Como debugar problemas de CORS descreve uma parte específica do pipeline web entre rede, runtime e renderização.
+Um guia prático para diagnosticar falhas de CORS olhando a troca real entre navegador e servidor (preflight + request final), em vez de confiar só na mensagem do console.
 
 ## Por que isso existe
 
-Para padronizar comportamento entre navegadores e tornar apps web previsíveis em escala.
+Erros de CORS costumam mascarar problemas diferentes (origem errada, headers ausentes, credenciais incompatíveis), e sem inspeção detalhada é fácil corrigir o ponto errado.
 
 ## Como funciona internamente
 
-1. Entrada do usuário ou script dispara uma operação.
-2. Browser agenda trabalho entre processos/threads internos.
-3. Camadas de rede, segurança e renderização são acionadas conforme dependências.
-4. Estado final é refletido no DOM/UI e em métricas de performance.
-
-## Fluxo de funcionamento
-
-```mermaid
-sequenceDiagram
-participant U as Usuário/JS
-participant B as Browser
-participant N as Rede/Servidor
-U->>B: Dispara ação
-B->>N: Solicita recurso/operação
-N-->>B: Retorna dados/resposta
-B-->>U: Atualiza estado/render
-```
+1. Abra DevTools > Network e habilite **Preserve log**.
+2. Reproduza a chamada e localize primeiro a request **OPTIONS** (preflight), depois a request real.
+3. Compare `Origin`, `Access-Control-Request-Method` e `Access-Control-Request-Headers` enviados pelo navegador.
+4. Valide se a resposta devolve `Access-Control-Allow-*` compatível e `Vary: Origin` quando aplicável.
 
 ## Exemplo prático
 
 ```bash
-curl -I https://example.com
+curl -i -X OPTIONS https://api.exemplo.com/orders \
+  -H 'Origin: https://app.exemplo.com' \
+  -H 'Access-Control-Request-Method: POST' \
+  -H 'Access-Control-Request-Headers: authorization,content-type'
 ```
 
 ```http
-GET /resource HTTP/1.1
-Host: example.com
-Accept: */*
+HTTP/1.1 204 No Content
+Access-Control-Allow-Origin: https://app.exemplo.com
+Access-Control-Allow-Methods: GET,POST,PUT,DELETE
+Access-Control-Allow-Headers: authorization,content-type
+Access-Control-Allow-Credentials: true
+Vary: Origin
 ```
 
-## Quando isso é importante para um engenheiro backend/devops
+## Quando isso é importante para backend/devops
 
-- Diagnóstico de incidentes de latência, erros intermitentes e saturação de recursos.
-- Definição de estratégia de cache, balanceamento, TLS termination e observabilidade.
-- Revisão de segurança em headers, cookies, políticas de origem e proteção de sessão.
-- Planejamento de capacidade (conexões concorrentes, CPU por handshake, egress).
+- Evita incidentes de produção causados por configuração incorreta em API Gateway, Nginx, CDN ou WAF.
+- Ajuda a separar erro de aplicação de erro de política de navegador.
+- Melhora tempo de resposta em incidentes frontend/backend compartilhados.
 
 ## Problemas comuns
 
-- Assumir que problema está apenas no backend sem validar DNS/TCP/TLS/browser.
-- Ignorar diferença entre ambiente local, staging e produção (proxy/CDN/WAF).
-- Não correlacionar waterfall do navegador com tracing e logs do servidor.
-- Configurar timeouts/retries de forma incompatível entre camadas.
+- Liberar `Access-Control-Allow-Origin: *` junto com credenciais (inválido no navegador).
+- Esquecer de responder `OPTIONS` na rota ou no proxy reverso.
+- Cachear resposta CORS sem `Vary: Origin`, misturando políticas entre clientes.
 
 ## Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP]]
-- [[DNS]]
-- [[TLS]]
-- [[TCP]]
-- [[Critical Rendering Path]]
-- [[Event Loop]]
+- [[CORS]]
+- [[Same Origin Policy]]
+- [[Como usar DevTools Network Tab]]
+- [[HTTP request lifecycle no navegador]]
