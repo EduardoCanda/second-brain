@@ -2,66 +2,85 @@
 
 ## O que é
 
-CLI do systemd-resolved para consultar e depurar resolução local. Resolve problemas de cache DNS e configuração por interface.
+`resolvectl` é a CLI do `systemd-resolved`. Ela mostra como o host está resolvendo nomes por interface, domínios de busca, DNS configurados, estado de DNSSEC e cache local.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Inspecionar configuração DNS efetiva em máquinas com systemd.
+- Descobrir qual interface e servidor DNS estão sendo usados.
+- Verificar split DNS (domínios roteados para DNS diferentes).
+- Limpar cache e revalidar resolução após mudanças.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Em hosts Linux modernos (Ubuntu, Debian, Fedora, etc.) com `systemd-resolved` ativo.
+- Quando `/etc/resolv.conf` parece correto, mas a resolução real não bate.
+- Em VPN corporativa onde domínios internos só resolvem em DNS específico.
+- Após mudança de rede/interface e comportamento DNS ficou inconsistente.
 
 ## Exemplos de uso
 
 ```bash
+# Visão geral do resolvedor
 resolvectl status
-resolvectl query kubernetes.default.svc.cluster.local
+
+# Consulta explícita via resolved
+resolvectl query api.interno.empresa.local
+
+# Mostrar DNS configurado por interface
+resolvectl dns
+
+# Limpar cache local
 resolvectl flush-caches
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
 $ resolvectl status
-... saída resumida ...
+Global
+       Protocols: +LLMNR +mDNS +DNSOverTLS DNSSEC=no/unsupported
+resolv.conf mode: stub
+
+Link 2 (eth0)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute +LLMNR -mDNS +DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 10.10.0.53
+       DNS Servers: 10.10.0.53 10.10.0.54
+        DNS Domain: corp.local
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida do que importa:
+- `Current DNS Server`: servidor DNS efetivamente em uso.
+- `DNS Servers`: lista de fallback.
+- `DNS Domain`: domínio de busca/split DNS por link.
+- `resolv.conf mode: stub`: host usa resolved como stub local.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
+- Se domínio interno não resolve, confirme no `status` se ele está vinculado ao link certo (VPN/LAN).
+- Quando DNS muda e host continua com resposta antiga, execute `resolvectl flush-caches`.
+- Compare `resolvectl query nome` com `dig @dns nome` para separar problema de cache local e servidor remoto.
+- Se `resolvectl` não existir, o host pode não usar systemd-resolved (usar `dig/host/nslookup` e revisar NetworkManager).
 
-## Comparação com ferramentas similares
+## Flags/comandos importantes
 
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
-
-## Flags importantes
-
-- status: mostra configuração e DNS por link.
-- query NOME: resolve nome explicitamente.
-- dns IFACE: exibe DNS da interface.
-- flush-caches: limpa cache do resolvedor local.
+- `status`: estado completo global e por interface.
+- `query NOME`: resolve nome usando caminho do resolved.
+- `dns [IFACE]`: exibe DNS configurado globalmente/por interface.
+- `domain [IFACE]`: mostra domínios de roteamento e busca.
+- `flush-caches`: limpa cache DNS local.
+- `statistics`: mostra métricas de cache/hits/misses.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Em incidentes de endpoint Linux, sempre coletar `resolvectl status` junto com `/etc/resolv.conf`.
+- Validar DNS por interface após conectar/desconectar VPN.
+- Evitar “corrigir” DNS só editando `/etc/resolv.conf` em hosts gerenciados por systemd/NetworkManager.
+- Registrar antes/depois de `flush-caches` para comprovar efeito da ação.
 
 ## Referências
 
-- man page: `man resolvectl`
-- Documentação oficial da ferramenta/projeto
+- `man resolvectl`
+- `man systemd-resolved`
+- Documentação do systemd: resolved e nss-resolve
