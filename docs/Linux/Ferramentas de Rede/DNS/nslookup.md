@@ -2,66 +2,77 @@
 
 ## O que é
 
-Ferramenta clássica para fazer consultas DNS em resolvedores configurados no sistema ou informados manualmente. Resolve dúvidas rápidas de resolução de nomes e registros.
+`nslookup` é uma ferramenta tradicional para consultas DNS rápidas, disponível em praticamente toda distribuição Linux. É útil para validações pontuais, mesmo sendo menos detalhada que `dig`.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Confirmar rapidamente se um nome resolve para IP.
+- Consultar tipos comuns de registro (`A`, `AAAA`, `MX`, `NS`, `TXT`).
+- Testar resposta de um DNS específico sem alterar `/etc/resolv.conf`.
+- Fazer troubleshooting básico quando você precisa de algo simples e imediato.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Em acesso inicial a servidor onde você precisa de diagnóstico rápido.
+- Quando equipe de suporte pede evidência simples de resolução DNS.
+- Para validar se o DNS interno responde diferente do DNS público.
+- Em ambientes legados onde `dig` pode não estar instalado por padrão.
 
 ## Exemplos de uso
 
 ```bash
-nslookup google.com
+# Consulta padrão (usa DNS configurado no host)
+nslookup example.com
+
+# Consulta tipo específico
 nslookup -type=mx gmail.com
+
+# Consulta reversa
 nslookup 8.8.8.8
+
+# Forçar servidor DNS específico
+nslookup example.com 1.1.1.1
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ nslookup google.com
-... saída resumida ...
+$ nslookup example.com 1.1.1.1
+Server:         1.1.1.1
+Address:        1.1.1.1#53
+
+Non-authoritative answer:
+Name:   example.com
+Address: 93.184.216.34
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida do que importa:
+- `Server` / `Address`: resolvedor que respondeu.
+- `Non-authoritative answer`: resposta veio de cache/recursivo, não direto do autoritativo.
+- `Name` e `Address`: resultado efetivo da resolução.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-nslookup vs dig: nslookup é direto para checagens rápidas; dig é melhor para análise aprofundada.
+- Teste primeiro sem servidor explícito, depois com servidor explícito (ex.: `1.1.1.1`) para isolar problema local.
+- Se houver timeout, valide conectividade UDP/TCP 53 entre host e DNS.
+- Se `nslookup` resolve mas aplicação falha, investigar camada de aplicação/TLS/proxy.
+- Use consulta reversa para checar consistência PTR em ambientes que dependem de reverse DNS (mail, logs).
 
 ## Flags importantes
 
-- -type=TIPO: consulta tipo específico.
-- -debug: saída detalhada.
-- servidor DNS no fim do comando: força resolvedor.
-- -port=PORTA: usa porta DNS customizada.
+- `-type=TIPO`: define tipo de registro (`A`, `AAAA`, `MX`, `TXT`, etc.).
+- `-debug`: aumenta detalhes do processo de consulta.
+- `-port=PORTA`: consulta DNS em porta não padrão.
+- `nome servidor_dns`: forma prática de escolher resolver no próprio comando.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Para análise profunda de incidente, complementar `nslookup` com `dig`.
+- Guardar saída completa quando houver erro intermitente (ajuda correlação com logs).
+- Evitar conclusões com único teste; repetir em mais de um resolvedor.
+- Padronizar um conjunto de domínios internos/externos para testes de saúde DNS.
 
 ## Referências
 
-- man page: `man nslookup`
-- Documentação oficial da ferramenta/projeto
+- `man nslookup`
+- BIND 9 Administrator Reference Manual (ISC)

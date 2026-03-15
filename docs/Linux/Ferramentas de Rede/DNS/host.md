@@ -2,66 +2,75 @@
 
 ## O que é
 
-Comando simples para consulta DNS direta e reversa. Resolve validações rápidas de nome para IP e IP para nome.
+`host` é um comando enxuto para consultas DNS diretas e reversas. Ele é excelente para checks objetivos no terminal e scripts simples.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Resolver nome para IP de forma direta.
+- Resolver IP para nome (PTR/reverso).
+- Consultar tipo específico de registro sem saída verbosa.
+- Validar rapidamente DNS autoritativo em troubleshooting do dia a dia.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Em scripts de health-check onde saída curta é melhor.
+- Para conferir PTR de IPs de servidores, balanceadores ou gateways.
+- Para checagem operacional rápida durante incidentes.
+- Quando você quer uma alternativa mais simples que `dig`.
 
 ## Exemplos de uso
 
 ```bash
-host google.com
-host -t mx gmail.com
+# Resolução padrão
+host example.com
+
+# Tipo específico
+host -t txt example.com
+
+# Reverso (PTR)
 host 8.8.8.8
+
+# Forçar servidor DNS específico
+host example.com 1.1.1.1
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ host google.com
-... saída resumida ...
+$ host example.com
+example.com has address 93.184.216.34
+
+$ host 8.8.8.8
+8.8.8.8.in-addr.arpa domain name pointer dns.google.
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura rápida do que importa:
+- `has address`: resposta de registro `A`.
+- `domain name pointer`: resposta PTR de reverso.
+- Mensagens como `not found: 3(NXDOMAIN)` indicam ausência do nome na zona.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Para incidentes DNS, compare o mesmo comando com DNS interno e público.
+- Em problema de e-mail, valide `MX` e `TXT` (SPF/DMARC) com `-t`.
+- Se o retorno variar entre execuções, investigar round-robin, cache e TTL baixo.
+- Em scripts, trate explicitamente códigos de erro para diferenciar timeout de NXDOMAIN.
 
 ## Flags importantes
 
-- -t TIPO: consulta registro específico.
-- -a: modo detalhado.
-- -W SEG: timeout da consulta.
-- -C: valida SOA entre servidores autoritativos.
+- `-t TIPO`: define tipo do registro (`A`, `AAAA`, `MX`, `TXT`, `NS`, etc.).
+- `-a`: modo “all” (equivalente a consulta detalhada/ANY quando possível).
+- `-W SEGUNDOS`: timeout da consulta.
+- `-C`: verifica consistência SOA entre autoritativos da zona.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Usar `host` para confirmação rápida e `dig` para investigação detalhada.
+- Em automação, capturar stdout e exit code para decisão confiável.
+- Documentar qual DNS foi consultado para evitar ambiguidade em incidentes.
+- Não presumir sucesso apenas por resolver `A`; validar também reverso quando relevante.
 
 ## Referências
 
-- man page: `man host`
-- Documentação oficial da ferramenta/projeto
+- `man host`
+- BIND 9 Administrator Reference Manual (ISC)
