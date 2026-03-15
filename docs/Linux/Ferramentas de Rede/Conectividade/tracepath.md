@@ -2,66 +2,77 @@
 
 ## O que é
 
-Ferramenta de rastreamento de rota sem exigir privilégios elevados na maioria dos casos. Resolve investigação de caminho e MTU.
+Ferramenta de rastreamento de rota semelhante ao traceroute, focada em simplicidade e detecção de **Path MTU (pMTU)**, geralmente sem exigir privilégios elevados.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Identificar gargalos de MTU no caminho (blackhole de fragmentação).
+- Mapear hops de forma rápida quando `traceroute` não está disponível.
+- Validar se encapsulamentos (VPN, VXLAN, GRE) estão reduzindo MTU efetiva.
+- Apoiar troubleshooting de conexões que "abrem", mas travam em payload maior.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Handshake TCP funciona, mas transferências maiores falham ou ficam lentas.
+- Suspeita de problema após habilitar túnel/VPN/overlay.
+- Ambiente sem privilégio root para usar traceroute completo.
+- Necessidade de checar pMTU fim-a-fim rapidamente.
 
 ## Exemplos de uso
 
 ```bash
+# Rota e pMTU para destino público
 tracepath 8.8.8.8
+
+# Sem resolução DNS dos hops
 tracepath -n api.exemplo.com
-tracepath -m 10 10.0.0.15
+
+# Limitar número de hops
+tracepath -m 12 10.50.0.25
 ```
 
 ## Exemplo de saída
 
 ```text
 $ tracepath 8.8.8.8
-... saída resumida ...
+ 1?: [LOCALHOST]                      pmtu 1500
+ 1:  192.168.0.1                       1.102ms
+ 2:  10.10.0.1                         4.771ms
+ 3:  no reply
+ 4:  200.160.2.1                      15.004ms
+ 5:  8.8.8.8                          18.220ms reached
+     Resume: pmtu 1480 hops 5 back 6
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+Leitura prática da saída:
+
+- `pmtu 1500` no início: MTU local de saída.
+- `Resume: pmtu 1480`: caminho impõe MTU menor (comum em túneis).
+- `no reply`: hop silencioso; se destino for alcançado, caminho segue funcional.
+- Queda de pMTU + falha em aplicações com payload grande: forte indício de MTU mal ajustada.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Se pMTU cair (ex.: 1500 -> 1480), ajuste MTU/MSS em interfaces/túneis/firewall.
+- Combine com `ping -M do -s <tam>` para validar tamanho máximo sem fragmentação.
+- Em VPN IPsec/WireGuard, reserve overhead do túnel ao definir MTU da interface.
+- Se o destino não é alcançado, compare com `traceroute -T -p 443` para separar bloqueio de método/protocolo.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-n`: sem resolução de nomes.
+- `-m <hops>`: número máximo de saltos.
+- `-l <bytes>`: tamanho inicial do pacote.
+- `-p <porta>`: porta UDP inicial (varia por implementação).
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Usar `tracepath` como primeira verificação de MTU em incidentes de VPN/overlay.
+- Documentar pMTU encontrado junto da topologia (link físico, túnel, cloud).
+- Padronizar MTU por segmento de rede para evitar comportamento imprevisível.
+- Após ajuste, repetir teste e anexar "antes/depois" no ticket.
 
 ## Referências
 
-- man page: `man tracepath`
-- Documentação oficial da ferramenta/projeto
+- `man tracepath`
+- iputils (tracepath): https://github.com/iputils/iputils
