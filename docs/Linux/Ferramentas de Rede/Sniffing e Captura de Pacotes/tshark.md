@@ -2,66 +2,83 @@
 
 ## O que é
 
-Versão CLI do Wireshark para captura e parsing avançado. Resolve extração automatizada de campos de protocolos.
+Versão CLI do Wireshark para captura e dissecação de protocolos. Ideal para ambientes sem interface gráfica e para automação em scripts/CI.
 
 ## Para que serve
 
-- Diagnosticar comportamento de rede em serviços Linux
-- Validar hipóteses durante troubleshooting de incidentes
-- Coletar evidências para análise pós-incidente
-- Apoiar observabilidade em ambientes de produção
+- Extrair campos específicos de protocolos (DNS, TLS, HTTP, DHCP, etc.).
+- Filtrar tráfego com display filter do Wireshark (`-Y`) em arquivos `.pcap`.
+- Gerar relatórios rápidos de conversas, endpoints e estatísticas.
+- Fazer troubleshooting reproduzível em servidores Linux headless.
 
 ## Quando usar
 
-- Um serviço não consegue se comunicar com outro serviço
-- Há suspeita de timeout, perda de pacote ou rota incorreta
-- DNS, porta, firewall ou TLS podem estar causando falha
-- É necessário validar conectividade em host, VM, container ou namespace
-
+- Você já tem um `.pcap` e precisa responder perguntas objetivas rápido.
+- Precisa automatizar análise de captura em pipeline de diagnóstico.
+- Quer validar handshake TLS, SNI, códigos HTTP ou erros DNS por CLI.
+- Não pode abrir Wireshark gráfico no servidor por segurança/acesso.
 
 ## Exemplos de uso
 
 ```bash
-tshark -i eth0 -f "tcp port 443"
-tshark -r captura.pcap -Y "http.request"
-tshark -r captura.pcap -T fields -e ip.src -e ip.dst
+# Capturar tráfego HTTPS na interface
+sudo tshark -i eth0 -f "tcp port 443"
+
+# Listar apenas queries/respostas DNS de um pcap
+tshark -r incidente.pcap -Y "dns" -T fields -e frame.time -e ip.src -e dns.qry.name -e dns.a
+
+# Ver somente handshake TLS
+tshark -r incidente.pcap -Y "tls.handshake" -T fields -e ip.src -e ip.dst -e tls.handshake.type
+
+# Descobrir top conversas TCP
+tshark -r incidente.pcap -q -z conv,tcp
 ```
 
-## Exemplo de saída
+## Exemplos de saída
 
 ```text
-$ tshark -i eth0 -f "tcp port 443"
-... saída resumida ...
+$ tshark -r incidente.pcap -Y "dns.flags.response == 0" -T fields -e ip.src -e dns.qry.name
+10.10.20.15 api.interna.local
+10.10.20.15 redis.interna.local
 ```
 
-Analise campos como código de resposta, tempo de execução, destino efetivo, interface usada e mensagens de erro. Esses pontos normalmente indicam se o problema está em DNS, rota, porta, firewall ou TLS.
+```text
+$ tshark -r incidente.pcap -Y "tls.handshake.type == 1" -T fields -e ip.dst -e tls.handshake.extensions_server_name
+10.10.30.40 api.empresa.com
+```
+
+Leitura rápida:
+
+- Query DNS sem resposta correspondente indica perda, bloqueio ou servidor DNS indisponível.
+- SNI diferente do hostname esperado pode explicar erro de certificado TLS.
 
 ## Dicas de troubleshooting
 
-- Rode o comando no mesmo contexto do problema (host, container, pod ou namespace)
-- Compare resultado com e sem resolução de nomes para separar erro de DNS de erro de rede
-- Cruze o resultado com logs da aplicação, métricas e eventos do sistema
-- Faça testes de controle para um alvo conhecido saudável e compare diferenças
-
-## Comparação com ferramentas similares
-
-Não há substituto único; escolha com base na camada que você precisa observar (DNS, transporte, aplicação ou pacote).
+- Separe **capture filter** (`-f`, reduz o que entra) de **display filter** (`-Y`, filtra o que já foi capturado).
+- Para automação, use `-T fields` com campos explícitos (`-e`) e evite saída “bonita”.
+- Se o volume estiver alto, combine `-a duration:60` para capturas curtas.
+- Sempre valide timezone/clock do host ao correlacionar com logs.
+- Use `-n` para evitar resolução de nomes e acelerar análise.
 
 ## Flags importantes
 
-- -h/--help: exibe ajuda e sintaxe.
-- -v ou modo verboso: aumenta detalhes para diagnóstico.
-- -n: evita resolução de nome quando aplicável.
-- timeout/opções de tempo: ajuda a detectar lentidão e falhas intermitentes.
+- `-i <iface>`: interface de captura.
+- `-f "<capture-filter>"`: filtro BPF na captura.
+- `-Y "<display-filter>"`: filtro de dissecação Wireshark.
+- `-r arquivo.pcap`: lê captura existente.
+- `-T fields` + `-e campo`: saída estruturada para parsing.
+- `-q -z <estatística>`: relatórios (conversas, endpoints, protocolos).
+- `-w arquivo.pcap`: grava captura.
 
 ## Boas práticas
 
-- Registre comandos e saídas relevantes no ticket/incidente
-- Evite testes destrutivos em produção; priorize inspeção e leitura
-- Execute múltiplos testes em camadas diferentes antes de concluir causa raiz
-- Documente o que foi validado para acelerar troubleshooting futuro
+- Padronize comandos de coleta para incidentes recorrentes.
+- Versione filtros úteis (DNS, TLS, HTTP) em runbooks da equipe.
+- Remova/anonimize dados sensíveis ao compartilhar saída.
+- Guarde comando e hash do arquivo `.pcap` para cadeia de evidência.
 
 ## Referências
 
-- man page: `man tshark`
-- Documentação oficial da ferramenta/projeto
+- `man tshark`
+- https://www.wireshark.org/docs/man-pages/tshark.html
+- Wireshark Display Filters: https://wiki.wireshark.org/DisplayFilters
