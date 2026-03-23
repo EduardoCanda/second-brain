@@ -170,4 +170,4 @@ sudo tcpdump tcp port 80
 
 ---
 
-> 💡 **Dica:** Documente o que você observar em cada laboratório para facilitar revisão futura.
+> **Dica:** Documente o que você observar em cada laboratório para facilitar revisão futura.

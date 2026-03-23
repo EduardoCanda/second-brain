@@ -46,7 +46,7 @@ histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket[5m])) by (
 
 Hipóteses comuns e como validar:
 
-- **CPU/memória saturada** → checar uso por pod/instância.
+- **CPU/memória saturada** → checar uso por pod/instncia.
 - **Banco degradado** → conexões esgotadas, lock, query lenta.
 - **Dependência externa lenta** → timeout crescente em cliente HTTP.
 - **Regressão de código** → erro iniciado após release recente.

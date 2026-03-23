@@ -10,8 +10,8 @@ Orquestração event-driven entre domínios e integrações entre contas.
 Existe para desacoplamento assíncrono com roteamento flexível por conteúdo.
 
 ## Trade-offs
-- ✅ Regras poderosas e integração nativa com muitos serviços.
-- ❌ Excesso de regras/event buses pode dificultar governança.
+- Regras poderosas e integração nativa com muitos serviços.
+- Excesso de regras/event buses pode dificultar governança.
 
 ## Boas práticas
 - Defina esquema de evento e versionamento.

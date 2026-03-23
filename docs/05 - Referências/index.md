@@ -1,4 +1,4 @@
-# 📚 Índice — Referências
+# Índice — Referências
 
 A pasta **Referências** reúne materiais de apoio para continuidade dos estudos.
 

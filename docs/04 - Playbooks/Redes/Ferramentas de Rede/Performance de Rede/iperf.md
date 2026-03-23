@@ -68,7 +68,7 @@ Como interpretar:
 ## Boas práticas
 
 - Documentar claramente que o teste foi feito com v2
-- Manter consistência de parâmetros entre execuções para comparar resultados
+- Manter consistência de parmetros entre execuções para comparar resultados
 - Evitar executar junto com backup/sincronização para não distorcer medição
 - Usar host dedicado quando possível para reduzir impacto de CPU/disco
 

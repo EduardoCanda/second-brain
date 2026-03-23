@@ -5,7 +5,7 @@ Pensa nele como uma **sala de controle** (tipo NASA), mas para segurança digita
 
 ---
 
-### ⚙️ **Funções de um SOC**
+### **Funções de um SOC**
 
 1. **Monitoramento Contínuo**
     
@@ -40,7 +40,7 @@ Pensa nele como uma **sala de controle** (tipo NASA), mas para segurança digita
 
 ---
 
-### 👥 **Papéis Comuns em um SOC**
+### **Papéis Comuns em um SOC**
 
 - **SOC Analyst Nível 1 (L1)**
     
@@ -65,7 +65,7 @@ Pensa nele como uma **sala de controle** (tipo NASA), mas para segurança digita
 
 ---
 
-### 🛠️ **Ferramentas usadas em um SOC**
+### **Ferramentas usadas em um SOC**
 
 - **SIEM:** Splunk, ELK, Wazuh, Microsoft Sentinel.
     
@@ -80,7 +80,7 @@ Pensa nele como uma **sala de controle** (tipo NASA), mas para segurança digita
 
 ---
 
-### 🔗 Como SOC se conecta ao resto
+### Como SOC se conecta ao resto
 
 - O **SOC** abriga o **Blue Team**.
     
@@ -95,7 +95,7 @@ Ou seja: **SOC é onde tudo acontece e se integra**.
 
 ---
 
-### 🧭 Fluxo operacional de um SOC
+### Fluxo operacional de um SOC
 
 ```text
 [Coleta de logs]
@@ -126,7 +126,7 @@ Ou seja: **SOC é onde tudo acontece e se integra**.
 [Lições aprendidas + melhoria contínua]
 ```
 
-### 🏗️ Integração SOC com outras frentes
+### Integração SOC com outras frentes
 
 ```mermaid
 flowchart LR

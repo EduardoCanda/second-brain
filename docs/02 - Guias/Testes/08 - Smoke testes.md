@@ -1,4 +1,4 @@
-# 🔥 Smoke testes
+# Smoke testes
 
 Smoke tests são verificações rápidas e essenciais para responder: **“o sistema está minimamente funcional após build/deploy?”**
 

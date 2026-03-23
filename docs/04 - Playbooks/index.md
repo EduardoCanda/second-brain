@@ -1,4 +1,4 @@
-# 📘 Índice — Playbooks
+# Índice — Playbooks
 
 A pasta **Playbooks** concentra roteiros de ação para cenários práticos e recorrentes.
 

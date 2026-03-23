@@ -10,8 +10,8 @@ Microserviços web, múltiplos domínios, canary e blue/green por regra.
 Existe para roteamento inteligente em aplicações web modernas.
 
 ## Trade-offs
-- ✅ Regras avançadas e integração com WAF/OIDC.
-- ❌ Não é ideal para tráfego TCP puro e cenários ultra-low-latency.
+- Regras avançadas e integração com WAF/OIDC.
+- Não é ideal para tráfego TCP puro e cenários ultra-low-latency.
 
 ## Boas práticas
 - Centralize TLS com ACM.

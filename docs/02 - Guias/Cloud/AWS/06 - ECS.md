@@ -10,8 +10,8 @@ Microserviços e workers em container com operação mais simples que Kubernetes
 Existe para rodar containers em escala com integração nativa AWS e pouca sobrecarga operacional.
 
 ## Trade-offs
-- ✅ Simples para times pequenos/médios; ótima integração IAM/ALB/CloudWatch.
-- ❌ Portabilidade menor que Kubernetes puro em cenários multi-cloud.
+- Simples para times pequenos/médios; ótima integração IAM/ALB/CloudWatch.
+- Portabilidade menor que Kubernetes puro em cenários multi-cloud.
 
 ## Boas práticas
 - Use Fargate para reduzir operação de host.

@@ -84,7 +84,7 @@ sudo mount /dev/sda3 /mnt/novo_home
 
 ## Etapa 5 — Copiar Conteúdo do /home Atual
 
-⚠️ Preserva permissões, donos e ACLs
+Aviso: Preserva permissões, donos e ACLs
 
 ```bash
 sudo rsync -aAXv /home/ /mnt/novo_home/
@@ -177,7 +177,7 @@ sudo rm -rf /home_backup
 ---
 
 ## Status
-✅ Triple boot resolvido
-✅ Ubuntu removido
-✅ /home migrado com segurança
+- Triple boot resolvido
+- Ubuntu removido
+- /home migrado com segurança
 

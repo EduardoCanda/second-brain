@@ -1,4 +1,4 @@
-# 🧠 Second Brain — Eduardo Canda
+# Second Brain — Eduardo Canda
 
 > Base de conhecimento estruturada com foco em Backend Engineering, DevOps, Cloud e Arquitetura de Sistemas.
 
@@ -13,7 +13,7 @@ flowchart TD
     E --> A
 ```
 ---
-## 📌 Como esta documentação está organizada
+## Como esta documentação está organizada
 
 O conteúdo está dividido em cinco grandes áreas:
 - **Fundamentos** → Base teórica essencial  
@@ -23,7 +23,7 @@ O conteúdo está dividido em cinco grandes áreas:
 - **Referências** → Organização de estudos e materiais externos  
 
 ---
-## 🎯 Objetivo deste projeto
+## Objetivo deste projeto
 
 Construir uma documentação técnica estruturada, evolutiva e organizada, mantendo separação clara entre:
 

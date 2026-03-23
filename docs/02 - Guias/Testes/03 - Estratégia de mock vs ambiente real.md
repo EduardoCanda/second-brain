@@ -1,4 +1,4 @@
-# 🎭 Estratégia de mock vs ambiente real
+# Estratégia de mock vs ambiente real
 
 A decisão não é “mock ou real”, e sim **quanto de cada um em cada estágio**.
 

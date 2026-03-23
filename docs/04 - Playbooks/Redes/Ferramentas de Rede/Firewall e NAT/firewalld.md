@@ -2,7 +2,7 @@
 
 ## O que é
 
-`firewalld` é um gerenciador dinâmico de firewall (backend nftables/iptables) orientado a zonas, muito usado em RHEL, Rocky, Alma e Fedora.
+`firewalld` é um gerenciador dinmico de firewall (backend nftables/iptables) orientado a zonas, muito usado em RHEL, Rocky, Alma e Fedora.
 
 ## Para que serve
 
@@ -76,7 +76,7 @@ Leitura prática:
 ## Boas práticas
 
 - Defina zona padrão conscientemente (`public` não deve ser “depósito” de exceções).
-- Prefira `services` (com descrição semântica) antes de abrir portas soltas.
+- Prefira `services` (com descrição semntica) antes de abrir portas soltas.
 - Evite alterações manuais diretas em backend nft/iptables quando firewalld é o orquestrador.
 - Versione arquivos de zona e use automação (Ansible, por exemplo) para consistência.
 

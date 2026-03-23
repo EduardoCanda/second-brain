@@ -10,8 +10,8 @@ Distribuir tráfego com health checks, alta disponibilidade e failover.
 Existe para eliminar ponto único de falha na entrada da aplicação.
 
 ## Trade-offs
-- ✅ Operação simplificada e integração com auto scaling.
-- ❌ Custos e configuração errada de health-check podem degradar serviço.
+- Operação simplificada e integração com auto scaling.
+- Custos e configuração errada de health-check podem degradar serviço.
 
 ## Boas práticas
 - Escolha o tipo certo (ALB x NLB) pelo protocolo.

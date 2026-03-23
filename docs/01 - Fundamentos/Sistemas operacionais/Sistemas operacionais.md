@@ -2,7 +2,7 @@ Um **Sistema Operacional (SO)** é um **software fundamental** que atua como int
 Ele gerencia recursos do sistema, fornece serviços essenciais e cria um ambiente para que programas possam ser executados.
 
 ---
-## 📌 Principais Funções
+## Principais Funções
 
 1. **Gerenciamento de Processos**
    - Controla a execução dos programas (processos e threads).
@@ -26,14 +26,14 @@ Ele gerencia recursos do sistema, fornece serviços essenciais e cria um ambient
 
 ---
 
-## 🏷️ Exemplos de Sistemas Operacionais
+## Exemplos de Sistemas Operacionais
 - **Desktop/Servidor:** Windows, Linux, macOS, Unix, BSD.  
 - **Mobile/Embarcados:** Android, iOS, FreeRTOS.  
 - **Especializados:** Sistemas de tempo real (RTOS), mainframes.  
 
 ---
 
-## 📊 Arquitetura
+## Arquitetura
 O SO normalmente é dividido em **camadas** ou **módulos**:
 - **Núcleo (Kernel):** controla hardware, memória e processos.  
 - **Chamadas de Sistema (System Calls):** interface para que programas interajam com o kernel.  

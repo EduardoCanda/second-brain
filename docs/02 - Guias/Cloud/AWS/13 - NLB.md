@@ -10,8 +10,8 @@ Serviços com latência muito baixa, alto throughput, protocolos não-HTTP.
 Existe para balanceamento de rede bruto com alta escala.
 
 ## Trade-offs
-- ✅ Desempenho elevado e IP estático por AZ.
-- ❌ Menos recursos de roteamento de aplicação que ALB.
+- Desempenho elevado e IP estático por AZ.
+- Menos recursos de roteamento de aplicação que ALB.
 
 ## Boas práticas
 - Use quando L7 não for necessário.

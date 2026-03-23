@@ -1,4 +1,4 @@
-# 🧱 Índice — Fundamentos
+# Índice — Fundamentos
 
 A pasta **Fundamentos** existe para consolidar a base técnica que sustenta todos os outros tópicos do Second Brain.
 

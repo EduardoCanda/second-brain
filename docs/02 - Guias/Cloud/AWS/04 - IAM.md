@@ -10,8 +10,8 @@ Permitir que ECS leia S3, Lambda publique SNS, humanos acessem conta com MFA.
 Existe para centralizar autenticação/autorização e auditoria de acesso.
 
 ## Trade-offs
-- ✅ Permissão granular e auditável.
-- ❌ Policies extensas e mal projetadas causam risco ou bloqueio operacional.
+- Permissão granular e auditável.
+- Policies extensas e mal projetadas causam risco ou bloqueio operacional.
 
 ## Boas práticas
 - Use roles para workloads, não access key fixa.

@@ -2,27 +2,27 @@ Docker fornece redes virtuais para comunicação entre containers.
 
 ------------------------------------------------------------------------
 
-# 📦 Visão Geral
+# Visão Geral
 
 Cada container possui:
 
--   Stack de rede própria
--   IP interno
--   Possibilidade de múltiplas redes
--   Portas expostas opcionalmente
+- Stack de rede própria
+- IP interno
+- Possibilidade de múltiplas redes
+- Portas expostas opcionalmente
 
 Por padrão, containers entram na rede `bridge`.
 
 ------------------------------------------------------------------------
 
-# 🌐 Tipos de Rede
+# Tipos de Rede
 
-## 1️⃣ bridge (default)
+## 1. bridge (default)
 
--   Rede padrão do Docker
--   Comunicação entre containers na mesma rede
--   NAT para saída externa
--   Permite port mapping
+- Rede padrão do Docker
+- Comunicação entre containers na mesma rede
+- NAT para saída externa
+- Permite port mapping
 
 Inspecionar:
 
@@ -32,12 +32,12 @@ docker network inspect bridge
 
 ------------------------------------------------------------------------
 
-## 2️⃣ host
+## 2. host
 
--   Container compartilha rede do host
--   Sem NAT
--   Sem port mapping necessário
--   Sem isolamento de porta
+- Container compartilha rede do host
+- Sem NAT
+- Sem port mapping necessário
+- Sem isolamento de porta
 
 Uso:
 
@@ -47,10 +47,10 @@ docker run --network host nginx
 
 ------------------------------------------------------------------------
 
-## 3️⃣ none
+## 3. none
 
--   Container sem rede
--   Totalmente isolado
+- Container sem rede
+- Totalmente isolado
 
 Uso:
 
@@ -60,23 +60,23 @@ docker run --network none alpine
 
 ------------------------------------------------------------------------
 
-## 4️⃣ overlay
+## 4. overlay
 
--   Rede distribuída entre múltiplos hosts
--   Utilizada com Docker Swarm
--   Permite comunicação cross-host
-
-------------------------------------------------------------------------
-
-## 5️⃣ macvlan
-
--   Container recebe IP real da rede física
--   Visível diretamente na LAN
--   Usado para integrações legadas
+- Rede distribuída entre múltiplos hosts
+- Utilizada com Docker Swarm
+- Permite comunicação cross-host
 
 ------------------------------------------------------------------------
 
-# 🔑 Conceitos Importantes
+## 5. macvlan
+
+- Container recebe IP real da rede física
+- Visível diretamente na LAN
+- Usado para integrações legadas
+
+------------------------------------------------------------------------
+
+# Conceitos Importantes
 
 ## Port Mapping
 
@@ -108,8 +108,8 @@ docker run --network minha-rede busybox ping app
 
 ## Service Discovery
 
--   Containers se comunicam pelo nome
--   Não é necessário conhecer IP
+- Containers se comunicam pelo nome
+- Não é necessário conhecer IP
 
 ------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ docker network connect backend app
 
 ------------------------------------------------------------------------
 
-# 🛠 Comandos
+# Comandos
 
 Listar redes:
 
@@ -147,24 +147,24 @@ docker network inspect minha-rede
 
 ------------------------------------------------------------------------
 
-# 📌 Boas Práticas
+# Boas Práticas
 
--   Criar redes customizadas por sistema
--   Evitar usar bridge default em produção
--   Evitar --network host em produção
--   Usar nomes de containers como hostname
--   Separar frontend e backend em redes distintas
+- Criar redes customizadas por sistema
+- Evitar usar bridge default em produção
+- Evitar --network host em produção
+- Usar nomes de containers como hostname
+- Separar frontend e backend em redes distintas
 
 ------------------------------------------------------------------------
 
-# 🎯 Modelo Mental
+# Modelo Mental
 
 Docker Networking fornece:
 
--   Virtualização de rede
--   DNS interno
--   Isolamento
--   Segmentação lógica
--   Controle de tráfego
+- Virtualização de rede
+- DNS interno
+- Isolamento
+- Segmentação lógica
+- Controle de tráfego
 
 Entender networking é essencial para arquiteturas de microsserviços.

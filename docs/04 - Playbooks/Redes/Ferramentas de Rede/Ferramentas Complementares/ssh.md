@@ -85,7 +85,7 @@ Leitura rápida:
 
 - Preferir autenticação por chave + passphrase (evitar senha em produção).
 - Desabilitar login direto de `root` e usar usuário nominativo + `sudo`.
-- Centralizar parâmetros em `~/.ssh/config` para reduzir erro operacional.
+- Centralizar parmetros em `~/.ssh/config` para reduzir erro operacional.
 - Rotacionar chaves e remover acessos de usuários inativos.
 - Registrar comandos críticos executados remotamente no processo de incidente.
 

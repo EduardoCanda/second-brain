@@ -10,8 +10,8 @@ Sessões, carrinho, catálogo, eventos e workloads de escala massiva.
 Existe para throughput previsível e alta disponibilidade sem gestão de servidor.
 
 ## Trade-offs
-- ✅ Escala horizontal nativa e alta performance.
-- ❌ Exige modelagem por padrão de acesso; consultas ad hoc são limitadas.
+- Escala horizontal nativa e alta performance.
+- Exige modelagem por padrão de acesso; consultas ad hoc são limitadas.
 
 ## Boas práticas
 - Modele partição para evitar hot keys.

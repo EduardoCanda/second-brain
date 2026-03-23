@@ -67,7 +67,7 @@ DNS não serve apenas para websites. Há múltiplos tipos de registros.
 - Exemplo:  192.168.1.10 -> www.google.com
 
 
-## 📌 Usando comando `host` para parta prática
+## Usando comando `host` para parta prática
 ### Consultar IPv4 e IPv6
 ```
 host www.exemplo.com

@@ -10,8 +10,8 @@ Aplicação privada baixando updates/chamando APIs externas sem IP público.
 Existe para manter recursos privados sem perder acesso de saída controlada.
 
 ## Trade-offs
-- ✅ Simplifica arquitetura segura para egress.
-- ❌ Pode representar custo alto; VPC endpoints podem reduzir gasto.
+- Simplifica arquitetura segura para egress.
+- Pode representar custo alto; VPC endpoints podem reduzir gasto.
 
 ## Boas práticas
 - Coloque NAT por AZ para resiliência.

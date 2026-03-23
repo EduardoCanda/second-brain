@@ -1,6 +1,6 @@
 # AGENTS.md
 
-## 🎯 Objetivo
+## Objetivo
 
 Este repositório é um Second Brain baseado nos princípios de Zettelkasten e Evergreen Notes.
 
@@ -14,7 +14,7 @@ As notas devem priorizar **clareza, profundidade e aplicabilidade prática**.
 
 ---
 
-## 🧠 Princípios Fundamentais
+## Princípios Fundamentais
 
 ### 1. Notas atômicas
 
@@ -56,7 +56,7 @@ Toda nota deve responder:
 
 ---
 
-## 🌍 Idioma
+## Idioma
 
 * Todas as notas devem ser escritas em **Português (PT-BR)**
 * Termos técnicos devem permanecer em inglês quando forem padrão da indústria
@@ -64,7 +64,7 @@ Toda nota deve responder:
 
 ---
 
-## 🏗️ Estrutura obrigatória das notas
+## Estrutura obrigatória das notas
 
 Todas as notas devem seguir exatamente este formato:
 
@@ -96,7 +96,7 @@ Exemplos práticos (preferencialmente reais)
 
 ---
 
-## 📊 Diagramas e Representações Visuais
+## Diagramas e Representações Visuais
 
 Utilizar diagramas sempre que melhorarem o entendimento.
 
@@ -122,7 +122,7 @@ Client -> API -> Service -> Database
 
 ---
 
-## 🧱 Estrutura de Pastas
+## Estrutura de Pastas
 
 * Pastas representam **domínios de conhecimento**, não hierarquia rígida
 
@@ -140,7 +140,7 @@ AI/
 
 ---
 
-## ✍️ Regras de Escrita
+## Regras de Escrita
 
 ### Estilo
 
@@ -159,7 +159,7 @@ AI/
 
 ---
 
-## 🔗 Estratégia de Linkagem
+## Estratégia de Linkagem
 
 Sempre que possível, linkar:
 
@@ -178,7 +178,7 @@ Veja também:
 
 ---
 
-## 🧪 Exemplos de Código
+## Exemplos de Código
 
 * Preferir **Java com Spring**
 * Devem ser:
@@ -189,7 +189,7 @@ Veja também:
 
 ---
 
-## ⚙️ Tipos de Notas
+## Tipos de Notas
 
 ### Concept
 
@@ -209,7 +209,7 @@ Explica um problema real (ex: Fan-out HTTP)
 
 ---
 
-## 🚫 Anti-patterns
+## Anti-patterns
 
 Evitar:
 
@@ -221,7 +221,7 @@ Evitar:
 
 ---
 
-## 📈 Checklist de Qualidade
+## Checklist de Qualidade
 
 Antes de finalizar uma nota:
 
@@ -233,7 +233,7 @@ Antes de finalizar uma nota:
 
 ---
 
-## 🤖 Comportamento do Agente
+## Comportamento do Agente
 
 Ao gerar notas:
 
@@ -246,7 +246,7 @@ Ao gerar notas:
 
 ---
 
-## 🧭 Filosofia
+## Filosofia
 
 Este não é um repositório de documentação.
 

@@ -4,7 +4,7 @@
 Você tinha uma lista grande (ex: 80 itens) e para cada item era feita uma chamada HTTP em paralelo.
 
 Isso gerava:
-- 80 threads simultâneas
+- 80 threads simultneas
 - Pico de CPU
 - Alto consumo de memória
 - Possível sobrecarga do serviço externo
@@ -55,7 +55,7 @@ Ajuste baseado em:
 ### 2. Cache com Redis
 
 - Evita chamadas repetidas
-- Compartilhado entre instâncias
+- Compartilhado entre instncias
 
 Pseudo:
 ```java
@@ -127,18 +127,18 @@ Fluxo:
 
 ## Quando usar thread pool
 
-✔ Chamadas I/O  
-✔ Processamento paralelo controlado  
-✔ Integrações externas  
+- Chamadas I/O  
+- Processamento paralelo controlado  
+- Integrações externas  
 
 ---
 
 ## Quando é anti-pattern
 
-❌ Criar thread por item  
-❌ Usar parallelStream sem controle  
-❌ Não limitar concorrência  
-❌ Bloquear muitas threads com I/O  
+- Criar thread por item  
+- Usar parallelStream sem controle  
+- Não limitar concorrência  
+- Bloquear muitas threads com I/O  
 
 ---
 

@@ -11,11 +11,11 @@ sistema.
 Um arquivo com extensão `.rpm` é um pacote binário pré-compilado que
 contém:
 
--   Arquivos do programa
--   Metadados (nome, versão, arquitetura)
--   Dependências
--   Scripts de pré/pós instalação
--   Assinatura digital
+- Arquivos do programa
+- Metadados (nome, versão, arquitetura)
+- Dependências
+- Scripts de pré/pós instalação
+- Assinatura digital
 
 Download normalmente pode ser feito via:
 
@@ -59,7 +59,7 @@ Parâmetros: - -i → install - -v → verbose - -h → barra de progresso
 rpm -Uvh file.rpm
 ```
 
--   -U → upgrade (instala ou atualiza)
+- -U → upgrade (instala ou atualiza)
 
 ### Forçar instalação (cuidado):
 
@@ -127,9 +127,9 @@ automaticamente.
 
 Ferramentas como DNF e YUM utilizam RPM internamente, mas oferecem:
 
--   Resolução automática de dependências
--   Download via repositórios
--   Atualizações completas do sistema
+- Resolução automática de dependências
+- Download via repositórios
+- Atualizações completas do sistema
 
 Exemplo recomendado:
 
@@ -141,17 +141,17 @@ sudo dnf install pacote.rpm
 
 ## Relações
 
--   Linux Package Management
--   DNF
--   YUM
--   APT
--   Distribuições Linux
+- Linux Package Management
+- DNF
+- YUM
+- APT
+- Distribuições Linux
 
 ------------------------------------------------------------------------
 
 ## Resumo
 
--   Trabalha diretamente com arquivos `.rpm`
--   Permite verificação de assinatura
--   Possui sistema avançado de consultas
--   Não resolve dependências automaticamente
+- Trabalha diretamente com arquivos `.rpm`
+- Permite verificação de assinatura
+- Possui sistema avançado de consultas
+- Não resolve dependências automaticamente

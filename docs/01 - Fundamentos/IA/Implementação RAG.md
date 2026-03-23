@@ -2,9 +2,9 @@
 
 Esta nota apresenta uma implementação simples de um sistema RAG usando:
 
--   OpenAI embeddings
--   ChromaDB (vector database)
--   Python
+- OpenAI embeddings
+- ChromaDB (vector database)
+- Python
 
 Objetivo: responder perguntas usando documentos locais.
 
@@ -129,8 +129,8 @@ relevantes.
 
 Combinação de:
 
--   busca vetorial
--   busca lexical (BM25)
+- busca vetorial
+- busca lexical (BM25)
 
 ------------------------------------------------------------------------
 
@@ -144,7 +144,7 @@ Se a resposta não estiver no contexto, diga que não sabe responder.
 
 # Casos reais de uso
 
--   chatbots de documentação técnica
--   assistentes corporativos
--   copilots de engenharia
--   busca inteligente em bases internas
+- chatbots de documentação técnica
+- assistentes corporativos
+- copilots de engenharia
+- busca inteligente em bases internas

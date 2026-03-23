@@ -10,8 +10,8 @@ Cache de leitura, sessão, rate limit, fila leve e pub/sub interno.
 Existe para acelerar aplicações e proteger bancos de picos de leitura.
 
 ## Trade-offs
-- ✅ Grande ganho de performance.
-- ❌ Invalidação e consistência de cache exigem desenho cuidadoso.
+- Grande ganho de performance.
+- Invalidação e consistência de cache exigem desenho cuidadoso.
 
 ## Boas práticas
 - Defina estratégia de TTL por tipo de dado.

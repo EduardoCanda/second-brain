@@ -1,4 +1,4 @@
-# 🧠 Arquitetura
+# Arquitetura
 ```
 Spring Boot
    ↓
@@ -12,7 +12,7 @@ OpenTelemetry Collector
        Grafana
 ```
 
-# 📁 Estrutura do projeto
+# Estrutura do projeto
 ```
 observability-lab/
  ├── app/
@@ -23,7 +23,7 @@ observability-lab/
 ```
 
 ---
-# 1️⃣ Spring Boot com OpenTelemetry
+# 1. Spring Boot com OpenTelemetry
 
 ## Dependências (pom.xml)
 
@@ -110,7 +110,7 @@ service:
 ```
 
 ---
-#  4 - docker-compose-.yml
+# 4 - docker-compose-.yml
 ``` yml
 version: "3.9"
 

@@ -4,7 +4,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 
 ---
 
-🧩 Funções Principais
+## Funções Principais
 	•	Segmentação e Reassembly: Divide mensagens grandes em segmentos menores e garante que eles sejam remontados corretamente no destino.
 	•	Controle de Fluxo: Evita que um emissor rápido sobrecarregue um receptor mais lento.
 	•	Controle de Erros: Detecta e retransmite segmentos corrompidos ou perdidos.
@@ -12,7 +12,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 
 ---
 
-🔑 Protocolos Importantes
+## Protocolos Importantes
 	•	[TCP](../../03 - Protocolos/TCP/TCP.md)
 	•	Confiável (usa confirmação de recebimento - ACK).
 	•	Conexão orientada (usa handshake de 3 vias).
@@ -26,7 +26,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 
 ---
 
-📊 Identificação (Portas)
+## Identificação (Portas)
 	•	Cada aplicação que usa a camada de transporte é identificada por um número de porta.
 	•	Tipos de portas:
 	•	Bem conhecidas (0–1023): usadas por serviços padrão (ex.: 80 = HTTP, 22 = SSH).
@@ -35,7 +35,7 @@ Ela atua como um intermediário entre a Camada de Rede e a Camada de Aplicação
 
 ---
 
-⚙️ Exemplo de Funcionamento
+## Exemplo de Funcionamento
 	1.	Um cliente abre uma conexão TCP com um servidor web na porta 80.
 	2.	A Camada de Transporte do cliente gera um número de porta temporário (ex.: 50231) para identificar sua aplicação.
 	3.	O servidor recebe o pedido na porta 80 e envia a resposta de volta para a porta 50231 do cliente.

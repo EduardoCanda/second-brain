@@ -10,8 +10,8 @@ Sistemas transacionais com SQL, joins e transações ACID.
 Existe para reduzir operação de banco (backup, patch, replica, failover).
 
 ## Trade-offs
-- ✅ Menos carga operacional e maior confiabilidade padrão.
-- ❌ Menor liberdade de tunning profundo comparado a self-managed.
+- Menos carga operacional e maior confiabilidade padrão.
+- Menor liberdade de tunning profundo comparado a self-managed.
 
 ## Boas práticas
 - Use Multi-AZ em produção crítica.

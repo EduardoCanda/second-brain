@@ -4,13 +4,13 @@
 
 Build a complete observability stack locally using:
 
--   Spring Boot application
--   OpenTelemetry (Java Agent)
--   OpenTelemetry Collector
--   Prometheus (metrics)
--   Jaeger (traces)
--   Loki (logs)
--   Grafana (visualization)
+- Spring Boot application
+- OpenTelemetry (Java Agent)
+- OpenTelemetry Collector
+- Prometheus (metrics)
+- Jaeger (traces)
+- Loki (logs)
+- Grafana (visualization)
 
 This document explains everything step-by-step in detail.
 
@@ -31,9 +31,9 @@ This document explains everything step-by-step in detail.
 
 We are implementing the three pillars of observability:
 
--   Metrics
--   Traces
--   Logs
+- Metrics
+- Traces
+- Logs
 
 ------------------------------------------------------------------------
 
@@ -55,8 +55,8 @@ We are implementing the three pillars of observability:
 
 Add:
 
--   spring-boot-starter-actuator
--   micrometer-registry-prometheus
+- spring-boot-starter-actuator
+- micrometer-registry-prometheus
 
 These expose metrics automatically.
 
@@ -72,8 +72,8 @@ In application.yml:
 
 This injects:
 
--   trace_id
--   span_id
+- trace_id
+- span_id
 
 into every log line.
 
@@ -219,10 +219,10 @@ Prometheus scrapes metrics from the Collector.
 
 Access:
 
--   App → http://localhost:8080
--   Prometheus → http://localhost:9090
--   Jaeger → http://localhost:16686
--   Grafana → http://localhost:3000
+- App → http://localhost:8080
+- Prometheus → http://localhost:9090
+- Jaeger → http://localhost:16686
+- Grafana → http://localhost:3000
 
 Default Grafana login:
 
@@ -250,15 +250,15 @@ Multiply by 100 to get percentage.
 
 ------------------------------------------------------------------------
 
-# 10. Log ↔ Trace Correlation
+# 10. Log  Trace Correlation
 
 In Grafana Loki datasource:
 
 Create Derived Field:
 
--   Name: trace_id
--   Regex: trace_id=(`\w`{=tex}+)
--   URL: http://localhost:16686/trace/\$\${\_\_value.raw}
+- Name: trace_id
+- Regex: trace_id=(`\w`{=tex}+)
+- URL: http://localhost:16686/trace/\$\${\_\_value.raw}
 
 Now clicking a log opens the trace automatically.
 
@@ -268,11 +268,11 @@ Now clicking a log opens the trace automatically.
 
 You built a production-style observability stack:
 
--   Automatic instrumentation
--   Distributed tracing
--   Log correlation
--   Professional metrics dashboard
--   RED methodology monitoring
+- Automatic instrumentation
+- Distributed tracing
+- Log correlation
+- Professional metrics dashboard
+- RED methodology monitoring
 
 This setup mirrors real-world cloud-native environments.
 

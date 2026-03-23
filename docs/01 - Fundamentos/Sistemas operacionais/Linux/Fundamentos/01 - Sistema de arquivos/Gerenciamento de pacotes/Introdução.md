@@ -87,7 +87,7 @@ Eles:
 `dnf install nginx
 
 ### Debian Family
--  apt
+- apt
 
 `apt install nginx`
 

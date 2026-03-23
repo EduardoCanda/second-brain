@@ -1,4 +1,4 @@
-# 🔺 Pirâmide de testes (unitário, integração, contrato, E2E)
+# Pirâmide de testes (unitário, integração, contrato, E2E)
 
 A pirâmide de testes é um modelo para distribuir esforço de validação por camadas, equilibrando **velocidade**, **cobertura comportamental** e **custo de manutenção**.
 

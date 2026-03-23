@@ -10,8 +10,8 @@ Permitir apenas tráfego necessário (ex.: app → banco na porta 5432).
 Existe para aplicar menor privilégio na camada de rede de forma simples.
 
 ## Trade-offs
-- ✅ Regras por origem/destino com referência entre SGs.
-- ❌ Regras permissivas (0.0.0.0/0) aumentam superfície de ataque.
+- Regras por origem/destino com referência entre SGs.
+- Regras permissivas (0.0.0.0/0) aumentam superfície de ataque.
 
 ## Boas práticas
 - Modele por papel: sg-alb, sg-app, sg-db.

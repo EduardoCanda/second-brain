@@ -2,20 +2,20 @@ SSH (Secure Shell) é um protocolo de rede que permite comunicação segura entr
 Ele é usado principalmente para acesso remoto a servidores e transferência segura de arquivos.
 
 ---
-## 🧩 Características Principais
+## Características Principais
 •	Criptografia ponta a ponta: Protege os dados contra espionagem durante o tráfego.
 •	Autenticação: Pode usar senha ou chave pública/privada.
 •	Integridade: Garante que os dados não sejam alterados no caminho.
 •	Confidencialidade: Ninguém além do cliente e servidor consegue ler o tráfego.
 
 ---
-## 🔐 Componentes do SSH
+## Componentes do SSH
 •	Servidor SSH: Software rodando no host remoto (ex.: sshd no Linux).
 •	Cliente SSH: Programa usado para conectar ao servidor (ex.: ssh no terminal).
 •	Porta padrão: TCP 22.
 
 ---
-## ⚙️ Funcionamento Básico
+## Funcionamento Básico
 1.	O cliente inicia a conexão ao servidor na porta 22.
 2.	O servidor envia sua chave pública para o cliente.
 3.	O cliente e o servidor negociam a sessão criptografada.
@@ -32,19 +32,19 @@ ssh -i ~/.ssh/minha_chave usuario@servidor
 ## Copiar arquivos com SCP (sobre SSH)
 scp arquivo.txt usuario@servidor:/caminho/destino
 
-## 🔑 Autenticação por Chave
+## Autenticação por Chave
 •	Chave Privada: Guardada no cliente, nunca deve ser compartilhada.
 •	Chave Pública: Copiada para o servidor (em ~/.ssh/authorized_keys).
 •	Permite autenticação sem senha (mais segura).
 
 ---
-## 🧠 Quando Usar
+## Quando Usar
 •	Administração remota de servidores.
 •	Transferência de arquivos de forma segura (via SCP ou SFTP).
 •	Tunelamento e encaminhamento seguro de portas.
 
 ---
-🔗 Notas Relacionadas
+## Notas Relacionadas
 	•	[TCP](../03 - Protocolos/TCP/TCP.md) – SSH funciona sobre TCP.
 	•	[Criptografia Assimétrica](../../../03 - Deep Dives/Ciber segurança/Criptografia/03 - Criptografia assimétrica.md) – usada para autenticação.
 	•	[Portas Mais Conhecidas](../01 - Modelo OSI/Portas Mais Conhecidas.md) – SSH usa a porta 22.

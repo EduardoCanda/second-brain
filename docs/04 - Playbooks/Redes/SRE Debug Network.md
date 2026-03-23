@@ -35,9 +35,9 @@ curl -v https://host
 
 Verificar:
 
--   status HTTP
--   latência
--   headers
+- status HTTP
+- latência
+- headers
 
 ------------------------------------------------------------------------
 
@@ -55,9 +55,9 @@ traceroute host
 
 Isso mostra:
 
--   hops da rede
--   perda de pacotes
--   latência por salto
+- hops da rede
+- perda de pacotes
+- latência por salto
 
 ------------------------------------------------------------------------
 
@@ -69,8 +69,8 @@ ss -tulpn
 
 Isso revela:
 
--   processos escutando portas
--   serviços ativos
+- processos escutando portas
+- serviços ativos
 
 Exemplo:
 
@@ -89,9 +89,9 @@ sudo tcpdump -nn host host.com
 
 Permite ver:
 
--   handshake TCP
--   conexões abertas
--   retransmissões
+- handshake TCP
+- conexões abertas
+- retransmissões
 
 ------------------------------------------------------------------------
 
@@ -109,9 +109,9 @@ iptables -t nat -L
 
 Isso mostra:
 
--   regras de bloqueio
--   NAT
--   redirecionamentos
+- regras de bloqueio
+- NAT
+- redirecionamentos
 
 ------------------------------------------------------------------------
 
@@ -123,9 +123,9 @@ conntrack -L
 
 Usado para identificar:
 
--   sessões NAT
--   conexões ativas
--   limites atingidos
+- sessões NAT
+- conexões ativas
+- limites atingidos
 
 ------------------------------------------------------------------------
 
@@ -144,27 +144,27 @@ Microservice --> Database
 
 ## Checklist rápido de SRE
 
-1️⃣ Testar endpoint
+1. Testar endpoint
 
     curl
 
-2️⃣ Ver rota
+2. Ver rota
 
     mtr
 
-3️⃣ Ver portas
+3. Ver portas
 
     ss
 
-4️⃣ Capturar rede
+4. Capturar rede
 
     tcpdump
 
-5️⃣ Ver firewall
+5. Ver firewall
 
     iptables
 
-6️⃣ Ver estado das conexões
+6. Ver estado das conexões
 
     conntrack
 
@@ -174,7 +174,7 @@ Microservice --> Database
 
 Esse playbook permite descobrir rapidamente:
 
--   falhas de conectividade
--   bloqueios de firewall
--   problemas de load balancer
--   gargalos de rede
+- falhas de conectividade
+- bloqueios de firewall
+- problemas de load balancer
+- gargalos de rede
