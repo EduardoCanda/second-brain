@@ -23,6 +23,6 @@ Dados imutáveis podem ser compartilhados com segurança entre threads e funçõ
 - Ignorar custo de cópia em estruturas grandes sem estratégia.
 
 ## Conceitos relacionados
-[[Estado e efeitos colaterais]]
-[[Thread safety]]
-[[Funções puras]]
+[Estado e efeitos colaterais](estado-e-efeitos-colaterais.md)
+[Thread safety](thread-safety.md)
+[Funções puras](funcoes-puras.md)

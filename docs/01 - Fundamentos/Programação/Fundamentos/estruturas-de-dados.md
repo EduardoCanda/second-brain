@@ -22,6 +22,6 @@ Comece pelas operações críticas do caso de uso (lookup, inserção, ordenaç�
 - Trocar estrutura sem medir impacto.
 
 ## Conceitos relacionados
-[[Complexidade Big-O]]
-[[HashMap]]
-[[Árvores]]
+[Complexidade Big-O](complexidade-big-o.md)
+[HashMap](hashmap.md)
+[Árvores](arvores.md)

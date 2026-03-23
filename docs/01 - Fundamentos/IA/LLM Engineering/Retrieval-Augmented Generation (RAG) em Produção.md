@@ -29,9 +29,9 @@ Para engenharia de software, RAG separa conhecimento (base de documentos) de rac
 - Risco de recuperar contexto irrelevante.
 
 ## Relação com outros conceitos
-- Usa [[Tokenização e Embeddings]] para indexação.
-- Qualidade de prompt depende de [[Prompt Engineering]].
-- Operação contínua exige [[Observabilidade para Aplicações com LLM]].
+- Usa [Tokenização e Embeddings](../NLP/Tokeniza%C3%A7%C3%A3o%20e%20Embeddings.md) para indexação.
+- Qualidade de prompt depende de [Prompt Engineering](Prompt%20Engineering.md).
+- Operação contínua exige [Observabilidade para Aplicações com LLM](../LLMOps/Observabilidade%20para%20Aplica%C3%A7%C3%B5es%20com%20LLM.md).
 
 ## Exemplos em Python quando aplicável
 ```python

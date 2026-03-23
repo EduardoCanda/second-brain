@@ -8,4 +8,4 @@ O **Windows** é um sistema operacional da Microsoft amplamente usado em computa
 - Presença forte em ambientes empresariais.
 
 **Notas relacionadas:**
-[Sistemas operacionais](Sistemas operacionais.md) · [Linux](Linux/Fundamentos/00 - Introdução/Linux.md)
+[Sistemas operacionais](../Sistemas operacionais.md) · [Linux](../Linux/Fundamentos/00 - Introdução/Linux.md)

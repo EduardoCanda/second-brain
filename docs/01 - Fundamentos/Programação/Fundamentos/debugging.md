@@ -23,6 +23,6 @@ Comece por reproduzir o problema, delimitar escopo e testar hipóteses com evid�
 - Confiar só em logs sem métricas/traces complementares.
 
 ## Conceitos relacionados
-[[Observabilidade]]
-[[Call stack]]
-[[Estado e efeitos colaterais]]
+[Observabilidade](observabilidade.md)
+[Call stack](call-stack.md)
+[Estado e efeitos colaterais](estado-e-efeitos-colaterais.md)

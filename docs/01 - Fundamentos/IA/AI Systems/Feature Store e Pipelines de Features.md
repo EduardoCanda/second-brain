@@ -29,9 +29,9 @@ Ele resolve um problema clássico de engenharia: divergência entre cálculo off
 - Complexidade com features em streaming.
 
 ## Relação com outros conceitos
-- Componente essencial da [[Arquitetura de Sistemas de IA em Produção]].
-- Alimenta modelos de [[Aprendizado Supervisionado]].
-- Pode armazenar vetores usados em [[Tokenização e Embeddings]].
+- Componente essencial da [Arquitetura de Sistemas de IA em Produção](Arquitetura%20de%20Sistemas%20de%20IA%20em%20Produ%C3%A7%C3%A3o.md).
+- Alimenta modelos de [Aprendizado Supervisionado](../Machine%20Learning/Aprendizado%20Supervisionado.md).
+- Pode armazenar vetores usados em [Tokenização e Embeddings](../NLP/Tokeniza%C3%A7%C3%A3o%20e%20Embeddings.md).
 
 ## Exemplos em Python quando aplicável
 ```python

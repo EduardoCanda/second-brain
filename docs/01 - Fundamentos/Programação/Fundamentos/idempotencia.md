@@ -23,6 +23,6 @@ Sempre pergunte: “Se essa requisição chegar duas vezes, o estado final conti
 - Não versionar atualização de estado concorrente.
 
 ## Conceitos relacionados
-[[Retries e timeouts]]
-[[Contratos de API]]
-[[Tolerância a falhas]]
+[Retries e timeouts](retries-e-timeouts.md)
+[Contratos de API](contratos-de-api.md)
+[Tolerância a falhas](tolerancia-a-falhas.md)

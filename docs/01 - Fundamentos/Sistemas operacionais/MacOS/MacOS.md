@@ -8,4 +8,4 @@ O **macOS** é o sistema operacional da Apple para computadores Mac. Ele é base
 - Base Unix útil para desenvolvimento de software.
 
 **Notas relacionadas:**
-[Unix](Linux/Fundamentos/00 - Introdução/Unix.md) · [Sistemas operacionais](Sistemas operacionais.md)
+[Unix](../Linux/Fundamentos/00 - Introdução/Unix.md) · [Sistemas operacionais](../Sistemas operacionais.md)

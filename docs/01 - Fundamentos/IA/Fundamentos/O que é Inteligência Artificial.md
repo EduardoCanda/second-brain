@@ -29,9 +29,9 @@ Para engenharia de software, IA é uma forma de implementar comportamento adapta
 - Custos de infraestrutura e manutenção em produção.
 
 ## Relação com outros conceitos
-- Base para [[Aprendizado Supervisionado]] e [[Aprendizado Não Supervisionado]].
-- Subárea [[Redes Neurais Artificiais]] dentro de Deep Learning.
-- Aplicações modernas incluem [[Transformers]] e [[Retrieval-Augmented Generation (RAG) em Produção]].
+- Base para [Aprendizado Supervisionado](../Machine%20Learning/Aprendizado%20Supervisionado.md) e [Aprendizado Não Supervisionado](../Machine%20Learning/Aprendizado%20N%C3%A3o%20Supervisionado.md).
+- Subárea [Redes Neurais Artificiais](../Deep%20Learning/Redes%20Neurais%20Artificiais.md) dentro de Deep Learning.
+- Aplicações modernas incluem [Transformers](../Deep%20Learning/Transformers.md) e [Retrieval-Augmented Generation (RAG) em Produção](../LLM%20Engineering/Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
 
 ## Exemplos em Python quando aplicável
 ```python

@@ -27,6 +27,6 @@ Código mais previsível separa cálculo puro de operações com I/O, banco, red
 - Depender de estado global para decisões críticas.
 
 ## Conceitos relacionados
-[[Funções puras]]
-[[Imutabilidade]]
-[[Debugging]]
+[Funções puras](funcoes-puras.md)
+[Imutabilidade](imutabilidade.md)
+[Debugging](debugging.md)

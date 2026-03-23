@@ -15,13 +15,13 @@ Esta nota agrupa os tópicos de **Security** em um único material, reduzindo re
 
 ## Índice rápido
 
-- [[#CORS|CORS]]
-- [[#CSP (Content Security Policy)|CSP (Content Security Policy)]]
-- [[#CSRF|CSRF]]
-- [[#HTTPS|HTTPS]]
-- [[#Mixed Content|Mixed Content]]
-- [[#Same Origin Policy|Same Origin Policy]]
-- [[#XSS|XSS]]
+- [CORS](#cors)
+- [CSP (Content Security Policy)](#csp-content-security-policy)
+- [CSRF](#csrf)
+- [HTTPS](#https)
+- [Mixed Content](#mixed-content)
+- [Same Origin Policy](#same-origin-policy)
+- [XSS](#xss)
 
 ---
 
@@ -59,9 +59,9 @@ Vary: Origin
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Same Origin Policy]]
-- [[CSRF]]
-- [[Como debugar problemas de CORS]]
+- [Same Origin Policy](#same-origin-policy)
+- [CSRF](#csrf)
+- [Como debugar problemas de CORS](../Debugging/Debugging%20-%20Guia%20Consolidado.md)
 
 ## CSP (Content Security Policy)
 
@@ -93,9 +93,9 @@ Content-Security-Policy: default-src "self"; script-src "self" https://cdn.exemp
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[XSS]]
-- [[Mixed Content]]
-- [[HTTPS]]
+- [XSS](#xss)
+- [Mixed Content](#mixed-content)
+- [HTTPS](#https)
 
 ## CSRF
 
@@ -130,9 +130,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Cookies]]
-- [[Same Origin Policy]]
-- [[CORS]]
+- [Cookies](../../../01%20-%20Fundamentos/Redes/04%20-%20Servi%C3%A7os%20de%20Rede/Cookies.md)
+- [Same Origin Policy](#same-origin-policy)
+- [CORS](#cors)
 
 ## HTTPS
 
@@ -165,9 +165,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[TLS handshake no navegador]]
-- [[HTTP-1 vs HTTP-2 vs HTTP-3 no browser]]
-- [[Mixed Content]]
+- [TLS handshake no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
+- [HTTP-1 vs HTTP-2 vs HTTP-3 no browser](../Networking/Networking%20-%20Guia%20Consolidado.md)
+- [Mixed Content](#mixed-content)
 
 ## Mixed Content
 
@@ -200,9 +200,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTPS]]
-- [[TLS handshake no navegador]]
-- [[CSP (Content Security Policy)]]
+- [HTTPS](#https)
+- [TLS handshake no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
+- [CSP (Content Security Policy)](#csp-content-security-policy)
 
 ## Same Origin Policy
 
@@ -235,9 +235,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[CORS]]
-- [[CSRF]]
-- [[Cookies]]
+- [CORS](#cors)
+- [CSRF](#csrf)
+- [Cookies](../../../01%20-%20Fundamentos/Redes/04%20-%20Servi%C3%A7os%20de%20Rede/Cookies.md)
 
 ## XSS
 
@@ -270,9 +270,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[CSP (Content Security Policy)]]
-- [[Cookies]]
-- [[HTTPS]]
+- [CSP (Content Security Policy)](#csp-content-security-policy)
+- [Cookies](../../../01%20-%20Fundamentos/Redes/04%20-%20Servi%C3%A7os%20de%20Rede/Cookies.md)
+- [HTTPS](#https)
 
 ## Pontos comuns da família (backend/devops)
 

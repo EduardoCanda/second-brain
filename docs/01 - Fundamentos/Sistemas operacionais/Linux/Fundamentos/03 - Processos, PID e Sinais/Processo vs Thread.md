@@ -25,7 +25,7 @@ A principal consequência dessa diferença aparece em criação, comunicação e
 
 Isso explica por que abrir duas aplicações distintas normalmente cria dois processos, enquanto um servidor web pode usar várias threads para atender múltiplas requisições dentro do mesmo processo.
 
-Em sistemas modernos, o scheduler alterna a CPU entre threads ou processos para dar a sensação de paralelismo. Em CPU multicore, diferentes threads ou processos podem realmente executar em paralelo. Quando a concorrência acontece entre threads do mesmo processo, a comunicação tende a ser mais rápida, porque os dados já estão no mesmo espaço de memória. Em compensação, essa proximidade exige sincronização para evitar [[race-conditions]], [[deadlocks]] e corrupção de estado.
+Em sistemas modernos, o scheduler alterna a CPU entre threads ou processos para dar a sensação de paralelismo. Em CPU multicore, diferentes threads ou processos podem realmente executar em paralelo. Quando a concorrência acontece entre threads do mesmo processo, a comunicação tende a ser mais rápida, porque os dados já estão no mesmo espaço de memória. Em compensação, essa proximidade exige sincronização para evitar [race-conditions](../../../../Programa%C3%A7%C3%A3o/Fundamentos/race-conditions.md), [deadlocks](../../../../Programa%C3%A7%C3%A3o/Fundamentos/deadlocks.md) e corrupção de estado.
 
 ```mermaid
 flowchart TD
@@ -74,9 +74,9 @@ Exemplo 3: um pipeline que chama `ffmpeg`, `tar` ou outro binário externo norma
 Pense no processo como uma casa com paredes, portas e recursos próprios. As threads são as pessoas trabalhando dentro dessa casa. Elas compartilham o mesmo ambiente e os mesmos objetos, mas cada uma segue sua própria sequência de trabalho. Criar outra pessoa trabalhando na mesma casa costuma ser mais barato do que construir uma casa nova, mas qualquer erro grave dentro da casa pode afetar tudo que está lá dentro.
 
 ## Related Notes
-- [[Processos]]
-- [[Threads]]
-- [[concorrencia]]
-- [[thread-safety]]
-- [[race-conditions]]
-- [[deadlocks]]
+- [Processos](Processos.md)
+- [Threads](Threads.md)
+- [concorrencia](../../../../Programa%C3%A7%C3%A3o/Fundamentos/concorrencia.md)
+- [thread-safety](../../../../Programa%C3%A7%C3%A3o/Fundamentos/thread-safety.md)
+- [race-conditions](../../../../Programa%C3%A7%C3%A3o/Fundamentos/race-conditions.md)
+- [deadlocks](../../../../Programa%C3%A7%C3%A3o/Fundamentos/deadlocks.md)

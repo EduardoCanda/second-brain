@@ -8,4 +8,4 @@ O **iOS** é o sistema operacional móvel da Apple para iPhone. Embora tenha foc
 - Integração com serviços como iCloud e Apple ID.
 
 **Notas relacionadas:**
-[MacOS](../../../../MacOS.md) · [Sistemas operacionais](../../../Sistemas operacionais.md)
+[MacOS](../../../MacOS/MacOS.md) · [Sistemas operacionais](../../../Sistemas operacionais.md)

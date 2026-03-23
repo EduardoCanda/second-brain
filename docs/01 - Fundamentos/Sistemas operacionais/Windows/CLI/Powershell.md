@@ -2,7 +2,7 @@ O powershell é foi designiado para automatizar tarefas e gerenciar as configura
 
 Ele é orientado a objeto, oque significa que ele interagir com dados complexos e lidar com o sistema de maneira mais eficiente.
 
-Inicialmente ele era disponível somente no Windows, mas já possui suas versões disponíveis para [Linux](../../Linux/Fundamentos/00 - Introdução/Linux.md) e [MacOS](../../../Sistemas operacionais/MacOS.md) também.
+Inicialmente ele era disponível somente no Windows, mas já possui suas versões disponíveis para [Linux](../../Linux/Fundamentos/00 - Introdução/Linux.md) e [MacOS](../../MacOS/MacOS.md) também.
 
 ---
 ## Sintaxe básica: Verb-Noun

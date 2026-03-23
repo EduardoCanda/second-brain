@@ -8,4 +8,4 @@
 - Filosofia de compor programas simples para resolver tarefas complexas.
 
 **Notas relacionadas:**
-[Linux](Linux.md) · [MacOS](../../../../MacOS.md)
+[Linux](Linux.md) · [MacOS](../../../MacOS/MacOS.md)

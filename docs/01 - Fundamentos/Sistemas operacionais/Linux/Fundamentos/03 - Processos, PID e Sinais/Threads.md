@@ -125,7 +125,7 @@ Em uma aplicação Spring Boot, o servidor pode usar várias threads para:
 - aguardar resposta de integrações externas;
 - disparar tarefas assíncronas controladas.
 
-Se o código compartilhar objetos mutáveis sem proteção, erros podem surgir apenas sob carga, o que torna [[Thread safety]] um requisito central.
+Se o código compartilhar objetos mutáveis sem proteção, erros podem surgir apenas sob carga, o que torna [Thread safety](../../../../Programa%C3%A7%C3%A3o/Fundamentos/thread-safety.md) um requisito central.
 
 ## Visual Representation
 ```mermaid
@@ -138,8 +138,8 @@ flowchart LR
 ```
 
 ## Related Notes
-- [[Processos]]
-- [[Concorrência]]
-- [[Thread safety]]
-- [[deadlocks]]
-- [[race-conditions]]
+- [Processos](Processos.md)
+- [Concorrência](../../../../Programa%C3%A7%C3%A3o/Fundamentos/concorrencia.md)
+- [Thread safety](../../../../Programa%C3%A7%C3%A3o/Fundamentos/thread-safety.md)
+- [deadlocks](../../../../Programa%C3%A7%C3%A3o/Fundamentos/deadlocks.md)
+- [race-conditions](../../../../Programa%C3%A7%C3%A3o/Fundamentos/race-conditions.md)

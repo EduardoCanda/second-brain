@@ -30,6 +30,6 @@ Prefira composição por padrão. Use herança quando a relação de subtipo for
 - Quebrar princípio de substituição de Liskov.
 
 ## Conceitos relacionados
-[[Acoplamento e Coesão]]
-[[Abstração]]
-[[Encapsulamento]]
+[Acoplamento e Coesão](acoplamento-e-coesao.md)
+[Abstração](abstracao.md)
+[Encapsulamento](encapsulamento.md)

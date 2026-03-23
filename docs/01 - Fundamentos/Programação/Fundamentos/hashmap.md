@@ -22,6 +22,6 @@ HashMap é excelente para acesso direto por chave, mas não mantém ordem natura
 - Assumir thread safety em HashMap comum.
 
 ## Conceitos relacionados
-[[Estruturas de dados]]
-[[Complexidade Big-O]]
-[[Thread safety]]
+[Estruturas de dados](estruturas-de-dados.md)
+[Complexidade Big-O](complexidade-big-o.md)
+[Thread safety](thread-safety.md)

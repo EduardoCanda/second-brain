@@ -17,15 +17,15 @@ Esta nota agrupa os tópicos de **Page Loading** em um único material, reduzind
 
 ## Índice rápido
 
-- [[#CSSOM|CSSOM]]
-- [[#Composite|Composite]]
-- [[#Critical Rendering Path|Critical Rendering Path]]
-- [[#DOM Construction|DOM Construction]]
-- [[#HTML Parsing|HTML Parsing]]
-- [[#Layout (Reflow)|Layout (Reflow)]]
-- [[#O que acontece quando digitamos uma URL no navegador|O que acontece quando digitamos uma URL no navegador]]
-- [[#Paint|Paint]]
-- [[#Render Tree|Render Tree]]
+- [CSSOM](#cssom)
+- [Composite](#composite)
+- [Critical Rendering Path](#critical-rendering-path)
+- [DOM Construction](#dom-construction)
+- [HTML Parsing](#html-parsing)
+- [Layout (Reflow)](#layout-reflow)
+- [O que acontece quando digitamos uma URL no navegador](#o-que-acontece-quando-digitamos-uma-url-no-navegador)
+- [Paint](#paint)
+- [Render Tree](#render-tree)
 
 ---
 
@@ -60,9 +60,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Render Tree]]
-- [[Layout (Reflow)]]
-- [[Critical Rendering Path]]
+- [Render Tree](#render-tree)
+- [Layout (Reflow)](#layout-reflow)
+- [Critical Rendering Path](#critical-rendering-path)
 
 ## Composite
 
@@ -95,9 +95,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Paint]]
-- [[Layout (Reflow)]]
-- [[Browser Multi Process Architecture]]
+- [Paint](#paint)
+- [Layout (Reflow)](#layout-reflow)
+- [Browser Multi Process Architecture](../Browser%20Architecture/Browser%20Architecture%20-%20Guia%20Consolidado.md)
 
 ## Critical Rendering Path
 
@@ -130,9 +130,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTML Parsing]]
-- [[CSSOM]]
-- [[Layout (Reflow)]]
+- [HTML Parsing](#html-parsing)
+- [CSSOM](#cssom)
+- [Layout (Reflow)](#layout-reflow)
 
 ## DOM Construction
 
@@ -165,9 +165,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTML Parsing]]
-- [[Layout (Reflow)]]
-- [[Event Loop]]
+- [HTML Parsing](#html-parsing)
+- [Layout (Reflow)](#layout-reflow)
+- [Event Loop](../JavaScript%20Execution/JavaScript%20Execution%20-%20Guia%20Consolidado.md)
 
 ## HTML Parsing
 
@@ -200,9 +200,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[DOM Construction]]
-- [[Critical Rendering Path]]
-- [[Render Tree]]
+- [DOM Construction](#dom-construction)
+- [Critical Rendering Path](#critical-rendering-path)
+- [Render Tree](#render-tree)
 
 ## Layout (Reflow)
 
@@ -235,9 +235,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Render Tree]]
-- [[Paint]]
-- [[Composite]]
+- [Render Tree](#render-tree)
+- [Paint](#paint)
+- [Composite](#composite)
 
 ## O que acontece quando digitamos uma URL no navegador
 
@@ -270,9 +270,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP request lifecycle no navegador]]
-- [[Critical Rendering Path]]
-- [[Como analisar waterfall de requests]]
+- [HTTP request lifecycle no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
+- [Critical Rendering Path](#critical-rendering-path)
+- [Como analisar waterfall de requests](../Debugging/Debugging%20-%20Guia%20Consolidado.md)
 
 ## Paint
 
@@ -305,9 +305,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Layout (Reflow)]]
-- [[Composite]]
-- [[Critical Rendering Path]]
+- [Layout (Reflow)](#layout-reflow)
+- [Composite](#composite)
+- [Critical Rendering Path](#critical-rendering-path)
 
 ## Render Tree
 
@@ -340,9 +340,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[CSSOM]]
-- [[Layout (Reflow)]]
-- [[Paint]]
+- [CSSOM](#cssom)
+- [Layout (Reflow)](#layout-reflow)
+- [Paint](#paint)
 
 ## Pontos comuns da família (backend/devops)
 

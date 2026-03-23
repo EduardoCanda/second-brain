@@ -57,6 +57,6 @@ trivy image --severity HIGH,CRITICAL my-api:1.2.0
 - Gerar SBOM sem integrá-la a processo de aprovação.
 
 ## Referências relacionadas
-- [[05 - GitOps com Argo CD e Flux]]
-- [[11 - CI-CD para DevOps]]
-- [[13 - Arquitetura Cloud para DevOps]]
+- [05 - GitOps com Argo CD e Flux](../../02%20-%20Guias/Kubernetes/05%20-%20GitOps%20com%20Argo%20CD%20e%20Flux.md)
+- [11 - CI-CD para DevOps](../../02%20-%20Guias/CI-CD/11%20-%20CI-CD%20para%20DevOps.md)
+- [13 - Arquitetura Cloud para DevOps](../../02%20-%20Guias/Cloud/13%20-%20Arquitetura%20Cloud%20para%20DevOps.md)

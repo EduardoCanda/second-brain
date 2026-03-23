@@ -13,11 +13,11 @@ Esta nota agrupa os tópicos de **Browser Storage** em um único material, reduz
 
 ## Índice rápido
 
-- [[#Cache Storage|Cache Storage]]
-- [[#Cookies|Cookies]]
-- [[#IndexedDB|IndexedDB]]
-- [[#LocalStorage|LocalStorage]]
-- [[#SessionStorage|SessionStorage]]
+- [Cache Storage](#cache-storage)
+- [Cookies](#cookies)
+- [IndexedDB](#indexeddb)
+- [LocalStorage](#localstorage)
+- [SessionStorage](#sessionstorage)
 
 ---
 
@@ -52,9 +52,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Service Workers e Cache]]
-- [[HTTP Cache]]
-- [[IndexedDB]]
+- [Service Workers e Cache](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
+- [HTTP Cache](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
+- [IndexedDB](#indexeddb)
 
 ## Cookies
 
@@ -87,9 +87,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[CSRF]]
-- [[Same Origin Policy]]
-- [[HTTP request lifecycle no navegador]]
+- [CSRF](../Security/Security%20-%20Guia%20Consolidado.md)
+- [Same Origin Policy](../Security/Security%20-%20Guia%20Consolidado.md)
+- [HTTP request lifecycle no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
 
 ## IndexedDB
 
@@ -122,9 +122,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Cache Storage]]
-- [[LocalStorage]]
-- [[Service Workers e Cache]]
+- [Cache Storage](#cache-storage)
+- [LocalStorage](#localstorage)
+- [Service Workers e Cache](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
 
 ## LocalStorage
 
@@ -157,9 +157,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[SessionStorage]]
-- [[IndexedDB]]
-- [[Cookies]]
+- [SessionStorage](#sessionstorage)
+- [IndexedDB](#indexeddb)
+- [Cookies](#cookies)
 
 ## SessionStorage
 
@@ -192,9 +192,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[LocalStorage]]
-- [[IndexedDB]]
-- [[Cookies]]
+- [LocalStorage](#localstorage)
+- [IndexedDB](#indexeddb)
+- [Cookies](#cookies)
 
 ## Pontos comuns da família (backend/devops)
 

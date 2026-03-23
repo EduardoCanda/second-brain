@@ -29,9 +29,9 @@ Aprendizado supervisionado é o treinamento de modelos com dados rotulados, onde
 - Sensível a desbalanceamento de classes.
 
 ## Relação com outros conceitos
-- Usa [[Métricas de Avaliação em Machine Learning]] para decisão técnica.
-- Pode ser implementado com [[Redes Neurais Artificiais]].
-- Em NLP moderno, conecta com [[Transformers]].
+- Usa [Métricas de Avaliação em Machine Learning](M%C3%A9tricas%20de%20Avalia%C3%A7%C3%A3o%20em%20Machine%20Learning.md) para decisão técnica.
+- Pode ser implementado com [Redes Neurais Artificiais](../Deep%20Learning/Redes%20Neurais%20Artificiais.md).
+- Em NLP moderno, conecta com [Transformers](../Deep%20Learning/Transformers.md).
 
 ## Exemplos em Python quando aplicável
 ```python

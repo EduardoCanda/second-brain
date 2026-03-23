@@ -29,9 +29,9 @@ Diferente de RNNs, Transformers processam tokens em paralelo e aprendem relaçõ
 - Exige estratégias para reduzir alucinação.
 
 ## Relação com outros conceitos
-- Depende de [[Tokenização e Embeddings]].
-- É a base para [[Prompt Engineering]] e [[Retrieval-Augmented Generation (RAG) em Produção]].
-- Operação em produção requer [[Observabilidade para Aplicações com LLM]].
+- Depende de [Tokenização e Embeddings](../NLP/Tokeniza%C3%A7%C3%A3o%20e%20Embeddings.md).
+- É a base para [Prompt Engineering](../LLM%20Engineering/Prompt%20Engineering.md) e [Retrieval-Augmented Generation (RAG) em Produção](../LLM%20Engineering/Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
+- Operação em produção requer [Observabilidade para Aplicações com LLM](../LLMOps/Observabilidade%20para%20Aplica%C3%A7%C3%B5es%20com%20LLM.md).
 
 ## Exemplos em Python quando aplicável
 ```python

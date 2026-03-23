@@ -16,4 +16,4 @@ Conjunto de técnicas para diagnóstico de problemas em containers.
 
 ## Relações
 - [Containers](../02 - Containers/Containers.md)
-- [Networking Docker](../02 - Containers/Networking Docker.md)
+- [Networking Docker](../04 - Networking/Networking.md)

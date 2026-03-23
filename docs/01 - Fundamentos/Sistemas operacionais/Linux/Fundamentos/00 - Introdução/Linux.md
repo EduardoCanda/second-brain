@@ -1,4 +1,4 @@
-Assim como [Windows](../../../Windows.md), [iOS](iOS.md) e [MacOS](../../../../Sistemas operacionais/MacOS.md), o **Linux** é um sistema operacional dos mais utilizados do mundo. Ele equipa carros inteligentes, dispositivos android, supercomputadores, servidores enterprise, websites, painéis de controle e muito mais.
+Assim como [Windows](../../../Windows/Windows.md), [iOS](iOS.md) e [MacOS](../../../MacOS/MacOS.md), o **Linux** é um sistema operacional dos mais utilizados do mundo. Ele equipa carros inteligentes, dispositivos android, supercomputadores, servidores enterprise, websites, painéis de controle e muito mais.
 
 ---
 ## Variações do Linux:

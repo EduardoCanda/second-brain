@@ -21,5 +21,5 @@ Docker Swarm é o modo de orquestração nativo do Docker.
 - docker service scale
 
 ## Relações
-- [Docker Networking](Docker Networking.md)
-- [Segurança Docker](Segurança Docker.md)
+- [Docker Networking](../04 - Networking/Networking.md)
+- [Segurança Docker](../07 - Segurança/Segurança.md)

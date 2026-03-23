@@ -13,11 +13,11 @@ Esta nota agrupa os tópicos de **Performance** em um único material, reduzindo
 
 ## Índice rápido
 
-- [[#Code splitting|Code splitting]]
-- [[#Compression (gzip - brotli)|Compression (gzip - brotli)]]
-- [[#Lazy Loading|Lazy Loading]]
-- [[#Prefetch|Prefetch]]
-- [[#Preload|Preload]]
+- [Code splitting](#code-splitting)
+- [Compression (gzip - brotli)](#compression-gzip-brotli)
+- [Lazy Loading](#lazy-loading)
+- [Prefetch](#prefetch)
+- [Preload](#preload)
 
 ---
 
@@ -52,9 +52,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Lazy Loading]]
-- [[Preload]]
-- [[Critical Rendering Path]]
+- [Lazy Loading](#lazy-loading)
+- [Preload](#preload)
+- [Critical Rendering Path](../Page%20Loading/Page%20Loading%20-%20Guia%20Consolidado.md)
 
 ## Compression (gzip - brotli)
 
@@ -87,9 +87,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP request lifecycle no navegador]]
-- [[Keep Alive]]
-- [[Performance]]
+- [HTTP request lifecycle no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
+- [Keep Alive](../Networking/Networking%20-%20Guia%20Consolidado.md)
+- [Performance](Performance%20-%20Guia%20Consolidado.md)
 
 ## Lazy Loading
 
@@ -122,9 +122,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Code splitting]]
-- [[Prefetch]]
-- [[Preload]]
+- [Code splitting](#code-splitting)
+- [Prefetch](#prefetch)
+- [Preload](#preload)
 
 ## Prefetch
 
@@ -157,9 +157,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Preload]]
-- [[HTTP Cache]]
-- [[Lazy Loading]]
+- [Preload](#preload)
+- [HTTP Cache](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
+- [Lazy Loading](#lazy-loading)
 
 ## Preload
 
@@ -192,9 +192,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Prefetch]]
-- [[Critical Rendering Path]]
-- [[Como analisar waterfall de requests]]
+- [Prefetch](#prefetch)
+- [Critical Rendering Path](../Page%20Loading/Page%20Loading%20-%20Guia%20Consolidado.md)
+- [Como analisar waterfall de requests](../Debugging/Debugging%20-%20Guia%20Consolidado.md)
 
 ## Pontos comuns da família (backend/devops)
 

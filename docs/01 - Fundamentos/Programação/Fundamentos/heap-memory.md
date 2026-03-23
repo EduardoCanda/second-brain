@@ -23,6 +23,6 @@ Pense em ciclo de vida de objetos: quem cria, quem referencia e quando pode ser 
 - Ignorar métricas de uso de heap em produção.
 
 ## Conceitos relacionados
-[[Garbage collection]]
-[[Call stack]]
-[[Observabilidade]]
+[Garbage collection](garbage-collection.md)
+[Call stack](call-stack.md)
+[Observabilidade](observabilidade.md)

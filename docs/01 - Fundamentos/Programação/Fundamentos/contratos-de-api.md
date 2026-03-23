@@ -23,6 +23,6 @@ Pense em API como produto: versione mudanças, documente erros e preserve compat
 - Não definir SLA/SLO e limites de uso.
 
 ## Conceitos relacionados
-[[Abstração]]
-[[Serialização]]
-[[Observabilidade]]
+[Abstração](abstracao.md)
+[Serialização](serializacao.md)
+[Observabilidade](observabilidade.md)

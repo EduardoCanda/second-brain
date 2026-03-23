@@ -28,9 +28,9 @@ Na prática de engenharia, prompt é interface de programação para modelos gen
 - Pode não resolver lacunas de conhecimento factual.
 
 ## Relação com outros conceitos
-- Complementa [[Retrieval-Augmented Generation (RAG) em Produção]].
-- Depende da arquitetura [[Transformers]].
-- Precisa de validação contínua em [[Avaliação e Guardrails para LLMs]].
+- Complementa [Retrieval-Augmented Generation (RAG) em Produção](Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
+- Depende da arquitetura [Transformers](../Deep%20Learning/Transformers.md).
+- Precisa de validação contínua em [Avaliação e Guardrails para LLMs](../LLMOps/Avalia%C3%A7%C3%A3o%20e%20Guardrails%20para%20LLMs.md).
 
 ## Exemplos em Python quando aplicável
 ```python

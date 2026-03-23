@@ -28,6 +28,6 @@ Engenheiros experientes desenham bordas estáveis entre módulos e deixam detalh
 - Confundir abstração com complexidade extra de arquitetura.
 
 ## Conceitos relacionados
-[[Encapsulamento]]
-[[Contratos de API]]
-[[Acoplamento e Coesão]]
+[Encapsulamento](encapsulamento.md)
+[Contratos de API](contratos-de-api.md)
+[Acoplamento e Coesão](acoplamento-e-coesao.md)

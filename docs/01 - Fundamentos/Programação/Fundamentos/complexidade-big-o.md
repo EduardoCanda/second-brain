@@ -24,6 +24,6 @@ Não busque micro-otimização cedo. Use Big-O para evitar decisões que explode
 - Achar que O(1) sempre é mais rápido na prática.
 
 ## Conceitos relacionados
-[[Estruturas de dados]]
-[[HashMap]]
-[[Recursão]]
+[Estruturas de dados](estruturas-de-dados.md)
+[HashMap](hashmap.md)
+[Recursão](recursao.md)

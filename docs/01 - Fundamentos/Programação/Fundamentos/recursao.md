@@ -23,6 +23,6 @@ Garanta caso base claro e progresso em direção a ele. Sem isso, você terá st
 - Usar recursão onde iteração é mais simples e legível.
 
 ## Conceitos relacionados
-[[Call stack]]
-[[Árvores]]
-[[Grafos]]
+[Call stack](call-stack.md)
+[Árvores](arvores.md)
+[Grafos](grafos.md)

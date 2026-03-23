@@ -28,9 +28,9 @@ Do ponto de vista de engenharia, agentes modelam automação orientada a objetiv
 - Em ambientes dinâmicos, plano pode ficar obsoleto rápido.
 
 ## Relação com outros conceitos
-- Complementa aprendizado em [[Aprendizado Supervisionado]].
-- Pode usar modelos [[Redes Neurais Artificiais]] como função de valor/política.
-- Em sistemas modernos, integra com [[Arquitetura de Sistemas de IA em Produção]].
+- Complementa aprendizado em [Aprendizado Supervisionado](../Machine%20Learning/Aprendizado%20Supervisionado.md).
+- Pode usar modelos [Redes Neurais Artificiais](../Deep%20Learning/Redes%20Neurais%20Artificiais.md) como função de valor/política.
+- Em sistemas modernos, integra com [Arquitetura de Sistemas de IA em Produção](../AI%20Systems/Arquitetura%20de%20Sistemas%20de%20IA%20em%20Produ%C3%A7%C3%A3o.md).
 
 ## Exemplos em Python quando aplicável
 ```python

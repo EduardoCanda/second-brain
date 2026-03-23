@@ -24,6 +24,6 @@ Não “otimize contra o GC” prematuramente; primeiro meça alocação, pausas
 - Tunagem de JVM sem baseline de métricas.
 
 ## Conceitos relacionados
-[[Heap memory]]
-[[Observabilidade]]
-[[Performance]]
+[Heap memory](heap-memory.md)
+[Observabilidade](observabilidade.md)
+[Performance](../../../02%20-%20Guias/Browser/Performance/Performance%20-%20Guia%20Consolidado.md)
