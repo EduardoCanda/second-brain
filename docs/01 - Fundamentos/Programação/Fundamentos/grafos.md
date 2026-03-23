@@ -23,6 +23,6 @@ Quando o problema envolve relações em rede e caminhos, pense em grafo antes de
 - Não definir direção das arestas corretamente.
 
 ## Conceitos relacionados
-[[Árvores]]
-[[Recursão]]
-[[Sistemas distribuídos]]
+[Árvores](arvores.md)
+[Recursão](recursao.md)
+[Sistemas distribuídos](../../../03%20-%20Deep%20Dives/Sistemas%20distr%C3%ADbuidos/Sistemas%20distribu%C3%ADdos.md)

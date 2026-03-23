@@ -57,4 +57,4 @@ Use quando o foco é **integração entre sistemas** por eventos, sem necessidad
 
 ## Nota relacionada
 
-- Compare com [[WebSocket]] quando houver necessidade de tempo real no front-end.
+- Compare com [WebSocket](WebSocket.md) quando houver necessidade de tempo real no front-end.

@@ -22,6 +22,6 @@ Trate funções puras como “blocos matemáticos” confiáveis. Quanto mais do
 - Escrever em log ou banco em função de cálculo.
 
 ## Conceitos relacionados
-[[Estado e efeitos colaterais]]
-[[Imutabilidade]]
-[[Testes]]
+[Estado e efeitos colaterais](estado-e-efeitos-colaterais.md)
+[Imutabilidade](imutabilidade.md)
+[Testes](../../../02%20-%20Guias/Testes/Testes.md)

@@ -26,6 +26,6 @@ Mantenha ordem global de aquisição de locks e reduza escopo de bloqueio.
 - Ignorar timeouts em aquisição de lock distribuído.
 
 ## Conceitos relacionados
-[[Concorrência]]
-[[Thread safety]]
-[[Tolerância a falhas]]
+[Concorrência](concorrencia.md)
+[Thread safety](thread-safety.md)
+[Tolerância a falhas](tolerancia-a-falhas.md)

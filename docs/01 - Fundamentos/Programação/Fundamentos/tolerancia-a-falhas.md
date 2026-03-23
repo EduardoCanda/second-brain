@@ -26,6 +26,6 @@ Projete para falhar: isole dependências, limite blast radius e garanta caminhos
 - Confundir disponibilidade com ausência total de erro.
 
 ## Conceitos relacionados
-[[Retries e timeouts]]
-[[Backpressure]]
-[[Observabilidade]]
+[Retries e timeouts](retries-e-timeouts.md)
+[Backpressure](backpressure.md)
+[Observabilidade](observabilidade.md)

@@ -29,9 +29,9 @@ Em engenharia de software, guardrails funcionam como validação de contrato: me
 - Regras precisam ser atualizadas com novos ataques.
 
 ## Relação com outros conceitos
-- Complementa [[Observabilidade para Aplicações com LLM]].
-- Depende de bons prompts em [[Prompt Engineering]].
-- Em sistemas com busca, reforça segurança em [[Retrieval-Augmented Generation (RAG) em Produção]].
+- Complementa [Observabilidade para Aplicações com LLM](Observabilidade%20para%20Aplica%C3%A7%C3%B5es%20com%20LLM.md).
+- Depende de bons prompts em [Prompt Engineering](../LLM%20Engineering/Prompt%20Engineering.md).
+- Em sistemas com busca, reforça segurança em [Retrieval-Augmented Generation (RAG) em Produção](../LLM%20Engineering/Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
 
 ## Exemplos em Python quando aplicável
 ```python

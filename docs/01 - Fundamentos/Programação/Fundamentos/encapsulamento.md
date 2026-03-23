@@ -31,6 +31,6 @@ Pense em invariantes: quais regras do domínio nunca podem ser violadas? Encapsu
 - Misturar lógica de domínio com acesso externo sem validação.
 
 ## Conceitos relacionados
-[[Abstração]]
-[[Imutabilidade]]
-[[Thread safety]]
+[Abstração](abstracao.md)
+[Imutabilidade](imutabilidade.md)
+[Thread safety](thread-safety.md)

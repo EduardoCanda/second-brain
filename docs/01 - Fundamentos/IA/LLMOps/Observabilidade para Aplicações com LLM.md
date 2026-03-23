@@ -29,9 +29,9 @@ Aplicações com LLM têm variabilidade estocástica. Métricas tradicionais de 
 - Privacidade exige anonimização cuidadosa.
 
 ## Relação com outros conceitos
-- Suporta [[Avaliação e Guardrails para LLMs]].
-- Necessário para operar [[Retrieval-Augmented Generation (RAG) em Produção]].
-- Faz parte de [[Arquitetura de Sistemas de IA em Produção]].
+- Suporta [Avaliação e Guardrails para LLMs](Avalia%C3%A7%C3%A3o%20e%20Guardrails%20para%20LLMs.md).
+- Necessário para operar [Retrieval-Augmented Generation (RAG) em Produção](../LLM%20Engineering/Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
+- Faz parte de [Arquitetura de Sistemas de IA em Produção](../AI%20Systems/Arquitetura%20de%20Sistemas%20de%20IA%20em%20Produ%C3%A7%C3%A3o.md).
 
 ## Exemplos em Python quando aplicável
 ```python

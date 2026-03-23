@@ -23,6 +23,6 @@ Cache é aposta probabilística: quando acerta, ganha performance; quando erra, 
 - Cachear sem medir hit rate e p95.
 
 ## Conceitos relacionados
-[[HashMap]]
-[[Observabilidade]]
-[[Tolerância a falhas]]
+[HashMap](hashmap.md)
+[Observabilidade](observabilidade.md)
+[Tolerância a falhas](tolerancia-a-falhas.md)

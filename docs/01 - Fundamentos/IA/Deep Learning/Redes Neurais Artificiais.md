@@ -28,9 +28,9 @@ Para engenheiros, uma rede neural é uma função parametrizada altamente flexí
 - Risco de overfitting sem regularização.
 
 ## Relação com outros conceitos
-- Evolução de [[Aprendizado Supervisionado]].
-- Base arquitetural para [[Transformers]].
-- Requer pipeline robusto de [[Feature Store e Pipelines de Features]].
+- Evolução de [Aprendizado Supervisionado](../Machine%20Learning/Aprendizado%20Supervisionado.md).
+- Base arquitetural para [Transformers](Transformers.md).
+- Requer pipeline robusto de [Feature Store e Pipelines de Features](../AI%20Systems/Feature%20Store%20e%20Pipelines%20de%20Features.md).
 
 ## Exemplos em Python quando aplicável
 ```python

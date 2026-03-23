@@ -28,6 +28,6 @@ Módulos bons mudam por um motivo principal. Se uma mudança quebra cinco partes
 - Dependências cíclicas entre pacotes.
 
 ## Conceitos relacionados
-[[Abstração]]
-[[Composição vs Herança]]
-[[Contratos de API]]
+[Abstração](abstracao.md)
+[Composição vs Herança](composicao-vs-heranca.md)
+[Contratos de API](contratos-de-api.md)

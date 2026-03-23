@@ -84,6 +84,6 @@ resources:
 - Não fixar versão de chart externo.
 
 ## Referências relacionadas
-- [[05 - GitOps com Argo CD e Flux]]
-- [[11 - CI-CD para DevOps]]
-- [[12 - Deployment Strategies em Kubernetes]]
+- [05 - GitOps com Argo CD e Flux](05%20-%20GitOps%20com%20Argo%20CD%20e%20Flux.md)
+- [11 - CI-CD para DevOps](../CI-CD/11%20-%20CI-CD%20para%20DevOps.md)
+- [12 - Deployment Strategies em Kubernetes](12%20-%20Deployment%20Strategies%20em%20Kubernetes.md)

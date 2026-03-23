@@ -15,13 +15,13 @@ Esta nota agrupa os tópicos de **Networking** em um único material, reduzindo 
 
 ## Índice rápido
 
-- [[#Como o navegador abre uma conexão TCP|Como o navegador abre uma conexão TCP]]
-- [[#Como o navegador resolve DNS|Como o navegador resolve DNS]]
-- [[#Connection pooling|Connection pooling]]
-- [[#HTTP request lifecycle no navegador|HTTP request lifecycle no navegador]]
-- [[#HTTP-1 vs HTTP-2 vs HTTP-3 no browser|HTTP-1 vs HTTP-2 vs HTTP-3 no browser]]
-- [[#Keep Alive|Keep Alive]]
-- [[#TLS handshake no navegador|TLS handshake no navegador]]
+- [Como o navegador abre uma conexão TCP](#como-o-navegador-abre-uma-conexao-tcp)
+- [Como o navegador resolve DNS](#como-o-navegador-resolve-dns)
+- [Connection pooling](#connection-pooling)
+- [HTTP request lifecycle no navegador](#http-request-lifecycle-no-navegador)
+- [HTTP-1 vs HTTP-2 vs HTTP-3 no browser](#http-1-vs-http-2-vs-http-3-no-browser)
+- [Keep Alive](#keep-alive)
+- [TLS handshake no navegador](#tls-handshake-no-navegador)
 
 ---
 
@@ -56,9 +56,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Keep Alive]]
-- [[Connection pooling]]
-- [[TLS handshake no navegador]]
+- [Keep Alive](#keep-alive)
+- [Connection pooling](#connection-pooling)
+- [TLS handshake no navegador](#tls-handshake-no-navegador)
 
 ## Como o navegador resolve DNS
 
@@ -91,9 +91,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Como o navegador abre uma conexão TCP]]
-- [[HTTP request lifecycle no navegador]]
-- [[Keep Alive]]
+- [Como o navegador abre uma conexão TCP](#como-o-navegador-abre-uma-conexao-tcp)
+- [HTTP request lifecycle no navegador](#http-request-lifecycle-no-navegador)
+- [Keep Alive](#keep-alive)
 
 ## Connection pooling
 
@@ -126,9 +126,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Keep Alive]]
-- [[HTTP-1 vs HTTP-2 vs HTTP-3 no browser]]
-- [[Como o navegador abre uma conexão TCP]]
+- [Keep Alive](#keep-alive)
+- [HTTP-1 vs HTTP-2 vs HTTP-3 no browser](#http-1-vs-http-2-vs-http-3-no-browser)
+- [Como o navegador abre uma conexão TCP](#como-o-navegador-abre-uma-conexao-tcp)
 
 ## HTTP request lifecycle no navegador
 
@@ -161,9 +161,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Como o navegador resolve DNS]]
-- [[Como o navegador abre uma conexão TCP]]
-- [[Critical Rendering Path]]
+- [Como o navegador resolve DNS](#como-o-navegador-resolve-dns)
+- [Como o navegador abre uma conexão TCP](#como-o-navegador-abre-uma-conexao-tcp)
+- [Critical Rendering Path](../Page%20Loading/Page%20Loading%20-%20Guia%20Consolidado.md)
 
 ## HTTP-1 vs HTTP-2 vs HTTP-3 no browser
 
@@ -196,9 +196,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[TLS handshake no navegador]]
-- [[Connection pooling]]
-- [[Como analisar waterfall de requests]]
+- [TLS handshake no navegador](#tls-handshake-no-navegador)
+- [Connection pooling](#connection-pooling)
+- [Como analisar waterfall de requests](../Debugging/Debugging%20-%20Guia%20Consolidado.md)
 
 ## Keep Alive
 
@@ -231,9 +231,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Connection pooling]]
-- [[HTTP-1 vs HTTP-2 vs HTTP-3 no browser]]
-- [[Como o navegador abre uma conexão TCP]]
+- [Connection pooling](#connection-pooling)
+- [HTTP-1 vs HTTP-2 vs HTTP-3 no browser](#http-1-vs-http-2-vs-http-3-no-browser)
+- [Como o navegador abre uma conexão TCP](#como-o-navegador-abre-uma-conexao-tcp)
 
 ## TLS handshake no navegador
 
@@ -266,9 +266,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTPS]]
-- [[HTTP-1 vs HTTP-2 vs HTTP-3 no browser]]
-- [[Como o navegador abre uma conexão TCP]]
+- [HTTPS](../Security/Security%20-%20Guia%20Consolidado.md)
+- [HTTP-1 vs HTTP-2 vs HTTP-3 no browser](#http-1-vs-http-2-vs-http-3-no-browser)
+- [Como o navegador abre uma conexão TCP](#como-o-navegador-abre-uma-conexao-tcp)
 
 ## Pontos comuns da família (backend/devops)
 

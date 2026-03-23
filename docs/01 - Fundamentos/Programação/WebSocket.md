@@ -58,4 +58,4 @@ Use quando há requisito de **tempo real contínuo** e interação frequente ent
 
 ## Nota relacionada
 
-- Compare com [[Webhooks]] para integrações orientadas a eventos entre sistemas.
+- Compare com [Webhooks](Webhooks.md) para integrações orientadas a eventos entre sistemas.

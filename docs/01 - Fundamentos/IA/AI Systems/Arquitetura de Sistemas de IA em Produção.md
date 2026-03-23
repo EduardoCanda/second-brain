@@ -29,9 +29,9 @@ Não basta treinar modelo. É preciso tratá-lo como sistema distribuído: inges
 - Dependência de maturidade de dados da organização.
 
 ## Relação com outros conceitos
-- Base operacional para [[Feature Store e Pipelines de Features]].
-- Inclui práticas de [[Observabilidade para Aplicações com LLM]].
-- Em apps generativas, integra [[Retrieval-Augmented Generation (RAG) em Produção]].
+- Base operacional para [Feature Store e Pipelines de Features](Feature%20Store%20e%20Pipelines%20de%20Features.md).
+- Inclui práticas de [Observabilidade para Aplicações com LLM](../LLMOps/Observabilidade%20para%20Aplica%C3%A7%C3%B5es%20com%20LLM.md).
+- Em apps generativas, integra [Retrieval-Augmented Generation (RAG) em Produção](../LLM%20Engineering/Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
 
 ## Exemplos em Python quando aplicável
 ```python

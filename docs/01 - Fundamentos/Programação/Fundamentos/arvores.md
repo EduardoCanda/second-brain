@@ -24,6 +24,6 @@ class Node {
 - Não tratar nós nulos nos limites da recursão.
 
 ## Conceitos relacionados
-[[Recursão]]
-[[Grafos]]
-[[Estruturas de dados]]
+[Recursão](recursao.md)
+[Grafos](grafos.md)
+[Estruturas de dados](estruturas-de-dados.md)

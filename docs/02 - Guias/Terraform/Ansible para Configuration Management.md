@@ -46,5 +46,5 @@ ansible-playbook -i inventories/prod/hosts.ini site.yml
 - Playbooks não idempotentes (sempre mudam).
 
 ## Referências relacionadas
-- [[Terraform para Infraestrutura como Código (IaC)]]
-- [[Backup, restore e disaster recovery]]
+- [Terraform para Infraestrutura como Código (IaC)](Terraform%20para%20Infraestrutura%20como%20C%C3%B3digo%20(IaC).md)
+- [Backup, restore e disaster recovery](../../03%20-%20Deep%20Dives/DevOps/SRE/Backup%2C%20restore%20e%20disaster%20recovery.md)

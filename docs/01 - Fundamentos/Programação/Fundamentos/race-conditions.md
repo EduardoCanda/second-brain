@@ -23,6 +23,6 @@ Se duas operações tocam o mesmo dado, assuma risco de corrida até provar o co
 - Não proteger leitura e escrita de estado compartilhado.
 
 ## Conceitos relacionados
-[[Concorrência]]
-[[Thread safety]]
-[[Debugging]]
+[Concorrência](concorrencia.md)
+[Thread safety](thread-safety.md)
+[Debugging](debugging.md)

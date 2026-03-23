@@ -22,6 +22,6 @@ Use timeout curto e retries com limite + jitter. Sem limite, retry vira ataque a
 - Não usar jitter e causar thundering herd.
 
 ## Conceitos relacionados
-[[Tolerância a falhas]]
-[[Idempotência]]
-[[Backpressure]]
+[Tolerância a falhas](tolerancia-a-falhas.md)
+[Idempotência](idempotencia.md)
+[Backpressure](backpressure.md)

@@ -14,12 +14,12 @@ Esta nota agrupa os tópicos de **JavaScript Execution** em um único material, 
 
 ## Índice rápido
 
-- [[#Call Stack|Call Stack]]
-- [[#Event Loop|Event Loop]]
-- [[#Microtask Queue|Microtask Queue]]
-- [[#Promises no navegador|Promises no navegador]]
-- [[#Task Queue|Task Queue]]
-- [[#Web APIs|Web APIs]]
+- [Call Stack](#call-stack)
+- [Event Loop](#event-loop)
+- [Microtask Queue](#microtask-queue)
+- [Promises no navegador](#promises-no-navegador)
+- [Task Queue](#task-queue)
+- [Web APIs](#web-apis)
 
 ---
 
@@ -54,9 +54,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Event Loop]]
-- [[Task Queue]]
-- [[Promises no navegador]]
+- [Event Loop](#event-loop)
+- [Task Queue](#task-queue)
+- [Promises no navegador](#promises-no-navegador)
 
 ## Event Loop
 
@@ -89,9 +89,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Call Stack]]
-- [[Task Queue]]
-- [[Microtask Queue]]
+- [Call Stack](#call-stack)
+- [Task Queue](#task-queue)
+- [Microtask Queue](#microtask-queue)
 
 ## Microtask Queue
 
@@ -124,9 +124,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Event Loop]]
-- [[Microtask Queue]]
-- [[Web APIs]]
+- [Event Loop](#event-loop)
+- [Microtask Queue](#microtask-queue)
+- [Web APIs](#web-apis)
 
 ## Promises no navegador
 
@@ -159,9 +159,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Microtask Queue]]
-- [[Event Loop]]
-- [[Web APIs]]
+- [Microtask Queue](#microtask-queue)
+- [Event Loop](#event-loop)
+- [Web APIs](#web-apis)
 
 ## Task Queue
 
@@ -194,9 +194,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Event Loop]]
-- [[Microtask Queue]]
-- [[Web APIs]]
+- [Event Loop](#event-loop)
+- [Microtask Queue](#microtask-queue)
+- [Web APIs](#web-apis)
 
 ## Web APIs
 
@@ -229,9 +229,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Event Loop]]
-- [[Browser JavaScript Engine]]
-- [[Como o navegador resolve DNS]]
+- [Event Loop](#event-loop)
+- [Browser JavaScript Engine](../Browser%20Architecture/Browser%20Architecture%20-%20Guia%20Consolidado.md)
+- [Como o navegador resolve DNS](../Networking/Networking%20-%20Guia%20Consolidado.md)
 
 ## Pontos comuns da família (backend/devops)
 

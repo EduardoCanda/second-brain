@@ -12,10 +12,10 @@ Esta nota agrupa os tópicos de **Debugging** em um único material, reduzindo r
 
 ## Índice rápido
 
-- [[#Como analisar waterfall de requests|Como analisar waterfall de requests]]
-- [[#Como debugar problemas de CORS|Como debugar problemas de CORS]]
-- [[#Como debugar problemas de cache|Como debugar problemas de cache]]
-- [[#Como usar DevTools Network Tab|Como usar DevTools Network Tab]]
+- [Como analisar waterfall de requests](#como-analisar-waterfall-de-requests)
+- [Como debugar problemas de CORS](#como-debugar-problemas-de-cors)
+- [Como debugar problemas de cache](#como-debugar-problemas-de-cache)
+- [Como usar DevTools Network Tab](#como-usar-devtools-network-tab)
 
 ---
 
@@ -50,9 +50,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Como usar DevTools Network Tab]]
-- [[Critical Rendering Path]]
-- [[Preload]]
+- [Como usar DevTools Network Tab](#como-usar-devtools-network-tab)
+- [Critical Rendering Path](../Page%20Loading/Page%20Loading%20-%20Guia%20Consolidado.md)
+- [Preload](../Performance/Performance%20-%20Guia%20Consolidado.md)
 
 ## Como debugar problemas de CORS
 
@@ -92,10 +92,10 @@ Vary: Origin
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[CORS]]
-- [[Same Origin Policy]]
-- [[Como usar DevTools Network Tab]]
-- [[HTTP request lifecycle no navegador]]
+- [CORS](../Security/Security%20-%20Guia%20Consolidado.md)
+- [Same Origin Policy](../Security/Security%20-%20Guia%20Consolidado.md)
+- [Como usar DevTools Network Tab](#como-usar-devtools-network-tab)
+- [HTTP request lifecycle no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
 
 ## Como debugar problemas de cache
 
@@ -128,9 +128,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP Cache]]
-- [[Cache-Control]]
-- [[Service Workers e Cache]]
+- [HTTP Cache](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
+- [Cache-Control](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
+- [Service Workers e Cache](../Browser%20Cache/Browser%20Cache%20-%20Guia%20Consolidado.md)
 
 ## Como usar DevTools Network Tab
 
@@ -163,9 +163,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Como analisar waterfall de requests]]
-- [[Como debugar problemas de CORS]]
-- [[HTTP request lifecycle no navegador]]
+- [Como analisar waterfall de requests](#como-analisar-waterfall-de-requests)
+- [Como debugar problemas de CORS](#como-debugar-problemas-de-cors)
+- [HTTP request lifecycle no navegador](../Networking/Networking%20-%20Guia%20Consolidado.md)
 
 ## Pontos comuns da família (backend/devops)
 

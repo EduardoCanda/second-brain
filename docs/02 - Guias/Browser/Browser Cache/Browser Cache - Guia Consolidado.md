@@ -12,10 +12,10 @@ Esta nota agrupa os tópicos de **Browser Cache** em um único material, reduzin
 
 ## Índice rápido
 
-- [[#Cache-Control|Cache-Control]]
-- [[#ETag|ETag]]
-- [[#HTTP Cache|HTTP Cache]]
-- [[#Service Workers e Cache|Service Workers e Cache]]
+- [Cache-Control](#cache-control)
+- [ETag](#etag)
+- [HTTP Cache](#http-cache)
+- [Service Workers e Cache](#service-workers-e-cache)
 
 ---
 
@@ -50,9 +50,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP Cache]]
-- [[ETag]]
-- [[Como debugar problemas de cache]]
+- [HTTP Cache](#http-cache)
+- [ETag](#etag)
+- [Como debugar problemas de cache](../Debugging/Debugging%20-%20Guia%20Consolidado.md)
 
 ## ETag
 
@@ -85,9 +85,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTTP Cache]]
-- [[Cache-Control]]
-- [[Keep Alive]]
+- [HTTP Cache](#http-cache)
+- [Cache-Control](#cache-control)
+- [Keep Alive](../Networking/Networking%20-%20Guia%20Consolidado.md)
 
 ## HTTP Cache
 
@@ -120,9 +120,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Cache-Control]]
-- [[ETag]]
-- [[Como debugar problemas de cache]]
+- [Cache-Control](#cache-control)
+- [ETag](#etag)
+- [Como debugar problemas de cache](../Debugging/Debugging%20-%20Guia%20Consolidado.md)
 
 ## Service Workers e Cache
 
@@ -155,9 +155,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Cache Storage]]
-- [[HTTP Cache]]
-- [[IndexedDB]]
+- [Cache Storage](../Browser%20Storage/Browser%20Storage%20-%20Guia%20Consolidado.md)
+- [HTTP Cache](#http-cache)
+- [IndexedDB](../Browser%20Storage/Browser%20Storage%20-%20Guia%20Consolidado.md)
 
 ## Pontos comuns da família (backend/devops)
 

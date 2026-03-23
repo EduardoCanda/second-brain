@@ -22,6 +22,6 @@ Cada chamada adiciona um frame na stack. O retorno remove frames em ordem LIFO.
 - Confundir stack (curta duração) com heap (objetos).
 
 ## Conceitos relacionados
-[[Recursão]]
-[[Heap memory]]
-[[Debugging]]
+[Recursão](recursao.md)
+[Heap memory](heap-memory.md)
+[Debugging](debugging.md)

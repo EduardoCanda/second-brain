@@ -22,6 +22,6 @@ Concorrência é sobre coordenação segura, não só velocidade. Primeiro corre
 - Criar mais threads do que o sistema suporta.
 
 ## Conceitos relacionados
-[[Thread safety]]
-[[Race conditions]]
-[[Deadlocks]]
+[Thread safety](thread-safety.md)
+[Race conditions](race-conditions.md)
+[Deadlocks](deadlocks.md)

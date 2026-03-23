@@ -21,6 +21,6 @@ Pense em “fazer perguntas novas em produção”. Bons sinais permitem investi
 - Coletar dados demais sem estratégia de custo.
 
 ## Conceitos relacionados
-[[Debugging]]
-[[Tolerância a falhas]]
-[[Cache]]
+[Debugging](debugging.md)
+[Tolerância a falhas](tolerancia-a-falhas.md)
+[Cache](../../Banco%20de%20dados/Cache.md)

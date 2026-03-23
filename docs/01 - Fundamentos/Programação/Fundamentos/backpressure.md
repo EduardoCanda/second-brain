@@ -22,6 +22,6 @@ Sistemas saudáveis comunicam capacidade. Quando não dá para processar, o corr
 - Não aplicar shed load em degradação.
 
 ## Conceitos relacionados
-[[Concorrência]]
-[[Tolerância a falhas]]
-[[Retries e timeouts]]
+[Concorrência](concorrencia.md)
+[Tolerância a falhas](tolerancia-a-falhas.md)
+[Retries e timeouts](retries-e-timeouts.md)

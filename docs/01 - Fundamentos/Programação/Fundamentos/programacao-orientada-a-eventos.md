@@ -23,6 +23,6 @@ Trate eventos como fatos imutáveis do domínio, e consumidores como projeções
 - Não tratar reprocessamento de mensagens.
 
 ## Conceitos relacionados
-[[Idempotência]]
-[[Contratos de API]]
-[[Tolerância a falhas]]
+[Idempotência](idempotencia.md)
+[Contratos de API](contratos-de-api.md)
+[Tolerância a falhas](tolerancia-a-falhas.md)

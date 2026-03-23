@@ -21,6 +21,6 @@ Escolha formato e esquema considerando compatibilidade, performance e legibilida
 - Ignorar custo de serializar payloads grandes.
 
 ## Conceitos relacionados
-[[Contratos de API]]
-[[Programação orientada a eventos]]
-[[Cache]]
+[Contratos de API](contratos-de-api.md)
+[Programação orientada a eventos](programacao-orientada-a-eventos.md)
+[Cache](../../Banco%20de%20dados/Cache.md)

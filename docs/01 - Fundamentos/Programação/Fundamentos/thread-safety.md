@@ -26,6 +26,6 @@ Pense em invariantes compartilhados. Se há escrita concorrente, use imutabilida
 - Não documentar expectativas de concorrência da classe.
 
 ## Conceitos relacionados
-[[Concorrência]]
-[[Race conditions]]
-[[Imutabilidade]]
+[Concorrência](concorrencia.md)
+[Race conditions](race-conditions.md)
+[Imutabilidade](imutabilidade.md)

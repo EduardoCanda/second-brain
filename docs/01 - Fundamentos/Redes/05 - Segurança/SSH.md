@@ -46,5 +46,5 @@ scp arquivo.txt usuario@servidor:/caminho/destino
 ---
 🔗 Notas Relacionadas
 	•	[TCP](../03 - Protocolos/TCP/TCP.md) – SSH funciona sobre TCP.
-	•	[Criptografia Assimétrica](../../Ciber segurança/Criptografia/03 - Criptografia assimétrica.md) – usada para autenticação.
+	•	[Criptografia Assimétrica](../../../03 - Deep Dives/Ciber segurança/Criptografia/03 - Criptografia assimétrica.md) – usada para autenticação.
 	•	[Portas Mais Conhecidas](../01 - Modelo OSI/Portas Mais Conhecidas.md) – SSH usa a porta 22.

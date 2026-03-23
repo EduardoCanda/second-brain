@@ -13,11 +13,11 @@ Esta nota agrupa os tópicos de **Browser Architecture** em um único material, 
 
 ## Índice rápido
 
-- [[#Browser Architecture Overview|Browser Architecture Overview]]
-- [[#Browser JavaScript Engine|Browser JavaScript Engine]]
-- [[#Browser Multi Process Architecture|Browser Multi Process Architecture]]
-- [[#Browser Rendering Engine|Browser Rendering Engine]]
-- [[#Event Loop no navegador|Event Loop no navegador]]
+- [Browser Architecture Overview](#browser-architecture-overview)
+- [Browser JavaScript Engine](#browser-javascript-engine)
+- [Browser Multi Process Architecture](#browser-multi-process-architecture)
+- [Browser Rendering Engine](#browser-rendering-engine)
+- [Event Loop no navegador](#event-loop-no-navegador)
 
 ---
 
@@ -52,9 +52,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Browser Multi Process Architecture]]
-- [[Browser Rendering Engine]]
-- [[Browser JavaScript Engine]]
+- [Browser Multi Process Architecture](#browser-multi-process-architecture)
+- [Browser Rendering Engine](#browser-rendering-engine)
+- [Browser JavaScript Engine](#browser-javascript-engine)
 
 ## Browser JavaScript Engine
 
@@ -87,9 +87,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Event Loop]]
-- [[Web APIs]]
-- [[Browser Rendering Engine]]
+- [Event Loop](../JavaScript%20Execution/JavaScript%20Execution%20-%20Guia%20Consolidado.md)
+- [Web APIs](../JavaScript%20Execution/JavaScript%20Execution%20-%20Guia%20Consolidado.md)
+- [Browser Rendering Engine](#browser-rendering-engine)
 
 ## Browser Multi Process Architecture
 
@@ -122,9 +122,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Browser Architecture Overview]]
-- [[Browser Rendering Engine]]
-- [[Security]]
+- [Browser Architecture Overview](#browser-architecture-overview)
+- [Browser Rendering Engine](#browser-rendering-engine)
+- [Security](../Security/Security%20-%20Guia%20Consolidado.md)
 
 ## Browser Rendering Engine
 
@@ -157,9 +157,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[HTML Parsing]]
-- [[Critical Rendering Path]]
-- [[Browser JavaScript Engine]]
+- [HTML Parsing](../Page%20Loading/Page%20Loading%20-%20Guia%20Consolidado.md)
+- [Critical Rendering Path](../Page%20Loading/Page%20Loading%20-%20Guia%20Consolidado.md)
+- [Browser JavaScript Engine](#browser-javascript-engine)
 
 ## Event Loop no navegador
 
@@ -192,9 +192,9 @@ Host: example.com
 ### Relação com outros conceitos
 
 Relaciona-se com:
-- [[Call Stack]]
-- [[Task Queue]]
-- [[Microtask Queue]]
+- [Call Stack](../../../01%20-%20Fundamentos/Programa%C3%A7%C3%A3o/Fundamentos/call-stack.md)
+- [Task Queue](../JavaScript%20Execution/JavaScript%20Execution%20-%20Guia%20Consolidado.md)
+- [Microtask Queue](../JavaScript%20Execution/JavaScript%20Execution%20-%20Guia%20Consolidado.md)
 
 ## Pontos comuns da família (backend/devops)
 

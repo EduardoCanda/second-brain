@@ -29,9 +29,9 @@ Em software, essa etapa é a ponte entre texto humano e computação numérica. 
 - Embeddings podem carregar vieses dos dados.
 
 ## Relação com outros conceitos
-- Pré-requisito para [[Transformers]].
-- Essencial para [[Retrieval-Augmented Generation (RAG) em Produção]].
-- Dados vetoriais são observados em [[Feature Store e Pipelines de Features]].
+- Pré-requisito para [Transformers](../Deep%20Learning/Transformers.md).
+- Essencial para [Retrieval-Augmented Generation (RAG) em Produção](../LLM%20Engineering/Retrieval-Augmented%20Generation%20(RAG)%20em%20Produ%C3%A7%C3%A3o.md).
+- Dados vetoriais são observados em [Feature Store e Pipelines de Features](../AI%20Systems/Feature%20Store%20e%20Pipelines%20de%20Features.md).
 
 ## Exemplos em Python quando aplicável
 ```python

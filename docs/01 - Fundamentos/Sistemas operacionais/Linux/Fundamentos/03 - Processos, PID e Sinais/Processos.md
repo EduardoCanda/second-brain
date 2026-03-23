@@ -109,7 +109,7 @@ flowchart TD
 ```
 
 ## Related Notes
-- [[Threads]]
-- [[System Calls]]
-- [[Memória Stack]]
-- [[Processos, PID e Sinais]]
+- [Threads](Threads.md)
+- [System Calls](System%20Calls.md)
+- [Memória Stack](Mem%C3%B3ria%20Stack.md)
+- [Processos, PID e Sinais](Processos%2C%20PID%20e%20Sinais.md)

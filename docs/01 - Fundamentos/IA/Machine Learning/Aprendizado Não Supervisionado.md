@@ -28,9 +28,9 @@ Aprendizado não supervisionado identifica estruturas e padrões em dados sem r�
 - Sensível a escala e representação de features.
 
 ## Relação com outros conceitos
-- Pode gerar pseudo-rótulos para [[Aprendizado Supervisionado]].
-- Embeddings de [[Tokenização e Embeddings]] são base para clusterização semântica.
-- Em produção, depende de [[Feature Store e Pipelines de Features]].
+- Pode gerar pseudo-rótulos para [Aprendizado Supervisionado](Aprendizado%20Supervisionado.md).
+- Embeddings de [Tokenização e Embeddings](../NLP/Tokeniza%C3%A7%C3%A3o%20e%20Embeddings.md) são base para clusterização semântica.
+- Em produção, depende de [Feature Store e Pipelines de Features](../AI%20Systems/Feature%20Store%20e%20Pipelines%20de%20Features.md).
 
 ## Exemplos em Python quando aplicável
 ```python

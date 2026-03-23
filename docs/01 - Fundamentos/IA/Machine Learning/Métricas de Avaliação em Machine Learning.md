@@ -28,9 +28,9 @@ Sem métricas, não há critério de promoção para produção. A escolha da m�
 - Datasets enviesados distorcem avaliação.
 
 ## Relação com outros conceitos
-- Critério central em [[Aprendizado Supervisionado]].
-- Avaliações online conectam com [[Observabilidade para Aplicações com LLM]].
-- Em LLMs, também envolve [[Avaliação e Guardrails para LLMs]].
+- Critério central em [Aprendizado Supervisionado](Aprendizado%20Supervisionado.md).
+- Avaliações online conectam com [Observabilidade para Aplicações com LLM](../LLMOps/Observabilidade%20para%20Aplica%C3%A7%C3%B5es%20com%20LLM.md).
+- Em LLMs, também envolve [Avaliação e Guardrails para LLMs](../LLMOps/Avalia%C3%A7%C3%A3o%20e%20Guardrails%20para%20LLMs.md).
 
 ## Exemplos em Python quando aplicável
 ```python

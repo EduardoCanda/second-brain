@@ -28,9 +28,9 @@ Para engenharia de software, NER estrutura texto não estruturado e permite auto
 - Requer adaptação para vocabulário específico da empresa.
 
 ## Relação com outros conceitos
-- Depende de [[Tokenização e Embeddings]].
-- Pode usar [[Transformers]] fine-tunados.
-- Métricas de qualidade seguem [[Métricas de Avaliação em Machine Learning]].
+- Depende de [Tokenização e Embeddings](Tokeniza%C3%A7%C3%A3o%20e%20Embeddings.md).
+- Pode usar [Transformers](../Deep%20Learning/Transformers.md) fine-tunados.
+- Métricas de qualidade seguem [Métricas de Avaliação em Machine Learning](../Machine%20Learning/M%C3%A9tricas%20de%20Avalia%C3%A7%C3%A3o%20em%20Machine%20Learning.md).
 
 ## Exemplos em Python quando aplicável
 ```python
