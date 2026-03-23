@@ -10,8 +10,8 @@ Domínios públicos/privados, failover geográfico, roteamento por latência.
 Existe para resolver nomes com alta disponibilidade global.
 
 ## Trade-offs
-- ✅ Muito confiável e flexível.
-- ❌ Erros de DNS/TTL podem causar incidentes de grande impacto.
+- Muito confiável e flexível.
+- Erros de DNS/TTL podem causar incidentes de grande impacto.
 
 ## Boas práticas
 - Use health checks para failover.

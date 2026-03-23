@@ -48,7 +48,7 @@ traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
 
 Leitura prática da saída:
 
-- Linha `* * *`: hop não respondeu (rate-limit/filtragem ICMP), não necessariamente falha de trânsito.
+- Linha `* * *`: hop não respondeu (rate-limit/filtragem ICMP), não necessariamente falha de trnsito.
 - Salto com latência alta **isolada** e hops seguintes normais: geralmente apenas controle-plane lento.
 - Latência que sobe e permanece alta nos hops seguintes: degradação real a partir daquele ponto.
 - Parada antes do destino: possível bloqueio na borda, rota incompleta ou destino não respondendo ao método usado.

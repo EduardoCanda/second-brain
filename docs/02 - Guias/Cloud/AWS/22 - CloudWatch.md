@@ -10,8 +10,8 @@ Monitorar saúde, SLOs e acionar alarmes/automação de incidentes.
 Existe para dar visibilidade operacional integrada ao ecossistema AWS.
 
 ## Trade-offs
-- ✅ Observabilidade centralizada e integrada.
-- ❌ Custo cresce rápido sem estratégia de retenção e cardinalidade.
+- Observabilidade centralizada e integrada.
+- Custo cresce rápido sem estratégia de retenção e cardinalidade.
 
 ## Boas práticas
 - Padronize logs estruturados.

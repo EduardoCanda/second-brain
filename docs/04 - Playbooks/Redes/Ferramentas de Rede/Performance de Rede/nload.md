@@ -38,7 +38,7 @@ Min/Avg/Max: 10.2 / 210.4 / 512.8 Mbit/s
 ```
 
 Como interpretar:
-- `Incoming/Outgoing` mostra taxa instantânea por direção
+- `Incoming/Outgoing` mostra taxa instantnea por direção
 - `Min/Avg/Max` ajuda a identificar burst vs carga estável
 - gráfico facilita perceber padrão cíclico (ex.: sincronização a cada minuto)
 

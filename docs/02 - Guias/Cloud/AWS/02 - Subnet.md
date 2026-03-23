@@ -10,8 +10,8 @@ Subnets públicas para balanceadores/NAT e privadas para aplicação, worker e b
 Existe para segmentar cargas por função, risco e disponibilidade.
 
 ## Trade-offs
-- ✅ Base de alta disponibilidade e segurança em camadas.
-- ❌ Planejamento CIDR ruim limita crescimento e cria retrabalho pesado.
+- Base de alta disponibilidade e segurança em camadas.
+- Planejamento CIDR ruim limita crescimento e cria retrabalho pesado.
 
 ## Boas práticas
 - Evite colocar banco em subnet pública.

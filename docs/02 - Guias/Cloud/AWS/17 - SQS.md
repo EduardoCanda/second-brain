@@ -10,8 +10,8 @@ Processar pedidos, envio de email, geração de relatório fora da requisição 
 Existe para desacoplar sistemas e absorver picos sem derrubar dependências.
 
 ## Trade-offs
-- ✅ Simples, resiliente e escalável.
-- ❌ Requer consumidores com idempotência e controle de visibilidade/retry.
+- Simples, resiliente e escalável.
+- Requer consumidores com idempotência e controle de visibilidade/retry.
 
 ## Boas práticas
 - Defina DLQ para mensagens com falha recorrente.

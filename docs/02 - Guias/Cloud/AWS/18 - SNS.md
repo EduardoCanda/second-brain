@@ -10,8 +10,8 @@ Publicar um evento e entregar para SQS, Lambda, HTTP, email ou mobile push.
 Existe para broadcast de eventos sem acoplamento ponto a ponto.
 
 ## Trade-offs
-- ✅ Excelente para arquitetura orientada a eventos.
-- ❌ Rastreabilidade fim-a-fim depende de observabilidade adicional.
+- Excelente para arquitetura orientada a eventos.
+- Rastreabilidade fim-a-fim depende de observabilidade adicional.
 
 ## Boas práticas
 - Combine SNS + SQS para consumo resiliente.

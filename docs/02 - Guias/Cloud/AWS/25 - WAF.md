@@ -10,8 +10,8 @@ Bloquear bots, SQLi, XSS e padrões maliciosos em ALB/API Gateway/CloudFront.
 Existe para camada extra de proteção antes da aplicação.
 
 ## Trade-offs
-- ✅ Mitiga ataques comuns rapidamente.
-- ❌ Regras agressivas podem gerar falso positivo e bloquear usuário legítimo.
+- Mitiga ataques comuns rapidamente.
+- Regras agressivas podem gerar falso positivo e bloquear usuário legítimo.
 
 ## Boas práticas
 - Comece com rule groups gerenciados e monitore em count mode.

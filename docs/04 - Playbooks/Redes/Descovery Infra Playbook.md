@@ -5,13 +5,13 @@ qualquer serviço web** usando apenas ferramentas padrão do Linux.
 
 Com esses comandos é possível identificar:
 
--   DNS routing
--   load balancers
--   proxies
--   API gateways
--   service mesh
--   CDNs
--   upstream services
+- DNS routing
+- load balancers
+- proxies
+- API gateways
+- service mesh
+- CDNs
+- upstream services
 
 Ferramentas usadas:
 
@@ -157,9 +157,9 @@ openssl s_client -connect host:443 -servername host
 
 Informações importantes:
 
--   CN
--   SAN
--   cadeia de certificados
+- CN
+- SAN
+- cadeia de certificados
 
 Exemplo:
 
@@ -263,9 +263,9 @@ sudo tcpdump -nn host host.com
 
 Isso revela:
 
--   IP real de destino
--   portas
--   handshake TCP
+- IP real de destino
+- portas
+- handshake TCP
 
 ------------------------------------------------------------------------
 
@@ -291,27 +291,27 @@ Gateway --> Service3
 
 Quando investigar um serviço:
 
-1️⃣ Ver DNS
+1. Ver DNS
 
     dig host
 
-2️⃣ Ver headers
+2. Ver headers
 
     curl -v host
 
-3️⃣ Ver certificado
+3. Ver certificado
 
     openssl s_client
 
-4️⃣ Ver rota
+4. Ver rota
 
     traceroute host
 
-5️⃣ Ver upstream
+5. Ver upstream
 
     curl paths diferentes
 
-6️⃣ Capturar rede
+6. Capturar rede
 
     tcpdump
 
@@ -321,22 +321,22 @@ Quando investigar um serviço:
 
 Com apenas **6 comandos Linux** é possível descobrir:
 
--   arquitetura de gateway
--   presença de proxies
--   load balancers
--   upstream services
--   service mesh
+- arquitetura de gateway
+- presença de proxies
+- load balancers
+- upstream services
+- service mesh
 
 Isso funciona para:
 
--   AWS
--   Kubernetes
--   API Gateways
--   CDNs
--   infra corporativa
+- AWS
+- Kubernetes
+- API Gateways
+- CDNs
+- infra corporativa
 
 Esse método é amplamente usado por:
 
--   SRE
--   DevOps
--   Platform Engineers
+- SRE
+- DevOps
+- Platform Engineers

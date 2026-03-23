@@ -10,8 +10,8 @@ Aumentar/ reduzir instâncias e tasks em picos sem intervenção manual.
 Existe para equilibrar performance, disponibilidade e custo.
 
 ## Trade-offs
-- ✅ Reduz risco de indisponibilidade por pico.
-- ❌ Política mal calibrada causa oscillation (sobe/desce sem estabilidade).
+- Reduz risco de indisponibilidade por pico.
+- Política mal calibrada causa oscillation (sobe/desce sem estabilidade).
 
 ## Boas práticas
 - Use cooldown adequado e métricas alinhadas ao gargalo real.

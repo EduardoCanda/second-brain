@@ -1,4 +1,4 @@
-# 🧪 Trilha de Testes de Software
+# Trilha de Testes de Software
 
 Esta trilha organiza os principais tópicos de teste de software em uma sequência prática de estudo e aplicação.
 

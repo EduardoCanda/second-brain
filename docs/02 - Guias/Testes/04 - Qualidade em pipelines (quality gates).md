@@ -1,4 +1,4 @@
-# 🚦 Qualidade em pipelines (quality gates)
+# Qualidade em pipelines (quality gates)
 
 Quality gates são critérios automáticos que impedem promoção de artefatos sem padrão mínimo de qualidade.
 

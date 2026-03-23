@@ -1,4 +1,4 @@
-# 🤝 Testes de contrato em arquitetura distribuída
+# Testes de contrato em arquitetura distribuída
 
 Em sistemas distribuídos, a falha mais comum não é lógica interna isolada: é **quebra de integração** entre serviços que evoluem em ritmos diferentes.
 

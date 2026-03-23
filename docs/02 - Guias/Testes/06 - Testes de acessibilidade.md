@@ -1,4 +1,4 @@
-# ♿ Testes de acessibilidade
+# Testes de acessibilidade
 
 Acessibilidade não é “acabamento”; é requisito de qualidade, inclusão e, em muitos contextos, conformidade legal.
 

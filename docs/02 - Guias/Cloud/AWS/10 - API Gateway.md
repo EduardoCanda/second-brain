@@ -10,8 +10,8 @@ Expor backend com auth, rate limit, versionamento e observabilidade.
 Existe para padronizar entrada de API com segurança e governança.
 
 ## Trade-offs
-- ✅ Recursos nativos de segurança, throttling e stages.
-- ❌ Pode aumentar latência/custo em tráfego alto e rotas simples.
+- Recursos nativos de segurança, throttling e stages.
+- Pode aumentar latência/custo em tráfego alto e rotas simples.
 
 ## Boas práticas
 - Use HTTP API quando possível (mais simples e barato).

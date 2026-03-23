@@ -10,8 +10,8 @@ APIs leves, automações, processamento de eventos (S3/SQS/SNS/EventBridge).
 Existe para remover gestão de servidor e acelerar entrega de integrações.
 
 ## Trade-offs
-- ✅ Escala automática e ótimo time-to-market.
-- ❌ Cold start, limites de execução e observabilidade distribuída exigem cuidado.
+- Escala automática e ótimo time-to-market.
+- Cold start, limites de execução e observabilidade distribuída exigem cuidado.
 
 ## Boas práticas
 - Prefira funções pequenas e coesas.

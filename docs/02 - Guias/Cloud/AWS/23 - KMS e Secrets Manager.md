@@ -10,8 +10,8 @@ Criptografar dados e guardar credenciais (DB, API keys, tokens) com rotação.
 Existe para reduzir risco de vazamento e suportar compliance.
 
 ## Trade-offs
-- ✅ Segurança forte com trilha de auditoria.
-- ❌ Requer desenho de permissões e governança mais rigoroso.
+- Segurança forte com trilha de auditoria.
+- Requer desenho de permissões e governança mais rigoroso.
 
 ## Boas práticas
 - Nunca commitar segredo no repositório.

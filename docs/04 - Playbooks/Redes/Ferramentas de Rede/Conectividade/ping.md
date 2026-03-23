@@ -53,7 +53,7 @@ Leitura prática da saída:
 
 - `packet loss > 0%`: indício de instabilidade, congestionamento, policing ou filtragem ICMP.
 - `time=` alto e variável: possível fila em link, saturação ou rota subótima.
-- `ttl` mudando entre respostas: pode indicar caminhos diferentes (ECMP/roteamento dinâmico).
+- `ttl` mudando entre respostas: pode indicar caminhos diferentes (ECMP/roteamento dinmico).
 - `unknown host`: falha de DNS, não de conectividade IP.
 
 ## Dicas de troubleshooting

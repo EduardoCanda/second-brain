@@ -10,8 +10,8 @@ Armazenar imagens para ECS, EKS e Lambda (container image).
 Existe para distribuição segura e integrada de imagens no ecossistema AWS.
 
 ## Trade-offs
-- ✅ Integração nativa com IAM e scanning.
-- ❌ Acoplamento maior à AWS para pipelines multi-cloud.
+- Integração nativa com IAM e scanning.
+- Acoplamento maior à AWS para pipelines multi-cloud.
 
 ## Boas práticas
 - Aplique política de retenção de imagens.

@@ -1,4 +1,4 @@
-# 🧩 Test as a Code (TaaC)
+# Test as a Code (TaaC)
 
 Test as a Code trata estratégia, dados, ambientes e execução de testes como artefatos versionados e auditáveis.
 

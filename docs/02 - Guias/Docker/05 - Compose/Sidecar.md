@@ -25,10 +25,10 @@ Cluster\
 
 ### Componentes:
 
--   **Cluster**: Agrupamento lógico de recursos.
--   **Service**: Mantém quantidade desejada de Tasks.
--   **Task Definition**: Define CPU, memória e containers.
--   **Task**: Instância em execução da Task Definition.
+- **Cluster**: Agrupamento lógico de recursos.
+- **Service**: Mantém quantidade desejada de Tasks.
+- **Task Definition**: Define CPU, memória e containers.
+- **Task**: Instância em execução da Task Definition.
 
 ------------------------------------------------------------------------
 
@@ -36,9 +36,9 @@ Cluster\
 
 No ECS (principalmente Fargate):
 
--   CPU e memória são definidos na Task.
--   Containers compartilham o total provisionado.
--   Você paga pelo total da Task.
+- CPU e memória são definidos na Task.
+- Containers compartilham o total provisionado.
+- Você paga pelo total da Task.
 
 Exemplo:
 
@@ -47,8 +47,8 @@ Task Memory: 2048
 
 Distribuição possível:
 
--   App: 800 CPU
--   Sidecar: 200 CPU
+- App: 800 CPU
+- Sidecar: 200 CPU
 
 Sempre manter margem de segurança (\~20-30%).
 
@@ -68,9 +68,9 @@ O scaling nunca aumenta apenas o container principal.
 
 ### Métricas recomendadas:
 
--   Request Count (via Load Balancer)
--   Latência
--   Target tracking
+- Request Count (via Load Balancer)
+- Latência
+- Target tracking
 
 Evitar depender apenas de CPU.
 
@@ -80,9 +80,9 @@ Evitar depender apenas de CPU.
 
 Sidecar aumenta custo porque:
 
--   Cada Task consome mais recursos
--   Scaling multiplica esse custo
--   No Fargate você paga por Task provisionada
+- Cada Task consome mais recursos
+- Scaling multiplica esse custo
+- No Fargate você paga por Task provisionada
 
 Quanto mais sidecars, maior o custo proporcional ao scaling.
 
@@ -90,11 +90,11 @@ Quanto mais sidecars, maior o custo proporcional ao scaling.
 
 ## 6. Quando Usar Sidecar
 
-✔ Proxy local
-✔ Service Mesh
-✔ Coletor de logs
-✔ Segurança acoplada
-✔ Injeção de certificados
+- Proxy local
+- Service Mesh
+- Coletor de logs
+- Segurança acoplada
+- Injeção de certificados
 
 Use quando a infraestrutura precisa estar próxima da aplicação.
 
@@ -141,10 +141,10 @@ observabilidade.
 
 Mas impacta:
 
--   Scaling
--   Consumo de recursos
--   Custo
--   Complexidade operacional
+- Scaling
+- Consumo de recursos
+- Custo
+- Complexidade operacional
 
 Decisão deve considerar consumo, modelo de scaling e previsibilidade
 financeira.

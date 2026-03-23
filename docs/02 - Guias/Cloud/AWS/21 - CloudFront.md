@@ -10,8 +10,8 @@ Frontend estático, distribuição de mídia, aceleração de APIs.
 Existe para aproximar conteúdo do usuário e reduzir carga na origem.
 
 ## Trade-offs
-- ✅ Menor latência e menor custo na origem em escala.
-- ❌ Estratégia ruim de cache/invalidation gera comportamento inesperado.
+- Menor latência e menor custo na origem em escala.
+- Estratégia ruim de cache/invalidation gera comportamento inesperado.
 
 ## Boas práticas
 - Defina cache policy por tipo de conteúdo.

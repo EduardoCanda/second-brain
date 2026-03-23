@@ -10,8 +10,8 @@ Isolar ambientes (prod/stage/dev), conectar app, banco e integrações com contr
 Existe para dar isolamento e governança de rede sem hardware físico próprio.
 
 ## Trade-offs
-- ✅ Controle completo de topologia e segmentação.
-- ❌ Configuração errada de rotas/NAT/peering gera incidentes difíceis de diagnosticar.
+- Controle completo de topologia e segmentação.
+- Configuração errada de rotas/NAT/peering gera incidentes difíceis de diagnosticar.
 
 ## Boas práticas
 - Defina CIDR com folga para crescimento.

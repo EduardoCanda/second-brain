@@ -10,8 +10,8 @@ Plataformas multi-time, ecossistema CNCF, padronização Kubernetes.
 Existe para unir portabilidade K8s com redução de esforço no controle do cluster.
 
 ## Trade-offs
-- ✅ Ecossistema rico e portável.
-- ❌ Curva de complexidade e custo maiores que ECS em muitos times.
+- Ecossistema rico e portável.
+- Curva de complexidade e custo maiores que ECS em muitos times.
 
 ## Boas práticas
 - Use managed node groups ou Fargate profile conforme perfil.

@@ -161,7 +161,7 @@ Monte um ambiente simples para prática contínua:
 ---
 ## 5) Checklist de competências (pronto para prova)
 
-Marque ✅ quando estiver confortável sem consulta:
+Marque  quando estiver confortável sem consulta:
 
 - [ ] Instalar, configurar e diagnosticar Docker Engine.
 - [ ] Criar Dockerfiles eficientes e seguros.

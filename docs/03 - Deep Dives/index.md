@@ -1,4 +1,4 @@
-# 🔬 Índice — Deep Dives
+# Índice — Deep Dives
 
 A pasta **Deep Dives** é dedicada a análises mais profundas de temas técnicos.
 

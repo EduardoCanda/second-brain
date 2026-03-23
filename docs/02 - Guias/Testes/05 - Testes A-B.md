@@ -1,4 +1,4 @@
-# 🧭 Testes A/B
+# Testes A/B
 
 Teste A/B é uma técnica de experimentação controlada para comparar variantes e decidir com base em evidência estatística.
 

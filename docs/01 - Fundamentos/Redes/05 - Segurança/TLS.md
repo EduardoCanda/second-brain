@@ -9,7 +9,7 @@ Na camada OSI, o TLS é frequentemente associaco á camada 6 (apresentação), e
 ## TLS Handshake:
 Antes de trafegar dados, o cliente e servidor realizam um **handshake TLS** para negociar segurança.
 
-####  Quem inicia o TLS Handshake?
+#### Quem inicia o TLS Handshake?
 **Sempre o CLIENTE**
 
 Exemplos de cliente:
@@ -75,7 +75,7 @@ CLIENTE                          SERVIDOR
 ```
 
 # Importante entender
--  TLS NÃO é automático
--  TLS não começa com o servidor
--  TLS sempre vem depois do TCP
--  TLS não criptografa a conexão inteira, só **após o handshake**
+- TLS NÃO é automático
+- TLS não começa com o servidor
+- TLS sempre vem depois do TCP
+- TLS não criptografa a conexão inteira, só **após o handshake**

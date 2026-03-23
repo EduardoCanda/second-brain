@@ -5,7 +5,7 @@ Ele ajuda a entender **como os dados são transmitidos de um computador para out
 Pense nele como uma pilha, onde cada camada **adiciona ou interpreta informações** antes de entregar para a próxima.
 
 ---
-# 📚 As 7 Camadas do Modelo OSI
+# As 7 Camadas do Modelo OSI
 
 | Camada | Nome                | Função                                                               | Exemplos                             | Nota                       |
 | ------ | ------------------- | -------------------------------------------------------------------- | ------------------------------------ | -------------------------- |

@@ -6,14 +6,14 @@ Ele foi criado principalmente para economizar o uso de endereços IPv4 públicos
 
 ---
 
-🧩 Funções do NAT
+## Funções do NAT
 	•	Traduzir endereços IP privados (não roteáveis na Internet) em endereços IP públicos.
 	•	Ocultar a topologia da rede interna, funcionando como uma camada de segurança.
 	•	Permitir que múltiplos dispositivos compartilhem um único IP público.
 
 ---
 
-🔑 Tipos de NAT
+## Tipos de NAT
 	1.	Static NAT (1:1)
 	•	Mapeia um IP privado fixo para um IP público específico.
 	•	Exemplo: Servidor interno sempre acessado pelo mesmo IP público.
@@ -27,21 +27,21 @@ Ele foi criado principalmente para economizar o uso de endereços IPv4 públicos
 
 ---
 
-📊 Vantagens
+## Vantagens
 	•	Economia de endereços IPv4.
 	•	Adiciona uma camada de segurança (IPs internos não ficam visíveis).
 	•	Flexibilidade na configuração de redes internas.
 
 ---
 
-⚠️ Desvantagens
+Aviso: Desvantagens
 	•	Pode causar problemas em aplicações que exigem conexões diretas (VoIP, jogos online, P2P).
 	•	Aumenta a complexidade na tradução de endereços e portas.
 	•	Quebra o modelo end-to-end da Internet.
 
 ---
 
-⚙️ Exemplo Prático
+## Exemplo Prático
 
 Rede interna:
 	•	PC1 → 192.168.0.2

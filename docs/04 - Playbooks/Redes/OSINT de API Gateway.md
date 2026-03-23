@@ -3,18 +3,18 @@ apenas ferramentas padrão de linha de comando.
 
 Ferramentas usadas:
 
--   dig / nslookup
--   curl
--   openssl
--   traceroute (opcional)
+- dig / nslookup
+- curl
+- openssl
+- traceroute (opcional)
 
 Esse método permite identificar:
 
--   DNS routing
--   load balancers
--   reverse proxies
--   gateways compartilhados
--   service mesh
+- DNS routing
+- load balancers
+- reverse proxies
+- gateways compartilhados
+- service mesh
 
 ------------------------------------------------------------------------
 
@@ -111,9 +111,9 @@ openssl s_client -connect host:443 -servername host
 
 Informações importantes:
 
--   CN
--   SAN
--   cadeia de certificados
+- CN
+- SAN
+- cadeia de certificados
 
 Exemplo:
 
@@ -228,16 +228,16 @@ Com apenas três ferramentas:
 
 é possível descobrir:
 
--   topologia de gateway
--   presença de proxies
--   arquitetura de balanceamento
--   possíveis upstreams
+- topologia de gateway
+- presença de proxies
+- arquitetura de balanceamento
+- possíveis upstreams
 
 Esse método funciona para:
 
--   AWS API Gateway
--   Envoy
--   Kong
--   Apigee
--   Nginx Gateway
--   Cloudflare
+- AWS API Gateway
+- Envoy
+- Kong
+- Apigee
+- Nginx Gateway
+- Cloudflare

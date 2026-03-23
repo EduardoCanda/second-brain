@@ -1,4 +1,4 @@
-# 🛠️ Índice — Guias
+# Índice — Guias
 
 A pasta **Guias** reúne materiais orientados à execução prática.
 

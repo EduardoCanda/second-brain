@@ -28,7 +28,7 @@ Use este playbook quando houver sinais de degradação relacionados ao banco de 
 ### 1) Validar escopo do incidente
 
 - O problema afeta leitura, escrita ou ambos?
-- Acontece em todas as instâncias ou apenas parte do tráfego?
+- Acontece em todas as instncias ou apenas parte do tráfego?
 - Começou após deploy, migração ou mudança de configuração?
 
 Correlacione com sinais de aplicação:
@@ -59,7 +59,7 @@ Sinais típicos:
 Ações:
 
 - confirmar `max_connections` do banco;
-- revisar tamanho de pool por instância da aplicação;
+- revisar tamanho de pool por instncia da aplicação;
 - validar vazamento de conexão (conexões não fechadas).
 
 Exemplo SQL (PostgreSQL):

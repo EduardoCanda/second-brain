@@ -42,9 +42,9 @@ Arquitetura de containers:
 O isolamento dos containers é construído usando três mecanismos
 principais do kernel Linux:
 
--   Namespaces
--   cgroups
--   Filesystem em camadas (OverlayFS)
+- Namespaces
+- cgroups
+- Filesystem em camadas (OverlayFS)
 
 ------------------------------------------------------------------------
 # Namespaces
@@ -84,9 +84,9 @@ O container não consegue ver processos do host nem de outros containers.
 
 Cada container possui:
 
--   sua própria interface de rede
--   tabela de roteamento própria
--   portas isoladas
+- sua própria interface de rede
+- tabela de roteamento própria
+- portas isoladas
 
 Dentro do container:
 
