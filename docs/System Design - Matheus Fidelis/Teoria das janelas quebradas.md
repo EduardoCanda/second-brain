@@ -1,0 +1,5 @@
+ A teoria da janela quebrada sugere que sinais visíveis de descuido, como uma janela quebrada não consertada, transmitem a ideia de abandono. Isso reduz o senso de responsabilidade das pessoas em preservar o ambiente, incentivando ainda mais degradação.
+
+Na engenharia de software, esse conceito se manifesta quando códigos mal estruturados e sem padrão começam a se acumular. Isso gera débito técnico e cria um efeito cascata, onde novos desenvolvimentos seguem o mesmo nível de desorganização. Como consequência, os engenheiros perdem a motivação para manter boas práticas, já que o sistema como um todo parece comprometido.
+
+Para evitar esse cenário, é essencial manter disciplina técnica, com revisões de código rigorosas, pipelines de CI/CD bem definidas e testes automatizados. Pequenos cuidados constantes evitam que problemas locais se transformem em falhas sistêmicas.
