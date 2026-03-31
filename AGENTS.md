@@ -71,22 +71,22 @@ Todas as notas devem seguir exatamente este formato:
 ```md id="x9f2kd"
 # Título
 
-## Definition
+## Definição
 Explicação clara e direta
 
-## Why it exists
+## Porque iso existe
 Qual problema isso resolve
 
-## How it works
+## Como funciona
 Explicação detalhada
 
-## When to use
+## Quando usar
 Cenários reais e critérios de decisão
 
-## Examples
+## Exemplos
 Exemplos práticos (preferencialmente reais)
 
-## Visual Representation
+## Representação visual
 (Usar apenas quando fizer sentido)
 
 ## Related Notes
