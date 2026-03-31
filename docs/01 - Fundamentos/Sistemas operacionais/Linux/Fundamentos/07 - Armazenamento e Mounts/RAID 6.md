@@ -37,7 +37,7 @@ flowchart TD
 ```
 
 ## Related Notes
-- [[RAID]]
-- [[RAID 5]]
-- [[RAID 10]]
-- [[Armazenamento e Mounts]]
+- [RAID](RAID.md)
+- [RAID 5](RAID 5.md)
+- [RAID 10](RAID 10.md)
+- [Armazenamento e Mounts](Armazenamento e Mounts.md)

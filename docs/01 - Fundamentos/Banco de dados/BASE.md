@@ -38,6 +38,6 @@ flowchart LR
 ```
 
 ## Notas Relacionadas
-- [[ACID]]
-- [[Teorema CAP]]
-- [[Teorema PACELC]]
+- [ACID](ACID.md)
+- [Teorema CAP](Teorema CAP.md)
+- [Teorema PACELC](Teorema PACELC.md)

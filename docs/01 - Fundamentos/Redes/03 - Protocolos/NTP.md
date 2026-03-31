@@ -88,7 +88,7 @@ flowchart TD
 ```
 
 ## Related Notes
-- [[UDP]]
-- [[DNS]]
-- [[Protocolos de Rede]]
-- [[Observability]]
+- [UDP](UDP.md)
+- [DNS](../04 - Serviços de Rede/DNS/DNS.md)
+- [Protocolos de Rede](Protocolos de Rede.md)
+- [Observabilidade](../../Programação/Fundamentos/observabilidade.md)

@@ -42,6 +42,6 @@ flowchart TD
 ```
 
 ## Notas Relacionadas
-- [[ACID]]
-- [[BASE]]
-- [[Teorema PACELC]]
+- [ACID](ACID.md)
+- [BASE](BASE.md)
+- [Teorema PACELC](Teorema PACELC.md)

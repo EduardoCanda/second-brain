@@ -42,6 +42,6 @@ flowchart TD
 ```
 
 ## Related Notes
-- [[RAID]]
-- [[RAID 1]]
-- [[Armazenamento e Mounts]]
+- [RAID](RAID.md)
+- [RAID 1](RAID 1.md)
+- [Armazenamento e Mounts](Armazenamento e Mounts.md)

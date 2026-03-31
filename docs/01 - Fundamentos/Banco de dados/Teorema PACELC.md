@@ -38,6 +38,6 @@ flowchart TD
 ```
 
 ## Notas Relacionadas
-- [[Teorema CAP]]
-- [[BASE]]
-- [[ACID]]
+- [Teorema CAP](Teorema CAP.md)
+- [BASE](BASE.md)
+- [ACID](ACID.md)

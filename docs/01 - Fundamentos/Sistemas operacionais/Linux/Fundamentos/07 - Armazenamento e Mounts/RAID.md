@@ -42,9 +42,9 @@ flowchart LR
 ```
 
 ## Related Notes
-- [[RAID 0]]
-- [[RAID 1]]
-- [[RAID 5]]
-- [[RAID 6]]
-- [[RAID 10]]
-- [[Armazenamento e Mounts]]
+- [RAID 0](RAID 0.md)
+- [RAID 1](RAID 1.md)
+- [RAID 5](RAID 5.md)
+- [RAID 6](RAID 6.md)
+- [RAID 10](RAID 10.md)
+- [Armazenamento e Mounts](Armazenamento e Mounts.md)
