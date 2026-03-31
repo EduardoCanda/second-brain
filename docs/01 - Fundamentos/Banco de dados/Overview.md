@@ -29,3 +29,9 @@ Em muitos sistemas, o melhor caminho é **híbrido**:
 - cache para reduzir latência e proteger o banco.
 
 Veja também: [Cache](Cache.md)
+
+## Consistência e sistemas distribuídos
+- [ACID](ACID.md)
+- [BASE](BASE.md)
+- [Teorema CAP](Teorema CAP.md)
+- [Teorema PACELC](Teorema PACELC.md)
