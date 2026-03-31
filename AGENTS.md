@@ -89,7 +89,7 @@ Exemplos práticos (preferencialmente reais)
 ## Representação visual
 (Usar apenas quando fizer sentido)
 
-## Related Notes
+## Notas Relacionadas
 - [[Nota A]]
 - [[Nota B]]
 ```
