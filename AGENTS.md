@@ -43,7 +43,8 @@ Toda nota deve responder:
 
 ### 4. Forte interconexão
 
-* Utilizar `[[links]]` entre notas
+* Utilizar links compatíveis com MkDocs no formato Markdown (`[Título](../pasta/arquivo.md)`)
+* Evitar `[[wikilinks]]` do Obsidian no conteúdo final versionado
 * Preferir linkar ao invés de repetir conteúdo
 * Construir um grafo de conhecimento
 
@@ -90,8 +91,8 @@ Exemplos práticos (preferencialmente reais)
 (Usar apenas quando fizer sentido)
 
 ## Notas Relacionadas
-- [[Nota A]]
-- [[Nota B]]
+- [Nota A](../dominio/nota-a.md)
+- [Nota B](../dominio/nota-b.md)
 ```
 
 ---
@@ -159,6 +160,40 @@ AI/
 
 ---
 
+
+## Compatibilidade de Links: Obsidian x MkDocs
+
+Obsidian e MkDocs resolvem links de forma diferente. Para evitar links quebrados no site, siga estas regras:
+
+### Regra principal
+
+* O repositório deve usar **links Markdown relativos** como padrão.
+* Formato obrigatório: `[Texto do link](../pasta/arquivo.md)`
+* Sempre usar caminho relativo entre arquivos.
+
+### Não usar no conteúdo final
+
+* `[[Nome da Nota]]`
+* `[[Nome da Nota|Alias]]`
+* Links sem caminho de arquivo real
+
+### Como converter mentalmente
+
+* Obsidian: `[[Thread Pool]]`
+* MkDocs (correto): `[Thread Pool](../backend/thread-pool.md)`
+
+* Obsidian com alias: `[[Domain-Driven Design|DDD]]`
+* MkDocs (correto): `[DDD](../arquitetura/domain-driven-design.md)`
+
+### Regra para o Codex ao criar/editar notas
+
+1. Criar arquivo com nome em `kebab-case.md`
+2. Linkar sempre para o **arquivo real** da nota
+3. Em `## Notas Relacionadas`, usar apenas links Markdown relativos
+4. Antes de finalizar, revisar se todos os links apontam para caminhos válidos no repositório
+
+---
+
 ## Estratégia de Linkagem
 
 Sempre que possível, linkar:
@@ -171,9 +206,9 @@ Exemplo:
 
 ```md id="q1k8mv"
 Veja também:
-- [[Thread Pool]]
-- [[Concurrency]]
-- [[Parallelism]]
+- [Thread Pool](../backend/thread-pool.md)
+- [Concurrency](../backend/concurrency.md)
+- [Parallelism](../backend/parallelism.md)
 ```
 
 ---
