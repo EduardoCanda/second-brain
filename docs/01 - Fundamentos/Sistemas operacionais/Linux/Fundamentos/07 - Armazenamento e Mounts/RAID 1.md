@@ -35,7 +35,7 @@ flowchart LR
 ```
 
 ## Related Notes
-- [[RAID]]
-- [[RAID 0]]
-- [[RAID 10]]
-- [[Armazenamento e Mounts]]
+- [RAID](RAID.md)
+- [RAID 0](RAID 0.md)
+- [RAID 10](RAID 10.md)
+- [Armazenamento e Mounts](Armazenamento e Mounts.md)

@@ -52,6 +52,6 @@ flowchart TD
 ```
 
 ## Notas Relacionadas
-- [[BASE]]
-- [[Teorema CAP]]
-- [[Teorema PACELC]]
+- [BASE](BASE.md)
+- [Teorema CAP](Teorema CAP.md)
+- [Teorema PACELC](Teorema PACELC.md)

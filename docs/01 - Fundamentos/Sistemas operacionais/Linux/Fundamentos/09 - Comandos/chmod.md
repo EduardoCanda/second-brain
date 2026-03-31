@@ -207,6 +207,6 @@ flowchart TD
 ```
 
 ## Related Notes
-- [[Usuários, Grupos e Permissões]]
-- [[Operadores do Terminal Linux]]
-- [[Linux]]
+- [Usuários, Grupos e Permissões](../02 - Usuário, grupos e permissões/Usuários, Grupos e Permissões.md)
+- [Operadores do Terminal Linux](Operadores do Terminal Linux.md)
+- [Linux](../00 - Introdução/Linux.md)
