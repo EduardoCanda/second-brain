@@ -1,12 +1,30 @@
 # Cache
 
 ## Definição
-Cache guarda dados frequentemente acessados para reduzir latência e carga no sistema de origem.
+Cache é uma camada de armazenamento temporário que mantém dados de alto reaproveitamento para reduzir latência e diminuir chamadas ao sistema de origem.
 
-## Por que isso importa
-Em backend, cache bem aplicado reduz custo e melhora tempo de resposta de forma significativa.
+## Porque iso existe
+Sistemas distribuídos precisam responder rápido e com custo controlado. Cache existe para reduzir tempo de resposta, proteger banco/API em picos e melhorar escalabilidade de leitura.
 
-## Exemplo de código
+## Como funciona
+A aplicação tenta ler no cache antes de consultar a fonte de verdade.
+
+- Se encontrar o dado, ocorre cache hit.
+- Se não encontrar, ocorre cache miss, a aplicação consulta a origem e popula o cache.
+
+Para funcionar bem, cache depende de:
+
+- chave bem definida;
+- TTL apropriado;
+- estratégia de invalidação;
+- métricas contínuas de hit/miss.
+
+## Quando usar
+Use cache quando há leitura repetitiva, custo alto de consulta na origem ou necessidade de reduzir p95/p99. Evite uso indiscriminado em dados que exigem consistência imediata sem estratégia de invalidação.
+
+## Exemplos
+Exemplo simples com Spring Cache:
+
 ```java
 @Cacheable("usuarios")
 public Usuario buscarUsuario(String id) {
@@ -14,15 +32,17 @@ public Usuario buscarUsuario(String id) {
 }
 ```
 
-## Modelo mental
-Cache é aposta probabilística: quando acerta, ganha performance; quando erra, precisa fallback correto.
+## Representação visual
+```mermaid
+flowchart LR
+    A[Request] --> B{Cache hit?}
+    B -- Sim --> C[Retorna do cache]
+    B -- Não --> D[Consulta origem]
+    D --> E[Armazena no cache]
+    E --> F[Retorna resposta]
+```
 
-## Erros comuns
-- Não definir TTL e servir dados obsoletos indefinidamente.
-- Ignorar invalidação ao atualizar dado fonte.
-- Cachear sem medir hit rate e p95.
-
-## Conceitos relacionados
-[HashMap](hashmap.md)
-[Observabilidade](observabilidade.md)
-[Tolerância a falhas](tolerancia-a-falhas.md)
+## Notas Relacionadas
+- [Métricas de cache: hit, miss e hit rate](../Cache/metricas-de-cache-hit-rate-e-miss-rate.md)
+- [Políticas de evicção e substituição de cache](../Cache/politicas-de-eviccao-e-substituicao-de-cache.md)
+- [Implementações de cache em aplicações](../Cache/implementacoes-de-cache-em-aplicacoes.md)
