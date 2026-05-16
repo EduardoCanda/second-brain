@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"3279476747d2ea83","x":-364,"y":77,"width":250,"height":60,"type":"text","text":"Transporte L4"},
+		{"id":"2d56c5a7b4323e14","x":-363,"y":180,"width":250,"height":60,"type":"text","text":"Redes L3"},
+		{"id":"44466938481a1464","x":-363,"y":280,"width":250,"height":60,"type":"text","text":"Enlace L2"},
+		{"id":"f7462b00ead69cbc","x":-363,"y":-20,"width":250,"height":64,"type":"text","text":"Aplicação L7"},
+		{"id":"e5a38b866fe6561b","x":-289,"y":-120,"width":103,"height":50,"type":"text","text":"TCP/IP"},
+		{"id":"3729dbccfa75eed4","x":-364,"y":394,"width":250,"height":60,"type":"text","text":"Física L1"}
+	],
+	"edges":[
+		{"id":"db0116eb37aa4ec7","fromNode":"e5a38b866fe6561b","fromSide":"bottom","toNode":"f7462b00ead69cbc","toSide":"top"},
+		{"id":"08dc84c0700c6fee","fromNode":"f7462b00ead69cbc","fromSide":"bottom","toNode":"3279476747d2ea83","toSide":"top"},
+		{"id":"03a2f6f8ddb6df24","fromNode":"3279476747d2ea83","fromSide":"bottom","toNode":"2d56c5a7b4323e14","toSide":"top"},
+		{"id":"ae5ec0dca99b0af4","fromNode":"2d56c5a7b4323e14","fromSide":"bottom","toNode":"44466938481a1464","toSide":"top"},
+		{"id":"f3bf8201e11dfd03","fromNode":"44466938481a1464","fromSide":"bottom","toNode":"3729dbccfa75eed4","toSide":"top"}
+	]
+}
